@@ -32,13 +32,22 @@ REVIEW = object_schema({
 })
 
 
-def reflection_trace(trace):
-    return {"id": trace["id"], "task_type": trace["task"]["task_type"],
-            "initial_observation": trace["initial_observation"], "success": trace["success"],
-            "termination": trace["termination"],
-            "final_visible_state": visible_state(trace["steps"]),
-            "steps": [{key: step[key] for key in ("step", "action", "observation", "score", "won")}
-                      for step in trace["steps"]]}
+STEP_FIELDS = ("step", "action", "observation", "score", "won")
+
+
+def reflection_payload(traces):
+    """Lossless reflection view: share identical context, declare step keys once."""
+    contexts, trajectories = [], []
+    for trace in traces:
+        context = {"task_type": trace["task"]["task_type"],
+                   "initial_observation": trace["initial_observation"]}
+        if context not in contexts:
+            contexts.append(context)
+        trajectories.append({"id": trace["id"], "context": contexts.index(context),
+                             "success": trace["success"], "termination": trace["termination"],
+                             "final_visible_state": visible_state(trace["steps"]),
+                             "steps": [[step[key] for key in STEP_FIELDS] for step in trace["steps"]]})
+    return {"step_fields": list(STEP_FIELDS), "contexts": contexts, "trajectories": trajectories}
 
 
 class Cognition:
@@ -47,7 +56,7 @@ class Cognition:
 
     def ask(self, name, schema, round_index, **values):
         template = (self.project / f"prompts/{name}.txt").read_text()
-        filled = template.format(**{key: value if isinstance(value, str) else json.dumps(value, ensure_ascii=False)
+        filled = template.format(**{key: value if isinstance(value, str) else json.dumps(value, ensure_ascii=False, separators=(",", ":"))
                                     for key, value in values.items()})
         messages = [{"role": "system", "content": "You are an evidence-grounded research assistant. Return only the requested JSON."},
                     {"role": "user", "content": filled}]
@@ -56,9 +65,9 @@ class Cognition:
 
     def propose(self, memory, pair, round_index):
         return self.ask("propose", PROPOSAL, round_index, memory=memory.render(),
-                        trajectories=[reflection_trace(t) for t in pair])
+                        trajectories=reflection_payload(pair))
 
     def review(self, memory, candidate, traces, round_index):
         return self.ask("review", REVIEW, round_index, memory=memory.render(), candidate=candidate,
-                        trajectories=[reflection_trace(t) for t in traces])
+                        trajectories=reflection_payload(traces))
 

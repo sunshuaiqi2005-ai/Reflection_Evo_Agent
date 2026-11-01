@@ -8,5 +8,6 @@ Original memory:
 {memory}
 Candidate:
 {candidate}
+Lossless trajectory format: contexts contains task types and initial observations; each trajectory's context is a zero-based index into that list. Different task contexts remain separate. step_fields declares the columns of every step array. Use the recorded step value for evidence, not the array index. All actions, observations, scores and won flags are preserved; success and termination belong to each trajectory separately.
 Original-task verification and extension-task execution:
 {trajectories}

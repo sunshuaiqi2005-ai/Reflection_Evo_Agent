@@ -1,0 +1,78 @@
+from copy import deepcopy
+import json
+from pathlib import Path
+import unittest
+
+from experience.cognition import Cognition, reflection_payload
+from experience.memory import Memory, validate_evidence
+from experience.visible_state import visible_state
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def make_trace(identifier, observation="Your task: 清洗后放置。\nYou see a sinkbasin 1."):
+    return {"id": identifier, "task": {"task_type": "pick_clean_then_place_in_recep"},
+            "initial_observation": observation, "success": False, "termination": "step_limit",
+            "steps": [{"step": index, "action": "clean bowl 1 with sinkbasin 1",
+                       "observation": "Nothing happens.\n检查位置。", "score": 0.0, "won": False}
+                      for index in range(1, 51)]}
+
+
+class ReflectionFormatTests(unittest.TestCase):
+    def test_full_fifty_step_pair_round_trips_without_losing_feedback_or_results(self):
+        pair = [make_trace("a"), make_trace("b")]
+        pair[1]["success"] = True
+        pair[1]["termination"] = "won"
+        pair[1]["steps"][-1].update(score=1.0, won=True)
+        original = deepcopy(pair)
+        payload = json.loads(json.dumps(reflection_payload(pair), ensure_ascii=False, separators=(",", ":")))
+        self.assertEqual(len(payload["contexts"]), 1)
+        for source, packed in zip(pair, payload["trajectories"]):
+            context = payload["contexts"][packed["context"]]
+            self.assertEqual(context["initial_observation"], source["initial_observation"])
+            self.assertEqual(context["task_type"], source["task"]["task_type"])
+            self.assertEqual(packed["success"], source["success"])
+            self.assertEqual(packed["termination"], source["termination"])
+            self.assertEqual(packed["final_visible_state"], visible_state(source["steps"]))
+            restored = [dict(zip(payload["step_fields"], row)) for row in packed["steps"]]
+            self.assertEqual(restored, source["steps"])
+            validate_evidence([{"trajectory_id": source["id"], "step": 50,
+                                "quote": restored[-1]["observation"]}], pair)
+        self.assertEqual(pair, original)
+
+    def test_different_original_and_extension_observations_never_share_context(self):
+        traces = [make_trace("original"), make_trace("extension", "A different room and task.")]
+        packed = reflection_payload(traces)
+        self.assertEqual(len(packed["contexts"]), 2)
+        self.assertEqual([t["context"] for t in packed["trajectories"]], [0, 1])
+
+    def test_context_sharing_requires_matching_task_type_as_well_as_observation(self):
+        traces = [make_trace("a"), make_trace("b")]
+        traces[1]["task"]["task_type"] = "pick_cool_then_place_in_recep"
+        self.assertEqual(len(reflection_payload(traces)["contexts"]), 2)
+
+    def test_proposal_and_review_both_send_the_lossless_format(self):
+        class Recorder:
+            def call(self, messages, seed, purpose, schema):
+                self.messages = messages
+                self.purpose = purpose
+                return {"captured": True}
+        client = Recorder()
+        cognition = Cognition(ROOT, client, 42)
+        pair = [make_trace("a"), make_trace("b")]
+        cognition.propose(Memory(), pair, 1)
+        body = client.messages[1]["content"]
+        packed = json.loads(body.split("\nPair:\n", 1)[1])
+        self.assertEqual(packed, reflection_payload(pair))
+        self.assertEqual(body.count(pair[0]["initial_observation"].replace("\n", "\\n")), 1)
+        candidate = {"advice": "Preserve exact strings: a, b and 中文。"}
+        cognition.review(Memory(), candidate, pair, 1)
+        body = client.messages[1]["content"]
+        packed = json.loads(body.split("\nOriginal-task verification and extension-task execution:\n", 1)[1])
+        self.assertEqual(packed, reflection_payload(pair))
+        candidate_json = body.split("\nCandidate:\n", 1)[1].split("\nLossless trajectory format:", 1)[0]
+        self.assertEqual(json.loads(candidate_json), candidate)
+
+
+if __name__ == "__main__":
+    unittest.main()
