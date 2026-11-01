@@ -2,9 +2,10 @@ from copy import deepcopy
 import json
 from pathlib import Path
 import unittest
+import jsonschema
 
-from experience.cognition import Cognition, reflection_payload
-from experience.memory import Memory, validate_evidence
+from experience.cognition import CANDIDATE, REVIEW, Cognition, reflection_payload
+from experience.memory import Memory
 from experience.visible_state import visible_state
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,6 +20,17 @@ def make_trace(identifier, observation="Your task: 清洗后放置。\nYou see a
 
 
 class ReflectionFormatTests(unittest.TestCase):
+    def test_candidate_and_extension_review_require_no_citation_fields(self):
+        candidate = {"trigger": "the target is held", "advice": "Visit the appliance before processing.",
+                     "exceptions": []}
+        jsonschema.validate(candidate, CANDIDATE)
+        review = {"trigger": "present", "followed": "no", "contribution": "uncertain",
+                  "needs_revision": True, "issue": "Clarify the navigation precondition.", "revision": candidate}
+        jsonschema.validate(review, REVIEW)
+        self.assertEqual(set(CANDIDATE["properties"]), {"trigger", "advice", "exceptions"})
+        for schema in (CANDIDATE, REVIEW):
+            self.assertFalse({"evidence", "quote", "trajectory_id", "step"} & set(schema["properties"]))
+
     def test_full_fifty_step_pair_round_trips_without_losing_feedback_or_results(self):
         pair = [make_trace("a"), make_trace("b")]
         pair[1]["success"] = True
@@ -36,8 +48,6 @@ class ReflectionFormatTests(unittest.TestCase):
             self.assertEqual(packed["final_visible_state"], visible_state(source["steps"]))
             restored = [dict(zip(payload["step_fields"], row)) for row in packed["steps"]]
             self.assertEqual(restored, source["steps"])
-            validate_evidence([{"trajectory_id": source["id"], "step": 50,
-                                "quote": restored[-1]["observation"]}], pair)
         self.assertEqual(pair, original)
 
     def test_different_original_and_extension_observations_never_share_context(self):

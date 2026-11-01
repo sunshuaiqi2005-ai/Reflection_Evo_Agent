@@ -47,7 +47,7 @@ class ImprovementTests(unittest.TestCase):
         trace = {"id": "a", "task": {"object": "Cup"}, "initial_observation": "A cup is visible.",
                  "steps": []}
         rule = {"trigger": "observing a cup in the fridge", "advice": "take the cup from the fridge",
-                "exceptions": [], "evidence": [{"trajectory_id": "a", "step": 0, "quote": "A cup is visible."}]}
+                "exceptions": []}
         with self.assertRaises(ProtocolError):
             validate_candidate(rule, [trace], "bad")
         rule["trigger"] = "the target is visible and the hands are occupied"

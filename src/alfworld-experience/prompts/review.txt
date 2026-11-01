@@ -1,6 +1,6 @@
 Review ONE extension-task execution with a temporarily appended candidate experience. The candidate has already passed ONE original-task execution. Use the extension trace to correct and improve this one experience as a whole: its trigger, advice, exceptions and operational detail. The original memory supplies context and is not rewritten.
 Decide whether the trigger occurred, whether the agent followed the advice, and what the observations support. Extension success is NOT an acceptance requirement; failure alone does not prove the rule wrong. You may clarify an ambiguous trigger or instruction when supported by the trace, including when the original advice was not followed. Do not invent a correction just to respond to failure in an unrelated stage.
-At most ONE revision is permitted. If a correction is warranted, set needs_revision true, explain the specific issue, cite an exact extension-trajectory quote, and return the complete revised candidate. Preserve useful conditions and exceptions. If no correction is supported, set needs_revision false and revision null so the original candidate can be appended unchanged.
+At most ONE revision is permitted. If a correction is warranted, set needs_revision true, explain the specific issue, and return the complete revised candidate containing trigger, advice and exceptions. Preserve useful conditions and exceptions. If no correction is supported, set needs_revision false and revision null so the original candidate can be appended unchanged.
 After this review the selected experience is directly appended. There is NO re-execution, fusion or regression check. Do not describe a revised experience as having been validated by executions that happened before the revision. Do not encode task answers or numbered entities.
 Express any revised trigger, advice and exceptions with abstract task roles (target object, held object, source container, goal receptacle). Do not include the specific task's target-object type or a memorized object-location answer. Use the visible-state summaries and successful action feedback to reason about action preconditions; do not infer state changes after Nothing happens.
 
@@ -8,6 +8,6 @@ Original memory:
 {memory}
 Candidate:
 {candidate}
-Lossless trajectory format: contexts contains task types and initial observations; each trajectory's context is a zero-based index into that list. Different task contexts remain separate. step_fields declares the columns of every step array. Use the recorded step value for evidence, not the array index. All actions, observations, scores and won flags are preserved; success and termination belong to each trajectory separately.
+Lossless trajectory format: contexts contains task types and initial observations; each trajectory's context is a zero-based index into that list. Different task contexts remain separate. step_fields declares the columns of every step array. All actions, observations, scores and won flags are preserved; success and termination belong to each trajectory separately.
 Original-task verification and extension-task execution:
 {trajectories}

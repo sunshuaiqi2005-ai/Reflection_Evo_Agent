@@ -4,7 +4,7 @@ from itertools import combinations
 from pathlib import Path
 import random
 
-from .memory import Memory, validate_candidate, validate_evidence
+from .memory import Memory, validate_candidate
 from .util import ProtocolError, digest, event, read_json, seed_for, write_json
 
 PROTOCOL = "original_once_extension_once_append"
@@ -84,21 +84,15 @@ class Evolution:
                     extension = episode("candidate-extension", temporary, plan["extension"])
                     review = self.cognition.review(memory, candidate, [original, extension], index)
                     write_json(folder / "extension_review.json", review)
-                    if review["evidence"]:
-                        validate_evidence(review["evidence"], [original, extension])
                     revised = review["needs_revision"]
                     if review["needs_revision"]:
-                        if (not review["issue"].strip() or not review["evidence"] or
-                                review["revision"] is None):
-                            raise ProtocolError("Revision lacks a specific, evidence-supported correction")
+                        if not review["issue"].strip() or review["revision"] is None:
+                            raise ProtocolError("Revision lacks a specific correction")
                         candidate = validate_candidate(review["revision"], [original, extension], f"r{index:02d}-revised")
-                        if not any(e["trajectory_id"] == extension["id"]
-                                   for e in [*review["evidence"], *candidate["evidence"]]):
-                            raise ProtocolError("Extension-based revision must cite the extension trajectory")
                         result["revised_candidate"] = candidate
                     elif review["revision"] is not None:
                         raise ProtocolError("Revision supplied while needs_revision is false")
-                    # The extension supplies correction evidence, not an acceptance success gate.
+                    # The extension supplies correction feedback, not an acceptance success gate.
                     # Commit immediately after this one review; never run revised/regression episodes.
                     candidate["validated_by"] = [] if revised else [original["id"]]
                     candidate["reviewed_on"] = [extension["id"]]

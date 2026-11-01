@@ -87,7 +87,7 @@ def summarize(directory, phase, started, returncode):
                "rounds": rows, "final_test_executed": False}
     save(directory / "evolution_summary.json", summary)
     labels = {"accepted": "接收经验", "rejected_original": "原题验证失败，舍弃",
-              "skipped_all_success": "三次均成功，跳过", "rejected_protocol": "输出或证据不符合协议"}
+              "skipped_all_success": "三次均成功，跳过", "rejected_protocol": "经验输出不符合格式或通用性要求"}
     lines = ["# 十轮经验进化结果", "", f"状态：{phase}；完成 {len(results)}/10 轮。",
              f"开始：{started}；结束：{summary['finished_at']}。",
              f"接收经验轮数：{summary['accepted_rounds']}；最终经验条数：{summary['experience_count']}。", "",

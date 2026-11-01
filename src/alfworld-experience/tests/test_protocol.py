@@ -33,8 +33,7 @@ def trace(identifier, task=TASK, success=False):
 def rule(t, revised=False):
     return {"trigger": "a closed container must be searched" if not revised else "an already inspected container is unchanged",
             "advice": "Open it before checking its contents." if not revised else "Search another uninspected location.",
-            "exceptions": ["Recheck if the environment state has changed."],
-            "evidence": [{"trajectory_id": t["id"], "step": 1, "quote": "is empty"}]}
+            "exceptions": ["Recheck if the environment state has changed."]}
 
 
 class ScriptedRunner:
@@ -58,10 +57,9 @@ class ScriptedCognition:
 
     def review(self, memory, candidate, traces, index):
         self.calls.append("review")
-        evidence = rule(traces[-1])["evidence"]
         return {"trigger": "present", "followed": "yes", "contribution": "uncertain",
                 "needs_revision": self.revise, "issue": "Missing unchanged-state condition." if self.revise else "",
-                "evidence": evidence, "revision": rule(traces[-1], True) if self.revise else None}
+                "revision": rule(traces[-1], True) if self.revise else None}
 
 class ProtocolTests(unittest.TestCase):
     def setUp(self):
@@ -168,11 +166,9 @@ class ProtocolTests(unittest.TestCase):
         self.assertIn(old["exceptions"][0], appended.render())
         self.assertIn(new["advice"], appended.render())
 
-    def test_fake_evidence_and_numbered_answers_are_rejected(self):
+    def test_candidate_without_citations_passes_but_numbered_answers_are_rejected(self):
         candidate = rule(trace("a"))
-        candidate["evidence"][0]["quote"] = "never happened"
-        with self.assertRaises(ProtocolError):
-            validate_candidate(candidate, [trace("a")], "x")
+        self.assertEqual(validate_candidate(candidate, [trace("a")], "x")["id"], "x")
         candidate = rule(trace("a"))
         candidate["advice"] = "The answer is in cabinet 3."
         with self.assertRaises(ProtocolError):
@@ -250,12 +246,12 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(len(runner.calls), 5)
         self.assertEqual(memory.items[0]["id"], "r01-revised")
 
-    def test_unsupported_revision_is_rejected_without_extra_episodes(self):
+    def test_revision_without_explanation_is_rejected_without_extra_episodes(self):
         cognition = ScriptedCognition(revise=True)
         original_review = cognition.review
         def unsupported(*args):
             result = original_review(*args)
-            result["evidence"][0]["quote"] = "an invented observation"
+            result["issue"] = ""
             return result
         cognition.review = unsupported
         runner = ScriptedRunner([True, False, False, True, False])

@@ -1,13 +1,13 @@
 You compare two real ALFWorld execution trajectories produced with the SAME frozen experience memory. Their success flags are environment results, not labels you may change.
 Produce exactly ONE generalizable candidate experience using the requested JSON schema. Analyze key behavior differences, possible causes, applicability and exceptions. A failure-failure pair has NO correct demonstration: report observed mistakes cautiously, never call one failure a success.
-Do not encode the answer to this particular task, specific object locations, room IDs or numbered entities in the rule. General action affordances are allowed. Cite exact short quotes from recorded steps; step 0 is the initial observation. Do not infer unseen actions or causal certainty from a single success. The entire trajectories below are supplied; no observations have been omitted.
+Do not encode the answer to this particular task, specific object locations, room IDs or numbered entities in the rule. General action affordances are allowed. Do not infer unseen actions or causal certainty from a single success. The entire trajectories below are supplied; no observations have been omitted. Provide a concise analysis and one candidate containing trigger, advice and exceptions.
 
-Write the trigger, advice and exceptions using transferable roles such as target object, held object, current location, source container and goal receptacle. Do not repeat the task's specific target-object type or an observed object-location answer. "Take the cup from the fridge" is not a general experience. Trace quotes may retain concrete names as evidence.
+Write the trigger, advice and exceptions using transferable roles such as target object, held object, current location, source container and goal receptacle. Do not repeat the task's specific target-object type or an observed object-location answer. "Take the cup from the fridge" is not a general experience.
 When an action fails, inspect earlier successful pickups, placements and navigation and the visible-state summary. A failed take may mean the hands are occupied or the agent is elsewhere, rather than bad take syntax. Extract the underlying precondition or recovery principle instead of merely repeating the failed action.
 
 Original memory:
 {memory}
 
-Lossless trajectory format: contexts contains shared task types and initial observations; each trajectory's context is a zero-based index into that list. step_fields declares the columns of every step array. Use the recorded step value for evidence, not the array index. All actions, observations, scores and won flags are preserved; success and termination belong to each trajectory separately.
+Lossless trajectory format: contexts contains shared task types and initial observations; each trajectory's context is a zero-based index into that list. step_fields declares the columns of every step array. All actions, observations, scores and won flags are preserved; success and termination belong to each trajectory separately.
 Pair:
 {trajectories}

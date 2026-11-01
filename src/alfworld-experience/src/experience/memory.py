@@ -54,29 +54,7 @@ class Memory:
         return "\n".join(lines)
 
 
-def validate_evidence(evidence, trajectories):
-    if not evidence:
-        raise ProtocolError("An empirical claim requires trajectory evidence")
-    lookup = {trajectory["id"]: trajectory for trajectory in trajectories}
-    for item in evidence:
-        trace = lookup.get(item["trajectory_id"])
-        if trace is None:
-            raise ProtocolError("Evidence references an unavailable trajectory")
-        step = item["step"]
-        if step == 0:
-            text = trace["initial_observation"]
-        elif 1 <= step <= len(trace["steps"]):
-            entry = trace["steps"][step - 1]
-            text = entry["action"] + "\n" + entry["observation"]
-        else:
-            raise ProtocolError("Evidence step is outside the recorded trajectory")
-        quote = " ".join(item["quote"].split())
-        if not quote or quote not in " ".join(text.split()):
-            raise ProtocolError("Evidence quote does not occur in the recorded step")
-
-
 def validate_candidate(candidate, trajectories, candidate_id):
-    validate_evidence(candidate["evidence"], trajectories)
     prose = " ".join([candidate["trigger"], candidate["advice"], *candidate["exceptions"]])
     if re.search(r"\b[a-z][a-z_-]*\s+\d+\b|FloorPlan\d+|trial_T\d+", prose, re.I):
         raise ProtocolError("Experience contains a task-specific numbered entity or scene")
