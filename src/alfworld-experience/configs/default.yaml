@@ -14,7 +14,8 @@ pool_transfer:
   extension_to_train: 10
 evolution:
   protocol: original_once_extension_failure_review_append_v2
-  rounds: 10
+  rounds: 30
+  original_order: manifest
   trials_per_task: 3
   max_revisions: 1
   extension_without_replacement: true

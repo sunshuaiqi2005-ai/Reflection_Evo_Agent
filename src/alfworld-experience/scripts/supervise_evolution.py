@@ -1,4 +1,4 @@
-"""Run the authorized ten-round evolution and record progress every 30 minutes."""
+"""Run the configured evolution plan and record progress every 30 minutes."""
 from __future__ import annotations
 
 import argparse
@@ -42,6 +42,15 @@ def tail(path, limit=8000):
         return stream.read().decode("utf-8", errors="replace")
 
 
+def planned_rounds(directory):
+    plan = load(directory / "manifests/plan.json")
+    if plan is None:
+        plan = load(ROOT / "data/manifests/plan.json")
+    if not plan:
+        raise RuntimeError("Missing evolution plan; run prepare before starting supervision")
+    return len(plan)
+
+
 def snapshot(directory, phase, started, worker, interval, **extra):
     rounds = [load(p) for p in sorted((directory / "rounds").glob("*/result.json"))]
     progress = list((directory / "episodes").glob("*.progress.json"))
@@ -50,7 +59,8 @@ def snapshot(directory, phase, started, worker, interval, **extra):
     result = {"checked_at": timestamp(), "started_at": started,
               "phase": phase, "supervisor_pid": os.getpid(), "worker_pid": worker.pid,
               "check_interval_seconds": interval, "rounds_completed": len(rounds),
-              "rounds_total": 10, "accepted_rounds": sum(r["status"] == "accepted" for r in rounds),
+              "rounds_total": planned_rounds(directory),
+              "accepted_rounds": sum(r["status"] == "accepted" for r in rounds),
               "round_status_counts": dict(Counter(r["status"] for r in rounds)),
               "evolution_status": status, **extra}
     if active:
@@ -69,6 +79,7 @@ def snapshot(directory, phase, started, worker, interval, **extra):
 def summarize(directory, phase, started, returncode):
     results = [load(p) for p in sorted((directory / "rounds").glob("*/result.json"))]
     memory = load(directory / "memory_final.json")
+    total = planned_rounds(directory)
     rows = []
     for result in results:
         episodes = result["episodes"]
@@ -82,13 +93,14 @@ def summarize(directory, phase, started, returncode):
                      "protocol_error": result.get("protocol_error")})
     summary = {"phase": phase, "started_at": started, "finished_at": timestamp(),
                "returncode": returncode, "rounds_completed": len(results),
+               "rounds_total": total,
                "accepted_rounds": sum(r["status"] == "accepted" for r in results),
                "experience_count": len(memory["memory"]["items"]) if memory else None,
                "rounds": rows, "final_test_executed": False}
     save(directory / "evolution_summary.json", summary)
     labels = {"accepted": "接收经验", "rejected_original": "原题验证失败，舍弃",
               "skipped_all_success": "三次均成功，跳过", "rejected_protocol": "经验输出不符合格式或通用性要求"}
-    lines = ["# 十轮经验进化结果", "", f"状态：{phase}；完成 {len(results)}/10 轮。",
+    lines = [f"# {total} 轮经验进化结果", "", f"状态：{phase}；完成 {len(results)}/{total} 轮。",
              f"开始：{started}；结束：{summary['finished_at']}。",
              f"接收经验轮数：{summary['accepted_rounds']}；最终经验条数：{summary['experience_count']}。", "",
              "| 轮次 | 三次初始执行成功数 | 处理 |", "| --- | --- | --- |"]
@@ -141,7 +153,8 @@ def main():
                             snapshot(directory, "running", started, worker, args.interval, attempt=attempt + 1)
                     status = load(directory / "status.json", {})
                     frozen = load(directory / "memory_final.json", {})
-                    if code == 0 and status.get("phase") == "evolution_complete" and frozen.get("rounds_completed") == 10:
+                    if (code == 0 and status.get("phase") == "evolution_complete"
+                            and frozen.get("rounds_completed") == planned_rounds(directory)):
                         snapshot(directory, "complete", started, worker, args.interval, returncode=code)
                         summarize(directory, "complete", started, code)
                         return

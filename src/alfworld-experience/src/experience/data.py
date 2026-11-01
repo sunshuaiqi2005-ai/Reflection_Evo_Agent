@@ -84,6 +84,9 @@ def prepare(config, project):
     if (type(transfer_count) is not int or transfer_count < 0 or
             transfer_count > config["splits"]["train"]):
         raise ValueError("extension_to_train must be a nonnegative integer no larger than train")
+    original_order = config.get("evolution", {}).get("original_order", "random")
+    if original_order not in ("random", "manifest"):
+        raise ValueError("original_order must be random or manifest")
     output = project / "data/manifests"
     signature_values = {"seed": config["seed"], "splits": config["splits"],
                         "evolution": config["evolution"], "root": str(root),
@@ -144,8 +147,11 @@ def prepare(config, project):
         warnings.append(f"rounds reduced from {requested_rounds} to {rounds}")
     if rounds == 0 or not pools["test"]:
         raise ValueError("题目不足，无法建立实验")
-    originals = random_sample(pools["train"], rounds,
-                              seed_for(config["seed"], "round-originals"))
+    if original_order == "manifest":
+        originals = pools["train"][:rounds]
+    else:
+        originals = random_sample(pools["train"], rounds,
+                                 seed_for(config["seed"], "round-originals"))
     remaining = list(pools["extension"])
     plan = []
     for index, original in enumerate(originals, 1):
@@ -164,7 +170,8 @@ def prepare(config, project):
                "available": available, "requested": config["splits"],
                "actual": {k: len(v) for k, v in pools.items()}, "rounds": rounds,
                "sampling": {"train_pool": "uniform_without_replacement",
-                            "round_originals": "uniform_without_replacement",
+                            "round_originals": ("manifest_order_without_replacement" if original_order == "manifest"
+                                                else "uniform_without_replacement"),
                             "extension_pool": "stratified",
                             "test_pool": "uniform_without_replacement" if test_types is not None else "stratified"},
                "family_counts": {k: dict(Counter(t["task_type"] for t in v)) for k, v in pools.items()},

@@ -153,6 +153,39 @@ class ImprovementTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "extension_to_train"):
                     prepare(config, Path(temp))
 
+    def test_manifest_order_runs_all_thirty_training_tasks_once(self):
+        def catalog(root, split):
+            count = 68 if split == "valid_seen" else 50
+            return [{"id": f"{split}/{i}", "official_split": split,
+                     "task_type": "pick_heat_then_place_in_recep", "object": str(i),
+                     "target": "target", "scene": str(i)} for i in range(count)]
+        config = {"seed": 42, "data_root": "data/alfworld",
+                  "splits": {"train": 30, "extension": 58, "test": 20, "allow_reduce": True},
+                  "pool_transfer": {"extension_to_train": 10},
+                  "evolution": {"rounds": 30, "original_order": "manifest",
+                                "extension_without_replacement": True}}
+        with tempfile.TemporaryDirectory() as temp, patch("experience.data.collect", catalog):
+            project = Path(temp)
+            summary = prepare(config, project)
+            development = read_json(project / "data/manifests/development.json")
+            plan = read_json(project / "data/manifests/plan.json")
+            self.assertEqual(summary["rounds"], 30)
+            self.assertEqual(summary["sampling"]["round_originals"], "manifest_order_without_replacement")
+            self.assertEqual([row["original"] for row in plan], development["train"])
+            self.assertEqual([row["round"] for row in plan], list(range(1, 31)))
+            self.assertEqual(len({row["original"]["id"] for row in plan}), 30)
+            self.assertEqual(len({row["extension"]["id"] for row in plan}), 30)
+            self.assertTrue(all(row["original"]["task_type"] == row["extension"]["task_type"] for row in plan))
+            self.assertEqual(sum(t["official_split"] == "valid_seen" for t in development["train"]), 10)
+            self.assertEqual(prepare(config, project), summary)
+
+    def test_invalid_original_order_is_rejected(self):
+        config = {"data_root": "data", "splits": {"train": 30},
+                  "evolution": {"original_order": "unsupported"}}
+        with tempfile.TemporaryDirectory() as temp:
+            with self.assertRaisesRegex(ValueError, "original_order"):
+                prepare(config, Path(temp))
+
 
 if __name__ == "__main__":
     unittest.main()

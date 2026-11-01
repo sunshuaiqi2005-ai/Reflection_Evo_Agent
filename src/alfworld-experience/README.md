@@ -25,7 +25,7 @@ docs/实验流程.md       # 详细实验方法
 
 - 原题池 30 道（原 20 道＋扩展池转入 10 道），扩展池 58 道，原最终测试题 20 道保持不变；固定种子 42。
 - 训练、扩展和测试均只选清洗、加热、冷却后放置三类任务，作为本实验的中等任务范围（并非官方难度标签）。基础训练从 train 的同类题中随机抽 20 道，再从 valid_seen 的 68 道扩展题中无放回随机转入 10 道；转入题从扩展池移除，剩余 58 道。测试仍为原 valid_unseen 抽取的 20 道。
-- 进化 10 轮，训练题普通随机抽样、无放回；每轮从扩展池抽一道同任务结构的题。
+- 进化 30 轮，按训练清单既有顺序逐题运行，30 道训练题各用一次；每轮从扩展池无放回匹配一道同任务结构的题。
 - 每轮先固定旧经验，在同一道原题上独立运行 3 次，配对比较轨迹，生成一条候选经验（触发条件、建议、例外）；候选和扩展修正均不要求引用原文或标注引用步号。
 - 候选经验只验证原题一次，失败就舍弃；通过后只运行一次扩展题。扩展成功直接追加候选，不调用修正模型；失败才审阅并最多修正一次，随后直接追加。
 - 扩展失败后无明确修改理由时保留候选；修订经验不再复验，不做融合回归。每轮最多 5 条执行轨迹。
@@ -79,7 +79,7 @@ macOS 也可双击 `开始实验.command`。如果本机已有相邻的 `qwen-lo
 PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 ```
 
-已在 M5 / 16GB Mac 上通过 49 项检查，包含真实环境任务完成、三类题池筛选和同结构配对检查。开发题预检不计入正式实验成绩。
+已在 M5 / 16GB Mac 上通过 53 项检查，包含真实环境任务完成、三类题池筛选和同结构配对检查。开发题预检不计入正式实验成绩。
 
 16GB 内存余量较紧，执行上下文为 4096 token，反思上下文为 8192 token。详细参数见 `configs/default.yaml`。
 
@@ -125,4 +125,4 @@ ALFWORLD_INTEGRATION=1 PYTHONPATH=src .venv/bin/python -m unittest discover -s t
 
 配置 `splits` 表示最终池大小：30/58/20；`pool_transfer.extension_to_train: 10` 表示先建立 20 道基础训练题和 68 道扩展题，再从扩展题中随机转移 10 道。转移种子与完整题目 ID 记录在 `data/manifests/summary.json` 的 `pool_transfer` 中。测试清单保持原样，三个池的题目 ID 和环境哈希互不重叠。
 
-已完成的旧版实验保存在 `runs/archive/`；本机 `runs/main/` 为已停止的运行记录，保持原样。新流程版本为 `original_once_extension_failure_review_append_v2`，不能复用旧流程结果。下一次实验使用独立目录，例如 `./scripts/run.sh evolve --run-dir runs/extension-failure-review-v2`。本次修改没有启动实验。
+已完成的旧版实验保存在 `runs/archive/`；本机 `runs/main/` 为已停止的运行记录，保持原样。新流程版本为 `original_once_extension_failure_review_append_v2`，不能复用旧流程结果。训练计划配置为 `rounds: 30`、`original_order: manifest`，监督脚本从实际计划读取总轮数。下一次实验使用独立目录，例如 `./scripts/run.sh evolve --run-dir runs/sequential-30`。本次修改没有启动实验。
