@@ -23,11 +23,40 @@ from .util import digest, event, exclusive_run, read_json, seed_for, write_json
 PROJECT = Path(__file__).resolve().parents[2]
 
 
+def source_hashes(project):
+    files = sorted((project / "src").rglob("*.py")) + sorted((project / "prompts").glob("*.txt"))
+    return {str(p.relative_to(project)): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
+
+
+def compatible_test_selection_update(previous, current, project, directory):
+    """Permit only a held-out selector change, with the training implementation frozen."""
+    old_config, new_config = deepcopy(previous["config"]), deepcopy(current["config"])
+    for config in (old_config, new_config):
+        config.get("task_selection", {}).pop("test_task_types", None)
+    if old_config != new_config:
+        return False
+    for key in ("model", "software", "tokenizer_sha256"):
+        if previous[key] != current[key]:
+            return False
+    for name in ("development.json", "plan.json"):
+        if previous["manifests"][name] != current["manifests"][name]:
+            return False
+    snapshot = directory / "source_snapshot"
+    if not snapshot.is_dir():
+        return False
+    frozen_sources = source_hashes(snapshot)
+    if digest(frozen_sources) != previous["source_hash"]:
+        return False
+    orchestration = {"src/experience/cli.py", "src/experience/data.py"}
+    original_sources = {k: v for k, v in frozen_sources.items() if k not in orchestration}
+    active_sources = {k: v for k, v in source_hashes(project).items() if k not in orchestration}
+    return bool(original_sources) and original_sources == active_sources
+
+
 def initialize(config, directory, summary, client):
     from importlib.metadata import version
-    source_files = sorted((PROJECT / "src").rglob("*.py")) + sorted((PROJECT / "prompts").glob("*.txt"))
-    source_hash = digest({str(p.relative_to(PROJECT)): hashlib.sha256(p.read_bytes()).hexdigest()
-                          for p in source_files})
+    files = source_hashes(PROJECT)
+    source_hash = digest(files)
     stamp = {"config": config, "manifests": summary["manifest_hashes"], "source_hash": source_hash,
              "model": client.metadata(),
              "software": {"python": platform.python_version(),
@@ -35,7 +64,21 @@ def initialize(config, directory, summary, client):
              "tokenizer_sha256": hashlib.sha256((PROJECT / config["tokenizer"]).read_bytes()).hexdigest()}
     path = directory / "run_metadata.json"
     if path.exists() and read_json(path) != stamp:
-        raise ValueError("代码、配置、模型或数据清单与已有运行不同。请使用新的 --run-dir，不能混合实验。")
+        previous = read_json(path)
+        if not compatible_test_selection_update(previous, stamp, PROJECT, directory):
+            raise ValueError("训练代码、配置、模型或开发题清单与已有运行不同。请使用新的 --run-dir，不能混合实验。")
+        write_json(directory / "evaluation_metadata.json", {
+            "reason": "Explicit final-test selector update; original training metadata retained",
+            "training_metadata_hash": digest(previous), "evaluation": stamp,
+            "development_manifest_unchanged": True, "actor_and_learning_sources_unchanged": True})
+        write_json(directory / "evaluation_manifests/summary.json", summary)
+        write_json(directory / "evaluation_manifests/test.json", read_json(PROJECT / "data/manifests/test.json"))
+        return
+    if not path.exists():
+        for relative in files:
+            target = directory / "source_snapshot" / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes((PROJECT / relative).read_bytes())
     write_json(path, stamp)
     for name in ("plan.json", "development.json", "summary.json"):
         write_json(directory / "manifests" / name, read_json(PROJECT / "data/manifests" / name))
@@ -158,7 +201,7 @@ def main(argv=None):
             if not frozen_path.exists() or not read_json(frozen_path).get("frozen"):
                 raise ValueError("必须先完成进化并冻结经验库，才能读取和运行最终测试清单。")
             tasks = read_json(PROJECT / "data/manifests/test.json")["test"]
-            write_json(directory / "manifests/test.json", {"test": tasks})
+            write_json(directory / "evaluation_manifests/test.json", {"test": tasks})
             evaluate(config, directory, tasks, runner)
         report(directory)
 

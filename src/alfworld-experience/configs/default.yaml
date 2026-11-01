@@ -3,6 +3,7 @@ data_root: data/alfworld/json_2.1.1
 tokenizer: data/tokenizer/tokenizer.json
 task_selection:
   train_task_types: [pick_and_place_simple]
+  test_task_types: [pick_and_place_simple]
 splits:
   train: 20
   extension: 80

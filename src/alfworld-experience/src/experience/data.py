@@ -75,8 +75,11 @@ def prepare(config, project):
     root = project / config["data_root"]
     selection = config.get("task_selection", {})
     training_types = selection.get("train_task_types")
+    test_types = selection.get("test_task_types")
     if training_types is not None and (not training_types or set(training_types) - TASK_TYPES):
         raise ValueError("train_task_types must contain supported ALFWorld task types")
+    if test_types is not None and (not test_types or set(test_types) - TASK_TYPES):
+        raise ValueError("test_task_types must contain supported ALFWorld task types")
     output = project / "data/manifests"
     signature = digest({"seed": config["seed"], "splits": config["splits"],
                         "evolution": config["evolution"], "root": str(root),
@@ -96,13 +99,15 @@ def prepare(config, project):
         tasks = collect(root, official)
         if name == "train" and training_types is not None:
             tasks = [task for task in tasks if task["task_type"] in training_types]
+        if name == "test" and test_types is not None:
+            tasks = [task for task in tasks if task["task_type"] in test_types]
         available[name] = len(tasks)
         requested = config["splits"][name]
         if len(tasks) < requested:
             if not config["splits"]["allow_reduce"]:
                 raise ValueError(f"{name}: requested {requested}, available {len(tasks)}")
             warnings.append(f"{name} reduced from {requested} to {len(tasks)}")
-        sampler = random_sample if name == "train" else stratified_sample
+        sampler = random_sample if name == "train" or (name == "test" and test_types is not None) else stratified_sample
         pools[name] = sampler(tasks, min(requested, len(tasks)),
                               seed_for(config["seed"], "split", name))
     identifiers = [t["id"] for pool in pools.values() for t in pool]
@@ -135,7 +140,8 @@ def prepare(config, project):
                "actual": {k: len(v) for k, v in pools.items()}, "rounds": rounds,
                "sampling": {"train_pool": "uniform_without_replacement",
                             "round_originals": "uniform_without_replacement",
-                            "extension_pool": "stratified", "test_pool": "stratified"},
+                            "extension_pool": "stratified",
+                            "test_pool": "uniform_without_replacement" if test_types is not None else "stratified"},
                "family_counts": {k: dict(Counter(t["task_type"] for t in v)) for k, v in pools.items()},
                "manifest_hashes": {name: digest(value) for name, value in manifests.items()},
                "warnings": warnings}
