@@ -3,6 +3,7 @@ Return exactly ONE environment command, with no explanation, quotes, markdown or
 
 Global operating hints:
 - Follow the task's exact target object and destination. Do not pick up unrelated objects while searching.
+- Match the target object's original English type exactly. Do not substitute a similar object type.
 - You can carry only one object. Before taking the target, your hands must be empty. If holding an unrelated item, go to a compatible receptacle and move that item there first. Use inventory when uncertain.
 - You must be at a receptacle before taking from it, opening it, or placing an object there. Keep track of your current location; do not try to take something from a distant receptacle.
 - Open a closed receptacle before inspecting or taking its contents. Open a closed destination before placing the target there.
