@@ -20,6 +20,26 @@ def make_trace(identifier, observation="Your task: 清洗后放置。\nYou see a
 
 
 class ReflectionFormatTests(unittest.TestCase):
+    def test_proposal_places_task_and_results_first_without_rendering_old_memory(self):
+        class Recorder:
+            def call(self, messages, seed, purpose, schema):
+                self.messages = messages
+                return {"captured": True}
+        class UnusedMemory:
+            def render(self):
+                raise AssertionError("Old memory must not be supplied to proposal generation")
+        instruction = "put a clean target in the goal receptacle."
+        pair = [make_trace(name, "Room description.\nYour task is to: " + instruction) for name in ("a", "b")]
+        client = Recorder()
+        Cognition(ROOT, client, 42).propose(UnusedMemory(), pair, 1)
+        body = client.messages[1]["content"]
+        tasks = json.loads(body.split("当前任务原文：\n", 1)[1].splitlines()[0])
+        results = json.loads(body.split("两条轨迹的真实结果：\n", 1)[1].splitlines()[0])
+        self.assertEqual(tasks, [{"context": 0, "task_type": pair[0]["task"]["task_type"], "instruction": instruction}])
+        self.assertEqual(results, [{"id": t["id"], "context": 0, "success": t["success"],
+                                    "termination": t["termination"]} for t in pair])
+        self.assertLess(body.index("当前任务原文："), body.index("完整执行轨迹："))
+
     def test_candidate_and_extension_review_require_no_citation_fields(self):
         candidate = {"trigger": "the target is held", "advice": "Visit the appliance before processing.",
                      "exceptions": []}
@@ -74,7 +94,8 @@ class ReflectionFormatTests(unittest.TestCase):
         body = client.messages[1]["content"]
         packed = json.loads(body.strip().splitlines()[-1])
         self.assertEqual(packed, reflection_payload(pair))
-        self.assertEqual(body.count(pair[0]["initial_observation"].replace("\n", "\\n")), 1)
+        self.assertEqual(len(packed["contexts"]), 1)
+        self.assertEqual(packed["contexts"][0]["initial_observation"], pair[0]["initial_observation"])
         candidate = {"advice": "Preserve exact strings: a, b and 中文。"}
         cognition.review(Memory(), candidate, pair, 1)
         body = client.messages[1]["content"]

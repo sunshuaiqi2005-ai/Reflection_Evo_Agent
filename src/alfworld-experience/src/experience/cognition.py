@@ -60,8 +60,14 @@ class Cognition:
                                 f"round-{round_index:02d}/{name}", schema)
 
     def propose(self, memory, pair, round_index):
-        return self.ask("propose", PROPOSAL, round_index, memory=memory.render(),
-                        trajectories=reflection_payload(pair))
+        payload = reflection_payload(pair)
+        tasks = [{"context": index, "task_type": context["task_type"],
+                  "instruction": context["initial_observation"].split("Your task is to:", 1)[-1].strip()}
+                 for index, context in enumerate(payload["contexts"])]
+        results = [{key: trace[key] for key in ("id", "context", "success", "termination")}
+                   for trace in payload["trajectories"]]
+        return self.ask("propose", PROPOSAL, round_index, tasks=tasks, results=results,
+                        trajectories=payload)
 
     def review(self, memory, candidate, traces, round_index):
         return self.ask("review", REVIEW, round_index, memory=memory.render(), candidate=candidate,

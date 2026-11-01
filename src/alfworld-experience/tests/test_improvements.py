@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from experience.data import prepare, stratified_sample
+from experience.data import prepare, random_sample, stratified_sample
 from experience.episode import normalize_action
 from experience.memory import validate_candidate
 from experience.util import ProtocolError, read_json, seed_for
@@ -107,6 +107,51 @@ class ImprovementTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             with self.assertRaisesRegex(ValueError, "extension_task_types"):
                 prepare(config, Path(temp))
+
+    def test_extension_transfer_preserves_base_training_and_heldout_tasks(self):
+        kinds = ["pick_clean_then_place_in_recep", "pick_heat_then_place_in_recep",
+                 "pick_cool_then_place_in_recep"]
+        def catalog(root, split):
+            counts = [22, 23, 23] if split == "valid_seen" else [30, 30, 30]
+            return [{"id": f"{split}/{kind}/{i}", "official_split": split, "task_type": kind,
+                     "object": str(i), "target": "target", "scene": str(i)}
+                    for kind, count in zip(kinds, counts) for i in range(count)]
+        config = {"seed": 42, "data_root": "data/alfworld",
+                  "task_selection": {name + "_task_types": kinds for name in ("train", "extension", "test")},
+                  "splits": {"train": 20, "extension": 80, "test": 20, "allow_reduce": True},
+                  "evolution": {"rounds": 10, "extension_without_replacement": True}}
+        with tempfile.TemporaryDirectory() as temp, patch("experience.data.collect", catalog):
+            before, after = Path(temp) / "before", Path(temp) / "after"
+            prepare(config, before)
+            old = read_json(before / "data/manifests/development.json")
+            new_config = deepcopy(config)
+            new_config["splits"].update(train=30, extension=58)
+            new_config["pool_transfer"] = {"extension_to_train": 10}
+            summary = prepare(new_config, after)
+            new = read_json(after / "data/manifests/development.json")
+            self.assertEqual(summary["actual"], {"train": 30, "extension": 58, "test": 20})
+            self.assertEqual(new["train"][:20], old["train"])
+            expected = random_sample(old["extension"], 10, seed_for(42, "extension-to-train"))
+            self.assertEqual(new["train"][20:], expected)
+            self.assertTrue(all(t["official_split"] == "valid_seen" for t in expected))
+            self.assertEqual({t["id"] for t in new["extension"]} | {t["id"] for t in expected},
+                             {t["id"] for t in old["extension"]})
+            self.assertFalse({t["id"] for t in new["train"]} & {t["id"] for t in new["extension"]})
+            self.assertEqual(read_json(before / "data/manifests/test.json"),
+                             read_json(after / "data/manifests/test.json"))
+            self.assertEqual(summary["pool_transfer"]["task_ids"], [t["id"] for t in expected])
+            self.assertEqual(prepare(new_config, after), summary)
+            plan = read_json(after / "data/manifests/plan.json")
+            self.assertEqual(len(plan), 10)
+            self.assertTrue(all(row["original"]["task_type"] == row["extension"]["task_type"] for row in plan))
+
+    def test_extension_transfer_rejects_invalid_counts(self):
+        config = {"data_root": "data", "splits": {"train": 30}}
+        with tempfile.TemporaryDirectory() as temp:
+            for count in (-1, 1.5, True, 31):
+                config["pool_transfer"] = {"extension_to_train": count}
+                with self.assertRaisesRegex(ValueError, "extension_to_train"):
+                    prepare(config, Path(temp))
 
 
 if __name__ == "__main__":

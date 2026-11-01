@@ -75,16 +75,23 @@ def prepare(config, project):
     root = project / config["data_root"]
     selection = config.get("task_selection", {})
     test_types = selection.get("test_task_types")
+    transfer_count = config.get("pool_transfer", {}).get("extension_to_train", 0)
     for split in ("train", "extension", "test"):
         key = split + "_task_types"
         types = selection.get(key)
         if types is not None and (not types or set(types) - TASK_TYPES):
             raise ValueError(key + " must contain supported ALFWorld task types")
+    if (type(transfer_count) is not int or transfer_count < 0 or
+            transfer_count > config["splits"]["train"]):
+        raise ValueError("extension_to_train must be a nonnegative integer no larger than train")
     output = project / "data/manifests"
-    signature = digest({"seed": config["seed"], "splits": config["splits"],
+    signature_values = {"seed": config["seed"], "splits": config["splits"],
                         "evolution": config["evolution"], "root": str(root),
                         "task_selection": selection,
-                        "train_sampling": "uniform_without_replacement_v2"})
+                        "train_sampling": "uniform_without_replacement_v2"}
+    if config.get("pool_transfer"):
+        signature_values["pool_transfer"] = config["pool_transfer"]
+    signature = digest(signature_values)
     existing = output / "summary.json"
     if existing.exists():
         summary = read_json(existing)
@@ -102,6 +109,10 @@ def prepare(config, project):
             tasks = [task for task in tasks if task["task_type"] in types]
         available[name] = len(tasks)
         requested = config["splits"][name]
+        if name == "train":
+            requested -= transfer_count
+        elif name == "extension":
+            requested += transfer_count
         if len(tasks) < requested:
             if not config["splits"]["allow_reduce"]:
                 raise ValueError(f"{name}: requested {requested}, available {len(tasks)}")
@@ -109,6 +120,21 @@ def prepare(config, project):
         sampler = random_sample if name == "train" or (name == "test" and test_types is not None) else stratified_sample
         pools[name] = sampler(tasks, min(requested, len(tasks)),
                               seed_for(config["seed"], "split", name))
+    transfer = None
+    if transfer_count:
+        training_types = selection.get("train_task_types")
+        eligible = [task for task in pools["extension"]
+                    if training_types is None or task["task_type"] in training_types]
+        if len(eligible) < transfer_count:
+            raise ValueError(f"Cannot transfer {transfer_count} extension tasks: only {len(eligible)} match training task types")
+        transfer_seed = seed_for(config["seed"], "extension-to-train")
+        moved = random_sample(eligible, transfer_count, transfer_seed)
+        moved_ids = {task["id"] for task in moved}
+        pools["train"].extend(moved)
+        pools["extension"] = [task for task in pools["extension"] if task["id"] not in moved_ids]
+        transfer = {"from": "extension", "to": "train", "count": len(moved),
+                    "seed": transfer_seed, "sampling": "uniform_without_replacement",
+                    "task_ids": [task["id"] for task in moved]}
     identifiers = [t["id"] for pool in pools.values() for t in pool]
     if len(identifiers) != len(set(identifiers)):
         raise ValueError("发现题池交集")
@@ -144,5 +170,8 @@ def prepare(config, project):
                "family_counts": {k: dict(Counter(t["task_type"] for t in v)) for k, v in pools.items()},
                "manifest_hashes": {name: digest(value) for name, value in manifests.items()},
                "warnings": warnings}
+    if transfer is not None:
+        summary["pool_transfer"] = transfer
+        summary["sampling"]["train_pool"] = "uniform_train_sample_plus_uniform_extension_transfer"
     write_json(existing, summary)
     return summary
