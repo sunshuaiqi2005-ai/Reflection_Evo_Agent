@@ -26,6 +26,10 @@ rounds/：每轮反思、修正及接收结果；episodes/：逐步执行轨迹�
 
 候选生成输入：当前任务、两条真实结果及完整轨迹，不传旧经验原文。
 转入训练的10道题从扩展池移除；种子与清单见 data/manifests/summary.json。
-已完成结果保存在 runs/archive；本机 runs/main 已停止，新实验使用独立目录，例如：
+已完成结果保存在 runs/archive；新实验使用独立目录或先归档旧 runs/main，例如：
 ./scripts/run.sh evolve --run-dir runs/sequential-30
-本次修改尚未启动新实验。
+
+监督完整训练和测试：
+.venv/bin/python -u scripts/supervise_evolution.py --run-dir runs/main --interval 1800 --with-test
+训练30轮后自动评估20道测试题，初始和最终经验各一次，共40条测试轨迹。
+每半小时记录状态；完成后查看 report.md 和 test_results.json。

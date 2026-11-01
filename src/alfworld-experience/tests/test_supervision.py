@@ -16,6 +16,77 @@ spec.loader.exec_module(supervision)
 
 
 class SupervisionTests(unittest.TestCase):
+    def completed_training(self, run):
+        write_json(run / "manifests/plan.json", [{"round": i} for i in range(1, 31)])
+        write_json(run / "manifests/summary.json", {"actual": {"test": 20}})
+        write_json(run / "run_metadata.json", {"config": {"evaluation": {"compare_initial_memory": True}}})
+        write_json(run / "status.json", {"phase": "evolution_complete", "rounds_completed": 30})
+        write_json(run / "memory_final.json", {"frozen": True, "memory": {"items": []},
+                                               "memory_hash": "frozen-memory", "rounds_completed": 30})
+
+    def completed_test(self):
+        return {"tasks": 20, "frozen_memory_hash": "frozen-memory",
+                "outcomes": {arm: [{"task_id": str(i)} for i in range(20)] for arm in ("initial", "final")},
+                "metrics": {"initial": {"successes": 6, "success_rate": 0.3, "mean_steps": 30.0},
+                            "final": {"successes": 10, "success_rate": 0.5, "mean_steps": 20.0}},
+                "success_rate_delta": 0.2}
+
+    def test_full_run_requires_all_twenty_tests_in_both_comparison_arms(self):
+        with tempfile.TemporaryDirectory() as temp:
+            run = Path(temp)
+            self.completed_training(run)
+            self.assertTrue(supervision.run_complete(run))
+            self.assertFalse(supervision.run_complete(run, with_test=True))
+            write_json(run / "status.json", {"phase": "complete"})
+            result = self.completed_test()
+            write_json(run / "test_results.json", result)
+            self.assertTrue(supervision.run_complete(run, with_test=True))
+            result["outcomes"]["final"].pop()
+            write_json(run / "test_results.json", result)
+            self.assertFalse(supervision.run_complete(run, with_test=True))
+            result = self.completed_test()
+            result["frozen_memory_hash"] = "different-memory"
+            write_json(run / "test_results.json", result)
+            self.assertFalse(supervision.run_complete(run, with_test=True))
+
+    def test_full_run_command_includes_training_and_testing(self):
+        run = Path("/temporary/run")
+        self.assertEqual(supervision.worker_command(run, with_test=True)[3], "run")
+        self.assertEqual(supervision.worker_command(run)[3], "evolve")
+
+    def test_monitor_records_testing_progress_and_partial_summary(self):
+        with tempfile.TemporaryDirectory() as temp:
+            run = Path(temp)
+            self.completed_training(run)
+            write_json(run / "status.json", {"phase": "test", "completed": 5, "total": 20})
+            write_json(run / "test_progress.json", {"completed": 5, "total": 20})
+            with contextlib.redirect_stdout(io.StringIO()):
+                snapshot = supervision.snapshot(run, "running", "started", SimpleNamespace(pid=123),
+                                                1800, with_test=True)
+            self.assertEqual(snapshot["stage"], "test")
+            self.assertEqual(snapshot["test_tasks_completed"], 5)
+            self.assertEqual(snapshot["test_tasks_total"], 20)
+            summary = supervision.summarize(run, "interrupted", "started", 130, with_test=True)
+            self.assertTrue(summary["final_test_executed"])
+            self.assertFalse(summary["final_test_completed"])
+            self.assertEqual(summary["test_tasks_completed"], 5)
+
+    def test_completed_summary_includes_frozen_test_comparison(self):
+        with tempfile.TemporaryDirectory() as temp:
+            run = Path(temp)
+            self.completed_training(run)
+            write_json(run / "status.json", {"phase": "complete"})
+            write_json(run / "test_results.json", self.completed_test())
+            summary = supervision.summarize(run, "complete", "started", 0, with_test=True)
+            self.assertTrue(summary["final_test_executed"])
+            self.assertTrue(summary["final_test_completed"])
+            self.assertEqual(summary["test_tasks_completed"], 20)
+            self.assertEqual(summary["test_metrics"]["final"]["successes"], 10)
+            text = (run / "evolution_summary.md").read_text()
+            self.assertIn("20/20", text)
+            self.assertIn("初始经验", text)
+            self.assertIn("最终经验", text)
+
     def test_snapshot_and_completion_summary_use_all_thirty_planned_rounds(self):
         with tempfile.TemporaryDirectory() as temp:
             run = Path(temp)

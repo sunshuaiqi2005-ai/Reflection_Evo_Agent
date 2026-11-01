@@ -79,7 +79,7 @@ macOS 也可双击 `开始实验.command`。如果本机已有相邻的 `qwen-lo
 PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 ```
 
-已在 M5 / 16GB Mac 上通过 53 项检查，包含真实环境任务完成、三类题池筛选和同结构配对检查。开发题预检不计入正式实验成绩。
+已在 M5 / 16GB Mac 上通过 57 项检查，包含真实环境任务完成、三类题池筛选和同结构配对检查。开发题预检不计入正式实验成绩。
 
 16GB 内存余量较紧，执行上下文为 4096 token，反思上下文为 8192 token。详细参数见 `configs/default.yaml`。
 
@@ -125,4 +125,16 @@ ALFWORLD_INTEGRATION=1 PYTHONPATH=src .venv/bin/python -m unittest discover -s t
 
 配置 `splits` 表示最终池大小：30/58/20；`pool_transfer.extension_to_train: 10` 表示先建立 20 道基础训练题和 68 道扩展题，再从扩展题中随机转移 10 道。转移种子与完整题目 ID 记录在 `data/manifests/summary.json` 的 `pool_transfer` 中。测试清单保持原样，三个池的题目 ID 和环境哈希互不重叠。
 
-已完成的旧版实验保存在 `runs/archive/`；本机 `runs/main/` 为已停止的运行记录，保持原样。新流程版本为 `original_once_extension_failure_review_append_v2`，不能复用旧流程结果。训练计划配置为 `rounds: 30`、`original_order: manifest`，监督脚本从实际计划读取总轮数。下一次实验使用独立目录，例如 `./scripts/run.sh evolve --run-dir runs/sequential-30`。本次修改没有启动实验。
+历史实验保存在 `runs/archive/`，新运行使用独立目录或先归档原运行。新流程版本为 `original_once_extension_failure_review_append_v2`，不能复用旧流程结果。训练计划配置为 `rounds: 30`、`original_order: manifest`，监督脚本从实际计划读取总轮数。下一次实验使用独立目录，例如 `./scripts/run.sh evolve --run-dir runs/sequential-30`。
+
+## 完整实验监督
+
+使用以下入口监督 30 轮训练及后续 20 道冻结测试，每 1800 秒记录一次进度：
+
+```sh
+.venv/bin/python -u scripts/supervise_evolution.py --run-dir runs/main --interval 1800 --with-test
+```
+
+训练按清单顺序完成后冻结经验库，再在同一组 20 道测试题上分别评估初始与最终经验，共 40 条测试轨迹。监督状态记录在 `supervision.json` 和 `monitoring.jsonl`；测试完成前不会标记完整实验成功。临时服务故障最多自动续跑两次，测试阶段支持保留进度后续跑。
+
+最终对照结果写入 `report.md`、`test_results.json` 和 `evolution_summary.md`。不加 `--with-test` 时只执行训练。
