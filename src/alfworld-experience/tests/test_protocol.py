@@ -109,6 +109,7 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(memory.items[0]["validated_by"], ["r01-candidate-original"])
         self.assertFalse(memory.items[0]["acceptance"]["extension_success"])
         self.assertFalse(memory.items[0]["acceptance"]["post_review_revalidated"])
+        self.assertTrue(memory.items[0]["acceptance"]["extension_review_performed"])
 
     def test_one_revision_is_appended_without_any_more_episodes(self):
         memory, result, runner, cognition = self.run_round(
@@ -123,13 +124,50 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual([c["stage"] for c in runner.calls],
                          ["trial", "trial", "trial", "candidate-original", "candidate-extension"])
 
-    def test_successful_extension_is_reviewed_and_appended(self):
+    def test_successful_extension_is_appended_unchanged_without_review(self):
         memory, result, runner, cognition = self.run_round(
             [False, False, False, True, True], revise=True)
         self.assertEqual(result["status"], "accepted")
         self.assertEqual(len(runner.calls), 5)
-        self.assertEqual(cognition.calls, ["propose", "review"])
+        self.assertEqual(cognition.calls, ["propose"])
         self.assertTrue(memory.items[0]["acceptance"]["extension_success"])
+        self.assertFalse(memory.items[0]["acceptance"]["extension_review_performed"])
+        self.assertFalse(memory.items[0]["acceptance"]["revised"])
+        self.assertEqual(memory.items[0]["id"], "r01-candidate")
+        self.assertEqual(memory.items[0]["validated_by"], ["r01-candidate-original", "r01-candidate-extension"])
+        self.assertEqual(memory.items[0]["reviewed_on"], [])
+        for key in ("trigger", "advice", "exceptions"):
+            self.assertEqual(memory.items[0][key], rule(trace("a"))[key])
+        self.assertFalse((self.folder / "rounds/01/extension_review.json").exists())
+        self.assertNotIn("revised_candidate", result)
+
+    def test_successful_extension_does_not_need_an_available_review_model(self):
+        cognition = ScriptedCognition()
+        def unavailable(*args):
+            raise InfrastructureError("Review model unavailable; successful extensions must skip it")
+        cognition.review = unavailable
+        runner = ScriptedRunner([True, False, False, True, True])
+        memory, result = Evolution(CONFIG, self.folder, runner, cognition).round(PLAN, Memory())
+        self.assertEqual(result["status"], "accepted")
+        self.assertEqual(memory.version, 1)
+        self.assertEqual(len(runner.calls), 5)
+
+    def test_original_failure_never_runs_extension_or_review(self):
+        memory, result, runner, cognition = self.run_round([True, False, False, False], revise=True)
+        self.assertEqual(result["status"], "rejected_original")
+        self.assertEqual(cognition.calls, ["propose"])
+        self.assertEqual(len(runner.calls), 4)
+        self.assertNotIn("candidate-extension", result["episodes"])
+        self.assertFalse(memory.items)
+
+    def test_round_results_from_old_review_policy_cannot_be_reused(self):
+        memory, result, runner, cognition = self.run_round([True, False, False, True, True])
+        result["protocol"] = "original_once_extension_once_append"
+        write_json(self.folder / "rounds/01/result.json", result)
+        calls = len(runner.calls)
+        with self.assertRaisesRegex(RuntimeError, "resume inputs"):
+            Evolution(CONFIG, self.folder, runner, cognition).round(PLAN, Memory())
+        self.assertEqual(len(runner.calls), calls)
 
     def test_appending_preserves_old_memory(self):
         old = validate_candidate(rule(trace("old-trace")), [trace("old-trace")], "old")

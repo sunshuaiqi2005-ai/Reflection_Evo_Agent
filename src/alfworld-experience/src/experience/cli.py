@@ -100,7 +100,10 @@ def report(directory):
             lines.append(f"| {name} | {metric['successes']} | {metric['success_rate']:.1%} | {metric['mean_steps']:.2f} |")
     else:
         lines += ["", "最终测试尚未完成；不能据此报告测试成功率。"]
-    lines += ["", "原题通过后，扩展轨迹仅用于修正经验；修正后直接追加，未做复验。最终效果以冻结测试结果为准。", ""]
+    policy = ("原题通过后，扩展轨迹用于修正经验；修正后直接追加，未做复验。"
+              if any(r.get("protocol") == "original_once_extension_once_append" for r in rounds) else
+              "原题通过后，扩展题成功直接追加候选；扩展题失败才审阅并最多修正一次，随后追加，不再复验。")
+    lines += ["", policy + "最终效果以冻结测试结果为准。", ""]
     (directory / "report.md").write_text("\n".join(lines), encoding="utf-8")
     return value
 

@@ -13,7 +13,7 @@ splits:
 pool_transfer:
   extension_to_train: 10
 evolution:
-  protocol: original_once_extension_once_append
+  protocol: original_once_extension_failure_review_append_v2
   rounds: 10
   trials_per_task: 3
   max_revisions: 1

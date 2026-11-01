@@ -96,8 +96,10 @@ def summarize(directory, phase, started, returncode):
     errors = [r for r in rows if r["protocol_error"]]
     if errors:
         lines += ["", "协议拒绝原因："] + [f"- 第 {r['round']} 轮：{r['protocol_error']}" for r in errors]
-    lines += ["", "本次仅执行经验进化，未运行最终测试集；以上不是测试成功率。",
-              "扩展题用于修正经验，修正后直接追加，未做复验。", ""]
+    policy = ("扩展题用于修正经验，修正后直接追加，未做复验。"
+              if any(r.get("protocol") == "original_once_extension_once_append" for r in results) else
+              "扩展题成功直接追加候选；失败才审阅并最多修正一次，随后追加，不再复验。")
+    lines += ["", "本次仅执行经验进化，未运行最终测试集；以上不是测试成功率。", policy, ""]
     (directory / "evolution_summary.md").write_text("\n".join(lines))
     return summary
 
