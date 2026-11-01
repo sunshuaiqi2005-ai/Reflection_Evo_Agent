@@ -72,16 +72,15 @@ class ReflectionFormatTests(unittest.TestCase):
         pair = [make_trace("a"), make_trace("b")]
         cognition.propose(Memory(), pair, 1)
         body = client.messages[1]["content"]
-        packed = json.loads(body.split("\nPair:\n", 1)[1])
+        packed = json.loads(body.strip().splitlines()[-1])
         self.assertEqual(packed, reflection_payload(pair))
         self.assertEqual(body.count(pair[0]["initial_observation"].replace("\n", "\\n")), 1)
         candidate = {"advice": "Preserve exact strings: a, b and 中文。"}
         cognition.review(Memory(), candidate, pair, 1)
         body = client.messages[1]["content"]
-        packed = json.loads(body.split("\nOriginal-task verification and extension-task execution:\n", 1)[1])
+        packed = json.loads(body.strip().splitlines()[-1])
         self.assertEqual(packed, reflection_payload(pair))
-        candidate_json = body.split("\nCandidate:\n", 1)[1].split("\nLossless trajectory format:", 1)[0]
-        self.assertEqual(json.loads(candidate_json), candidate)
+        self.assertIn(json.dumps(candidate, ensure_ascii=False, separators=(",", ":")), body)
 
 
 if __name__ == "__main__":

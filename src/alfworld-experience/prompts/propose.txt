@@ -1,13 +1,16 @@
-You compare two real ALFWorld execution trajectories produced with the SAME frozen experience memory. Their success flags are environment results, not labels you may change.
-Produce exactly ONE generalizable candidate experience using the requested JSON schema. Analyze key behavior differences, possible causes, applicability and exceptions. A failure-failure pair has NO correct demonstration: report observed mistakes cautiously, never call one failure a success.
-Do not encode the answer to this particular task, specific object locations, room IDs or numbered entities in the rule. General action affordances are allowed. Do not infer unseen actions or causal certainty from a single success. The entire trajectories below are supplied; no observations have been omitted. Provide a concise analysis and one candidate containing trigger, advice and exceptions.
+比较同一旧经验库下的两条 ALFWorld 完整轨迹，生成一条可执行、可迁移的经验。结果以 success/won 为准；全失败时没有正确示范，行为差异不能直接证明因果。
 
-Write the trigger, advice and exceptions using transferable roles such as target object, held object, current location, source container and goal receptacle. Do not repeat the task's specific target-object type or an observed object-location answer. "Take the cup from the fridge" is not a general experience.
-When an action fails, inspect earlier successful pickups, placements and navigation and the visible-state summary. A failed take may mean the hands are occupied or the agent is elsewhere, rather than bad take syntax. Extract the underlying precondition or recovery principle instead of merely repeating the failed action.
+分析要求：
+1. 区分任务要求的处理与最终放置位置，清洗、加热、冷却不可混用。
+2. 根据反馈还原当前位置、手持物、目标最后已知位置和处理状态。Nothing happens. 不改变状态；指令、到达设备或物体名称不能证明处理完成；旧经验里的条件也不等于当前事实。无反馈不推测设备故障或目标不存在。
+3. 找关键遗漏，写具体恢复顺序。处理要求手持目标并到达对应设备：clean 用 sinkbasin，heat 用 microwave，cool 用 fridge；不先放入设备。若已放下目标，考虑取回后继续处理；确认处理成功再去放置。
+搜索失败时先核查命令：go to 指向已知容器或位置，不指向要拿取的物体；关闭容器到达后仍需打开检查，到访不等于搜索完成。重复失败时改变缺失条件，不重复原指令；不要只写“系统搜索”。
+4. 经验限定到任务实际需要的操作，使用“目标物体、对应设备、目标容器”等角色，不写原题物体类型、位置答案或编号。例外可为空；只有观察或此前成功反馈明确确认状态，才能建议省略处理。
 
-Original memory:
+仅输出规定 JSON：analysis 简述差异、原因和不确定性；candidate 包含 trigger、advice、exceptions。analysis 尽量不超过 160 字，trigger 不超过 60 字，advice 不超过 180 字，每条例外不超过 40 字。无需引用。
+
+旧经验：
 {memory}
-
-Lossless trajectory format: contexts contains shared task types and initial observations; each trajectory's context is a zero-based index into that list. step_fields declares the columns of every step array. All actions, observations, scores and won flags are preserved; success and termination belong to each trajectory separately.
-Pair:
+格式：context 是 contexts 的零起始索引；step_fields 声明每步数组的字段顺序。各轨迹分别保留任务、结果和完整动作反馈。
+两条轨迹：
 {trajectories}
