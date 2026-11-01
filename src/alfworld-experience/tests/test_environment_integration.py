@@ -41,6 +41,23 @@ class NativeEnvironmentTests(unittest.TestCase):
         self.assertIn("move OBJECT to RECEPTACLE", prompt)
         self.assertNotIn("put OBJECT in/on RECEPTACLE", prompt)
 
+    def test_cooling_requires_held_target_at_fridge_and_remains_recoverable(self):
+        fixture = json.loads((ROOT / "tests/fixtures/cooling_regression.json").read_text())
+        env = AlfworldEnvironment(ROOT / "data/alfworld/json_2.1.1" / fixture["game_path"], fixture["environment_seed"])
+        self.addCleanup(env.close)
+        env.reset()
+        for action in fixture["prefix_actions"]:
+            observation, _, _, _ = env.step(action)
+            self.assertNotEqual(observation, "Nothing happens.", action)
+        observation, _, _, won = env.step(fixture["wrong_location_action"])
+        self.assertEqual(observation, "Nothing happens.")
+        self.assertFalse(won)
+        for action in fixture["recovery_actions"]:
+            observation, _, done, won = env.step(action)
+            self.assertNotEqual(observation, "Nothing happens.", action)
+        self.assertTrue(done)
+        self.assertTrue(won)
+
 
 if __name__ == "__main__":
     unittest.main()

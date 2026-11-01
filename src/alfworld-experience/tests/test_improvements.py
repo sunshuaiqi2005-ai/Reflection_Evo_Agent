@@ -73,6 +73,41 @@ class ImprovementTests(unittest.TestCase):
             self.assertEqual(test, expected)
             self.assertEqual(summary["actual"], {"train": 20, "extension": 80, "test": 20})
 
+    def test_processing_curriculum_filters_all_pools_and_keeps_matching_extensions(self):
+        kinds = ["pick_clean_then_place_in_recep", "pick_heat_then_place_in_recep",
+                 "pick_cool_then_place_in_recep"]
+        def catalog(root, split):
+            return [{"id": f"{split}/{kind}/{i}", "task_type": kind, "object": str(i),
+                     "target": "target", "scene": str(i)}
+                    for kind in kinds + ["pick_and_place_simple", "pick_two_obj_and_place"]
+                    for i in range(30)]
+        config = {"seed": 42, "data_root": "data/alfworld",
+                  "task_selection": {name + "_task_types": kinds for name in ("train", "extension", "test")},
+                  "splits": {"train": 20, "extension": 80, "test": 20, "allow_reduce": True},
+                  "evolution": {"rounds": 10, "extension_without_replacement": True}}
+        with tempfile.TemporaryDirectory() as temp, patch("experience.data.collect", catalog):
+            project = Path(temp)
+            summary = prepare(config, project)
+            self.assertEqual(summary["actual"], {"train": 20, "extension": 80, "test": 20})
+            for counts in summary["family_counts"].values():
+                self.assertEqual(set(counts), set(kinds))
+            plan = read_json(project / "data/manifests/plan.json")
+            self.assertEqual(len(plan), 10)
+            self.assertEqual(len({row["original"]["id"] for row in plan}), 10)
+            self.assertEqual(len({row["extension"]["id"] for row in plan}), 10)
+            self.assertTrue(all(row["original"]["task_type"] == row["extension"]["task_type"] for row in plan))
+            development = read_json(project / "data/manifests/development.json")
+            test = read_json(project / "data/manifests/test.json")["test"]
+            ids = [task["id"] for pool in [development["train"], development["extension"], test] for task in pool]
+            self.assertEqual(len(set(ids)), 120)
+            self.assertEqual(prepare(config, project), summary)
+
+    def test_extension_filter_rejects_unsupported_task_types(self):
+        config = {"data_root": "data/alfworld", "task_selection": {"extension_task_types": ["unknown"]}}
+        with tempfile.TemporaryDirectory() as temp:
+            with self.assertRaisesRegex(ValueError, "extension_task_types"):
+                prepare(config, Path(temp))
+
 
 if __name__ == "__main__":
     unittest.main()

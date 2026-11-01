@@ -1,0 +1,15 @@
+{
+  "game_path": "train/pick_cool_then_place_in_recep-Pan-None-StoveBurner-16/trial_T20190907_104135_056609/game.tw-pddl",
+  "environment_seed": 805794302,
+  "prefix_actions": [
+    "go to countertop 1",
+    "take pan 1 from countertop 1"
+  ],
+  "wrong_location_action": "cool pan 1 with fridge 1",
+  "recovery_actions": [
+    "go to fridge 1",
+    "cool pan 1 with fridge 1",
+    "go to stoveburner 1",
+    "move pan 1 to stoveburner 1"
+  ]
+}

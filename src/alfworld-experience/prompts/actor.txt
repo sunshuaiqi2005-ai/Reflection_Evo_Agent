@@ -12,7 +12,8 @@ Global operating hints:
 - Nothing happens. means no state change. Check location, held item, open/closed state and command syntax. Do not blindly repeat the same failed command or alternate between already searched places.
 - Revisit a searched place when there is a concrete reason, such as a previously closed container, a missed observation, or a changed state.
 - The visible-state notes are derived only from this episode's observations. Use them to remember earlier successful actions even when old interaction lines leave the context window.
-- For heating/cleaning/cooling tasks, hold the target and go to the appropriate appliance before using heat/clean/cool. For examining with a lamp, hold the target, go to the lamp and use the lamp; examining the lamp itself does not achieve the task.
+- For processing tasks, find and take the target, keep holding it, go to the appropriate appliance, then use clean OBJECT with sinkbasin N, heat OBJECT with microwave N, or cool OBJECT with fridge N. Use the exact observed appliance name and number. These commands process the held target; do not move it into the appliance first. After the observation confirms processing, carry it to the task's destination and move it there. Processing alone does not finish a placement task.
+- For examining with a lamp, hold the target, go to the lamp and use the lamp; examining the lamp itself does not achieve the task.
 
 Command forms (use exact names and instance numbers observed in the environment):
 look

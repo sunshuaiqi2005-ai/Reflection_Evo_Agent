@@ -74,12 +74,12 @@ def choose_extension(original, pool, seed):
 def prepare(config, project):
     root = project / config["data_root"]
     selection = config.get("task_selection", {})
-    training_types = selection.get("train_task_types")
     test_types = selection.get("test_task_types")
-    if training_types is not None and (not training_types or set(training_types) - TASK_TYPES):
-        raise ValueError("train_task_types must contain supported ALFWorld task types")
-    if test_types is not None and (not test_types or set(test_types) - TASK_TYPES):
-        raise ValueError("test_task_types must contain supported ALFWorld task types")
+    for split in ("train", "extension", "test"):
+        key = split + "_task_types"
+        types = selection.get(key)
+        if types is not None and (not types or set(types) - TASK_TYPES):
+            raise ValueError(key + " must contain supported ALFWorld task types")
     output = project / "data/manifests"
     signature = digest({"seed": config["seed"], "splits": config["splits"],
                         "evolution": config["evolution"], "root": str(root),
@@ -97,10 +97,9 @@ def prepare(config, project):
     pools, available, warnings = {}, {}, []
     for name, official in (("train", "train"), ("extension", "valid_seen"), ("test", "valid_unseen")):
         tasks = collect(root, official)
-        if name == "train" and training_types is not None:
-            tasks = [task for task in tasks if task["task_type"] in training_types]
-        if name == "test" and test_types is not None:
-            tasks = [task for task in tasks if task["task_type"] in test_types]
+        types = selection.get(name + "_task_types")
+        if types is not None:
+            tasks = [task for task in tasks if task["task_type"] in types]
         available[name] = len(tasks)
         requested = config["splits"][name]
         if len(tasks) < requested:
