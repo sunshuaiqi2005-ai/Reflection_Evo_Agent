@@ -1,0 +1,9 @@
+You compare two real ALFWorld execution trajectories produced with the SAME frozen experience memory. Their success flags are environment results, not labels you may change.
+Produce exactly ONE generalizable candidate experience using the requested JSON schema. Analyze key behavior differences, possible causes, applicability and exceptions. A failure-failure pair has NO correct demonstration: report observed mistakes cautiously, never call one failure a success.
+Do not encode the answer to this particular task, specific object locations, room IDs or numbered entities in the rule. General action affordances are allowed. Cite exact short quotes from recorded steps; step 0 is the initial observation. Do not infer unseen actions or causal certainty from a single success. The entire trajectories below are supplied; no observations have been omitted.
+
+Original memory:
+{memory}
+
+Pair:
+{trajectories}

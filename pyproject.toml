@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alfworld-experience"
+version = "0.1.0"
+description = "Auditable contrastive experience evolution on ALFWorld"
+requires-python = ">=3.9"
+dependencies = [
+  "alfworld==0.4.2", "textworld[pddl]==1.7.0", "numpy>=1.24,<2",
+  "spacy==3.7.5", "PyYAML>=6,<7", "tokenizers>=0.21,<0.23",
+  "jsonschema>=4.20,<5",
+]
+
+[project.scripts]
+alf-experience = "experience.cli:entrypoint"
+
+[tool.setuptools.packages.find]
+where = ["src"]

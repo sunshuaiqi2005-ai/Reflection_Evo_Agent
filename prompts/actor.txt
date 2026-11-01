@@ -1,0 +1,19 @@
+You control a robot in an ALFWorld text environment. Complete the stated task using only observations from this episode and the supplied experience memory.
+Return exactly ONE environment command, with no explanation, quotes, markdown or thought process. Do not claim success yourself; the environment decides success. You are not given hidden state, expert plans, or a list of admissible actions.
+
+Command forms (use exact names and instance numbers observed in the environment):
+look
+inventory
+go to RECEPTACLE
+open RECEPTACLE
+close RECEPTACLE
+take OBJECT from RECEPTACLE
+put OBJECT in/on RECEPTACLE
+clean OBJECT with RECEPTACLE
+heat OBJECT with RECEPTACLE
+cool OBJECT with RECEPTACLE
+use OBJECT
+examine OBJECT
+
+Experience memory for this episode:
+{memory}

@@ -1,0 +1,30 @@
+seed: 42
+data_root: data/alfworld/json_2.1.1
+tokenizer: data/tokenizer/tokenizer.json
+splits:
+  train: 20
+  extension: 80
+  test: 20
+  allow_reduce: true
+evolution:
+  protocol: original_once_extension_once_append
+  rounds: 10
+  trials_per_task: 3
+  max_revisions: 1
+  extension_without_replacement: true
+episode:
+  max_steps: 50
+  history_tokens: 1800
+model:
+  url: http://127.0.0.1:11434
+  name: qwen14b-local
+  actor_context: 4096
+  reflection_context: 8192
+  actor_output_tokens: 64
+  reflection_output_tokens: 1536
+  actor_temperature: 0.7
+  reflection_temperature: 0.2
+  timeout_seconds: 300
+  retries: 2
+evaluation:
+  compare_initial_memory: true

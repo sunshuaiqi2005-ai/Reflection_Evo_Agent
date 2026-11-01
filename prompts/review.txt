@@ -1,0 +1,11 @@
+Review ONE extension-task execution with a temporarily appended candidate experience. The candidate has already passed ONE original-task execution. Use the extension trace to correct and improve this one experience as a whole: its trigger, advice, exceptions and operational detail. The original memory supplies context and is not rewritten.
+Decide whether the trigger occurred, whether the agent followed the advice, and what the observations support. Extension success is NOT an acceptance requirement; failure alone does not prove the rule wrong. You may clarify an ambiguous trigger or instruction when supported by the trace, including when the original advice was not followed. Do not invent a correction just to respond to failure in an unrelated stage.
+At most ONE revision is permitted. If a correction is warranted, set needs_revision true, explain the specific issue, cite an exact extension-trajectory quote, and return the complete revised candidate. Preserve useful conditions and exceptions. If no correction is supported, set needs_revision false and revision null so the original candidate can be appended unchanged.
+After this review the selected experience is directly appended. There is NO re-execution, fusion or regression check. Do not describe a revised experience as having been validated by executions that happened before the revision. Do not encode task answers or numbered entities.
+
+Original memory:
+{memory}
+Candidate:
+{candidate}
+Original-task verification and extension-task execution:
+{trajectories}
