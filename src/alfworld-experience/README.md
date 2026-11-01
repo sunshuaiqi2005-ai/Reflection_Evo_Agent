@@ -24,6 +24,7 @@ docs/实验流程.md       # 详细实验方法
 ## 实验设置
 
 - 原题池 20 道，扩展池 80 道，最终测试题 20 道；固定种子 42。
+- 当前进化使用较简单的单物体取放题：20 道原题从此任务类型随机抽取，每轮扩展题也匹配此类型。扩展候选池保留 80 道，最终测试题清单保持原样。
 - 进化 10 轮，训练题普通随机抽样、无放回；每轮从扩展池抽一道同任务结构的题。
 - 每轮先固定旧经验，在同一道原题上独立运行 3 次，配对比较轨迹，生成一条候选经验。
 - 候选经验只验证原题一次，失败就舍弃；通过后只运行一次扩展题，用其轨迹修正经验，然后直接追加。
@@ -78,8 +79,21 @@ macOS 也可双击 `开始实验.command`。如果本机已有相邻的 `qwen-lo
 PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
 ```
 
-已在 M5 / 16GB Mac 上通过 22 项流程测试，并验证 ALFWorld 环境重置和本地模型联通。尚未运行完整 10 轮实验，仓库不包含正式实验成绩。
+已在 M5 / 16GB Mac 上通过 31 项检查（包含真实环境任务完成检查），并以本地模型在一个开发题上用 21 步完成任务。预检不计入正式实验成绩。
 
 16GB 内存余量较紧，执行上下文为 4096 token，反思上下文为 8192 token。详细参数见 `configs/default.yaml`。
 
 Benchmark 来源：[ALFWorld（ICLR 2021）](https://github.com/alfworld/alfworld)。本实验最终测试从官方公开 `valid_unseen` 划分留出；扩展池属于开发数据。
+
+## 全局提示和环境协议
+
+全局提示位于 `prompts/actor.txt`。TextWorld 放置使用 `move OBJECT to RECEPTACLE`，并明确手持限制、位置、容器开关和失败反馈恢复；执行输入还包含仅由本条轨迹可见反馈整理的状态笔记。旧 `put ... in/on ...` 别名会等价翻译，原始输出和标记保留。
+
+```sh
+# 完整开发题预检（不计入正式结果）
+./scripts/run.sh pilot
+# 真实环境回归检查（先安装数据）
+ALFWORLD_INTEGRATION=1 PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v
+```
+
+旧错误语法运行仅保留作排错记录；修复版用空经验库和独立运行目录重新开始。

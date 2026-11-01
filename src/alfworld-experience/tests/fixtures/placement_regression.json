@@ -1,0 +1,16 @@
+{
+  "game_path": "train/pick_heat_then_place_in_recep-Cup-None-Cabinet-3/trial_T20190908_233045_285903/game.tw-pddl",
+  "environment_seed": 1937430503,
+  "prefix_actions": [
+    "go to fridge 1",
+    "open fridge 1",
+    "take cup 1 from fridge 1",
+    "go to microwave 1",
+    "open microwave 1",
+    "heat cup 1 with microwave 1",
+    "go to cabinet 1",
+    "open cabinet 1"
+  ],
+  "native_placement": "move cup 1 to cabinet 1",
+  "legacy_placement": "put cup 1 in/on cabinet 1"
+}

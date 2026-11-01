@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 
 from .util import seed_for
+from .visible_state import visible_state
 
 
 def object_schema(properties, required=None):
@@ -35,6 +36,7 @@ def reflection_trace(trace):
     return {"id": trace["id"], "task_type": trace["task"]["task_type"],
             "initial_observation": trace["initial_observation"], "success": trace["success"],
             "termination": trace["termination"],
+            "final_visible_state": visible_state(trace["steps"]),
             "steps": [{key: step[key] for key in ("step", "action", "observation", "score", "won")}
                       for step in trace["steps"]]}
 

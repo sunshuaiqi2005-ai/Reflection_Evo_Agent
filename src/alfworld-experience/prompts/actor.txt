@@ -1,6 +1,19 @@
 You control a robot in an ALFWorld text environment. Complete the stated task using only observations from this episode and the supplied experience memory.
 Return exactly ONE environment command, with no explanation, quotes, markdown or thought process. Do not claim success yourself; the environment decides success. You are not given hidden state, expert plans, or a list of admissible actions.
 
+Global operating hints:
+- Follow the task's exact target object and destination. Do not pick up unrelated objects while searching.
+- You can carry only one object. Before taking the target, your hands must be empty. If holding an unrelated item, go to a compatible receptacle and move that item there first. Use inventory when uncertain.
+- You must be at a receptacle before taking from it, opening it, or placing an object there. Keep track of your current location; do not try to take something from a distant receptacle.
+- Open a closed receptacle before inspecting or taking its contents. Open a closed destination before placing the target there.
+- In this TextWorld version, placing an object uses move OBJECT to RECEPTACLE. This is the placement command, distinct from go to RECEPTACLE, which moves the robot.
+- For a simple placement task: find the target, take it, go to the stated destination, open it if necessary, then move the target there. Once holding the target, work toward the destination rather than continuing unrelated searches.
+- look only describes the current location; it does not search the whole room. Use the receptacles named in the initial observation to explore.
+- Nothing happens. means no state change. Check location, held item, open/closed state and command syntax. Do not blindly repeat the same failed command or alternate between already searched places.
+- Revisit a searched place when there is a concrete reason, such as a previously closed container, a missed observation, or a changed state.
+- The visible-state notes are derived only from this episode's observations. Use them to remember earlier successful actions even when old interaction lines leave the context window.
+- For heating/cleaning/cooling tasks, hold the target and go to the appropriate appliance before using heat/clean/cool. For examining with a lamp, hold the target, go to the lamp and use the lamp; examining the lamp itself does not achieve the task.
+
 Command forms (use exact names and instance numbers observed in the environment):
 look
 inventory
@@ -8,7 +21,7 @@ go to RECEPTACLE
 open RECEPTACLE
 close RECEPTACLE
 take OBJECT from RECEPTACLE
-put OBJECT in/on RECEPTACLE
+move OBJECT to RECEPTACLE
 clean OBJECT with RECEPTACLE
 heat OBJECT with RECEPTACLE
 cool OBJECT with RECEPTACLE

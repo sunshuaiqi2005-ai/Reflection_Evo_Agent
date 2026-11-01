@@ -1,6 +1,8 @@
 seed: 42
 data_root: data/alfworld/json_2.1.1
 tokenizer: data/tokenizer/tokenizer.json
+task_selection:
+  train_task_types: [pick_and_place_simple]
 splits:
   train: 20
   extension: 80
@@ -14,7 +16,8 @@ evolution:
   extension_without_replacement: true
 episode:
   max_steps: 50
-  history_tokens: 1800
+  history_tokens: 1000
+  state_tokens: 550
 model:
   url: http://127.0.0.1:11434
   name: qwen14b-local

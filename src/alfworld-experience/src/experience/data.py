@@ -73,9 +73,14 @@ def choose_extension(original, pool, seed):
 
 def prepare(config, project):
     root = project / config["data_root"]
+    selection = config.get("task_selection", {})
+    training_types = selection.get("train_task_types")
+    if training_types is not None and (not training_types or set(training_types) - TASK_TYPES):
+        raise ValueError("train_task_types must contain supported ALFWorld task types")
     output = project / "data/manifests"
     signature = digest({"seed": config["seed"], "splits": config["splits"],
                         "evolution": config["evolution"], "root": str(root),
+                        "task_selection": selection,
                         "train_sampling": "uniform_without_replacement_v2"})
     existing = output / "summary.json"
     if existing.exists():
@@ -89,6 +94,8 @@ def prepare(config, project):
     pools, available, warnings = {}, {}, []
     for name, official in (("train", "train"), ("extension", "valid_seen"), ("test", "valid_unseen")):
         tasks = collect(root, official)
+        if name == "train" and training_types is not None:
+            tasks = [task for task in tasks if task["task_type"] in training_types]
         available[name] = len(tasks)
         requested = config["splits"][name]
         if len(tasks) < requested:
@@ -123,6 +130,7 @@ def prepare(config, project):
     for name, value in manifests.items():
         write_json(output / name, value)
     summary = {"configuration_hash": signature, "seed": config["seed"],
+               "task_selection": selection,
                "available": available, "requested": config["splits"],
                "actual": {k: len(v) for k, v in pools.items()}, "rounds": rounds,
                "sampling": {"train_pool": "uniform_without_replacement",

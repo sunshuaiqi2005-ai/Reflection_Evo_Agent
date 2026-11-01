@@ -85,7 +85,7 @@ def check(config, summary, client):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description="ALFWorld 轨迹对比与经验进化实验")
-    parser.add_argument("command", choices=["prepare", "check", "smoke", "evolve", "test", "run", "status", "report"])
+    parser.add_argument("command", choices=["prepare", "check", "smoke", "pilot", "evolve", "test", "run", "status", "report"])
     parser.add_argument("--config", default="configs/default.yaml")
     parser.add_argument("--run-dir", default=None)
     args = parser.parse_args(argv)
@@ -93,7 +93,8 @@ def main(argv=None):
     if not config_path.is_absolute():
         config_path = PROJECT / config_path
     config = yaml.safe_load(config_path.read_text())
-    directory = Path(args.run_dir or ("runs/smoke" if args.command == "smoke" else "runs/main"))
+    default_directory = {"smoke": "runs/smoke", "pilot": "runs/pilot"}.get(args.command, "runs/main")
+    directory = Path(args.run_dir or default_directory)
     if not directory.is_absolute():
         directory = PROJECT / directory
     os.environ["ALFWORLD_DATA"] = str(PROJECT / "data/alfworld")
@@ -128,6 +129,15 @@ def main(argv=None):
         runner = EpisodeRunner(config, PROJECT, directory, client)
         cognition = Cognition(PROJECT, client, config["seed"])
         plan = read_json(directory / "manifests/plan.json")
+        if args.command == "pilot":
+            trace = runner.run(plan[0]["original"], Memory(), seed_for(config["seed"], "development-pilot"),
+                               "development-pilot", "diagnostic-only")
+            result = {"diagnostic_only": True, "not_a_benchmark_result": True,
+                      "task_id": trace["task"]["id"], "success": trace["success"],
+                      "steps": len(trace["steps"]), "termination": trace["termination"]}
+            write_json(directory / "pilot_result.json", result)
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+            return
         if args.command == "smoke":
             trace = runner.run(plan[0]["original"], Memory(), seed_for(config["seed"], "smoke"),
                                "smoke-actor", "diagnostic-only")

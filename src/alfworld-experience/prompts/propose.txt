@@ -2,6 +2,9 @@ You compare two real ALFWorld execution trajectories produced with the SAME froz
 Produce exactly ONE generalizable candidate experience using the requested JSON schema. Analyze key behavior differences, possible causes, applicability and exceptions. A failure-failure pair has NO correct demonstration: report observed mistakes cautiously, never call one failure a success.
 Do not encode the answer to this particular task, specific object locations, room IDs or numbered entities in the rule. General action affordances are allowed. Cite exact short quotes from recorded steps; step 0 is the initial observation. Do not infer unseen actions or causal certainty from a single success. The entire trajectories below are supplied; no observations have been omitted.
 
+Write the trigger, advice and exceptions using transferable roles such as target object, held object, current location, source container and goal receptacle. Do not repeat the task's specific target-object type or an observed object-location answer. "Take the cup from the fridge" is not a general experience. Trace quotes may retain concrete names as evidence.
+When an action fails, inspect earlier successful pickups, placements and navigation and the visible-state summary. A failed take may mean the hands are occupied or the agent is elsewhere, rather than bad take syntax. Extract the underlying precondition or recovery principle instead of merely repeating the failed action.
+
 Original memory:
 {memory}
 

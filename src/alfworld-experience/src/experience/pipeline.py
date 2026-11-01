@@ -134,6 +134,10 @@ class Evolution:
         write_json(initial_path, initial.to_dict())
         memory, results = initial, []
         for entry in plan:
+            write_json(self.directory / "status.json", {"phase": "evolution", "active_round": entry["round"],
+                       "rounds_completed": len(results), "rounds_total": len(plan),
+                       "accepted": sum(r["status"] == "accepted" for r in results),
+                       "memory_hash": memory.fingerprint})
             memory, result = self.round(entry, memory)
             results.append(result)
             write_json(self.directory / "memory_current.json", memory.to_dict())

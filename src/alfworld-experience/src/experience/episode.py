@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 
 from .util import ContextBudgetError, InfrastructureError, digest, event, read_json, seed_for, write_json
+from .visible_state import visible_state, render_visible_state
 
 
 class AlfworldEnvironment:
@@ -30,11 +31,19 @@ class AlfworldEnvironment:
         self.env.close()
 
 
-def normalize_action(text):
+def extract_action(text):
     lines = [line.strip() for line in text.splitlines() if line.strip() and not line.strip().startswith("```")]
     if not lines:
         return "__empty_action__"
     return re.sub(r"^(?:action\s*:\s*|>\s*)", "", lines[0], flags=re.I).strip()
+
+
+def normalize_action(text):
+    command = extract_action(text)
+    legacy = re.fullmatch(r"put\s+(.+?)\s+in/on\s+(.+)", command, flags=re.I)
+    if legacy:
+        return f"move {legacy.group(1)} to {legacy.group(2)}"
+    return command
 
 
 class EpisodeRunner:
@@ -48,6 +57,8 @@ class EpisodeRunner:
         # Each call is stateless. Always preserve the full memory and initial task observation.
         retained = []
         limit = self.config["episode"]["history_tokens"]
+        notes = render_visible_state(visible_state(steps), self.client.tokens,
+                                     self.config["episode"].get("state_tokens", 550))
         for step in reversed(steps):
             text = f"Action: {step['action']}\nObservation: {step['observation']}"
             if retained and self.client.tokens("\n".join([text, *retained])) > limit:
@@ -58,7 +69,8 @@ class EpisodeRunner:
             body = "Initial observation and task:\n" + initial
             if omitted:
                 body += f"\n[{omitted} earlier steps omitted from the actor's context window; full trace is logged.]"
-            body += "\nRecent interaction:\n" + ("\n".join(retained) or "(none)") + "\nNext command:"
+            body += "\nRecent interaction:\n" + ("\n".join(retained) or "(none)")
+            body += "\nVisible-state notes (from this episode only):\n" + notes + "\nNext command:"
             messages = [{"role": "system", "content": system}, {"role": "user", "content": body}]
             c = self.config["model"]
             if self.client.chat_tokens(messages) + c["actor_output_tokens"] <= c["actor_context"]:
@@ -113,6 +125,7 @@ class EpisodeRunner:
                 except Exception as exc:
                     raise InfrastructureError("ALFWorld engine failed during step: " + str(exc)) from exc
                 step = {"step": index + 1, "action": action, "raw_model_output": result["text"],
+                        "legacy_placement_alias_applied": action != extract_action(result["text"]),
                         "model_call": result["call_hash"], "observation": observation,
                         "score": score, "done": done, "won": won}
                 if previous and index < len(previous["steps"]):
