@@ -54,6 +54,23 @@ class SupervisionTests(unittest.TestCase):
         self.assertEqual(supervision.worker_command(run, with_test=True)[3], "run")
         self.assertEqual(supervision.worker_command(run)[3], "evolve")
 
+    def test_full_run_completion_uses_forty_round_plan(self):
+        with tempfile.TemporaryDirectory() as temp:
+            run = Path(temp)
+            self.completed_training(run)
+            write_json(run / "manifests/plan.json", [{"round": i} for i in range(1, 41)])
+            write_json(run / "status.json", {"phase": "complete"})
+            write_json(run / "test_results.json", self.completed_test())
+            self.assertFalse(supervision.run_complete(run, with_test=True))
+            frozen = read_json(run / "memory_final.json")
+            frozen["rounds_completed"] = 40
+            write_json(run / "memory_final.json", frozen)
+            self.assertTrue(supervision.run_complete(run, with_test=True))
+            with contextlib.redirect_stdout(io.StringIO()):
+                snapshot = supervision.snapshot(run, "complete", "started", SimpleNamespace(pid=123),
+                                                1800, with_test=True)
+            self.assertEqual(snapshot["rounds_total"], 40)
+
     def test_monitor_records_testing_progress_and_partial_summary(self):
         with tempfile.TemporaryDirectory() as temp:
             run = Path(temp)

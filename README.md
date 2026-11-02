@@ -23,4 +23,4 @@ cd src/alfworld-experience
 ./安装环境.command
 ```
 
-实验使用本地 Qwen3-14B 4bit；20 道原题池、80 道扩展池、20 道简单最终测试题，进化 10 轮。详细流程与启动方法见 **[项目说明](src/alfworld-experience/README.md)**。
+实验使用本地 Qwen3-14B 4bit；40 道训练题、48 道扩展题、20 道最终测试题，均为清洗、加热、冷却后放置任务，按训练清单顺序进化 40 轮。详细流程与启动方法见 **[项目说明](src/alfworld-experience/README.md)**。

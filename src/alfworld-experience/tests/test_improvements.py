@@ -186,6 +186,41 @@ class ImprovementTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "original_order"):
                 prepare(config, Path(temp))
 
+    def test_second_transfer_appends_ten_tasks_and_preserves_existing_thirty(self):
+        def catalog(root, split):
+            count = 68 if split == "valid_seen" else 50
+            return [{"id": f"{split}/{i}", "official_split": split,
+                     "task_type": "pick_heat_then_place_in_recep", "object": str(i),
+                     "target": "target", "scene": str(i)} for i in range(count)]
+        config = {"seed": 42, "data_root": "data/alfworld",
+                  "splits": {"train": 30, "extension": 58, "test": 20, "allow_reduce": True},
+                  "pool_transfer": {"extension_to_train": 10},
+                  "evolution": {"rounds": 30, "original_order": "manifest",
+                                "extension_without_replacement": True}}
+        with tempfile.TemporaryDirectory() as temp, patch("experience.data.collect", catalog):
+            before, after = Path(temp) / "before", Path(temp) / "after"
+            prepare(config, before)
+            old = read_json(before / "data/manifests/development.json")
+            updated = deepcopy(config)
+            updated["splits"].update(train=40, extension=48)
+            updated["pool_transfer"]["extension_to_train"] = 20
+            updated["evolution"]["rounds"] = 40
+            summary = prepare(updated, after)
+            new = read_json(after / "data/manifests/development.json")
+            plan = read_json(after / "data/manifests/plan.json")
+            self.assertEqual(summary["actual"], {"train": 40, "extension": 48, "test": 20})
+            self.assertEqual(new["train"][:30], old["train"])
+            added = {task["id"] for task in new["train"][30:]}
+            self.assertEqual(len(added), 10)
+            self.assertTrue(added <= {task["id"] for task in old["extension"]})
+            self.assertEqual({task["id"] for task in new["extension"]},
+                             {task["id"] for task in old["extension"]} - added)
+            self.assertEqual(read_json(before / "data/manifests/test.json"),
+                             read_json(after / "data/manifests/test.json"))
+            self.assertEqual([row["original"] for row in plan], new["train"])
+            self.assertEqual(len(plan), 40)
+            self.assertEqual(len({row["extension"]["id"] for row in plan}), 40)
+
 
 if __name__ == "__main__":
     unittest.main()

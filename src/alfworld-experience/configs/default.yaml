@@ -6,15 +6,15 @@ task_selection:
   extension_task_types: [pick_clean_then_place_in_recep, pick_heat_then_place_in_recep, pick_cool_then_place_in_recep]
   test_task_types: [pick_clean_then_place_in_recep, pick_heat_then_place_in_recep, pick_cool_then_place_in_recep]
 splits:
-  train: 30
-  extension: 58
+  train: 40
+  extension: 48
   test: 20
   allow_reduce: true
 pool_transfer:
-  extension_to_train: 10
+  extension_to_train: 20
 evolution:
   protocol: original_once_extension_failure_review_append_v2
-  rounds: 30
+  rounds: 40
   original_order: manifest
   trials_per_task: 3
   max_revisions: 1

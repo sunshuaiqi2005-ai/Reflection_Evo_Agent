@@ -1,20 +1,20 @@
 ALFWorld 经验进化实验
 
-配置：原题池 30 道（原20道＋扩展池转入10道）、扩展池 58 道、最终测试原20道；进化 30 轮。
+配置：原题池 40 道（原30道＋本次再转入10道）、扩展池 48 道、最终测试原20道；进化 40 轮。
 训练、扩展和测试均选清洗、加热、冷却后放置三类中等任务。
-按训练清单现有顺序，从第1道到第30道逐题运行，每题一轮，不再随机抽题。
+按训练清单现有顺序，从第1道到第40道逐题运行，每题一轮，不再随机抽题。
 固定旧经验后独立执行原题 3 次，对比轨迹，生成一条候选经验。
 候选经验只验证原题一次，失败即舍弃；通过后再跑一次同结构扩展题。
 扩展题成功：直接追加候选，不调用修正模型。
 扩展题失败：最多修正一次后追加；无明确问题保留候选，不再复验或做融合回归。
 
-开始：双击“开始实验.command”。环境、数据和本地 Qwen 已配置。
-暂停：在运行终端按 Ctrl+C；再次双击“开始实验.command”可续跑。
+新实验使用下面的独立目录命令；默认 runs/main 已有完成结果，须先归档后才能双击运行。
+暂停：在运行终端按 Ctrl+C；使用相同运行目录可续跑。
 进度：双击“查看进度.command”。
 检查：双击“运行检查.command”，只做联通检查，不运行完整实验。
 完整开发题预检：./scripts/run.sh pilot，不计入正式结果。
 
-结果在 runs/main/ 下：
+已有结果在 runs/main/ 下；新结果位于启动时指定的运行目录：
 report.md：汇总结果；memory_final.json：冻结后的经验库；
 rounds/：每轮反思、修正及接收结果；episodes/：逐步执行轨迹。
 
@@ -25,11 +25,12 @@ rounds/：每轮反思、修正及接收结果；episodes/：逐步执行轨迹�
 详细方法与参数见 README.md 和 configs/default.yaml。
 
 候选生成输入：当前任务、两条真实结果及完整轨迹，不传旧经验原文。
-转入训练的10道题从扩展池移除；种子与清单见 data/manifests/summary.json。
-已完成结果保存在 runs/archive；新实验使用独立目录或先归档旧 runs/main，例如：
-./scripts/run.sh evolve --run-dir runs/sequential-30
+先找最早阻断点；经验写清前提和恢复顺序，用角色名称，不写原题细节，不举例。
+本次转入训练的10道题从扩展池移除，原30道及顺序保留；种子与清单见 data/manifests/summary.json。
+已完成的30轮结果保留在 runs/main，更早结果在 runs/archive；本次未启动新实验。新实验使用独立目录：
+./scripts/run.sh evolve --run-dir runs/sequential-40
 
 监督完整训练和测试：
-.venv/bin/python -u scripts/supervise_evolution.py --run-dir runs/main --interval 1800 --with-test
-训练30轮后自动评估20道测试题，初始和最终经验各一次，共40条测试轨迹。
+.venv/bin/python -u scripts/supervise_evolution.py --run-dir runs/sequential-40 --interval 1800 --with-test
+训练40轮后自动评估20道测试题，初始和最终经验各一次，共40条测试轨迹。
 每半小时记录状态；完成后查看 report.md 和 test_results.json。

@@ -33,12 +33,12 @@ class ReflectionFormatTests(unittest.TestCase):
         client = Recorder()
         Cognition(ROOT, client, 42).propose(UnusedMemory(), pair, 1)
         body = client.messages[1]["content"]
-        tasks = json.loads(body.split("当前任务原文：\n", 1)[1].splitlines()[0])
-        results = json.loads(body.split("两条轨迹的真实结果：\n", 1)[1].splitlines()[0])
+        tasks = json.loads(body.split("当前任务：\n", 1)[1].splitlines()[0])
+        results = json.loads(body.split("真实结果：\n", 1)[1].splitlines()[0])
         self.assertEqual(tasks, [{"context": 0, "task_type": pair[0]["task"]["task_type"], "instruction": instruction}])
         self.assertEqual(results, [{"id": t["id"], "context": 0, "success": t["success"],
                                     "termination": t["termination"]} for t in pair])
-        self.assertLess(body.index("当前任务原文："), body.index("完整执行轨迹："))
+        self.assertLess(body.index("当前任务："), body.index("完整轨迹："))
 
     def test_candidate_and_extension_review_require_no_citation_fields(self):
         candidate = {"trigger": "the target is held", "advice": "Visit the appliance before processing.",
