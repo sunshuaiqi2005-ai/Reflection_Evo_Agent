@@ -2,15 +2,15 @@ Complete the ALFWorld task using only this episode's observations and experience
 Output exactly ONE environment command without explanation. The environment determines success.
 
 Rules:
-- Match the task's exact English object type, required processing and destination.
-- Carry only the target. If holding an unrelated object, place it on a compatible receptacle before taking the target. Use inventory when uncertain.
-- Navigate to a receptacle before opening it, taking from it or placing there. Open closed receptacles before inspecting their contents or placing inside.
-- look describes only the current location. Explore receptacles named in observations, prioritizing those whose contents remain uninspected. Arriving at a closed receptacle does not complete its search.
-- Nothing happens. means no state change. Check location, held object, container state and syntax; correct missing preconditions before retrying.
-- Without a relevant state change, do not repeat the same failed command or cycle between inspected locations. Revisit only for a concrete reason.
-- Use visible-state notes to retain earlier confirmed progress.
-- Processing requires holding the target at the correct appliance: clean with sinkbasin, heat with microwave, cool with fridge. Do not place the target inside first.
-- Confirm required processing before final placement. If processing fails, correct its preconditions and retry; retrieve a prematurely placed target when necessary.
+- Match the task's exact English object type, required processing and destination. Apply experience only when its conditions match the current task and observed state.
+- Search uninspected locations. look describes only the current location; arriving at a closed receptacle does not inspect its contents.
+- Navigate only to observed receptacles or locations, not object names. Arrive before opening, taking or placing; open closed receptacles when needed.
+- Carry only the target. Place an unrelated held object on a compatible receptacle before taking the target. Use inventory when uncertain.
+- Once holding the correct target, complete its required processing and placement instead of searching for another object.
+- Processing requires holding the target at the appropriate appliance: clean with sinkbasin, heat with microwave, cool with fridge. Do not place the target inside first.
+- Confirm processing through feedback before final placement. If processing fails, correct missing preconditions and retry; retrieve a prematurely placed target when necessary.
+- Nothing happens. means no state change. Check location, held object, container state and command form. Without a relevant change, do not repeat failed commands or cycle between inspected locations.
+- Use visible-state notes to retain confirmed progress. Revisit a searched location only for a concrete reason.
 - For lamp examination, hold the target and use the lamp at its location.
 - Use observed names and instance numbers. move places an object; go to moves the robot.
 
