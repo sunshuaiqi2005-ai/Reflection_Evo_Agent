@@ -38,7 +38,7 @@ class ReflectionFormatTests(unittest.TestCase):
         self.assertEqual(tasks, [{"context": 0, "task_type": pair[0]["task"]["task_type"], "instruction": instruction}])
         self.assertEqual(results, [{"id": t["id"], "context": 0, "success": t["success"],
                                     "termination": t["termination"]} for t in pair])
-        self.assertLess(body.index("当前任务："), body.index("完整轨迹："))
+        self.assertLess(body.index("当前任务："), body.index("轨迹中 context"))
 
     def test_candidate_and_extension_review_require_no_citation_fields(self):
         candidate = {"trigger": "the target is held", "advice": "Visit the appliance before processing.",

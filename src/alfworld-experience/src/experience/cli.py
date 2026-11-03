@@ -17,7 +17,7 @@ from .cognition import Cognition, object_schema
 from .data import prepare
 from .episode import AlfworldEnvironment, EpisodeRunner
 from .memory import Memory
-from .pipeline import Evolution, evaluate
+from .pipeline import Evolution, evaluate, evaluate_baseline
 from .util import digest, event, exclusive_run, read_json, seed_for, write_json
 
 PROJECT = Path(__file__).resolve().parents[2]
@@ -197,9 +197,16 @@ def main(argv=None):
             print(json.dumps(result, ensure_ascii=False, indent=2))
             return
         if args.command in {"evolve", "run"}:
+            if args.command == "run" and config["evaluation"].get("baseline_before_training", False):
+                if not config["evaluation"]["compare_initial_memory"]:
+                    raise ValueError("训练前基线要求启用初始经验对照")
+                baseline_tasks = read_json(PROJECT / "data/manifests/test.json")["test"]
+                write_json(directory / "evaluation_manifests/test.json", {"test": baseline_tasks})
+                evaluate_baseline(config, directory, baseline_tasks, runner)
+                del baseline_tasks
             Evolution(config, directory, runner, cognition).evolve(plan)
         if args.command in {"test", "run"}:
-            # The test manifest is read only after evolution and freezing; never supplied to cognition.
+            # Evaluation tasks/results are never supplied to the learning module.
             frozen_path = directory / "memory_final.json"
             if not frozen_path.exists() or not read_json(frozen_path).get("frozen"):
                 raise ValueError("必须先完成进化并冻结经验库，才能读取和运行最终测试清单。")

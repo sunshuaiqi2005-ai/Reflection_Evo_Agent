@@ -72,9 +72,16 @@ def run_complete(directory, with_test=False):
     result = load(directory / "test_results.json", {})
     metadata = load(directory / "run_metadata.json", {})
     compare_initial = metadata.get("config", {}).get("evaluation", {}).get("compare_initial_memory", True)
+    baseline_first = metadata.get("config", {}).get("evaluation", {}).get("baseline_before_training", False)
     arms = {"initial", "final"} if compare_initial else {"final"}
     outcomes = result.get("outcomes", {})
     count = planned_test_tasks(directory)
+    if baseline_first:
+        baseline = load(directory / "baseline_results.json", {})
+        if (not baseline.get("complete") or baseline.get("tasks") != count
+                or len(baseline.get("outcomes", [])) != count
+                or baseline["outcomes"] != outcomes.get("initial")):
+            return False
     return bool(frozen.get("memory_hash") and result.get("frozen_memory_hash") == frozen["memory_hash"]
                 and result.get("tasks") == count and set(outcomes) == arms
                 and all(len(outcomes[arm]) == count for arm in arms))
@@ -103,6 +110,12 @@ def snapshot(directory, phase, started, worker, interval, with_test=False, **ext
         result["test_tasks_total"] = planned_test_tasks(directory)
         result["test_tasks_completed"] = test_progress.get("completed", 0)
         result["stage"] = status.get("phase", "evolution")
+        baseline = load(directory / "baseline_results.json") or load(directory / "baseline_progress.json", {})
+        if baseline:
+            result["baseline_tasks_completed"] = baseline.get("tasks", baseline.get("completed", 0))
+            result["baseline_tasks_total"] = planned_test_tasks(directory)
+            if baseline.get("complete"):
+                result["baseline_metrics"] = baseline["metrics"]
     if active:
         result["active_episode"] = {"id": active["id"], "stage": active["stage"],
                                     "completed_steps": len(active["steps"])}
@@ -122,7 +135,8 @@ def summarize(directory, phase, started, returncode, with_test=False):
     total = planned_rounds(directory)
     test_results = load(directory / "test_results.json")
     test_progress = load(directory / "test_progress.json", {})
-    test_started = bool(test_results or test_progress or list((directory / "episodes").glob("test-*.json")))
+    baseline = load(directory / "baseline_results.json") or load(directory / "baseline_progress.json", {})
+    test_started = bool(test_results or test_progress or list((directory / "episodes").glob("test-*-final.json")))
     rows = []
     for result in results:
         episodes = result["episodes"]
@@ -141,6 +155,11 @@ def summarize(directory, phase, started, returncode, with_test=False):
                "experience_count": len(memory["memory"]["items"]) if memory else None,
                "rounds": rows, "final_test_executed": test_started,
                "final_test_completed": bool(test_results and run_complete(directory, with_test=True))}
+    if baseline:
+        summary["baseline_tasks_completed"] = baseline.get("tasks", baseline.get("completed", 0))
+        summary["baseline_completed"] = baseline.get("complete", False)
+        if baseline.get("complete"):
+            summary["baseline_metrics"] = baseline["metrics"]
     if with_test or test_started:
         summary["test_tasks_total"] = planned_test_tasks(directory)
         summary["test_tasks_completed"] = test_results["tasks"] if test_results else test_progress.get("completed", 0)
@@ -155,6 +174,8 @@ def summarize(directory, phase, started, returncode, with_test=False):
              f"接收经验轮数：{summary['accepted_rounds']}；最终经验条数：{summary['experience_count']}。", "",
              "| 轮次 | 三次初始执行成功数 | 处理 |", "| --- | --- | --- |"]
     lines += [f"| {r['round']} | {r['baseline_successes']}/3 | {labels.get(r['status'], r['status'])} |" for r in rows]
+    if baseline:
+        lines += ["", f"训练前基线：{summary['baseline_tasks_completed']}/{planned_test_tasks(directory)} 道。"]
     errors = [r for r in rows if r["protocol_error"]]
     if errors:
         lines += ["", "协议拒绝原因："] + [f"- 第 {r['round']} 轮：{r['protocol_error']}" for r in errors]

@@ -1,22 +1,20 @@
-You control a robot in an ALFWorld text environment. Complete the stated task using only observations from this episode and the supplied experience memory.
-Return exactly ONE environment command, with no explanation, quotes, markdown or thought process. Do not claim success yourself; the environment decides success. You are not given hidden state, expert plans, or a list of admissible actions.
+Complete the ALFWorld task using only this episode's observations and experience memory.
+Output exactly ONE environment command without explanation. The environment determines success.
 
-Global operating hints:
-- Follow the task's exact target object and destination. Do not pick up unrelated objects while searching.
-- Match the target object's original English type exactly. Do not substitute a similar object type.
-- You can carry only one object. Before taking the target, your hands must be empty. If holding an unrelated item, go to a compatible receptacle and move that item there first. Use inventory when uncertain.
-- You must be at a receptacle before taking from it, opening it, or placing an object there. Keep track of your current location; do not try to take something from a distant receptacle.
-- Open a closed receptacle before inspecting or taking its contents. Open a closed destination before placing the target there.
-- In this TextWorld version, placing an object uses move OBJECT to RECEPTACLE. This is the placement command, distinct from go to RECEPTACLE, which moves the robot.
-- For a simple placement task: find the target, take it, go to the stated destination, open it if necessary, then move the target there. Once holding the target, work toward the destination rather than continuing unrelated searches.
-- look only describes the current location; it does not search the whole room. Use the receptacles named in the initial observation to explore.
-- Nothing happens. means no state change. Check location, held item, open/closed state and command syntax. Do not blindly repeat the same failed command or alternate between already searched places.
-- Revisit a searched place when there is a concrete reason, such as a previously closed container, a missed observation, or a changed state.
-- The visible-state notes are derived only from this episode's observations. Use them to remember earlier successful actions even when old interaction lines leave the context window.
-- For processing tasks, find and take the target, keep holding it, go to the appropriate appliance, then use clean OBJECT with sinkbasin N, heat OBJECT with microwave N, or cool OBJECT with fridge N. Use the exact observed appliance name and number. These commands process the held target; do not move it into the appliance first. After the observation confirms processing, carry it to the task's destination and move it there. Processing alone does not finish a placement task.
-- For examining with a lamp, hold the target, go to the lamp and use the lamp; examining the lamp itself does not achieve the task.
+Rules:
+- Match the task's exact English object type, required processing and destination.
+- Carry only the target. If holding an unrelated object, place it on a compatible receptacle before taking the target. Use inventory when uncertain.
+- Navigate to a receptacle before opening it, taking from it or placing there. Open closed receptacles before inspecting their contents or placing inside.
+- look describes only the current location. Explore receptacles named in observations, prioritizing those whose contents remain uninspected. Arriving at a closed receptacle does not complete its search.
+- Nothing happens. means no state change. Check location, held object, container state and syntax; correct missing preconditions before retrying.
+- Without a relevant state change, do not repeat the same failed command or cycle between inspected locations. Revisit only for a concrete reason.
+- Use visible-state notes to retain earlier confirmed progress.
+- Processing requires holding the target at the correct appliance: clean with sinkbasin, heat with microwave, cool with fridge. Do not place the target inside first.
+- Confirm required processing before final placement. If processing fails, correct its preconditions and retry; retrieve a prematurely placed target when necessary.
+- For lamp examination, hold the target and use the lamp at its location.
+- Use observed names and instance numbers. move places an object; go to moves the robot.
 
-Command forms (use exact names and instance numbers observed in the environment):
+Commands:
 look
 inventory
 go to RECEPTACLE
@@ -30,5 +28,5 @@ cool OBJECT with RECEPTACLE
 use OBJECT
 examine OBJECT
 
-Experience memory for this episode:
+Experience memory:
 {memory}

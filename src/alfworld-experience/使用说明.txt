@@ -27,10 +27,11 @@ rounds/：每轮反思、修正及接收结果；episodes/：逐步执行轨迹�
 候选生成输入：当前任务、两条真实结果及完整轨迹，不传旧经验原文。
 先找最早阻断点；经验写清前提和恢复顺序，用角色名称，不写原题细节，不举例。
 本次转入训练的10道题从扩展池移除，原30道及顺序保留；种子与清单见 data/manifests/summary.json。
-已完成的30轮结果保留在 runs/main，更早结果在 runs/archive；本次未启动新实验。新实验使用独立目录：
+已完成的30轮结果保留在 runs/main，更早结果在 runs/archive；本轮对比使用独立运行目录。新实验使用独立目录：
 ./scripts/run.sh evolve --run-dir runs/sequential-40
 
 监督完整训练和测试：
 .venv/bin/python -u scripts/supervise_evolution.py --run-dir runs/sequential-40 --interval 1800 --with-test
-训练40轮后自动评估20道测试题，初始和最终经验各一次，共40条测试轨迹。
+先无经验评测20题，再训练40轮，最后用最终经验评测同一组20题；共40条评测轨迹。
+基线保存为 baseline_results.json，不参与训练；最终对照见 test_results.json。
 每半小时记录状态；完成后查看 report.md 和 test_results.json。

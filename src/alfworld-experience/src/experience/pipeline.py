@@ -157,6 +157,49 @@ class Evolution:
         return frozen
 
 
+def evaluate_baseline(config, directory, tasks, runner):
+    """Evaluate the empty initial memory before learning, without supplying results to it."""
+    directory = Path(directory)
+    initial_path = directory / "memory_initial.json"
+    memory = Memory.from_dict(read_json(initial_path)) if initial_path.exists() else Memory()
+    if memory.items or memory.version != 0:
+        raise ValueError("训练前基线必须使用空经验库")
+    write_json(initial_path, memory.to_dict())
+    identity = digest({"tasks": tasks, "memory_hash": memory.fingerprint, "seed": config["seed"]})
+    path = directory / "baseline_results.json"
+    if path.exists():
+        saved = read_json(path)
+        if (saved.get("input_hash") != identity or not saved.get("complete")
+                or [row["task_id"] for row in saved["outcomes"]] != [task["id"] for task in tasks]):
+            raise ValueError("训练前基线与当前评测输入不一致")
+        return saved
+    if (directory / "rounds").exists() and any((directory / "rounds").glob("*/result.json")):
+        raise ValueError("训练已开始，不能补做训练前基线；请使用新的运行目录")
+    event(directory, "baseline_start", tasks=len(tasks), memory_hash=memory.fingerprint)
+    outcomes = []
+    write_json(directory / "status.json", {"phase": "baseline", "completed": 0, "total": len(tasks)})
+    for index, task in enumerate(tasks, 1):
+        trace = runner.run(task, memory, seed_for(config["seed"], "heldout-test", task["id"]),
+                           f"test-{index:03d}-initial", "heldout-test")
+        if memory.fingerprint != Memory().fingerprint or read_json(initial_path) != memory.to_dict():
+            raise RuntimeError("训练前基线修改了初始经验")
+        outcomes.append({"task_id": task["id"], "success": trace["success"],
+                         "steps": len(trace["steps"]), "episode_id": trace["id"]})
+        write_json(directory / "baseline_progress.json", {"completed": index, "total": len(tasks),
+                                                          "outcomes": outcomes})
+        write_json(directory / "status.json", {"phase": "baseline", "completed": index, "total": len(tasks)})
+        print(f"Pre-training baseline {index}/{len(tasks)} complete", flush=True)
+    result = {"complete": True, "input_hash": identity, "tasks": len(tasks),
+              "initial_memory_hash": memory.fingerprint, "outcomes": outcomes,
+              "metrics": {"successes": sum(row["success"] for row in outcomes),
+                          "success_rate": sum(row["success"] for row in outcomes) / len(tasks),
+                          "mean_steps": sum(row["steps"] for row in outcomes) / len(tasks)}}
+    write_json(path, result)
+    write_json(directory / "status.json", {"phase": "baseline_complete", "completed": len(tasks), "total": len(tasks)})
+    event(directory, "baseline_end", tasks=len(tasks), metrics=result["metrics"])
+    return result
+
+
 def evaluate(config, directory, tasks, runner):
     directory = Path(directory)
     frozen = read_json(directory / "memory_final.json")
@@ -164,11 +207,25 @@ def evaluate(config, directory, tasks, runner):
     if not frozen.get("frozen") or memory.fingerprint != frozen["memory_hash"]:
         raise ValueError("最终测试要求已冻结且未被修改的经验库")
     arms = [("final", memory)]
-    if config["evaluation"]["compare_initial_memory"]:
+    baseline_first = config["evaluation"].get("baseline_before_training", False)
+    baseline = None
+    if baseline_first:
+        if not config["evaluation"]["compare_initial_memory"]:
+            raise ValueError("训练前基线要求启用初始经验对照")
+        baseline = read_json(directory / "baseline_results.json")
+        initial = Memory.from_dict(read_json(directory / "memory_initial.json"))
+        expected = digest({"tasks": tasks, "memory_hash": initial.fingerprint, "seed": config["seed"]})
+        if (not baseline.get("complete") or baseline.get("input_hash") != expected
+                or baseline.get("initial_memory_hash") != initial.fingerprint
+                or [row["task_id"] for row in baseline["outcomes"]] != [task["id"] for task in tasks]):
+            raise ValueError("训练前基线缺失或与最终评测不匹配")
+    elif config["evaluation"]["compare_initial_memory"]:
         arms.insert(0, ("initial", Memory.from_dict(read_json(directory / "memory_initial.json"))))
     outcomes = {name: [] for name, _ in arms}
+    if baseline_first:
+        outcomes = {"initial": baseline["outcomes"], **outcomes}
     for index, task in enumerate(tasks, 1):
-        # Common sampling seeds across arms; environment resets and histories remain independent.
+        # Common seeds for initial/final arms, including a previously completed baseline.
         actor_seed = seed_for(config["seed"], "heldout-test", task["id"])
         order = list(arms)
         random.Random(seed_for(config["seed"], "test-order", task["id"])).shuffle(order)

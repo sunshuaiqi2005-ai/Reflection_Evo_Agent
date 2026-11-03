@@ -54,6 +54,40 @@ class SupervisionTests(unittest.TestCase):
         self.assertEqual(supervision.worker_command(run, with_test=True)[3], "run")
         self.assertEqual(supervision.worker_command(run)[3], "evolve")
 
+    def test_baseline_progress_is_distinct_from_final_testing(self):
+        with tempfile.TemporaryDirectory() as temp:
+            run = Path(temp)
+            self.completed_training(run)
+            write_json(run / "status.json", {"phase": "baseline", "completed": 4, "total": 20})
+            write_json(run / "baseline_progress.json", {"completed": 4, "total": 20})
+            write_json(run / "episodes/test-001-initial.json", {})
+            with contextlib.redirect_stdout(io.StringIO()):
+                snapshot = supervision.snapshot(run, "running", "started", SimpleNamespace(pid=123),
+                                                1800, with_test=True)
+            self.assertEqual(snapshot["stage"], "baseline")
+            self.assertEqual(snapshot["baseline_tasks_completed"], 4)
+            self.assertEqual(snapshot["test_tasks_completed"], 0)
+            summary = supervision.summarize(run, "interrupted", "started", 130, with_test=True)
+            self.assertFalse(summary["final_test_executed"])
+            self.assertFalse(summary["baseline_completed"])
+
+    def test_baseline_first_completion_requires_matching_baseline_results(self):
+        with tempfile.TemporaryDirectory() as temp:
+            run = Path(temp)
+            self.completed_training(run)
+            write_json(run / "run_metadata.json", {"config": {"evaluation": {
+                "compare_initial_memory": True, "baseline_before_training": True}}})
+            write_json(run / "status.json", {"phase": "complete"})
+            result = self.completed_test()
+            write_json(run / "test_results.json", result)
+            self.assertFalse(supervision.run_complete(run, with_test=True))
+            baseline = {"complete": True, "tasks": 20, "outcomes": result["outcomes"]["initial"]}
+            write_json(run / "baseline_results.json", baseline)
+            self.assertTrue(supervision.run_complete(run, with_test=True))
+            baseline["outcomes"][0] = {"task_id": "wrong"}
+            write_json(run / "baseline_results.json", baseline)
+            self.assertFalse(supervision.run_complete(run, with_test=True))
+
     def test_full_run_completion_uses_forty_round_plan(self):
         with tempfile.TemporaryDirectory() as temp:
             run = Path(temp)

@@ -36,3 +36,4 @@ model:
   retries: 2
 evaluation:
   compare_initial_memory: true
+  baseline_before_training: true
