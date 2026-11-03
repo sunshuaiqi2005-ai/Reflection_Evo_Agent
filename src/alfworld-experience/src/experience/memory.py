@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from copy import deepcopy
 from dataclasses import dataclass, field
-import re
 
 from .util import ProtocolError, digest
 
@@ -54,19 +53,8 @@ class Memory:
         return "\n".join(lines)
 
 
-def validate_candidate(candidate, trajectories, candidate_id):
-    prose = " ".join([candidate["trigger"], candidate["advice"], *candidate["exceptions"]])
-    if re.search(r"\b[a-z][a-z_-]*\s+\d+\b|FloorPlan\d+|trial_T\d+", prose, re.I):
-        raise ProtocolError("Experience contains a task-specific numbered entity or scene")
-    for trace in trajectories:
-        concrete = trace.get("task", {}).get("object", "")
-        if not concrete:
-            continue
-        words = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", concrete).lower().replace("_", " ").split()
-        variants = {"".join(words), " ".join(words)}
-        if any(re.search(r"\b" + r"\s*".join(map(re.escape, term.split())) + r"(?:s|es)?\b", prose, re.I)
-               for term in variants):
-            raise ProtocolError("Experience names the task's concrete target type; use target object or another transferable role")
+def experience_with_id(candidate, candidate_id):
+    """Copy model output and attach bookkeeping only; do not filter its content."""
     result = deepcopy(candidate)
     result["id"] = candidate_id
     return result

@@ -6,8 +6,7 @@ from unittest.mock import patch
 
 from experience.data import prepare, random_sample, stratified_sample
 from experience.episode import normalize_action
-from experience.memory import validate_candidate
-from experience.util import ProtocolError, read_json, seed_for
+from experience.util import read_json, seed_for
 from experience.visible_state import visible_state, render_visible_state
 
 
@@ -42,17 +41,6 @@ class ImprovementTests(unittest.TestCase):
         self.assertIn("cup 1", state["held_object"])
         state = visible_state([{"action": "inventory", "observation": "You are not carrying anything."}])
         self.assertEqual(state["held_object"], "empty")
-
-    def test_candidate_cannot_memorize_concrete_target_type(self):
-        trace = {"id": "a", "task": {"object": "Cup"}, "initial_observation": "A cup is visible.",
-                 "steps": []}
-        rule = {"trigger": "observing a cup in the fridge", "advice": "take the cup from the fridge",
-                "exceptions": []}
-        with self.assertRaises(ProtocolError):
-            validate_candidate(rule, [trace], "bad")
-        rule["trigger"] = "the target is visible and the hands are occupied"
-        rule["advice"] = "Place the unrelated held object in a compatible receptacle before taking the target."
-        self.assertEqual(validate_candidate(rule, [trace], "good")["id"], "good")
 
     def test_simple_training_selection_preserves_test_sample(self):
         def catalog(root, split):

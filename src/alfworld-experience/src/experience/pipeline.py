@@ -4,7 +4,7 @@ from itertools import combinations
 from pathlib import Path
 import random
 
-from .memory import Memory, validate_candidate
+from .memory import Memory, experience_with_id
 from .util import ProtocolError, digest, event, read_json, seed_for, write_json
 
 PROTOCOL = "original_once_extension_failure_review_append_v2"
@@ -74,7 +74,7 @@ class Evolution:
             else:
                 proposal = self.cognition.propose(memory, pair, index)
                 write_json(folder / "proposal.json", proposal)
-                candidate = validate_candidate(proposal["candidate"], pair, f"r{index:02d}-candidate")
+                candidate = experience_with_id(proposal["candidate"], f"r{index:02d}-candidate")
                 result["candidate"] = candidate
                 temporary = memory.appended(candidate)
                 original = episode("candidate-original", temporary, plan["original"])
@@ -93,7 +93,7 @@ class Evolution:
                         if revised:
                             if not review["issue"].strip() or review["revision"] is None:
                                 raise ProtocolError("Revision lacks a specific correction")
-                            candidate = validate_candidate(review["revision"], [original, extension], f"r{index:02d}-revised")
+                            candidate = experience_with_id(review["revision"], f"r{index:02d}-revised")
                             result["revised_candidate"] = candidate
                         elif review["revision"] is not None:
                             raise ProtocolError("Revision supplied while needs_revision is false")

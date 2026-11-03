@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 from experience.data import choose_extension, prepare, random_sample, stratified_sample
 from experience.episode import EpisodeRunner
-from experience.memory import Memory, validate_candidate
+from experience.memory import Memory, experience_with_id
 from experience.pipeline import Evolution, choose_pair, evaluate
 from experience.util import ContextBudgetError, InfrastructureError, ProtocolError, read_json, write_json
 
@@ -170,7 +170,7 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(len(runner.calls), calls)
 
     def test_appending_preserves_old_memory(self):
-        old = validate_candidate(rule(trace("old-trace")), [trace("old-trace")], "old")
+        old = experience_with_id(rule(trace("old-trace")), "old")
         base = Memory(2, [old], [{"source_ids": ["old"], "relation": "independent"}])
         before = base.to_dict()
         memory, result, runner, _ = self.run_round([True, False, False, True, False], revise=True, memory=base)
@@ -190,27 +190,55 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(len(runner.calls), calls)
 
     def test_duplicate_experience_id_cannot_be_appended(self):
-        candidate = validate_candidate(rule(trace("a")), [trace("a")], "candidate")
+        candidate = experience_with_id(rule(trace("a")), "candidate")
         base = Memory().appended(candidate)
         with self.assertRaises(ProtocolError):
             base.appended(candidate)
 
     def test_source_conditions_and_exceptions_survive_append(self):
-        old = validate_candidate(rule(trace("a")), [trace("a")], "old")
-        new = validate_candidate(rule(trace("b"), True), [trace("b")], "new")
+        old = experience_with_id(rule(trace("a")), "old")
+        new = experience_with_id(rule(trace("b"), True), "new")
         base = Memory(1, [old], [{"source_ids": ["old"], "relation": "independent"}])
         appended = base.appended(new)
         self.assertEqual(appended.items[0], old)
         self.assertIn(old["exceptions"][0], appended.render())
         self.assertIn(new["advice"], appended.render())
 
-    def test_candidate_without_citations_passes_but_numbered_answers_are_rejected(self):
-        candidate = rule(trace("a"))
-        self.assertEqual(validate_candidate(candidate, [trace("a")], "x")["id"], "x")
-        candidate = rule(trace("a"))
-        candidate["advice"] = "The answer is in cabinet 3."
-        with self.assertRaises(ProtocolError):
-            validate_candidate(candidate, [trace("a")], "x")
+    def test_concrete_candidate_content_reaches_validation_and_is_preserved(self):
+        candidates = [
+            {"trigger": "searching for an apple", "advice": "Check the apple on the countertop.", "exceptions": []},
+            {"trigger": "taking a pan", "advice": "Check the pan before taking it.", "exceptions": []},
+            {"trigger": "at cabinet 3 in FloorPlan301", "advice": "Search cabinet 3; trial_T20190909.",
+             "exceptions": ["Leave bowl 2 in drawer 1."]},
+        ]
+        for index, candidate in enumerate(candidates):
+            with self.subTest(candidate=candidate):
+                plan = deepcopy(PLAN)
+                plan["original"]["object"] = "Apple" if index == 0 else "Pan"
+                runner, cognition = ScriptedRunner([False, False, False, True, True]), ScriptedCognition()
+                before = deepcopy(candidate)
+                with patch.object(cognition, "propose", return_value={"analysis": "", "candidate": candidate}):
+                    memory, result = Evolution(CONFIG, self.folder / str(index), runner, cognition).round(plan, Memory())
+                self.assertEqual(result["status"], "accepted")
+                self.assertEqual(len(runner.calls), 5)
+                self.assertEqual(candidate, before)
+                for field in ("trigger", "advice", "exceptions"):
+                    self.assertEqual(memory.items[0][field], candidate[field])
+                    self.assertEqual(runner.calls[3]["memory"]["items"][0][field], candidate[field])
+
+    def test_revised_content_is_appended_without_filtering_or_reexecution(self):
+        revised = {"trigger": "apple in cabinet 3", "advice": "Check apple in FloorPlan301.",
+                   "exceptions": ["trial_T20190909"]}
+        runner, cognition = ScriptedRunner([False, False, False, True, False]), ScriptedCognition()
+        review = {"needs_revision": True, "issue": "Clarify the next action.", "revision": revised}
+        with patch.object(cognition, "review", return_value=review):
+            memory, result = Evolution(CONFIG, self.folder, runner, cognition).round(PLAN, Memory())
+        self.assertEqual(result["status"], "accepted")
+        self.assertEqual(len(runner.calls), 5)
+        self.assertEqual(memory.items[0]["id"], "r01-revised")
+        for field in ("trigger", "advice", "exceptions"):
+            self.assertEqual(memory.items[0][field], revised[field])
+        self.assertFalse(memory.items[0]["acceptance"]["post_review_revalidated"])
 
     def test_infrastructure_failure_does_not_become_rejected_task(self):
         class BrokenRunner:

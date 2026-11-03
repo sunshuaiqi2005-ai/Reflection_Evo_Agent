@@ -168,7 +168,7 @@ def summarize(directory, phase, started, returncode, with_test=False):
         summary["success_rate_delta"] = test_results.get("success_rate_delta")
     save(directory / "evolution_summary.json", summary)
     labels = {"accepted": "接收经验", "rejected_original": "原题验证失败，舍弃",
-              "skipped_all_success": "三次均成功，跳过", "rejected_protocol": "经验输出不符合格式或通用性要求"}
+              "skipped_all_success": "三次均成功，跳过", "rejected_protocol": "模型输出格式不符合要求"}
     lines = [f"# {total} 轮经验进化结果", "", f"状态：{phase}；完成 {len(results)}/{total} 轮。",
              f"开始：{started}；结束：{summary['finished_at']}。",
              f"接收经验轮数：{summary['accepted_rounds']}；最终经验条数：{summary['experience_count']}。", "",
