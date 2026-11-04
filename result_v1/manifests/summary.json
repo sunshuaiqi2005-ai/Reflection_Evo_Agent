@@ -1,0 +1,96 @@
+{
+  "configuration_hash": "3f9a9bc0463c5ebb1b75a3b03810dc8b3a4685caed0d53f39b3ffb581665c946",
+  "seed": 42,
+  "task_selection": {
+    "train_task_types": [
+      "pick_clean_then_place_in_recep",
+      "pick_heat_then_place_in_recep",
+      "pick_cool_then_place_in_recep"
+    ],
+    "extension_task_types": [
+      "pick_clean_then_place_in_recep",
+      "pick_heat_then_place_in_recep",
+      "pick_cool_then_place_in_recep"
+    ],
+    "test_task_types": [
+      "pick_clean_then_place_in_recep",
+      "pick_heat_then_place_in_recep",
+      "pick_cool_then_place_in_recep"
+    ]
+  },
+  "available": {
+    "train": 1642,
+    "extension": 68,
+    "test": 75
+  },
+  "requested": {
+    "train": 40,
+    "extension": 48,
+    "test": 20,
+    "allow_reduce": true
+  },
+  "actual": {
+    "train": 40,
+    "extension": 48,
+    "test": 20
+  },
+  "rounds": 40,
+  "sampling": {
+    "train_pool": "uniform_train_sample_plus_uniform_extension_transfer",
+    "round_originals": "manifest_order_without_replacement",
+    "extension_pool": "stratified",
+    "test_pool": "uniform_without_replacement"
+  },
+  "family_counts": {
+    "train": {
+      "pick_clean_then_place_in_recep": 14,
+      "pick_heat_then_place_in_recep": 10,
+      "pick_cool_then_place_in_recep": 16
+    },
+    "extension": {
+      "pick_cool_then_place_in_recep": 16,
+      "pick_heat_then_place_in_recep": 11,
+      "pick_clean_then_place_in_recep": 21
+    },
+    "test": {
+      "pick_clean_then_place_in_recep": 11,
+      "pick_cool_then_place_in_recep": 5,
+      "pick_heat_then_place_in_recep": 4
+    }
+  },
+  "manifest_hashes": {
+    "development.json": "b17b7a4fc53009a95983b80531bb7ecae53567f1061ceebc0814fb4a627ccbc8",
+    "test.json": "949b431de6f77c74139ea33666071c1f5d74768f0b0b01b659d9ebfa4ab7bbc0",
+    "plan.json": "c9c43d9d212c9c5dbd9b3a36360adfd7bec2d242cc16fb51fadc3176871060e9"
+  },
+  "warnings": [],
+  "pool_transfer": {
+    "from": "extension",
+    "to": "train",
+    "count": 20,
+    "seed": 625895638,
+    "sampling": "uniform_without_replacement",
+    "task_ids": [
+      "valid_seen/pick_clean_then_place_in_recep-Ladle-None-DiningTable-16/trial_T20190909_183724_205399/game.tw-pddl",
+      "valid_seen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-11/trial_T20190908_222555_651605/game.tw-pddl",
+      "valid_seen/pick_clean_then_place_in_recep-Fork-None-CounterTop-23/trial_T20190908_233922_171295/game.tw-pddl",
+      "valid_seen/pick_clean_then_place_in_recep-Spatula-None-DiningTable-4/trial_T20190909_002804_564168/game.tw-pddl",
+      "valid_seen/pick_heat_then_place_in_recep-Egg-None-CounterTop-2/trial_T20190908_122951_021026/game.tw-pddl",
+      "valid_seen/pick_clean_then_place_in_recep-ButterKnife-None-Drawer-2/trial_T20190908_121728_511866/game.tw-pddl",
+      "valid_seen/pick_cool_then_place_in_recep-Tomato-None-CounterTop-12/trial_T20190909_063754_216554/game.tw-pddl",
+      "valid_seen/pick_cool_then_place_in_recep-Pan-None-DiningTable-7/trial_T20190908_232648_241836/game.tw-pddl",
+      "valid_seen/pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-1/trial_T20190907_222640_487432/game.tw-pddl",
+      "valid_seen/pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-26/trial_T20190907_233056_022802/game.tw-pddl",
+      "valid_seen/pick_cool_then_place_in_recep-Bowl-None-Cabinet-20/trial_T20190909_112912_154874/game.tw-pddl",
+      "valid_seen/pick_heat_then_place_in_recep-Apple-None-DiningTable-26/trial_T20190907_060234_011675/game.tw-pddl",
+      "valid_seen/pick_cool_then_place_in_recep-Tomato-None-Microwave-13/trial_T20190910_173916_331859/game.tw-pddl",
+      "valid_seen/pick_heat_then_place_in_recep-Tomato-None-Fridge-15/trial_T20190909_020200_054379/game.tw-pddl",
+      "valid_seen/pick_cool_then_place_in_recep-Pan-None-StoveBurner-18/trial_T20190906_181023_216915/game.tw-pddl",
+      "valid_seen/pick_clean_then_place_in_recep-ButterKnife-None-Drawer-8/trial_T20190909_124425_112757/game.tw-pddl",
+      "valid_seen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-1/trial_T20190908_042713_075616/game.tw-pddl",
+      "valid_seen/pick_heat_then_place_in_recep-Tomato-None-Fridge-23/trial_T20190909_082320_103350/game.tw-pddl",
+      "valid_seen/pick_cool_then_place_in_recep-Pan-None-StoveBurner-23/trial_T20190906_215856_374127/game.tw-pddl",
+      "valid_seen/pick_cool_then_place_in_recep-Cup-None-Microwave-17/trial_T20190906_192817_654400/game.tw-pddl"
+    ]
+  }
+}

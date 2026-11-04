@@ -1,0 +1,167 @@
+{
+  "id": "test-012-final",
+  "stage": "heldout-test",
+  "task": {
+    "id": "valid_unseen/pick_cool_then_place_in_recep-Mug-None-Cabinet-10/trial_T20190909_121710_650938/game.tw-pddl",
+    "game_path": "valid_unseen/pick_cool_then_place_in_recep-Mug-None-Cabinet-10/trial_T20190909_121710_650938/game.tw-pddl",
+    "official_split": "valid_unseen",
+    "task_type": "pick_cool_then_place_in_recep",
+    "object": "Mug",
+    "target": "Cabinet",
+    "scene": "10",
+    "game_sha256": "77e6c83aa8d991e796bcab3352352ac51ab378c3b75cba85016174a8cfe95bfd"
+  },
+  "input_hash": "963a1a2e7c9bfafbfde67d7037a349afa2ade0ec2089f4eaa9d71c38ea568eec",
+  "memory_hash": "1187b7faad6aba91b945000e6d7145d8efd150d05009a1a123bbd555296ed2d2",
+  "actor_seed": 629669621,
+  "environment_seed": 858533959,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: cool some mug and put it in cabinet.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "dce04e1df029cc75dc80a9098d06eadd142a7fcff78e4f1eb05375bd4a8b4250",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to cabinet 1",
+      "raw_model_output": "go to cabinet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "45a632a682d59991d0087bc6ae21fedc243c244c65879eba603f409b32d643c4",
+      "observation": "You arrive at cabinet 1. On the cabinet 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "go to cabinet 2",
+      "raw_model_output": "go to cabinet 2",
+      "legacy_placement_alias_applied": false,
+      "model_call": "a4a04c02ed3ae0e327b04f8ccc583f0e97da1241cd125bb4ac26d222946213b7",
+      "observation": "You arrive at cabinet 2. The cabinet 2 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "open cabinet 2",
+      "raw_model_output": "open cabinet 2",
+      "legacy_placement_alias_applied": false,
+      "model_call": "4dc915d909bdf5940042d290e585345f18840d4cb0f8276241ba1c755c71a56c",
+      "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see a mug 1, and a saltshaker 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "take mug 1 from cabinet 2",
+      "raw_model_output": "take mug 1 from cabinet 2",
+      "legacy_placement_alias_applied": false,
+      "model_call": "e39be879be97a1d4b9becddcf43e87bfec7bd2dccc91956eb0fcf7ff1ad07cb8",
+      "observation": "You pick up the mug 1 from the cabinet 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "cool mug 1 with fridge 1",
+      "raw_model_output": "cool mug 1 with fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "cbc2e61aa93d92222d3faae2906bf8c1d3576073de34e85ca66b55f4ebb5e3d9",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "8da1c273e9d669cd396897319ff8ef0b2b5957caba5704dc405742415896caa9",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "open fridge 1",
+      "raw_model_output": "open fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "462b38d303a2dc89a20b3d164d8f02bb72bf42894510c46933f0d5a6898fb38b",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a apple 1, a bread 1, a egg 1, a plate 2, a plate 1, and a tomato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "cool mug 1 with fridge 1",
+      "raw_model_output": "cool mug 1 with fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "233854e0c97e76916ef27c7b9c7e5b5542a5285b76c2e5bad045086dbe505587",
+      "observation": "You cool the mug 1 using the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "move mug 1 to cabinet 1",
+      "raw_model_output": "move mug 1 to cabinet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "bc37424973a283bf48851a9a48d990510cdcbea755c9b9f9b3c4a77bc6d6dfbd",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "move mug 1 to cabinet 1",
+      "raw_model_output": "move mug 1 to cabinet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "0ef7f515c37bff77cff6cbc403e2c3cc743d6feaa153b1536153f4341094784c",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 12,
+      "action": "go to cabinet 1",
+      "raw_model_output": "go to cabinet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "2784ad550de2684e81bf2d786802cd9466d72a944458dbe280d2c92933ce3d76",
+      "observation": "You arrive at cabinet 1. On the cabinet 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 13,
+      "action": "move mug 1 to cabinet 1",
+      "raw_model_output": "move mug 1 to cabinet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "b8a1ef0a95524ee1dedb846f0d1cfc3892313729a3f3dc93e3b093f75582eb3c",
+      "observation": "You move the mug 1 to the cabinet 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

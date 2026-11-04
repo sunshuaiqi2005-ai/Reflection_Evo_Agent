@@ -1,0 +1,134 @@
+{
+  "id": "r40-trial-1",
+  "stage": "trial",
+  "task": {
+    "id": "valid_seen/pick_cool_then_place_in_recep-Cup-None-Microwave-17/trial_T20190906_192817_654400/game.tw-pddl",
+    "game_path": "valid_seen/pick_cool_then_place_in_recep-Cup-None-Microwave-17/trial_T20190906_192817_654400/game.tw-pddl",
+    "official_split": "valid_seen",
+    "task_type": "pick_cool_then_place_in_recep",
+    "object": "Cup",
+    "target": "Microwave",
+    "scene": "17",
+    "game_sha256": "4c58377775876b971aeec717b67e2b1a06d212644d75e5e7c673bea58925f682"
+  },
+  "input_hash": "e10e0c81da63c339a7aa9b02586a73a3222507e3d3499c6a968c2be5eee71bbc",
+  "memory_hash": "1187b7faad6aba91b945000e6d7145d8efd150d05009a1a123bbd555296ed2d2",
+  "actor_seed": 935798311,
+  "environment_seed": 1979056762,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 20, a cabinet 19, a cabinet 18, a cabinet 17, a cabinet 16, a cabinet 15, a cabinet 14, a cabinet 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a diningtable 2, a diningtable 1, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a cool cup in microwave.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "3e4df2031a6fd97f2bc3174e724112ac1ff35b3d3d18a02eb423314f1618bbdd",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to microwave 1",
+      "raw_model_output": "go to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "5dbe7188437e30422b2d56296360b4a7ea062f5ae2922776a7bc21fc56a447a2",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "open microwave 1",
+      "raw_model_output": "open microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "45b88f82c0a29524e37f07ac73372fa2ad3a4eb9b8d2465b648e4f2c2e1c9560",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a cup 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "take cup 1 from microwave 1",
+      "raw_model_output": "take cup 1 from microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "4854e7f2d667889825fc39b41d9c2fb2b241472aca13570f8dbdc4468146772f",
+      "observation": "You pick up the cup 1 from the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "cool cup 1 with fridge 1",
+      "raw_model_output": "cool cup 1 with fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "6d1a1d8fcb30faa6d2eedb3583a67e112a70aa3105bf5f251b3380e56db2201a",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "afcdcc2c8aa42d087693418ff6256c3f8c3ce43b301924197a0772317ff366dd",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "open fridge 1",
+      "raw_model_output": "open fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "7a9a9b736f7198ceabb4eaa9357b2e6242ba320e96a7882d6705d0bc4a14ed79",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a bowl 2, a bread 2, a potato 1, a tomato 2, a tomato 1, and a winebottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "cool cup 1 with fridge 1",
+      "raw_model_output": "cool cup 1 with fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "4167faf70f0105731894e84871a0952cff8d82c0fa2e879c55f19df56938e105",
+      "observation": "You cool the cup 1 using the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "go to microwave 1",
+      "raw_model_output": "go to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "3f35f5ed202b4e069d14b4d997a512e00d8fe9be32080b2ba4c030e27fcfd980",
+      "observation": "You arrive at microwave 1. The microwave 1 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "move cup 1 to microwave 1",
+      "raw_model_output": "move cup 1 to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "01404fb9498a3a031e9a49204879688bc1eff8812e71fe477d50d5bf533d69c6",
+      "observation": "You move the cup 1 to the microwave 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

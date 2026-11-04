@@ -1,0 +1,167 @@
+{
+  "id": "test-017-final",
+  "stage": "heldout-test",
+  "task": {
+    "id": "valid_unseen/pick_clean_then_place_in_recep-Pan-None-CounterTop-10/trial_T20190908_032543_712058/game.tw-pddl",
+    "game_path": "valid_unseen/pick_clean_then_place_in_recep-Pan-None-CounterTop-10/trial_T20190908_032543_712058/game.tw-pddl",
+    "official_split": "valid_unseen",
+    "task_type": "pick_clean_then_place_in_recep",
+    "object": "Pan",
+    "target": "CounterTop",
+    "scene": "10",
+    "game_sha256": "328eefc03242a86072f5dd8a1dc7c0f95cbcb89450194994ec8517b79445c064"
+  },
+  "input_hash": "a2d7b6d94c297a7da077f5c5e07289b1995da9c7175575f84e2a8d00ce05f737",
+  "memory_hash": "1187b7faad6aba91b945000e6d7145d8efd150d05009a1a123bbd555296ed2d2",
+  "actor_seed": 911988005,
+  "environment_seed": 144498189,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a clean pan in countertop.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "2c509c7e6270b58ee25ec2523f1fca88b88b2a7c47905da91b8d93d9c35f9f42",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "b0ef925d85aaf6ae4c26261ad5eb49a596798faa4adb61d46e78e51dbe68488e",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a mug 2, and a pan 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "clean pan 1 with sinkbasin 1",
+      "raw_model_output": "clean pan 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "97a31406ea93d84f34424cec244fcab90910f0d55845a2ab878cc2d803afa32d",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "inventory",
+      "raw_model_output": "inventory",
+      "legacy_placement_alias_applied": false,
+      "model_call": "eca628f0f2a4ae6fb7ed7c88082af5a43e28324e0c66229a728e528c48bc635c",
+      "observation": "You are not carrying anything.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "take pan 1 from countertop 1",
+      "raw_model_output": "take pan 1 from countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "dcadf7603f01a7e4dff23acb8a944a4c58733ac1a00298fb2c43597ea514d8c0",
+      "observation": "You pick up the pan 1 from the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "clean pan 1 with sinkbasin 1",
+      "raw_model_output": "clean pan 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "cc89a0839d79d39e7f4fd6d9e18a5fdff69c5127b82ea6bbfc069bf740044f1b",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "clean pan 1 with sinkbasin 1",
+      "raw_model_output": "clean pan 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "a8cf7d18f3c13a689c9f8488f0a37836718a00df6ea2783142c5428a36c2b07e",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "47624c4cffc22193bd4fe2886f9244119f89e4d1fdf07d48172081fa02fb5ef4",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "clean pan 1 with sinkbasin 1",
+      "raw_model_output": "clean pan 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "1afeff29554abb59bd6349af60c2f92f23a696b6e5dd934e47d3f78369daf2bf",
+      "observation": "You clean the pan 1 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "move pan 1 to countertop 1",
+      "raw_model_output": "move pan 1 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "434059adae54a6154b93090f978695ccb832450f3f82257d1dd581dcf5424dae",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "move pan 1 to countertop 1",
+      "raw_model_output": "move pan 1 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "f8a939f52c1658e2fb096226a7cdd0c2170f4f5fc1aa964a48a91e211d373ca2",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 12,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "5db6a0c46c1de967ef5b8a05cfc160aa24b61dd5643e8de810e0339a21c66aa3",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a mug 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 13,
+      "action": "move pan 1 to countertop 1",
+      "raw_model_output": "move pan 1 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "4f7017b43f67d8a5616770abc2ff80c66802dfb20cf5b77291d54a2075eb37ad",
+      "observation": "You move the pan 1 to the countertop 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

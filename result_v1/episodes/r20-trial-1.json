@@ -1,0 +1,167 @@
+{
+  "id": "r20-trial-1",
+  "stage": "trial",
+  "task": {
+    "id": "train/pick_cool_then_place_in_recep-Apple-None-GarbageCan-2/trial_T20190906_195910_686523/game.tw-pddl",
+    "game_path": "train/pick_cool_then_place_in_recep-Apple-None-GarbageCan-2/trial_T20190906_195910_686523/game.tw-pddl",
+    "official_split": "train",
+    "task_type": "pick_cool_then_place_in_recep",
+    "object": "Apple",
+    "target": "GarbageCan",
+    "scene": "2",
+    "game_sha256": "a9ac6d9c2cf5db909e2c1976b47f2a114f280a6659fbc9fe6087f07ca380b830"
+  },
+  "input_hash": "90e66db0ecf59fe7e564c5487c997acae5d45b0b1a33443bd63991fcfe656866",
+  "memory_hash": "559446680b23955beeebfeed5883f6f750331c47c5344783dd2a1507d8b70226",
+  "actor_seed": 471857988,
+  "environment_seed": 1439703116,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a drawer 13, a drawer 12, a drawer 11, a drawer 10, a drawer 9, a drawer 8, a drawer 7, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 6, a stoveburner 5, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a cool apple in garbagecan.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "42a8d1cf84143f2796295ee2b1e270128de26b3b0c1cc9e2ab316cfa1c61eb3d",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "74903e68ed226842ed1387e913162e505b5780a5f235bfcdb0fd859cefebaabc",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "open fridge 1",
+      "raw_model_output": "open fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "f90f05226f6d33bd1f2e4fcb63291844fe3d5025c4dca4275d7c6d19bc792cdc",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a potato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "e23316d6410765eb802b6ab07bdfe44ce6cea865ea2a40eb1d873acf14b55aae",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a fork 2, a ladle 1, a pan 1, a pot 1, a soapbottle 2, a spatula 1, a tomato 1, a window 3, and a window 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "9d359a9214fe50b6f7458449c0e9877ec7463e0956a137d66852287d03b141c6",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see a apple 3, a bowl 2, a spoon 2, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "take apple 3 from sinkbasin 1",
+      "raw_model_output": "take apple 3 from sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "0f6434ca8c86621f89771f31cded6fef4daf120950987a2f960ef3a6c9f02f53",
+      "observation": "You pick up the apple 3 from the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "cool apple 3 with fridge 1",
+      "raw_model_output": "cool apple 3 with fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "07719d5aeb2a8c5972bb2d60f676c8ad6a4fdb4018fb0b44bc4d81a9995fb563",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "cool apple 3 with fridge 1",
+      "raw_model_output": "cool apple 3 with fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "cc00b888ba892165cb749cf8cb1837069fc2aedf6fdc17b1a4691489536d86c0",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "1bff6914571cbf83d3044f70a2459e567c52747640fb594d29be0a63be5d1866",
+      "observation": "You arrive at fridge 1. The fridge 1 is open. In it, you see a potato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "cool apple 3 with fridge 1",
+      "raw_model_output": "cool apple 3 with fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "58592d6b964188a1dedde6ba076680c9eadebea4c3003f38ff766d8073a58607",
+      "observation": "You cool the apple 3 using the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "move apple 3 to garbagecan 1",
+      "raw_model_output": "move apple 3 to garbagecan 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "b0e2d76c3b1f76f7e9b77564feed5f06f730841bd239caf9c00009116ae5e578",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 12,
+      "action": "go to garbagecan 1",
+      "raw_model_output": "go to garbagecan 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "c2fcc198513b4bde269e45e25f02e23c7a9f1818410979d72ae9c61198a25782",
+      "observation": "You arrive at garbagecan 1. On the garbagecan 1, you see a apple 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 13,
+      "action": "move apple 3 to garbagecan 1",
+      "raw_model_output": "move apple 3 to garbagecan 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "cc134f656f81e3730265053fcbca5b6b7b57d87c318c5180f2079fa068b5a0e9",
+      "observation": "You move the apple 3 to the garbagecan 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

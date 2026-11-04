@@ -1,0 +1,145 @@
+{
+  "id": "r38-trial-1",
+  "stage": "trial",
+  "task": {
+    "id": "valid_seen/pick_heat_then_place_in_recep-Tomato-None-Fridge-23/trial_T20190909_082320_103350/game.tw-pddl",
+    "game_path": "valid_seen/pick_heat_then_place_in_recep-Tomato-None-Fridge-23/trial_T20190909_082320_103350/game.tw-pddl",
+    "official_split": "valid_seen",
+    "task_type": "pick_heat_then_place_in_recep",
+    "object": "Tomato",
+    "target": "Fridge",
+    "scene": "23",
+    "game_sha256": "2d3cb73d8f274ef626b6c8992f164438d78f351a5eaa771643d627106c39a09e"
+  },
+  "input_hash": "4e63a59da8fbae588c6820a2bc0963d79072cafbf48d74e31ad83cf725d93e5b",
+  "memory_hash": "1187b7faad6aba91b945000e6d7145d8efd150d05009a1a123bbd555296ed2d2",
+  "actor_seed": 1011460932,
+  "environment_seed": 1040202571,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 1, a diningtable 1, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: heat some tomato and put it in fridge.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "23922342c3c13e1f4ed6604433c1891728246670767c887dbe365c5616478cc0",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "fb931116112fd1e5bf86ecbc6f315d20c8ed9d25a8ffd867319517467bcb84f8",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a apple 2, a bread 1, a dishsponge 3, a peppershaker 1, a spatula 1, a tomato 2, and a winebottle 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "take tomato 2 from countertop 1",
+      "raw_model_output": "take tomato 2 from countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "32c5b455fc8705cf740cbdd58955cb68978c8d69b38220c801a82bde1589f4e1",
+      "observation": "You pick up the tomato 2 from the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "heat tomato 2 with microwave 1",
+      "raw_model_output": "heat tomato 2 with microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "5dfade4731ea56a9b245066b941550a25dbfdd49cf407a0b6422dc72a19f2bb7",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "go to microwave 1",
+      "raw_model_output": "go to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "ff75dafffcf61f40107a3f2f5ca8a0c5a1a67a46c91ee92f72d9440c1e4c754b",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "open microwave 1",
+      "raw_model_output": "open microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "d0054e0453b74d793593ecad9fe5926ea386bfd959af1d033634a2917cc68a9e",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a egg 1, and a potato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "heat tomato 2 with microwave 1",
+      "raw_model_output": "heat tomato 2 with microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "aba5f115f55679c39d6e17b8cc6d53a0febd6842f59e0ae2ae845762854a491c",
+      "observation": "You heat the tomato 2 using the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "move tomato 2 to fridge 1",
+      "raw_model_output": "move tomato 2 to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "add35e3ead01bf30ba6346a8e045ff94c54207ff2a4d60f19a1e1750cad02b22",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "f31f9ef3bb8738e5d51d982ad8413813a7c5d6965e0e0be8040670c2b9577d04",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "open fridge 1",
+      "raw_model_output": "open fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "62bfbf4d9fa95e1ffbcd1548d636907627b1910017580d1d206b094330e297ce",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a apple 3, a cup 1, a mug 1, a potato 3, a tomato 4, and a tomato 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "move tomato 2 to fridge 1",
+      "raw_model_output": "move tomato 2 to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "6879e620719185d4f3da829b52780c1ae3d154073b9d53a9d2abedd3596f348b",
+      "observation": "You move the tomato 2 to the fridge 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

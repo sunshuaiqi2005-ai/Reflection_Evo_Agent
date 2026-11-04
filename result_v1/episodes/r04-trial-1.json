@@ -1,0 +1,145 @@
+{
+  "id": "r04-trial-1",
+  "stage": "trial",
+  "task": {
+    "id": "train/pick_clean_then_place_in_recep-DishSponge-None-CounterTop-427/trial_T20190909_010859_090150/game.tw-pddl",
+    "game_path": "train/pick_clean_then_place_in_recep-DishSponge-None-CounterTop-427/trial_T20190909_010859_090150/game.tw-pddl",
+    "official_split": "train",
+    "task_type": "pick_clean_then_place_in_recep",
+    "object": "DishSponge",
+    "target": "CounterTop",
+    "scene": "427",
+    "game_sha256": "48332c786c95538f116af88b1f06e3b511778f12f769c1e5c40db32912f2bc40"
+  },
+  "input_hash": "1451ebb676568c4f6dc4c72ce705edd78f6e83c231c694271c46270d362f199d",
+  "memory_hash": "186bd1ef943e2b05e33059ad3a1cfada3d3aa3e4b53a8bb4a9b0c783bd5712ee",
+  "actor_seed": 432627175,
+  "environment_seed": 1209270076,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a bathtubbasin 1, a countertop 1, a drawer 8, a drawer 7, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a garbagecan 1, a handtowelholder 2, a handtowelholder 1, a sinkbasin 1, a toilet 1, a toiletpaperhanger 1, and a towelholder 1.\n\nYour task is to: clean some dishsponge and put it in countertop.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "0194f9177d01454a8ef71b6a05bd55afe411864246da68f2778e57848f69e545",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "6df13a9079fc771bb6971717541f66316cabeb51528871a619d89af0b438a6ff",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a dishsponge 2, a soapbottle 2, a soapbottle 1, and a tissuebox 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "take dishsponge 2 from countertop 1",
+      "raw_model_output": "take dishsponge 2 from countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "413627be1e71d2e897659e9d4dc1fad4f66d316cbb72a50134188b6d892ddca1",
+      "observation": "You pick up the dishsponge 2 from the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "clean dishsponge 2 with sinkbasin 1",
+      "raw_model_output": "clean dishsponge 2 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "cc9c3a0bbd8cdb1ce54dd1ce41553d2c11ea27824a6f1ebe177a03ea47b259f8",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "clean dishsponge 2 with sinkbasin 1",
+      "raw_model_output": "clean dishsponge 2 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "0a38d36c0b45e908f04ff5be7ebefacb6e7406f184e0be36a8cd6c1614f7120c",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "c6b1978879b49853e8689f154d5d77d8f5630e782a8cb71294b9ffef71cf97c3",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see a soapbar 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "clean dishsponge 2 with sinkbasin 1",
+      "raw_model_output": "clean dishsponge 2 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "725d4f67a5eec4817796fcc86362cdc69b189add0f9af4244811813c5210ebe6",
+      "observation": "You clean the dishsponge 2 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "move dishsponge 2 to countertop 1",
+      "raw_model_output": "move dishsponge 2 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "a2f98ac0a46f9958f00701b0673a880dc5d6d43e5ca597410cc07e1e4131389d",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "move dishsponge 2 to countertop 1",
+      "raw_model_output": "move dishsponge 2 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "69848c17a60888c2c563b87f81efb77dacf2e793a4ac9b5540cc2e156abc489f",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "38cd63aaafd5b8f9c2ffcce9e3c243812dbe7c7f140fa32c940a272bc84f5157",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a soapbottle 2, a soapbottle 1, and a tissuebox 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "move dishsponge 2 to countertop 1",
+      "raw_model_output": "move dishsponge 2 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "304a551fee5e0fb15f27497351f6e084fe1bcc0203366267473ff36613b45773",
+      "observation": "You move the dishsponge 2 to the countertop 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

@@ -1,0 +1,8 @@
+{
+  "analysis": "轨迹 r20-trial-2 成功完成任务：正确获取了苹果（apple 3），成功将其冷却（通过 fridge 1），并最终将其放置在 garbagecan 1 中。轨迹 r20-trial-3 虽然获取了苹果（apple 3），但未能成功冷却它（cool apple 3 with fridge 1 返回 'Nothing happens.'），导致无法完成放置步骤。阻断点出现在冷却步骤，因为冷却操作未成功执行。不确定性在于为何 'cool apple 3 with fridge 1' 在 r20-trial-3 中无效，可能与冷却条件或环境交互有关。",
+  "candidate": {
+    "trigger": "尝试冷却物体但未成功",
+    "advice": "在尝试冷却物体之前，确保物体已被正确获取，并且冷却设备（如 fridge）处于可用状态。如果冷却操作无效，应重新检查冷却设备的状态或尝试其他冷却方法。",
+    "exceptions": []
+  }
+}

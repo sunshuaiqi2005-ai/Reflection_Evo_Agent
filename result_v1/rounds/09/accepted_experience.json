@@ -1,0 +1,22 @@
+{
+  "trigger": "Attempting to cool an object using an object that is not suitable for cooling (e.g., fridge instead of a cooler or ice source).",
+  "advice": "Before attempting to cool an object, verify that the selected object is capable of cooling (e.g., a cooler, ice, or freezer). If the object is not suitable, find an appropriate cooling source and use it to complete the cooling step.",
+  "exceptions": [],
+  "id": "r09-candidate",
+  "validated_by": [
+    "r09-candidate-original"
+  ],
+  "reviewed_on": [
+    "r09-candidate-extension"
+  ],
+  "acceptance": {
+    "basis": "original_pass_then_failed_extension_review",
+    "original_validation_episode": "r09-candidate-original",
+    "extension_validation_episode": "r09-candidate-extension",
+    "originally_validated_candidate": "r09-candidate",
+    "extension_success": false,
+    "extension_review_performed": true,
+    "revised": false,
+    "post_review_revalidated": false
+  }
+}

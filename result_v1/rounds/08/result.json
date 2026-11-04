@@ -1,0 +1,179 @@
+{
+  "protocol": "original_once_extension_failure_review_append_v2",
+  "round": 8,
+  "plan": {
+    "round": 8,
+    "original": {
+      "id": "train/pick_cool_then_place_in_recep-Mug-None-CoffeeMachine-19/trial_T20190907_162137_972674/game.tw-pddl",
+      "game_path": "train/pick_cool_then_place_in_recep-Mug-None-CoffeeMachine-19/trial_T20190907_162137_972674/game.tw-pddl",
+      "official_split": "train",
+      "task_type": "pick_cool_then_place_in_recep",
+      "object": "Mug",
+      "target": "CoffeeMachine",
+      "scene": "19",
+      "game_sha256": "6b58de96e697ba40c087ff35308d5404bcc42ba49882a866a93018c374786575"
+    },
+    "extension": {
+      "id": "valid_seen/pick_cool_then_place_in_recep-Plate-None-Cabinet-27/trial_T20190906_173120_350651/game.tw-pddl",
+      "game_path": "valid_seen/pick_cool_then_place_in_recep-Plate-None-Cabinet-27/trial_T20190906_173120_350651/game.tw-pddl",
+      "official_split": "valid_seen",
+      "task_type": "pick_cool_then_place_in_recep",
+      "object": "Plate",
+      "target": "Cabinet",
+      "scene": "27",
+      "game_sha256": "a95f7eadf81e51d3acf35913312acddaf0df3b8e2b3f43f6618b3fb9f4914009"
+    },
+    "extension_seed": 274673994
+  },
+  "memory_before_hash": "186bd1ef943e2b05e33059ad3a1cfada3d3aa3e4b53a8bb4a9b0c783bd5712ee",
+  "memory_before": {
+    "version": 2,
+    "items": [
+      {
+        "trigger": "尝试清洁目标但未成功",
+        "advice": "在清洁目标之前，确保目标已被正确获取并处于可清洁状态。若清洁操作未成功，应重新检查清洁动作的执行条件，如目标是否已正确获取、清洁设备是否可用，并尝试重新执行清洁操作。此外，确保在清洁前已手持目标。",
+        "exceptions": [],
+        "id": "r01-revised",
+        "validated_by": [],
+        "reviewed_on": [
+          "r01-candidate-extension"
+        ],
+        "acceptance": {
+          "basis": "original_pass_then_failed_extension_review",
+          "original_validation_episode": "r01-candidate-original",
+          "extension_validation_episode": "r01-candidate-extension",
+          "originally_validated_candidate": "r01-candidate",
+          "extension_success": false,
+          "extension_review_performed": true,
+          "revised": true,
+          "post_review_revalidated": false
+        }
+      },
+      {
+        "trigger": "Attempting to move an object to a location without being in the correct location or without the object being in the correct state.",
+        "advice": "Ensure that the agent is in the correct location and that the object is in the correct state before attempting to move it to the target location.",
+        "exceptions": [],
+        "id": "r03-candidate",
+        "validated_by": [
+          "r03-candidate-original",
+          "r03-candidate-extension"
+        ],
+        "reviewed_on": [],
+        "acceptance": {
+          "basis": "original_and_extension_pass",
+          "original_validation_episode": "r03-candidate-original",
+          "extension_validation_episode": "r03-candidate-extension",
+          "originally_validated_candidate": "r03-candidate",
+          "extension_success": true,
+          "extension_review_performed": false,
+          "revised": false,
+          "post_review_revalidated": false
+        }
+      }
+    ],
+    "groups": [
+      {
+        "source_ids": [
+          "r01-revised"
+        ],
+        "relation": "independent"
+      },
+      {
+        "source_ids": [
+          "r03-candidate"
+        ],
+        "relation": "independent"
+      }
+    ]
+  },
+  "episodes": {
+    "trial-1": {
+      "id": "r08-trial-1",
+      "success": true,
+      "steps": 39,
+      "seed": 2012232059,
+      "memory_hash": "186bd1ef943e2b05e33059ad3a1cfada3d3aa3e4b53a8bb4a9b0c783bd5712ee"
+    },
+    "trial-2": {
+      "id": "r08-trial-2",
+      "success": true,
+      "steps": 11,
+      "seed": 890891599,
+      "memory_hash": "186bd1ef943e2b05e33059ad3a1cfada3d3aa3e4b53a8bb4a9b0c783bd5712ee"
+    },
+    "trial-3": {
+      "id": "r08-trial-3",
+      "success": true,
+      "steps": 18,
+      "seed": 476153537,
+      "memory_hash": "186bd1ef943e2b05e33059ad3a1cfada3d3aa3e4b53a8bb4a9b0c783bd5712ee"
+    }
+  },
+  "status": "skipped_all_success",
+  "pairing": {
+    "seed": 244987630,
+    "type": "all_success",
+    "trajectory_ids": []
+  },
+  "memory_after": {
+    "version": 2,
+    "items": [
+      {
+        "trigger": "尝试清洁目标但未成功",
+        "advice": "在清洁目标之前，确保目标已被正确获取并处于可清洁状态。若清洁操作未成功，应重新检查清洁动作的执行条件，如目标是否已正确获取、清洁设备是否可用，并尝试重新执行清洁操作。此外，确保在清洁前已手持目标。",
+        "exceptions": [],
+        "id": "r01-revised",
+        "validated_by": [],
+        "reviewed_on": [
+          "r01-candidate-extension"
+        ],
+        "acceptance": {
+          "basis": "original_pass_then_failed_extension_review",
+          "original_validation_episode": "r01-candidate-original",
+          "extension_validation_episode": "r01-candidate-extension",
+          "originally_validated_candidate": "r01-candidate",
+          "extension_success": false,
+          "extension_review_performed": true,
+          "revised": true,
+          "post_review_revalidated": false
+        }
+      },
+      {
+        "trigger": "Attempting to move an object to a location without being in the correct location or without the object being in the correct state.",
+        "advice": "Ensure that the agent is in the correct location and that the object is in the correct state before attempting to move it to the target location.",
+        "exceptions": [],
+        "id": "r03-candidate",
+        "validated_by": [
+          "r03-candidate-original",
+          "r03-candidate-extension"
+        ],
+        "reviewed_on": [],
+        "acceptance": {
+          "basis": "original_and_extension_pass",
+          "original_validation_episode": "r03-candidate-original",
+          "extension_validation_episode": "r03-candidate-extension",
+          "originally_validated_candidate": "r03-candidate",
+          "extension_success": true,
+          "extension_review_performed": false,
+          "revised": false,
+          "post_review_revalidated": false
+        }
+      }
+    ],
+    "groups": [
+      {
+        "source_ids": [
+          "r01-revised"
+        ],
+        "relation": "independent"
+      },
+      {
+        "source_ids": [
+          "r03-candidate"
+        ],
+        "relation": "independent"
+      }
+    ]
+  },
+  "memory_after_hash": "186bd1ef943e2b05e33059ad3a1cfada3d3aa3e4b53a8bb4a9b0c783bd5712ee"
+}

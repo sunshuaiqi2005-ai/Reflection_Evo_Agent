@@ -1,0 +1,396 @@
+{
+  "phase": "complete",
+  "started_at": "2026-11-04T04:41:11+08:00",
+  "finished_at": "2026-11-04T19:42:45+08:00",
+  "returncode": 0,
+  "rounds_completed": 40,
+  "rounds_total": 40,
+  "accepted_rounds": 9,
+  "experience_count": 9,
+  "rounds": [
+    {
+      "round": 1,
+      "status": "accepted",
+      "task_type": "pick_clean_then_place_in_recep",
+      "baseline_successes": 2,
+      "original_validation_success": true,
+      "extension_success": false,
+      "protocol_error": null
+    },
+    {
+      "round": 2,
+      "status": "skipped_all_success",
+      "task_type": "pick_heat_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 3,
+      "status": "accepted",
+      "task_type": "pick_heat_then_place_in_recep",
+      "baseline_successes": 2,
+      "original_validation_success": true,
+      "extension_success": true,
+      "protocol_error": null
+    },
+    {
+      "round": 4,
+      "status": "skipped_all_success",
+      "task_type": "pick_clean_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 5,
+      "status": "rejected_original",
+      "task_type": "pick_heat_then_place_in_recep",
+      "baseline_successes": 0,
+      "original_validation_success": false,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 6,
+      "status": "skipped_all_success",
+      "task_type": "pick_clean_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 7,
+      "status": "skipped_all_success",
+      "task_type": "pick_clean_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 8,
+      "status": "skipped_all_success",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 9,
+      "status": "accepted",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 0,
+      "original_validation_success": true,
+      "extension_success": false,
+      "protocol_error": null
+    },
+    {
+      "round": 10,
+      "status": "skipped_all_success",
+      "task_type": "pick_heat_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 11,
+      "status": "skipped_all_success",
+      "task_type": "pick_clean_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 12,
+      "status": "skipped_all_success",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 13,
+      "status": "skipped_all_success",
+      "task_type": "pick_heat_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 14,
+      "status": "rejected_original",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 1,
+      "original_validation_success": false,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 15,
+      "status": "skipped_all_success",
+      "task_type": "pick_clean_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 16,
+      "status": "accepted",
+      "task_type": "pick_clean_then_place_in_recep",
+      "baseline_successes": 2,
+      "original_validation_success": true,
+      "extension_success": true,
+      "protocol_error": null
+    },
+    {
+      "round": 17,
+      "status": "skipped_all_success",
+      "task_type": "pick_clean_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 18,
+      "status": "accepted",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 2,
+      "original_validation_success": true,
+      "extension_success": true,
+      "protocol_error": null
+    },
+    {
+      "round": 19,
+      "status": "rejected_original",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 0,
+      "original_validation_success": false,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 20,
+      "status": "accepted",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 2,
+      "original_validation_success": true,
+      "extension_success": true,
+      "protocol_error": null
+    },
+    {
+      "round": 21,
+      "status": "skipped_all_success",
+      "task_type": "pick_clean_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 22,
+      "status": "accepted",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 1,
+      "original_validation_success": true,
+      "extension_success": true,
+      "protocol_error": null
+    },
+    {
+      "round": 23,
+      "status": "rejected_original",
+      "task_type": "pick_clean_then_place_in_recep",
+      "baseline_successes": 1,
+      "original_validation_success": false,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 24,
+      "status": "accepted",
+      "task_type": "pick_clean_then_place_in_recep",
+      "baseline_successes": 1,
+      "original_validation_success": true,
+      "extension_success": true,
+      "protocol_error": null
+    },
+    {
+      "round": 25,
+      "status": "accepted",
+      "task_type": "pick_heat_then_place_in_recep",
+      "baseline_successes": 1,
+      "original_validation_success": true,
+      "extension_success": true,
+      "protocol_error": null
+    },
+    {
+      "round": 26,
+      "status": "rejected_original",
+      "task_type": "pick_clean_then_place_in_recep",
+      "baseline_successes": 1,
+      "original_validation_success": false,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 27,
+      "status": "rejected_original",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 0,
+      "original_validation_success": false,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 28,
+      "status": "rejected_original",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 0,
+      "original_validation_success": false,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 29,
+      "status": "skipped_all_success",
+      "task_type": "pick_heat_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 30,
+      "status": "skipped_all_success",
+      "task_type": "pick_clean_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 31,
+      "status": "skipped_all_success",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 32,
+      "status": "skipped_all_success",
+      "task_type": "pick_heat_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 33,
+      "status": "skipped_all_success",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 34,
+      "status": "skipped_all_success",
+      "task_type": "pick_heat_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 35,
+      "status": "rejected_original",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 0,
+      "original_validation_success": false,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 36,
+      "status": "rejected_protocol",
+      "task_type": "pick_clean_then_place_in_recep",
+      "baseline_successes": 0,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": "r36-trial-3/step-35: empty or truncated model output; see model_calls/3d7b59e124f97f7d769c33a029b1a8c9f4bb5a8392fd9c6deef27930ee4570bb.json"
+    },
+    {
+      "round": 37,
+      "status": "skipped_all_success",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 38,
+      "status": "skipped_all_success",
+      "task_type": "pick_heat_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 39,
+      "status": "skipped_all_success",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    },
+    {
+      "round": 40,
+      "status": "skipped_all_success",
+      "task_type": "pick_cool_then_place_in_recep",
+      "baseline_successes": 3,
+      "original_validation_success": null,
+      "extension_success": null,
+      "protocol_error": null
+    }
+  ],
+  "final_test_executed": true,
+  "final_test_completed": true,
+  "baseline_tasks_completed": 20,
+  "baseline_completed": true,
+  "baseline_metrics": {
+    "successes": 12,
+    "success_rate": 0.6,
+    "mean_steps": 31.05
+  },
+  "test_tasks_total": 20,
+  "test_tasks_completed": 20,
+  "test_metrics": {
+    "initial": {
+      "successes": 12,
+      "success_rate": 0.6,
+      "mean_steps": 31.05
+    },
+    "final": {
+      "successes": 15,
+      "success_rate": 0.75,
+      "mean_steps": 22.25
+    }
+  },
+  "success_rate_delta": 0.15000000000000002
+}

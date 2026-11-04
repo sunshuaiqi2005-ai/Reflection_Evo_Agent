@@ -1,0 +1,211 @@
+{
+  "protocol": "original_once_extension_failure_review_append_v2",
+  "round": 3,
+  "plan": {
+    "round": 3,
+    "original": {
+      "id": "train/pick_heat_then_place_in_recep-Apple-None-CounterTop-2/trial_T20190908_112607_841503/game.tw-pddl",
+      "game_path": "train/pick_heat_then_place_in_recep-Apple-None-CounterTop-2/trial_T20190908_112607_841503/game.tw-pddl",
+      "official_split": "train",
+      "task_type": "pick_heat_then_place_in_recep",
+      "object": "Apple",
+      "target": "CounterTop",
+      "scene": "2",
+      "game_sha256": "3ddb3f6a9d200c070f22e082a334dc1921a7e3a9bb0f170a8a148ee46bbacb7c"
+    },
+    "extension": {
+      "id": "valid_seen/pick_heat_then_place_in_recep-Mug-None-Cabinet-26/trial_T20190909_062333_424779/game.tw-pddl",
+      "game_path": "valid_seen/pick_heat_then_place_in_recep-Mug-None-Cabinet-26/trial_T20190909_062333_424779/game.tw-pddl",
+      "official_split": "valid_seen",
+      "task_type": "pick_heat_then_place_in_recep",
+      "object": "Mug",
+      "target": "Cabinet",
+      "scene": "26",
+      "game_sha256": "e3c51ab4071c631468b5aee7ca3e4c87a9c4cdd7942c5b1e9bba84d594e59b8d"
+    },
+    "extension_seed": 1131496956
+  },
+  "memory_before_hash": "af2c22da1d006cb667652305879711e9a256a9e214cde9b2f98a8d6fc2b9a24b",
+  "memory_before": {
+    "version": 1,
+    "items": [
+      {
+        "trigger": "尝试清洁目标但未成功",
+        "advice": "在清洁目标之前，确保目标已被正确获取并处于可清洁状态。若清洁操作未成功，应重新检查清洁动作的执行条件，如目标是否已正确获取、清洁设备是否可用，并尝试重新执行清洁操作。此外，确保在清洁前已手持目标。",
+        "exceptions": [],
+        "id": "r01-revised",
+        "validated_by": [],
+        "reviewed_on": [
+          "r01-candidate-extension"
+        ],
+        "acceptance": {
+          "basis": "original_pass_then_failed_extension_review",
+          "original_validation_episode": "r01-candidate-original",
+          "extension_validation_episode": "r01-candidate-extension",
+          "originally_validated_candidate": "r01-candidate",
+          "extension_success": false,
+          "extension_review_performed": true,
+          "revised": true,
+          "post_review_revalidated": false
+        }
+      }
+    ],
+    "groups": [
+      {
+        "source_ids": [
+          "r01-revised"
+        ],
+        "relation": "independent"
+      }
+    ]
+  },
+  "episodes": {
+    "trial-1": {
+      "id": "r03-trial-1",
+      "success": false,
+      "steps": 50,
+      "seed": 394417919,
+      "memory_hash": "af2c22da1d006cb667652305879711e9a256a9e214cde9b2f98a8d6fc2b9a24b"
+    },
+    "trial-2": {
+      "id": "r03-trial-2",
+      "success": true,
+      "steps": 18,
+      "seed": 1721234519,
+      "memory_hash": "af2c22da1d006cb667652305879711e9a256a9e214cde9b2f98a8d6fc2b9a24b"
+    },
+    "trial-3": {
+      "id": "r03-trial-3",
+      "success": true,
+      "steps": 21,
+      "seed": 5282450,
+      "memory_hash": "af2c22da1d006cb667652305879711e9a256a9e214cde9b2f98a8d6fc2b9a24b"
+    },
+    "candidate-original": {
+      "id": "r03-candidate-original",
+      "success": true,
+      "steps": 17,
+      "seed": 1992620026,
+      "memory_hash": "29d3f501b81f93ef19f43e6e110cd1eac6c5e427e4c7f64a7a4812b90839da0c"
+    },
+    "candidate-extension": {
+      "id": "r03-candidate-extension",
+      "success": true,
+      "steps": 30,
+      "seed": 1829441603,
+      "memory_hash": "29d3f501b81f93ef19f43e6e110cd1eac6c5e427e4c7f64a7a4812b90839da0c"
+    }
+  },
+  "status": "accepted",
+  "pairing": {
+    "seed": 686377940,
+    "type": "success_failure",
+    "trajectory_ids": [
+      "r03-trial-3",
+      "r03-trial-1"
+    ]
+  },
+  "candidate": {
+    "trigger": "Attempting to move an object to a location without being in the correct location or without the object being in the correct state.",
+    "advice": "Ensure that the agent is in the correct location and that the object is in the correct state before attempting to move it to the target location.",
+    "exceptions": [],
+    "id": "r03-candidate",
+    "validated_by": [
+      "r03-candidate-original",
+      "r03-candidate-extension"
+    ],
+    "reviewed_on": [],
+    "acceptance": {
+      "basis": "original_and_extension_pass",
+      "original_validation_episode": "r03-candidate-original",
+      "extension_validation_episode": "r03-candidate-extension",
+      "originally_validated_candidate": "r03-candidate",
+      "extension_success": true,
+      "extension_review_performed": false,
+      "revised": false,
+      "post_review_revalidated": false
+    }
+  },
+  "accepted_experience": {
+    "trigger": "Attempting to move an object to a location without being in the correct location or without the object being in the correct state.",
+    "advice": "Ensure that the agent is in the correct location and that the object is in the correct state before attempting to move it to the target location.",
+    "exceptions": [],
+    "id": "r03-candidate",
+    "validated_by": [
+      "r03-candidate-original",
+      "r03-candidate-extension"
+    ],
+    "reviewed_on": [],
+    "acceptance": {
+      "basis": "original_and_extension_pass",
+      "original_validation_episode": "r03-candidate-original",
+      "extension_validation_episode": "r03-candidate-extension",
+      "originally_validated_candidate": "r03-candidate",
+      "extension_success": true,
+      "extension_review_performed": false,
+      "revised": false,
+      "post_review_revalidated": false
+    }
+  },
+  "memory_after": {
+    "version": 2,
+    "items": [
+      {
+        "trigger": "尝试清洁目标但未成功",
+        "advice": "在清洁目标之前，确保目标已被正确获取并处于可清洁状态。若清洁操作未成功，应重新检查清洁动作的执行条件，如目标是否已正确获取、清洁设备是否可用，并尝试重新执行清洁操作。此外，确保在清洁前已手持目标。",
+        "exceptions": [],
+        "id": "r01-revised",
+        "validated_by": [],
+        "reviewed_on": [
+          "r01-candidate-extension"
+        ],
+        "acceptance": {
+          "basis": "original_pass_then_failed_extension_review",
+          "original_validation_episode": "r01-candidate-original",
+          "extension_validation_episode": "r01-candidate-extension",
+          "originally_validated_candidate": "r01-candidate",
+          "extension_success": false,
+          "extension_review_performed": true,
+          "revised": true,
+          "post_review_revalidated": false
+        }
+      },
+      {
+        "trigger": "Attempting to move an object to a location without being in the correct location or without the object being in the correct state.",
+        "advice": "Ensure that the agent is in the correct location and that the object is in the correct state before attempting to move it to the target location.",
+        "exceptions": [],
+        "id": "r03-candidate",
+        "validated_by": [
+          "r03-candidate-original",
+          "r03-candidate-extension"
+        ],
+        "reviewed_on": [],
+        "acceptance": {
+          "basis": "original_and_extension_pass",
+          "original_validation_episode": "r03-candidate-original",
+          "extension_validation_episode": "r03-candidate-extension",
+          "originally_validated_candidate": "r03-candidate",
+          "extension_success": true,
+          "extension_review_performed": false,
+          "revised": false,
+          "post_review_revalidated": false
+        }
+      }
+    ],
+    "groups": [
+      {
+        "source_ids": [
+          "r01-revised"
+        ],
+        "relation": "independent"
+      },
+      {
+        "source_ids": [
+          "r03-candidate"
+        ],
+        "relation": "independent"
+      }
+    ]
+  },
+  "memory_after_hash": "186bd1ef943e2b05e33059ad3a1cfada3d3aa3e4b53a8bb4a9b0c783bd5712ee"
+}

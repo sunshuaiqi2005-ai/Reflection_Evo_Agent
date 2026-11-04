@@ -1,0 +1,235 @@
+{
+  "protocol": "original_once_extension_failure_review_append_v2",
+  "round": 15,
+  "plan": {
+    "round": 15,
+    "original": {
+      "id": "train/pick_clean_then_place_in_recep-Bowl-None-Shelf-7/trial_T20190908_152915_959135/game.tw-pddl",
+      "game_path": "train/pick_clean_then_place_in_recep-Bowl-None-Shelf-7/trial_T20190908_152915_959135/game.tw-pddl",
+      "official_split": "train",
+      "task_type": "pick_clean_then_place_in_recep",
+      "object": "Bowl",
+      "target": "Shelf",
+      "scene": "7",
+      "game_sha256": "5ae2c12d9128476210ad474f9c46a1e654ddcfc749ef71ba3a4c0d78a101d118"
+    },
+    "extension": {
+      "id": "valid_seen/pick_clean_then_place_in_recep-SoapBar-None-Toilet-410/trial_T20190906_201106_979461/game.tw-pddl",
+      "game_path": "valid_seen/pick_clean_then_place_in_recep-SoapBar-None-Toilet-410/trial_T20190906_201106_979461/game.tw-pddl",
+      "official_split": "valid_seen",
+      "task_type": "pick_clean_then_place_in_recep",
+      "object": "SoapBar",
+      "target": "Toilet",
+      "scene": "410",
+      "game_sha256": "5de332286ca1fa87a26753e5a5d0c43444529b69b260806c4c43aedee3a60fde"
+    },
+    "extension_seed": 1781203294
+  },
+  "memory_before_hash": "5a751888179793903f2a1e8ad3271afb29c34a908c9872b7751a28c486225505",
+  "memory_before": {
+    "version": 3,
+    "items": [
+      {
+        "trigger": "尝试清洁目标但未成功",
+        "advice": "在清洁目标之前，确保目标已被正确获取并处于可清洁状态。若清洁操作未成功，应重新检查清洁动作的执行条件，如目标是否已正确获取、清洁设备是否可用，并尝试重新执行清洁操作。此外，确保在清洁前已手持目标。",
+        "exceptions": [],
+        "id": "r01-revised",
+        "validated_by": [],
+        "reviewed_on": [
+          "r01-candidate-extension"
+        ],
+        "acceptance": {
+          "basis": "original_pass_then_failed_extension_review",
+          "original_validation_episode": "r01-candidate-original",
+          "extension_validation_episode": "r01-candidate-extension",
+          "originally_validated_candidate": "r01-candidate",
+          "extension_success": false,
+          "extension_review_performed": true,
+          "revised": true,
+          "post_review_revalidated": false
+        }
+      },
+      {
+        "trigger": "Attempting to move an object to a location without being in the correct location or without the object being in the correct state.",
+        "advice": "Ensure that the agent is in the correct location and that the object is in the correct state before attempting to move it to the target location.",
+        "exceptions": [],
+        "id": "r03-candidate",
+        "validated_by": [
+          "r03-candidate-original",
+          "r03-candidate-extension"
+        ],
+        "reviewed_on": [],
+        "acceptance": {
+          "basis": "original_and_extension_pass",
+          "original_validation_episode": "r03-candidate-original",
+          "extension_validation_episode": "r03-candidate-extension",
+          "originally_validated_candidate": "r03-candidate",
+          "extension_success": true,
+          "extension_review_performed": false,
+          "revised": false,
+          "post_review_revalidated": false
+        }
+      },
+      {
+        "trigger": "Attempting to cool an object using an object that is not suitable for cooling (e.g., fridge instead of a cooler or ice source).",
+        "advice": "Before attempting to cool an object, verify that the selected object is capable of cooling (e.g., a cooler, ice, or freezer). If the object is not suitable, find an appropriate cooling source and use it to complete the cooling step.",
+        "exceptions": [],
+        "id": "r09-candidate",
+        "validated_by": [
+          "r09-candidate-original"
+        ],
+        "reviewed_on": [
+          "r09-candidate-extension"
+        ],
+        "acceptance": {
+          "basis": "original_pass_then_failed_extension_review",
+          "original_validation_episode": "r09-candidate-original",
+          "extension_validation_episode": "r09-candidate-extension",
+          "originally_validated_candidate": "r09-candidate",
+          "extension_success": false,
+          "extension_review_performed": true,
+          "revised": false,
+          "post_review_revalidated": false
+        }
+      }
+    ],
+    "groups": [
+      {
+        "source_ids": [
+          "r01-revised"
+        ],
+        "relation": "independent"
+      },
+      {
+        "source_ids": [
+          "r03-candidate"
+        ],
+        "relation": "independent"
+      },
+      {
+        "source_ids": [
+          "r09-candidate"
+        ],
+        "relation": "independent"
+      }
+    ]
+  },
+  "episodes": {
+    "trial-1": {
+      "id": "r15-trial-1",
+      "success": true,
+      "steps": 40,
+      "seed": 522891478,
+      "memory_hash": "5a751888179793903f2a1e8ad3271afb29c34a908c9872b7751a28c486225505"
+    },
+    "trial-2": {
+      "id": "r15-trial-2",
+      "success": true,
+      "steps": 41,
+      "seed": 76864566,
+      "memory_hash": "5a751888179793903f2a1e8ad3271afb29c34a908c9872b7751a28c486225505"
+    },
+    "trial-3": {
+      "id": "r15-trial-3",
+      "success": true,
+      "steps": 43,
+      "seed": 1942702152,
+      "memory_hash": "5a751888179793903f2a1e8ad3271afb29c34a908c9872b7751a28c486225505"
+    }
+  },
+  "status": "skipped_all_success",
+  "pairing": {
+    "seed": 419966044,
+    "type": "all_success",
+    "trajectory_ids": []
+  },
+  "memory_after": {
+    "version": 3,
+    "items": [
+      {
+        "trigger": "尝试清洁目标但未成功",
+        "advice": "在清洁目标之前，确保目标已被正确获取并处于可清洁状态。若清洁操作未成功，应重新检查清洁动作的执行条件，如目标是否已正确获取、清洁设备是否可用，并尝试重新执行清洁操作。此外，确保在清洁前已手持目标。",
+        "exceptions": [],
+        "id": "r01-revised",
+        "validated_by": [],
+        "reviewed_on": [
+          "r01-candidate-extension"
+        ],
+        "acceptance": {
+          "basis": "original_pass_then_failed_extension_review",
+          "original_validation_episode": "r01-candidate-original",
+          "extension_validation_episode": "r01-candidate-extension",
+          "originally_validated_candidate": "r01-candidate",
+          "extension_success": false,
+          "extension_review_performed": true,
+          "revised": true,
+          "post_review_revalidated": false
+        }
+      },
+      {
+        "trigger": "Attempting to move an object to a location without being in the correct location or without the object being in the correct state.",
+        "advice": "Ensure that the agent is in the correct location and that the object is in the correct state before attempting to move it to the target location.",
+        "exceptions": [],
+        "id": "r03-candidate",
+        "validated_by": [
+          "r03-candidate-original",
+          "r03-candidate-extension"
+        ],
+        "reviewed_on": [],
+        "acceptance": {
+          "basis": "original_and_extension_pass",
+          "original_validation_episode": "r03-candidate-original",
+          "extension_validation_episode": "r03-candidate-extension",
+          "originally_validated_candidate": "r03-candidate",
+          "extension_success": true,
+          "extension_review_performed": false,
+          "revised": false,
+          "post_review_revalidated": false
+        }
+      },
+      {
+        "trigger": "Attempting to cool an object using an object that is not suitable for cooling (e.g., fridge instead of a cooler or ice source).",
+        "advice": "Before attempting to cool an object, verify that the selected object is capable of cooling (e.g., a cooler, ice, or freezer). If the object is not suitable, find an appropriate cooling source and use it to complete the cooling step.",
+        "exceptions": [],
+        "id": "r09-candidate",
+        "validated_by": [
+          "r09-candidate-original"
+        ],
+        "reviewed_on": [
+          "r09-candidate-extension"
+        ],
+        "acceptance": {
+          "basis": "original_pass_then_failed_extension_review",
+          "original_validation_episode": "r09-candidate-original",
+          "extension_validation_episode": "r09-candidate-extension",
+          "originally_validated_candidate": "r09-candidate",
+          "extension_success": false,
+          "extension_review_performed": true,
+          "revised": false,
+          "post_review_revalidated": false
+        }
+      }
+    ],
+    "groups": [
+      {
+        "source_ids": [
+          "r01-revised"
+        ],
+        "relation": "independent"
+      },
+      {
+        "source_ids": [
+          "r03-candidate"
+        ],
+        "relation": "independent"
+      },
+      {
+        "source_ids": [
+          "r09-candidate"
+        ],
+        "relation": "independent"
+      }
+    ]
+  },
+  "memory_after_hash": "5a751888179793903f2a1e8ad3271afb29c34a908c9872b7751a28c486225505"
+}

@@ -1,0 +1,12 @@
+{
+  "source_run": "compare40-v2-20261104-044111",
+  "original_file_count": 5726,
+  "original_bytes": 47162584,
+  "archive": "compare40-v2-20261104-044111.tar.xz",
+  "archive_bytes": 1379436,
+  "archive_sha256": "90680a326c126d8960c25b3a0726c1058bfe937df41e56390970ab4665fe8aad",
+  "archive_git_blob_sha1": "4731a50333d4a052ed57868de2957a74aac4d57d",
+  "all_original_files_verified": true,
+  "model_calls_included": 5433,
+  "raw_run_unchanged": true
+}

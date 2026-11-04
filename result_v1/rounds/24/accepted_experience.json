@@ -1,0 +1,21 @@
+{
+  "trigger": "在搜索目标物体时未能正确识别其位置或访问无效的容器。",
+  "advice": "在尝试访问容器或物体前，应确认其存在性，并优先搜索已知可能包含目标物体的区域。",
+  "exceptions": [],
+  "id": "r24-candidate",
+  "validated_by": [
+    "r24-candidate-original",
+    "r24-candidate-extension"
+  ],
+  "reviewed_on": [],
+  "acceptance": {
+    "basis": "original_and_extension_pass",
+    "original_validation_episode": "r24-candidate-original",
+    "extension_validation_episode": "r24-candidate-extension",
+    "originally_validated_candidate": "r24-candidate",
+    "extension_success": true,
+    "extension_review_performed": false,
+    "revised": false,
+    "post_review_revalidated": false
+  }
+}

@@ -1,0 +1,1498 @@
+  test-001-initial: start (memory v0)
+    test-001-initial: step 5/50
+    test-001-initial: step 10/50
+    test-001-initial: step 15/50
+  test-001-initial: success (17 steps)
+Pre-training baseline 1/20 complete
+  test-002-initial: start (memory v0)
+    test-002-initial: step 5/50
+    test-002-initial: step 10/50
+    test-002-initial: step 15/50
+    test-002-initial: step 20/50
+    test-002-initial: step 25/50
+    test-002-initial: step 30/50
+    test-002-initial: step 35/50
+    test-002-initial: step 40/50
+    test-002-initial: step 45/50
+    test-002-initial: step 50/50
+  test-002-initial: failure (50 steps)
+Pre-training baseline 2/20 complete
+  test-003-initial: start (memory v0)
+    test-003-initial: step 5/50
+    test-003-initial: step 10/50
+    test-003-initial: step 15/50
+    test-003-initial: step 20/50
+    test-003-initial: step 25/50
+    test-003-initial: step 30/50
+    test-003-initial: step 35/50
+    test-003-initial: step 40/50
+    test-003-initial: step 45/50
+  test-003-initial: success (48 steps)
+Pre-training baseline 3/20 complete
+  test-004-initial: start (memory v0)
+    test-004-initial: step 5/50
+    test-004-initial: step 10/50
+    test-004-initial: step 15/50
+    test-004-initial: step 20/50
+  test-004-initial: success (21 steps)
+Pre-training baseline 4/20 complete
+  test-005-initial: start (memory v0)
+    test-005-initial: step 5/50
+    test-005-initial: step 10/50
+    test-005-initial: step 15/50
+    test-005-initial: step 20/50
+    test-005-initial: step 25/50
+    test-005-initial: step 30/50
+    test-005-initial: step 35/50
+    test-005-initial: step 40/50
+    test-005-initial: step 45/50
+    test-005-initial: step 50/50
+  test-005-initial: failure (50 steps)
+Pre-training baseline 5/20 complete
+  test-006-initial: start (memory v0)
+    test-006-initial: step 5/50
+    test-006-initial: step 10/50
+    test-006-initial: step 15/50
+  test-006-initial: success (16 steps)
+Pre-training baseline 6/20 complete
+  test-007-initial: start (memory v0)
+    test-007-initial: step 5/50
+    test-007-initial: step 10/50
+    test-007-initial: step 15/50
+    test-007-initial: step 20/50
+    test-007-initial: step 25/50
+    test-007-initial: step 30/50
+    test-007-initial: step 35/50
+    test-007-initial: step 40/50
+    test-007-initial: step 45/50
+    test-007-initial: step 50/50
+  test-007-initial: failure (50 steps)
+Pre-training baseline 7/20 complete
+  test-008-initial: start (memory v0)
+    test-008-initial: step 5/50
+    test-008-initial: step 10/50
+    test-008-initial: step 15/50
+    test-008-initial: step 20/50
+    test-008-initial: step 25/50
+    test-008-initial: step 30/50
+    test-008-initial: step 35/50
+    test-008-initial: step 40/50
+    test-008-initial: step 45/50
+    test-008-initial: step 50/50
+  test-008-initial: failure (50 steps)
+Pre-training baseline 8/20 complete
+  test-009-initial: start (memory v0)
+    test-009-initial: step 5/50
+    test-009-initial: step 10/50
+    test-009-initial: step 15/50
+    test-009-initial: step 20/50
+    test-009-initial: step 25/50
+  test-009-initial: success (25 steps)
+Pre-training baseline 9/20 complete
+  test-010-initial: start (memory v0)
+    test-010-initial: step 5/50
+    test-010-initial: step 10/50
+  test-010-initial: success (14 steps)
+Pre-training baseline 10/20 complete
+  test-011-initial: start (memory v0)
+    test-011-initial: step 5/50
+    test-011-initial: step 10/50
+    test-011-initial: step 15/50
+    test-011-initial: step 20/50
+    test-011-initial: step 25/50
+    test-011-initial: step 30/50
+    test-011-initial: step 35/50
+    test-011-initial: step 40/50
+    test-011-initial: step 45/50
+    test-011-initial: step 50/50
+  test-011-initial: failure (50 steps)
+Pre-training baseline 11/20 complete
+  test-012-initial: start (memory v0)
+    test-012-initial: step 5/50
+    test-012-initial: step 10/50
+    test-012-initial: step 15/50
+    test-012-initial: step 20/50
+  test-012-initial: success (21 steps)
+Pre-training baseline 12/20 complete
+  test-013-initial: start (memory v0)
+    test-013-initial: step 5/50
+    test-013-initial: step 10/50
+  test-013-initial: success (11 steps)
+Pre-training baseline 13/20 complete
+  test-014-initial: start (memory v0)
+    test-014-initial: step 5/50
+    test-014-initial: step 10/50
+  test-014-initial: success (11 steps)
+Pre-training baseline 14/20 complete
+  test-015-initial: start (memory v0)
+    test-015-initial: step 5/50
+  test-015-initial: success (9 steps)
+Pre-training baseline 15/20 complete
+  test-016-initial: start (memory v0)
+    test-016-initial: step 5/50
+    test-016-initial: step 10/50
+    test-016-initial: step 15/50
+  test-016-initial: success (17 steps)
+Pre-training baseline 16/20 complete
+  test-017-initial: start (memory v0)
+    test-017-initial: step 5/50
+    test-017-initial: step 10/50
+  test-017-initial: success (11 steps)
+Pre-training baseline 17/20 complete
+  test-018-initial: start (memory v0)
+    test-018-initial: step 5/50
+    test-018-initial: step 10/50
+    test-018-initial: step 15/50
+    test-018-initial: step 20/50
+    test-018-initial: step 25/50
+    test-018-initial: step 30/50
+    test-018-initial: step 35/50
+    test-018-initial: step 40/50
+    test-018-initial: step 45/50
+    test-018-initial: step 50/50
+  test-018-initial: failure (50 steps)
+Pre-training baseline 18/20 complete
+  test-019-initial: start (memory v0)
+    test-019-initial: step 5/50
+    test-019-initial: step 10/50
+    test-019-initial: step 15/50
+    test-019-initial: step 20/50
+    test-019-initial: step 25/50
+    test-019-initial: step 30/50
+    test-019-initial: step 35/50
+    test-019-initial: step 40/50
+    test-019-initial: step 45/50
+    test-019-initial: step 50/50
+  test-019-initial: failure (50 steps)
+Pre-training baseline 19/20 complete
+  test-020-initial: start (memory v0)
+    test-020-initial: step 5/50
+    test-020-initial: step 10/50
+    test-020-initial: step 15/50
+    test-020-initial: step 20/50
+    test-020-initial: step 25/50
+    test-020-initial: step 30/50
+    test-020-initial: step 35/50
+    test-020-initial: step 40/50
+    test-020-initial: step 45/50
+    test-020-initial: step 50/50
+  test-020-initial: failure (50 steps)
+Pre-training baseline 20/20 complete
+  r01-trial-1: start (memory v0)
+    r01-trial-1: step 5/50
+    r01-trial-1: step 10/50
+    r01-trial-1: step 15/50
+  r01-trial-1: success (15 steps)
+  r01-trial-2: start (memory v0)
+    r01-trial-2: step 5/50
+    r01-trial-2: step 10/50
+    r01-trial-2: step 15/50
+    r01-trial-2: step 20/50
+    r01-trial-2: step 25/50
+    r01-trial-2: step 30/50
+    r01-trial-2: step 35/50
+    r01-trial-2: step 40/50
+    r01-trial-2: step 45/50
+    r01-trial-2: step 50/50
+  r01-trial-2: failure (50 steps)
+  r01-trial-3: start (memory v0)
+    r01-trial-3: step 5/50
+    r01-trial-3: step 10/50
+    r01-trial-3: step 15/50
+  r01-trial-3: success (15 steps)
+  r01-candidate-original: start (memory v0)
+    r01-candidate-original: step 5/50
+    r01-candidate-original: step 10/50
+    r01-candidate-original: step 15/50
+    r01-candidate-original: step 20/50
+    r01-candidate-original: step 25/50
+    r01-candidate-original: step 30/50
+    r01-candidate-original: step 35/50
+  r01-candidate-original: success (37 steps)
+  r01-candidate-extension: start (memory v0)
+    r01-candidate-extension: step 5/50
+    r01-candidate-extension: step 10/50
+    r01-candidate-extension: step 15/50
+    r01-candidate-extension: step 20/50
+    r01-candidate-extension: step 25/50
+    r01-candidate-extension: step 30/50
+    r01-candidate-extension: step 35/50
+    r01-candidate-extension: step 40/50
+    r01-candidate-extension: step 45/50
+    r01-candidate-extension: step 50/50
+  r01-candidate-extension: failure (50 steps)
+  Round 1: extension failed; review candidate once
+Round 1/40: accepted; memory version 1
+  r02-trial-1: start (memory v1)
+    r02-trial-1: step 5/50
+    r02-trial-1: step 10/50
+  r02-trial-1: success (10 steps)
+  r02-trial-2: start (memory v1)
+    r02-trial-2: step 5/50
+    r02-trial-2: step 10/50
+  r02-trial-2: success (10 steps)
+  r02-trial-3: start (memory v1)
+    r02-trial-3: step 5/50
+    r02-trial-3: step 10/50
+    r02-trial-3: step 15/50
+    r02-trial-3: step 20/50
+  r02-trial-3: success (22 steps)
+Round 2/40: skipped_all_success; memory version 1
+  r03-trial-1: start (memory v1)
+    r03-trial-1: step 5/50
+    r03-trial-1: step 10/50
+    r03-trial-1: step 15/50
+    r03-trial-1: step 20/50
+    r03-trial-1: step 25/50
+    r03-trial-1: step 30/50
+    r03-trial-1: step 35/50
+    r03-trial-1: step 40/50
+    r03-trial-1: step 45/50
+    r03-trial-1: step 50/50
+  r03-trial-1: failure (50 steps)
+  r03-trial-2: start (memory v1)
+    r03-trial-2: step 5/50
+    r03-trial-2: step 10/50
+    r03-trial-2: step 15/50
+  r03-trial-2: success (18 steps)
+  r03-trial-3: start (memory v1)
+    r03-trial-3: step 5/50
+    r03-trial-3: step 10/50
+    r03-trial-3: step 15/50
+    r03-trial-3: step 20/50
+  r03-trial-3: success (21 steps)
+  r03-candidate-original: start (memory v1)
+    r03-candidate-original: step 5/50
+    r03-candidate-original: step 10/50
+    r03-candidate-original: step 15/50
+  r03-candidate-original: success (17 steps)
+  r03-candidate-extension: start (memory v1)
+    r03-candidate-extension: step 5/50
+    r03-candidate-extension: step 10/50
+    r03-candidate-extension: step 15/50
+    r03-candidate-extension: step 20/50
+    r03-candidate-extension: step 25/50
+    r03-candidate-extension: step 30/50
+  r03-candidate-extension: success (30 steps)
+  Round 3: extension passed; accept candidate directly
+Round 3/40: accepted; memory version 2
+  r04-trial-1: start (memory v2)
+    r04-trial-1: step 5/50
+    r04-trial-1: step 10/50
+  r04-trial-1: success (11 steps)
+  r04-trial-2: start (memory v2)
+    r04-trial-2: step 5/50
+    r04-trial-2: step 10/50
+  r04-trial-2: success (10 steps)
+  r04-trial-3: start (memory v2)
+    r04-trial-3: step 5/50
+    r04-trial-3: step 10/50
+  r04-trial-3: success (10 steps)
+Round 4/40: skipped_all_success; memory version 2
+  r05-trial-1: start (memory v2)
+    r05-trial-1: step 5/50
+    r05-trial-1: step 10/50
+    r05-trial-1: step 15/50
+    r05-trial-1: step 20/50
+    r05-trial-1: step 25/50
+    r05-trial-1: step 30/50
+    r05-trial-1: step 35/50
+    r05-trial-1: step 40/50
+    r05-trial-1: step 45/50
+    r05-trial-1: step 50/50
+  r05-trial-1: failure (50 steps)
+  r05-trial-2: start (memory v2)
+    r05-trial-2: step 5/50
+    r05-trial-2: step 10/50
+    r05-trial-2: step 15/50
+    r05-trial-2: step 20/50
+    r05-trial-2: step 25/50
+    r05-trial-2: step 30/50
+    r05-trial-2: step 35/50
+    r05-trial-2: step 40/50
+    r05-trial-2: step 45/50
+    r05-trial-2: step 50/50
+  r05-trial-2: failure (50 steps)
+  r05-trial-3: start (memory v2)
+    r05-trial-3: step 5/50
+    r05-trial-3: step 10/50
+    r05-trial-3: step 15/50
+    r05-trial-3: step 20/50
+    r05-trial-3: step 25/50
+    r05-trial-3: step 30/50
+    r05-trial-3: step 35/50
+    r05-trial-3: step 40/50
+    r05-trial-3: step 45/50
+    r05-trial-3: step 50/50
+  r05-trial-3: failure (50 steps)
+  r05-candidate-original: start (memory v2)
+    r05-candidate-original: step 5/50
+    r05-candidate-original: step 10/50
+    r05-candidate-original: step 15/50
+    r05-candidate-original: step 20/50
+    r05-candidate-original: step 25/50
+    r05-candidate-original: step 30/50
+    r05-candidate-original: step 35/50
+    r05-candidate-original: step 40/50
+    r05-candidate-original: step 45/50
+    r05-candidate-original: step 50/50
+  r05-candidate-original: failure (50 steps)
+Round 5/40: rejected_original; memory version 2
+  r06-trial-1: start (memory v2)
+    r06-trial-1: step 5/50
+    r06-trial-1: step 10/50
+    r06-trial-1: step 15/50
+  r06-trial-1: success (15 steps)
+  r06-trial-2: start (memory v2)
+    r06-trial-2: step 5/50
+    r06-trial-2: step 10/50
+    r06-trial-2: step 15/50
+  r06-trial-2: success (15 steps)
+  r06-trial-3: start (memory v2)
+    r06-trial-3: step 5/50
+    r06-trial-3: step 10/50
+    r06-trial-3: step 15/50
+  r06-trial-3: success (15 steps)
+Round 6/40: skipped_all_success; memory version 2
+  r07-trial-1: start (memory v2)
+    r07-trial-1: step 5/50
+    r07-trial-1: step 10/50
+    r07-trial-1: step 15/50
+  r07-trial-1: success (16 steps)
+  r07-trial-2: start (memory v2)
+    r07-trial-2: step 5/50
+    r07-trial-2: step 10/50
+    r07-trial-2: step 15/50
+  r07-trial-2: success (15 steps)
+  r07-trial-3: start (memory v2)
+    r07-trial-3: step 5/50
+    r07-trial-3: step 10/50
+  r07-trial-3: success (14 steps)
+Round 7/40: skipped_all_success; memory version 2
+  r08-trial-1: start (memory v2)
+    r08-trial-1: step 5/50
+    r08-trial-1: step 10/50
+    r08-trial-1: step 15/50
+    r08-trial-1: step 20/50
+    r08-trial-1: step 25/50
+    r08-trial-1: step 30/50
+    r08-trial-1: step 35/50
+  r08-trial-1: success (39 steps)
+  r08-trial-2: start (memory v2)
+    r08-trial-2: step 5/50
+    r08-trial-2: step 10/50
+  r08-trial-2: success (11 steps)
+  r08-trial-3: start (memory v2)
+    r08-trial-3: step 5/50
+    r08-trial-3: step 10/50
+    r08-trial-3: step 15/50
+  r08-trial-3: success (18 steps)
+Round 8/40: skipped_all_success; memory version 2
+  r09-trial-1: start (memory v2)
+    r09-trial-1: step 5/50
+    r09-trial-1: step 10/50
+    r09-trial-1: step 15/50
+    r09-trial-1: step 20/50
+    r09-trial-1: step 25/50
+    r09-trial-1: step 30/50
+    r09-trial-1: step 35/50
+    r09-trial-1: step 40/50
+    r09-trial-1: step 45/50
+    r09-trial-1: step 50/50
+  r09-trial-1: failure (50 steps)
+  r09-trial-2: start (memory v2)
+    r09-trial-2: step 5/50
+    r09-trial-2: step 10/50
+    r09-trial-2: step 15/50
+    r09-trial-2: step 20/50
+    r09-trial-2: step 25/50
+    r09-trial-2: step 30/50
+    r09-trial-2: step 35/50
+    r09-trial-2: step 40/50
+    r09-trial-2: step 45/50
+    r09-trial-2: step 50/50
+  r09-trial-2: failure (50 steps)
+  r09-trial-3: start (memory v2)
+    r09-trial-3: step 5/50
+    r09-trial-3: step 10/50
+    r09-trial-3: step 15/50
+    r09-trial-3: step 20/50
+    r09-trial-3: step 25/50
+    r09-trial-3: step 30/50
+    r09-trial-3: step 35/50
+    r09-trial-3: step 40/50
+    r09-trial-3: step 45/50
+    r09-trial-3: step 50/50
+  r09-trial-3: failure (50 steps)
+  r09-candidate-original: start (memory v2)
+    r09-candidate-original: step 5/50
+    r09-candidate-original: step 10/50
+    r09-candidate-original: step 15/50
+    r09-candidate-original: step 20/50
+  r09-candidate-original: success (22 steps)
+  r09-candidate-extension: start (memory v2)
+    r09-candidate-extension: step 5/50
+    r09-candidate-extension: step 10/50
+    r09-candidate-extension: step 15/50
+    r09-candidate-extension: step 20/50
+    r09-candidate-extension: step 25/50
+    r09-candidate-extension: step 30/50
+    r09-candidate-extension: step 35/50
+    r09-candidate-extension: step 40/50
+    r09-candidate-extension: step 45/50
+    r09-candidate-extension: step 50/50
+  r09-candidate-extension: failure (50 steps)
+  Round 9: extension failed; review candidate once
+Round 9/40: accepted; memory version 3
+  r10-trial-1: start (memory v3)
+    r10-trial-1: step 5/50
+    r10-trial-1: step 10/50
+    r10-trial-1: step 15/50
+    r10-trial-1: step 20/50
+    r10-trial-1: step 25/50
+    r10-trial-1: step 30/50
+    r10-trial-1: step 35/50
+    r10-trial-1: step 40/50
+    r10-trial-1: step 45/50
+  r10-trial-1: success (46 steps)
+  r10-trial-2: start (memory v3)
+    r10-trial-2: step 5/50
+    r10-trial-2: step 10/50
+    r10-trial-2: step 15/50
+    r10-trial-2: step 20/50
+    r10-trial-2: step 25/50
+    r10-trial-2: step 30/50
+    r10-trial-2: step 35/50
+    r10-trial-2: step 40/50
+    r10-trial-2: step 45/50
+  r10-trial-2: success (45 steps)
+  r10-trial-3: start (memory v3)
+    r10-trial-3: step 5/50
+    r10-trial-3: step 10/50
+    r10-trial-3: step 15/50
+    r10-trial-3: step 20/50
+    r10-trial-3: step 25/50
+    r10-trial-3: step 30/50
+    r10-trial-3: step 35/50
+    r10-trial-3: step 40/50
+    r10-trial-3: step 45/50
+  r10-trial-3: success (46 steps)
+Round 10/40: skipped_all_success; memory version 3
+  r11-trial-1: start (memory v3)
+    r11-trial-1: step 5/50
+    r11-trial-1: step 10/50
+  r11-trial-1: success (12 steps)
+  r11-trial-2: start (memory v3)
+    r11-trial-2: step 5/50
+    r11-trial-2: step 10/50
+  r11-trial-2: success (10 steps)
+  r11-trial-3: start (memory v3)
+    r11-trial-3: step 5/50
+    r11-trial-3: step 10/50
+  r11-trial-3: success (14 steps)
+Round 11/40: skipped_all_success; memory version 3
+  r12-trial-1: start (memory v3)
+    r12-trial-1: step 5/50
+    r12-trial-1: step 10/50
+    r12-trial-1: step 15/50
+    r12-trial-1: step 20/50
+  r12-trial-1: success (22 steps)
+  r12-trial-2: start (memory v3)
+    r12-trial-2: step 5/50
+    r12-trial-2: step 10/50
+    r12-trial-2: step 15/50
+    r12-trial-2: step 20/50
+  r12-trial-2: success (22 steps)
+  r12-trial-3: start (memory v3)
+    r12-trial-3: step 5/50
+    r12-trial-3: step 10/50
+    r12-trial-3: step 15/50
+    r12-trial-3: step 20/50
+  r12-trial-3: success (22 steps)
+Round 12/40: skipped_all_success; memory version 3
+  r13-trial-1: start (memory v3)
+    r13-trial-1: step 5/50
+    r13-trial-1: step 10/50
+    r13-trial-1: step 15/50
+    r13-trial-1: step 20/50
+    r13-trial-1: step 25/50
+  r13-trial-1: success (29 steps)
+  r13-trial-2: start (memory v3)
+    r13-trial-2: step 5/50
+    r13-trial-2: step 10/50
+    r13-trial-2: step 15/50
+  r13-trial-2: success (18 steps)
+  r13-trial-3: start (memory v3)
+    r13-trial-3: step 5/50
+    r13-trial-3: step 10/50
+    r13-trial-3: step 15/50
+  r13-trial-3: success (15 steps)
+Round 13/40: skipped_all_success; memory version 3
+  r14-trial-1: start (memory v3)
+    r14-trial-1: step 5/50
+    r14-trial-1: step 10/50
+    r14-trial-1: step 15/50
+    r14-trial-1: step 20/50
+    r14-trial-1: step 25/50
+    r14-trial-1: step 30/50
+    r14-trial-1: step 35/50
+    r14-trial-1: step 40/50
+    r14-trial-1: step 45/50
+    r14-trial-1: step 50/50
+  r14-trial-1: failure (50 steps)
+  r14-trial-2: start (memory v3)
+    r14-trial-2: step 5/50
+    r14-trial-2: step 10/50
+    r14-trial-2: step 15/50
+    r14-trial-2: step 20/50
+    r14-trial-2: step 25/50
+    r14-trial-2: step 30/50
+    r14-trial-2: step 35/50
+    r14-trial-2: step 40/50
+    r14-trial-2: step 45/50
+    r14-trial-2: step 50/50
+  r14-trial-2: failure (50 steps)
+  r14-trial-3: start (memory v3)
+    r14-trial-3: step 5/50
+    r14-trial-3: step 10/50
+    r14-trial-3: step 15/50
+    r14-trial-3: step 20/50
+    r14-trial-3: step 25/50
+    r14-trial-3: step 30/50
+    r14-trial-3: step 35/50
+    r14-trial-3: step 40/50
+    r14-trial-3: step 45/50
+    r14-trial-3: step 50/50
+  r14-trial-3: success (50 steps)
+  r14-candidate-original: start (memory v3)
+    r14-candidate-original: step 5/50
+    r14-candidate-original: step 10/50
+    r14-candidate-original: step 15/50
+    r14-candidate-original: step 20/50
+    r14-candidate-original: step 25/50
+    r14-candidate-original: step 30/50
+    r14-candidate-original: step 35/50
+    r14-candidate-original: step 40/50
+    r14-candidate-original: step 45/50
+    r14-candidate-original: step 50/50
+  r14-candidate-original: failure (50 steps)
+Round 14/40: rejected_original; memory version 3
+  r15-trial-1: start (memory v3)
+    r15-trial-1: step 5/50
+    r15-trial-1: step 10/50
+    r15-trial-1: step 15/50
+    r15-trial-1: step 20/50
+    r15-trial-1: step 25/50
+    r15-trial-1: step 30/50
+    r15-trial-1: step 35/50
+    r15-trial-1: step 40/50
+  r15-trial-1: success (40 steps)
+  r15-trial-2: start (memory v3)
+    r15-trial-2: step 5/50
+    r15-trial-2: step 10/50
+    r15-trial-2: step 15/50
+    r15-trial-2: step 20/50
+    r15-trial-2: step 25/50
+    r15-trial-2: step 30/50
+    r15-trial-2: step 35/50
+    r15-trial-2: step 40/50
+  r15-trial-2: success (41 steps)
+  r15-trial-3: start (memory v3)
+    r15-trial-3: step 5/50
+    r15-trial-3: step 10/50
+    r15-trial-3: step 15/50
+    r15-trial-3: step 20/50
+    r15-trial-3: step 25/50
+    r15-trial-3: step 30/50
+    r15-trial-3: step 35/50
+    r15-trial-3: step 40/50
+  r15-trial-3: success (43 steps)
+Round 15/40: skipped_all_success; memory version 3
+  r16-trial-1: start (memory v3)
+    r16-trial-1: step 5/50
+    r16-trial-1: step 10/50
+    r16-trial-1: step 15/50
+    r16-trial-1: step 20/50
+    r16-trial-1: step 25/50
+    r16-trial-1: step 30/50
+    r16-trial-1: step 35/50
+    r16-trial-1: step 40/50
+    r16-trial-1: step 45/50
+    r16-trial-1: step 50/50
+  r16-trial-1: failure (50 steps)
+  r16-trial-2: start (memory v3)
+    r16-trial-2: step 5/50
+    r16-trial-2: step 10/50
+    r16-trial-2: step 15/50
+    r16-trial-2: step 20/50
+    r16-trial-2: step 25/50
+    r16-trial-2: step 30/50
+  r16-trial-2: success (34 steps)
+  r16-trial-3: start (memory v3)
+    r16-trial-3: step 5/50
+    r16-trial-3: step 10/50
+    r16-trial-3: step 15/50
+    r16-trial-3: step 20/50
+    r16-trial-3: step 25/50
+    r16-trial-3: step 30/50
+  r16-trial-3: success (30 steps)
+  r16-candidate-original: start (memory v3)
+    r16-candidate-original: step 5/50
+    r16-candidate-original: step 10/50
+    r16-candidate-original: step 15/50
+    r16-candidate-original: step 20/50
+    r16-candidate-original: step 25/50
+  r16-candidate-original: success (29 steps)
+  r16-candidate-extension: start (memory v3)
+    r16-candidate-extension: step 5/50
+    r16-candidate-extension: step 10/50
+  r16-candidate-extension: success (10 steps)
+  Round 16: extension passed; accept candidate directly
+Round 16/40: accepted; memory version 4
+  r17-trial-1: start (memory v4)
+    r17-trial-1: step 5/50
+    r17-trial-1: step 10/50
+  r17-trial-1: success (14 steps)
+  r17-trial-2: start (memory v4)
+    r17-trial-2: step 5/50
+    r17-trial-2: step 10/50
+  r17-trial-2: success (13 steps)
+  r17-trial-3: start (memory v4)
+    r17-trial-3: step 5/50
+    r17-trial-3: step 10/50
+    r17-trial-3: step 15/50
+  r17-trial-3: success (17 steps)
+Round 17/40: skipped_all_success; memory version 4
+  r18-trial-1: start (memory v4)
+    r18-trial-1: step 5/50
+    r18-trial-1: step 10/50
+    r18-trial-1: step 15/50
+    r18-trial-1: step 20/50
+    r18-trial-1: step 25/50
+    r18-trial-1: step 30/50
+  r18-trial-1: success (32 steps)
+  r18-trial-2: start (memory v4)
+    r18-trial-2: step 5/50
+    r18-trial-2: step 10/50
+    r18-trial-2: step 15/50
+    r18-trial-2: step 20/50
+    r18-trial-2: step 25/50
+    r18-trial-2: step 30/50
+    r18-trial-2: step 35/50
+    r18-trial-2: step 40/50
+    r18-trial-2: step 45/50
+    r18-trial-2: step 50/50
+  r18-trial-2: failure (50 steps)
+  r18-trial-3: start (memory v4)
+    r18-trial-3: step 5/50
+    r18-trial-3: step 10/50
+    r18-trial-3: step 15/50
+    r18-trial-3: step 20/50
+    r18-trial-3: step 25/50
+    r18-trial-3: step 30/50
+  r18-trial-3: success (31 steps)
+  r18-candidate-original: start (memory v4)
+    r18-candidate-original: step 5/50
+    r18-candidate-original: step 10/50
+    r18-candidate-original: step 15/50
+    r18-candidate-original: step 20/50
+    r18-candidate-original: step 25/50
+    r18-candidate-original: step 30/50
+  r18-candidate-original: success (32 steps)
+  r18-candidate-extension: start (memory v4)
+    r18-candidate-extension: step 5/50
+    r18-candidate-extension: step 10/50
+  r18-candidate-extension: success (10 steps)
+  Round 18: extension passed; accept candidate directly
+Round 18/40: accepted; memory version 5
+  r19-trial-1: start (memory v5)
+    r19-trial-1: step 5/50
+    r19-trial-1: step 10/50
+    r19-trial-1: step 15/50
+    r19-trial-1: step 20/50
+    r19-trial-1: step 25/50
+    r19-trial-1: step 30/50
+    r19-trial-1: step 35/50
+    r19-trial-1: step 40/50
+    r19-trial-1: step 45/50
+    r19-trial-1: step 50/50
+  r19-trial-1: failure (50 steps)
+  r19-trial-2: start (memory v5)
+    r19-trial-2: step 5/50
+    r19-trial-2: step 10/50
+    r19-trial-2: step 15/50
+    r19-trial-2: step 20/50
+    r19-trial-2: step 25/50
+    r19-trial-2: step 30/50
+    r19-trial-2: step 35/50
+    r19-trial-2: step 40/50
+    r19-trial-2: step 45/50
+    r19-trial-2: step 50/50
+  r19-trial-2: failure (50 steps)
+  r19-trial-3: start (memory v5)
+    r19-trial-3: step 5/50
+    r19-trial-3: step 10/50
+    r19-trial-3: step 15/50
+    r19-trial-3: step 20/50
+    r19-trial-3: step 25/50
+    r19-trial-3: step 30/50
+    r19-trial-3: step 35/50
+    r19-trial-3: step 40/50
+    r19-trial-3: step 45/50
+    r19-trial-3: step 50/50
+  r19-trial-3: failure (50 steps)
+  r19-candidate-original: start (memory v5)
+    r19-candidate-original: step 5/50
+    r19-candidate-original: step 10/50
+    r19-candidate-original: step 15/50
+    r19-candidate-original: step 20/50
+    r19-candidate-original: step 25/50
+    r19-candidate-original: step 30/50
+    r19-candidate-original: step 35/50
+    r19-candidate-original: step 40/50
+    r19-candidate-original: step 45/50
+    r19-candidate-original: step 50/50
+  r19-candidate-original: failure (50 steps)
+Round 19/40: rejected_original; memory version 5
+  r20-trial-1: start (memory v5)
+    r20-trial-1: step 5/50
+    r20-trial-1: step 10/50
+  r20-trial-1: success (13 steps)
+  r20-trial-2: start (memory v5)
+    r20-trial-2: step 5/50
+    r20-trial-2: step 10/50
+  r20-trial-2: success (13 steps)
+  r20-trial-3: start (memory v5)
+    r20-trial-3: step 5/50
+    r20-trial-3: step 10/50
+    r20-trial-3: step 15/50
+    r20-trial-3: step 20/50
+    r20-trial-3: step 25/50
+    r20-trial-3: step 30/50
+    r20-trial-3: step 35/50
+    r20-trial-3: step 40/50
+    r20-trial-3: step 45/50
+    r20-trial-3: step 50/50
+  r20-trial-3: failure (50 steps)
+  r20-candidate-original: start (memory v5)
+    r20-candidate-original: step 5/50
+    r20-candidate-original: step 10/50
+    r20-candidate-original: step 15/50
+    r20-candidate-original: step 20/50
+  r20-candidate-original: success (23 steps)
+  r20-candidate-extension: start (memory v5)
+    r20-candidate-extension: step 5/50
+    r20-candidate-extension: step 10/50
+  r20-candidate-extension: success (11 steps)
+  Round 20: extension passed; accept candidate directly
+Round 20/40: accepted; memory version 6
+  r21-trial-1: start (memory v6)
+    r21-trial-1: step 5/50
+  r21-trial-1: success (8 steps)
+  r21-trial-2: start (memory v6)
+    r21-trial-2: step 5/50
+  r21-trial-2: success (8 steps)
+  r21-trial-3: start (memory v6)
+    r21-trial-3: step 5/50
+  r21-trial-3: success (8 steps)
+Round 21/40: skipped_all_success; memory version 6
+  r22-trial-1: start (memory v6)
+    r22-trial-1: step 5/50
+    r22-trial-1: step 10/50
+    r22-trial-1: step 15/50
+    r22-trial-1: step 20/50
+    r22-trial-1: step 25/50
+    r22-trial-1: step 30/50
+    r22-trial-1: step 35/50
+    r22-trial-1: step 40/50
+    r22-trial-1: step 45/50
+    r22-trial-1: step 50/50
+  r22-trial-1: failure (50 steps)
+  r22-trial-2: start (memory v6)
+    r22-trial-2: step 5/50
+    r22-trial-2: step 10/50
+    r22-trial-2: step 15/50
+    r22-trial-2: step 20/50
+    r22-trial-2: step 25/50
+    r22-trial-2: step 30/50
+    r22-trial-2: step 35/50
+    r22-trial-2: step 40/50
+    r22-trial-2: step 45/50
+    r22-trial-2: step 50/50
+  r22-trial-2: failure (50 steps)
+  r22-trial-3: start (memory v6)
+    r22-trial-3: step 5/50
+    r22-trial-3: step 10/50
+    r22-trial-3: step 15/50
+  r22-trial-3: success (16 steps)
+  r22-candidate-original: start (memory v6)
+    r22-candidate-original: step 5/50
+    r22-candidate-original: step 10/50
+  r22-candidate-original: success (14 steps)
+  r22-candidate-extension: start (memory v6)
+    r22-candidate-extension: step 5/50
+    r22-candidate-extension: step 10/50
+  r22-candidate-extension: success (13 steps)
+  Round 22: extension passed; accept candidate directly
+Round 22/40: accepted; memory version 7
+  r23-trial-1: start (memory v7)
+    r23-trial-1: step 5/50
+    r23-trial-1: step 10/50
+    r23-trial-1: step 15/50
+    r23-trial-1: step 20/50
+    r23-trial-1: step 25/50
+    r23-trial-1: step 30/50
+    r23-trial-1: step 35/50
+    r23-trial-1: step 40/50
+    r23-trial-1: step 45/50
+    r23-trial-1: step 50/50
+  r23-trial-1: failure (50 steps)
+  r23-trial-2: start (memory v7)
+    r23-trial-2: step 5/50
+    r23-trial-2: step 10/50
+    r23-trial-2: step 15/50
+    r23-trial-2: step 20/50
+    r23-trial-2: step 25/50
+    r23-trial-2: step 30/50
+    r23-trial-2: step 35/50
+    r23-trial-2: step 40/50
+    r23-trial-2: step 45/50
+    r23-trial-2: step 50/50
+  r23-trial-2: failure (50 steps)
+  r23-trial-3: start (memory v7)
+    r23-trial-3: step 5/50
+    r23-trial-3: step 10/50
+    r23-trial-3: step 15/50
+    r23-trial-3: step 20/50
+    r23-trial-3: step 25/50
+    r23-trial-3: step 30/50
+    r23-trial-3: step 35/50
+  r23-trial-3: success (37 steps)
+  r23-candidate-original: start (memory v7)
+    r23-candidate-original: step 5/50
+    r23-candidate-original: step 10/50
+    r23-candidate-original: step 15/50
+    r23-candidate-original: step 20/50
+    r23-candidate-original: step 25/50
+    r23-candidate-original: step 30/50
+    r23-candidate-original: step 35/50
+    r23-candidate-original: step 40/50
+    r23-candidate-original: step 45/50
+    r23-candidate-original: step 50/50
+  r23-candidate-original: failure (50 steps)
+Round 23/40: rejected_original; memory version 7
+  r24-trial-1: start (memory v7)
+    r24-trial-1: step 5/50
+    r24-trial-1: step 10/50
+    r24-trial-1: step 15/50
+    r24-trial-1: step 20/50
+    r24-trial-1: step 25/50
+    r24-trial-1: step 30/50
+    r24-trial-1: step 35/50
+    r24-trial-1: step 40/50
+    r24-trial-1: step 45/50
+    r24-trial-1: step 50/50
+  r24-trial-1: failure (50 steps)
+  r24-trial-2: start (memory v7)
+    r24-trial-2: step 5/50
+    r24-trial-2: step 10/50
+    r24-trial-2: step 15/50
+    r24-trial-2: step 20/50
+    r24-trial-2: step 25/50
+    r24-trial-2: step 30/50
+    r24-trial-2: step 35/50
+    r24-trial-2: step 40/50
+    r24-trial-2: step 45/50
+    r24-trial-2: step 50/50
+  r24-trial-2: failure (50 steps)
+  r24-trial-3: start (memory v7)
+    r24-trial-3: step 5/50
+    r24-trial-3: step 10/50
+  r24-trial-3: success (11 steps)
+  r24-candidate-original: start (memory v7)
+    r24-candidate-original: step 5/50
+    r24-candidate-original: step 10/50
+  r24-candidate-original: success (11 steps)
+  r24-candidate-extension: start (memory v7)
+    r24-candidate-extension: step 5/50
+    r24-candidate-extension: step 10/50
+    r24-candidate-extension: step 15/50
+    r24-candidate-extension: step 20/50
+    r24-candidate-extension: step 25/50
+  r24-candidate-extension: success (28 steps)
+  Round 24: extension passed; accept candidate directly
+Round 24/40: accepted; memory version 8
+  r25-trial-1: start (memory v8)
+    r25-trial-1: step 5/50
+    r25-trial-1: step 10/50
+  r25-trial-1: success (13 steps)
+  r25-trial-2: start (memory v8)
+    r25-trial-2: step 5/50
+    r25-trial-2: step 10/50
+    r25-trial-2: step 15/50
+    r25-trial-2: step 20/50
+    r25-trial-2: step 25/50
+    r25-trial-2: step 30/50
+    r25-trial-2: step 35/50
+    r25-trial-2: step 40/50
+    r25-trial-2: step 45/50
+    r25-trial-2: step 50/50
+  r25-trial-2: failure (50 steps)
+  r25-trial-3: start (memory v8)
+    r25-trial-3: step 5/50
+    r25-trial-3: step 10/50
+    r25-trial-3: step 15/50
+    r25-trial-3: step 20/50
+    r25-trial-3: step 25/50
+    r25-trial-3: step 30/50
+    r25-trial-3: step 35/50
+    r25-trial-3: step 40/50
+    r25-trial-3: step 45/50
+    r25-trial-3: step 50/50
+  r25-trial-3: failure (50 steps)
+  r25-candidate-original: start (memory v8)
+    r25-candidate-original: step 5/50
+    r25-candidate-original: step 10/50
+  r25-candidate-original: success (14 steps)
+  r25-candidate-extension: start (memory v8)
+    r25-candidate-extension: step 5/50
+    r25-candidate-extension: step 10/50
+    r25-candidate-extension: step 15/50
+  r25-candidate-extension: success (15 steps)
+  Round 25: extension passed; accept candidate directly
+Round 25/40: accepted; memory version 9
+  r26-trial-1: start (memory v9)
+    r26-trial-1: step 5/50
+    r26-trial-1: step 10/50
+    r26-trial-1: step 15/50
+    r26-trial-1: step 20/50
+    r26-trial-1: step 25/50
+    r26-trial-1: step 30/50
+    r26-trial-1: step 35/50
+    r26-trial-1: step 40/50
+    r26-trial-1: step 45/50
+    r26-trial-1: step 50/50
+  r26-trial-1: failure (50 steps)
+  r26-trial-2: start (memory v9)
+    r26-trial-2: step 5/50
+    r26-trial-2: step 10/50
+    r26-trial-2: step 15/50
+    r26-trial-2: step 20/50
+    r26-trial-2: step 25/50
+    r26-trial-2: step 30/50
+    r26-trial-2: step 35/50
+    r26-trial-2: step 40/50
+    r26-trial-2: step 45/50
+    r26-trial-2: step 50/50
+  r26-trial-2: failure (50 steps)
+  r26-trial-3: start (memory v9)
+    r26-trial-3: step 5/50
+    r26-trial-3: step 10/50
+    r26-trial-3: step 15/50
+    r26-trial-3: step 20/50
+    r26-trial-3: step 25/50
+    r26-trial-3: step 30/50
+    r26-trial-3: step 35/50
+    r26-trial-3: step 40/50
+    r26-trial-3: step 45/50
+  r26-trial-3: success (49 steps)
+  r26-candidate-original: start (memory v9)
+    r26-candidate-original: step 5/50
+    r26-candidate-original: step 10/50
+    r26-candidate-original: step 15/50
+    r26-candidate-original: step 20/50
+    r26-candidate-original: step 25/50
+    r26-candidate-original: step 30/50
+    r26-candidate-original: step 35/50
+    r26-candidate-original: step 40/50
+    r26-candidate-original: step 45/50
+    r26-candidate-original: step 50/50
+  r26-candidate-original: failure (50 steps)
+Round 26/40: rejected_original; memory version 9
+  r27-trial-1: start (memory v9)
+    r27-trial-1: step 5/50
+    r27-trial-1: step 10/50
+    r27-trial-1: step 15/50
+    r27-trial-1: step 20/50
+    r27-trial-1: step 25/50
+    r27-trial-1: step 30/50
+    r27-trial-1: step 35/50
+    r27-trial-1: step 40/50
+    r27-trial-1: step 45/50
+    r27-trial-1: step 50/50
+  r27-trial-1: failure (50 steps)
+  r27-trial-2: start (memory v9)
+    r27-trial-2: step 5/50
+    r27-trial-2: step 10/50
+    r27-trial-2: step 15/50
+    r27-trial-2: step 20/50
+    r27-trial-2: step 25/50
+    r27-trial-2: step 30/50
+    r27-trial-2: step 35/50
+    r27-trial-2: step 40/50
+    r27-trial-2: step 45/50
+    r27-trial-2: step 50/50
+  r27-trial-2: failure (50 steps)
+  r27-trial-3: start (memory v9)
+    r27-trial-3: step 5/50
+    r27-trial-3: step 10/50
+    r27-trial-3: step 15/50
+    r27-trial-3: step 20/50
+    r27-trial-3: step 25/50
+    r27-trial-3: step 30/50
+    r27-trial-3: step 35/50
+    r27-trial-3: step 40/50
+    r27-trial-3: step 45/50
+    r27-trial-3: step 50/50
+  r27-trial-3: failure (50 steps)
+  r27-candidate-original: start (memory v9)
+    r27-candidate-original: step 5/50
+    r27-candidate-original: step 10/50
+    r27-candidate-original: step 15/50
+    r27-candidate-original: step 20/50
+    r27-candidate-original: step 25/50
+    r27-candidate-original: step 30/50
+    r27-candidate-original: step 35/50
+    r27-candidate-original: step 40/50
+    r27-candidate-original: step 45/50
+    r27-candidate-original: step 50/50
+  r27-candidate-original: failure (50 steps)
+Round 27/40: rejected_original; memory version 9
+  r28-trial-1: start (memory v9)
+    r28-trial-1: step 5/50
+    r28-trial-1: step 10/50
+    r28-trial-1: step 15/50
+    r28-trial-1: step 20/50
+    r28-trial-1: step 25/50
+    r28-trial-1: step 30/50
+    r28-trial-1: step 35/50
+    r28-trial-1: step 40/50
+    r28-trial-1: step 45/50
+    r28-trial-1: step 50/50
+  r28-trial-1: failure (50 steps)
+  r28-trial-2: start (memory v9)
+    r28-trial-2: step 5/50
+    r28-trial-2: step 10/50
+    r28-trial-2: step 15/50
+    r28-trial-2: step 20/50
+    r28-trial-2: step 25/50
+    r28-trial-2: step 30/50
+    r28-trial-2: step 35/50
+    r28-trial-2: step 40/50
+    r28-trial-2: step 45/50
+    r28-trial-2: step 50/50
+  r28-trial-2: failure (50 steps)
+  r28-trial-3: start (memory v9)
+    r28-trial-3: step 5/50
+    r28-trial-3: step 10/50
+    r28-trial-3: step 15/50
+    r28-trial-3: step 20/50
+    r28-trial-3: step 25/50
+    r28-trial-3: step 30/50
+    r28-trial-3: step 35/50
+    r28-trial-3: step 40/50
+    r28-trial-3: step 45/50
+    r28-trial-3: step 50/50
+  r28-trial-3: failure (50 steps)
+  r28-candidate-original: start (memory v9)
+    r28-candidate-original: step 5/50
+    r28-candidate-original: step 10/50
+    r28-candidate-original: step 15/50
+    r28-candidate-original: step 20/50
+    r28-candidate-original: step 25/50
+    r28-candidate-original: step 30/50
+    r28-candidate-original: step 35/50
+    r28-candidate-original: step 40/50
+    r28-candidate-original: step 45/50
+    r28-candidate-original: step 50/50
+  r28-candidate-original: failure (50 steps)
+Round 28/40: rejected_original; memory version 9
+  r29-trial-1: start (memory v9)
+    r29-trial-1: step 5/50
+  r29-trial-1: success (9 steps)
+  r29-trial-2: start (memory v9)
+    r29-trial-2: step 5/50
+  r29-trial-2: success (9 steps)
+  r29-trial-3: start (memory v9)
+    r29-trial-3: step 5/50
+  r29-trial-3: success (9 steps)
+Round 29/40: skipped_all_success; memory version 9
+  r30-trial-1: start (memory v9)
+    r30-trial-1: step 5/50
+    r30-trial-1: step 10/50
+  r30-trial-1: success (12 steps)
+  r30-trial-2: start (memory v9)
+    r30-trial-2: step 5/50
+  r30-trial-2: success (9 steps)
+  r30-trial-3: start (memory v9)
+    r30-trial-3: step 5/50
+    r30-trial-3: step 10/50
+  r30-trial-3: success (12 steps)
+Round 30/40: skipped_all_success; memory version 9
+  r31-trial-1: start (memory v9)
+    r31-trial-1: step 5/50
+    r31-trial-1: step 10/50
+    r31-trial-1: step 15/50
+    r31-trial-1: step 20/50
+    r31-trial-1: step 25/50
+    r31-trial-1: step 30/50
+  r31-trial-1: success (32 steps)
+  r31-trial-2: start (memory v9)
+    r31-trial-2: step 5/50
+    r31-trial-2: step 10/50
+    r31-trial-2: step 15/50
+    r31-trial-2: step 20/50
+    r31-trial-2: step 25/50
+    r31-trial-2: step 30/50
+    r31-trial-2: step 35/50
+  r31-trial-2: success (36 steps)
+  r31-trial-3: start (memory v9)
+    r31-trial-3: step 5/50
+    r31-trial-3: step 10/50
+    r31-trial-3: step 15/50
+    r31-trial-3: step 20/50
+    r31-trial-3: step 25/50
+    r31-trial-3: step 30/50
+  r31-trial-3: success (34 steps)
+Round 31/40: skipped_all_success; memory version 9
+  r32-trial-1: start (memory v9)
+    r32-trial-1: step 5/50
+    r32-trial-1: step 10/50
+    r32-trial-1: step 15/50
+    r32-trial-1: step 20/50
+    r32-trial-1: step 25/50
+    r32-trial-1: step 30/50
+  r32-trial-1: success (33 steps)
+  r32-trial-2: start (memory v9)
+    r32-trial-2: step 5/50
+    r32-trial-2: step 10/50
+    r32-trial-2: step 15/50
+    r32-trial-2: step 20/50
+    r32-trial-2: step 25/50
+    r32-trial-2: step 30/50
+  r32-trial-2: success (33 steps)
+  r32-trial-3: start (memory v9)
+    r32-trial-3: step 5/50
+    r32-trial-3: step 10/50
+    r32-trial-3: step 15/50
+    r32-trial-3: step 20/50
+    r32-trial-3: step 25/50
+    r32-trial-3: step 30/50
+    r32-trial-3: step 35/50
+  r32-trial-3: success (38 steps)
+Round 32/40: skipped_all_success; memory version 9
+  r33-trial-1: start (memory v9)
+    r33-trial-1: step 5/50
+    r33-trial-1: step 10/50
+    r33-trial-1: step 15/50
+    r33-trial-1: step 20/50
+    r33-trial-1: step 25/50
+    r33-trial-1: step 30/50
+  r33-trial-1: success (30 steps)
+  r33-trial-2: start (memory v9)
+    r33-trial-2: step 5/50
+    r33-trial-2: step 10/50
+    r33-trial-2: step 15/50
+    r33-trial-2: step 20/50
+    r33-trial-2: step 25/50
+  r33-trial-2: success (26 steps)
+  r33-trial-3: start (memory v9)
+    r33-trial-3: step 5/50
+    r33-trial-3: step 10/50
+    r33-trial-3: step 15/50
+    r33-trial-3: step 20/50
+    r33-trial-3: step 25/50
+  r33-trial-3: success (25 steps)
+Round 33/40: skipped_all_success; memory version 9
+  r34-trial-1: start (memory v9)
+    r34-trial-1: step 5/50
+    r34-trial-1: step 10/50
+  r34-trial-1: success (12 steps)
+  r34-trial-2: start (memory v9)
+    r34-trial-2: step 5/50
+    r34-trial-2: step 10/50
+  r34-trial-2: success (10 steps)
+  r34-trial-3: start (memory v9)
+    r34-trial-3: step 5/50
+    r34-trial-3: step 10/50
+  r34-trial-3: success (11 steps)
+Round 34/40: skipped_all_success; memory version 9
+  r35-trial-1: start (memory v9)
+    r35-trial-1: step 5/50
+    r35-trial-1: step 10/50
+    r35-trial-1: step 15/50
+    r35-trial-1: step 20/50
+    r35-trial-1: step 25/50
+    r35-trial-1: step 30/50
+    r35-trial-1: step 35/50
+    r35-trial-1: step 40/50
+    r35-trial-1: step 45/50
+    r35-trial-1: step 50/50
+  r35-trial-1: failure (50 steps)
+  r35-trial-2: start (memory v9)
+    r35-trial-2: step 5/50
+    r35-trial-2: step 10/50
+    r35-trial-2: step 15/50
+    r35-trial-2: step 20/50
+    r35-trial-2: step 25/50
+    r35-trial-2: step 30/50
+    r35-trial-2: step 35/50
+    r35-trial-2: step 40/50
+    r35-trial-2: step 45/50
+    r35-trial-2: step 50/50
+  r35-trial-2: failure (50 steps)
+  r35-trial-3: start (memory v9)
+    r35-trial-3: step 5/50
+    r35-trial-3: step 10/50
+    r35-trial-3: step 15/50
+    r35-trial-3: step 20/50
+    r35-trial-3: step 25/50
+    r35-trial-3: step 30/50
+    r35-trial-3: step 35/50
+    r35-trial-3: step 40/50
+    r35-trial-3: step 45/50
+    r35-trial-3: step 50/50
+  r35-trial-3: failure (50 steps)
+  r35-candidate-original: start (memory v9)
+    r35-candidate-original: step 5/50
+    r35-candidate-original: step 10/50
+    r35-candidate-original: step 15/50
+    r35-candidate-original: step 20/50
+    r35-candidate-original: step 25/50
+    r35-candidate-original: step 30/50
+    r35-candidate-original: step 35/50
+    r35-candidate-original: step 40/50
+    r35-candidate-original: step 45/50
+    r35-candidate-original: step 50/50
+  r35-candidate-original: failure (50 steps)
+Round 35/40: rejected_original; memory version 9
+  r36-trial-1: start (memory v9)
+    r36-trial-1: step 5/50
+    r36-trial-1: step 10/50
+    r36-trial-1: step 15/50
+    r36-trial-1: step 20/50
+    r36-trial-1: step 25/50
+    r36-trial-1: step 30/50
+    r36-trial-1: step 35/50
+    r36-trial-1: step 40/50
+    r36-trial-1: step 45/50
+    r36-trial-1: step 50/50
+  r36-trial-1: failure (50 steps)
+  r36-trial-2: start (memory v9)
+    r36-trial-2: step 5/50
+    r36-trial-2: step 10/50
+    r36-trial-2: step 15/50
+    r36-trial-2: step 20/50
+    r36-trial-2: step 25/50
+    r36-trial-2: step 30/50
+    r36-trial-2: step 35/50
+    r36-trial-2: step 40/50
+    r36-trial-2: step 45/50
+    r36-trial-2: step 50/50
+  r36-trial-2: failure (50 steps)
+  r36-trial-3: start (memory v9)
+    r36-trial-3: step 5/50
+    r36-trial-3: step 10/50
+    r36-trial-3: step 15/50
+    r36-trial-3: step 20/50
+    r36-trial-3: step 25/50
+    r36-trial-3: step 30/50
+Round 36/40: rejected_protocol; memory version 9
+  r37-trial-1: start (memory v9)
+    r37-trial-1: step 5/50
+    r37-trial-1: step 10/50
+    r37-trial-1: step 15/50
+  r37-trial-1: success (17 steps)
+  r37-trial-2: start (memory v9)
+    r37-trial-2: step 5/50
+    r37-trial-2: step 10/50
+    r37-trial-2: step 15/50
+  r37-trial-2: success (16 steps)
+  r37-trial-3: start (memory v9)
+    r37-trial-3: step 5/50
+    r37-trial-3: step 10/50
+  r37-trial-3: success (12 steps)
+Round 37/40: skipped_all_success; memory version 9
+  r38-trial-1: start (memory v9)
+    r38-trial-1: step 5/50
+    r38-trial-1: step 10/50
+  r38-trial-1: success (11 steps)
+  r38-trial-2: start (memory v9)
+    r38-trial-2: step 5/50
+    r38-trial-2: step 10/50
+  r38-trial-2: success (11 steps)
+  r38-trial-3: start (memory v9)
+    r38-trial-3: step 5/50
+    r38-trial-3: step 10/50
+  r38-trial-3: success (11 steps)
+Round 38/40: skipped_all_success; memory version 9
+  r39-trial-1: start (memory v9)
+    r39-trial-1: step 5/50
+  r39-trial-1: success (8 steps)
+  r39-trial-2: start (memory v9)
+    r39-trial-2: step 5/50
+  r39-trial-2: success (7 steps)
+  r39-trial-3: start (memory v9)
+    r39-trial-3: step 5/50
+  r39-trial-3: success (8 steps)
+Round 39/40: skipped_all_success; memory version 9
+  r40-trial-1: start (memory v9)
+    r40-trial-1: step 5/50
+    r40-trial-1: step 10/50
+  r40-trial-1: success (10 steps)
+  r40-trial-2: start (memory v9)
+    r40-trial-2: step 5/50
+    r40-trial-2: step 10/50
+    r40-trial-2: step 15/50
+  r40-trial-2: success (19 steps)
+  r40-trial-3: start (memory v9)
+    r40-trial-3: step 5/50
+    r40-trial-3: step 10/50
+    r40-trial-3: step 15/50
+  r40-trial-3: success (15 steps)
+Round 40/40: skipped_all_success; memory version 9
+  test-001-final: start (memory v9)
+    test-001-final: step 5/50
+    test-001-final: step 10/50
+    test-001-final: step 15/50
+  test-001-final: success (16 steps)
+Held-out test 1/20 complete
+  test-002-final: start (memory v9)
+    test-002-final: step 5/50
+    test-002-final: step 10/50
+    test-002-final: step 15/50
+    test-002-final: step 20/50
+    test-002-final: step 25/50
+    test-002-final: step 30/50
+    test-002-final: step 35/50
+    test-002-final: step 40/50
+    test-002-final: step 45/50
+    test-002-final: step 50/50
+  test-002-final: failure (50 steps)
+Held-out test 2/20 complete
+  test-003-final: start (memory v9)
+    test-003-final: step 5/50
+    test-003-final: step 10/50
+  test-003-final: success (13 steps)
+Held-out test 3/20 complete
+  test-004-final: start (memory v9)
+    test-004-final: step 5/50
+    test-004-final: step 10/50
+  test-004-final: success (10 steps)
+Held-out test 4/20 complete
+  test-005-final: start (memory v9)
+    test-005-final: step 5/50
+    test-005-final: step 10/50
+  test-005-final: success (12 steps)
+Held-out test 5/20 complete
+  test-006-final: start (memory v9)
+    test-006-final: step 5/50
+    test-006-final: step 10/50
+    test-006-final: step 15/50
+  test-006-final: success (15 steps)
+Held-out test 6/20 complete
+  test-007-final: start (memory v9)
+    test-007-final: step 5/50
+    test-007-final: step 10/50
+    test-007-final: step 15/50
+    test-007-final: step 20/50
+    test-007-final: step 25/50
+    test-007-final: step 30/50
+    test-007-final: step 35/50
+    test-007-final: step 40/50
+    test-007-final: step 45/50
+    test-007-final: step 50/50
+  test-007-final: failure (50 steps)
+Held-out test 7/20 complete
+  test-008-final: start (memory v9)
+    test-008-final: step 5/50
+    test-008-final: step 10/50
+    test-008-final: step 15/50
+    test-008-final: step 20/50
+    test-008-final: step 25/50
+    test-008-final: step 30/50
+    test-008-final: step 35/50
+    test-008-final: step 40/50
+    test-008-final: step 45/50
+    test-008-final: step 50/50
+  test-008-final: failure (50 steps)
+Held-out test 8/20 complete
+  test-009-final: start (memory v9)
+    test-009-final: step 5/50
+    test-009-final: step 10/50
+    test-009-final: step 15/50
+  test-009-final: success (16 steps)
+Held-out test 9/20 complete
+  test-010-final: start (memory v9)
+    test-010-final: step 5/50
+    test-010-final: step 10/50
+    test-010-final: step 15/50
+  test-010-final: success (15 steps)
+Held-out test 10/20 complete
+  test-011-final: start (memory v9)
+    test-011-final: step 5/50
+    test-011-final: step 10/50
+    test-011-final: step 15/50
+    test-011-final: step 20/50
+    test-011-final: step 25/50
+    test-011-final: step 30/50
+    test-011-final: step 35/50
+    test-011-final: step 40/50
+    test-011-final: step 45/50
+    test-011-final: step 50/50
+  test-011-final: failure (50 steps)
+Held-out test 11/20 complete
+  test-012-final: start (memory v9)
+    test-012-final: step 5/50
+    test-012-final: step 10/50
+  test-012-final: success (13 steps)
+Held-out test 12/20 complete
+  test-013-final: start (memory v9)
+    test-013-final: step 5/50
+    test-013-final: step 10/50
+  test-013-final: success (10 steps)
+Held-out test 13/20 complete
+  test-014-final: start (memory v9)
+    test-014-final: step 5/50
+    test-014-final: step 10/50
+  test-014-final: success (13 steps)
+Held-out test 14/20 complete
+  test-015-final: start (memory v9)
+    test-015-final: step 5/50
+    test-015-final: step 10/50
+  test-015-final: success (10 steps)
+Held-out test 15/20 complete
+  test-016-final: start (memory v9)
+    test-016-final: step 5/50
+    test-016-final: step 10/50
+  test-016-final: success (11 steps)
+Held-out test 16/20 complete
+  test-017-final: start (memory v9)
+    test-017-final: step 5/50
+    test-017-final: step 10/50
+  test-017-final: success (13 steps)
+Held-out test 17/20 complete
+  test-018-final: start (memory v9)
+    test-018-final: step 5/50
+    test-018-final: step 10/50
+  test-018-final: success (13 steps)
+Held-out test 18/20 complete
+  test-019-final: start (memory v9)
+    test-019-final: step 5/50
+    test-019-final: step 10/50
+    test-019-final: step 15/50
+  test-019-final: success (15 steps)
+Held-out test 19/20 complete
+  test-020-final: start (memory v9)
+    test-020-final: step 5/50
+    test-020-final: step 10/50
+    test-020-final: step 15/50
+    test-020-final: step 20/50
+    test-020-final: step 25/50
+    test-020-final: step 30/50
+    test-020-final: step 35/50
+    test-020-final: step 40/50
+    test-020-final: step 45/50
+    test-020-final: step 50/50
+  test-020-final: failure (50 steps)
+Held-out test 20/20 complete

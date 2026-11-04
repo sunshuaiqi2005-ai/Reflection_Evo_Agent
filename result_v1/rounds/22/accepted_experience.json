@@ -1,0 +1,21 @@
+{
+  "trigger": "Attempting to process an object that is not in the current location or environment.",
+  "advice": "Before attempting to process an object, ensure it is present in the current location or environment. If it is not, search for it first.",
+  "exceptions": [],
+  "id": "r22-candidate",
+  "validated_by": [
+    "r22-candidate-original",
+    "r22-candidate-extension"
+  ],
+  "reviewed_on": [],
+  "acceptance": {
+    "basis": "original_and_extension_pass",
+    "original_validation_episode": "r22-candidate-original",
+    "extension_validation_episode": "r22-candidate-extension",
+    "originally_validated_candidate": "r22-candidate",
+    "extension_success": true,
+    "extension_review_performed": false,
+    "revised": false,
+    "post_review_revalidated": false
+  }
+}

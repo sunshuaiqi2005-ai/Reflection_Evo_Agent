@@ -1,0 +1,8 @@
+{
+  "analysis": "Trajectory r23-trial-3 successfully completed the task by finding a fork on the diningtable, cleaning it in the sinkbasin, and placing it on the countertop. Trajectory r23-trial-2 failed to complete the task, as it did not find a fork or clean it before the step limit was reached. The key difference is that r23-trial-3 successfully located and processed the fork, while r23-trial-2 did not find a fork to process. The earliest unresolved block in r23-trial-2 is the failure to locate a fork, which is a prerequisite for cleaning and placing it. There is uncertainty about whether the fork was not found due to incomplete search or incorrect search strategy.",
+  "candidate": {
+    "trigger": "Failure to locate a target object during search.",
+    "advice": "Ensure the target object is located before attempting to process or place it. If the object is not found, re-evaluate the search strategy and revisit unexplored locations.",
+    "exceptions": []
+  }
+}

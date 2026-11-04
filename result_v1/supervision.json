@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-11-04T19:42:45+08:00",
+  "started_at": "2026-11-04T04:41:11+08:00",
+  "phase": "complete",
+  "supervisor_pid": 89397,
+  "worker_pid": 89398,
+  "check_interval_seconds": 1800,
+  "rounds_completed": 40,
+  "rounds_total": 40,
+  "accepted_rounds": 9,
+  "round_status_counts": {
+    "accepted": 9,
+    "skipped_all_success": 22,
+    "rejected_original": 8,
+    "rejected_protocol": 1
+  },
+  "evolution_status": {
+    "phase": "complete",
+    "test_metrics": {
+      "initial": {
+        "successes": 12,
+        "success_rate": 0.6,
+        "mean_steps": 31.05
+      },
+      "final": {
+        "successes": 15,
+        "success_rate": 0.75,
+        "mean_steps": 22.25
+      }
+    }
+  },
+  "returncode": 0,
+  "test_requested": true,
+  "test_tasks_total": 20,
+  "test_tasks_completed": 20,
+  "stage": "complete",
+  "baseline_tasks_completed": 20,
+  "baseline_tasks_total": 20,
+  "baseline_metrics": {
+    "successes": 12,
+    "success_rate": 0.6,
+    "mean_steps": 31.05
+  },
+  "active_episode": {
+    "id": "r36-trial-3",
+    "stage": "trial",
+    "completed_steps": 34
+  },
+  "seconds_since_last_event": 4
+}

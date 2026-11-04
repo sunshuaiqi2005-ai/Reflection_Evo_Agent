@@ -1,0 +1,189 @@
+{
+  "id": "test-019-final",
+  "stage": "heldout-test",
+  "task": {
+    "id": "valid_unseen/pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_171850_960211/game.tw-pddl",
+    "game_path": "valid_unseen/pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_171850_960211/game.tw-pddl",
+    "official_split": "valid_unseen",
+    "task_type": "pick_heat_then_place_in_recep",
+    "object": "Mug",
+    "target": "CoffeeMachine",
+    "scene": "10",
+    "game_sha256": "799fb7dc0adbc8311c57bd376d5e1101564b4cc1a1f41690964bda8fd7a05714"
+  },
+  "input_hash": "4a2fc668a7978c631f1ea87a526f2ee84cb1687005c092d822585af5b7d4d284",
+  "memory_hash": "1187b7faad6aba91b945000e6d7145d8efd150d05009a1a123bbd555296ed2d2",
+  "actor_seed": 1794466449,
+  "environment_seed": 1369217064,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: heat some mug and put it in coffeemachine.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "go to coffeemachine 1",
+      "raw_model_output": "go to coffeemachine 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "94d875bf9ccac65ccbc165b23be8faa7e52d7bb8d6c3514d8651be2ccced1c26",
+      "observation": "You arrive at coffeemachine 1. On the coffeemachine 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to drawer 1",
+      "raw_model_output": "go to drawer 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "5e98b60972b9dc12bdea0537a52600cebf7bef20af55854efcc180ff9505109c",
+      "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "open drawer 1",
+      "raw_model_output": "open drawer 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "4432c97d682eb162db0a99123cbb4cef8900e149c65b15e79e53879abfa379bc",
+      "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a knife 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "go to drawer 2",
+      "raw_model_output": "go to drawer 2",
+      "legacy_placement_alias_applied": false,
+      "model_call": "dcf7c8d83e1e250e57b7dd3b9955483a8418d234cf28d8e482a5a4a27b1a7741",
+      "observation": "You arrive at drawer 2. The drawer 2 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "go to drawer 3",
+      "raw_model_output": "go to drawer 3",
+      "legacy_placement_alias_applied": false,
+      "model_call": "deb8761a028a86021c02c04ecb9b5f0ec620eb883aa55eb766caa48a604bb507",
+      "observation": "You arrive at drawer 3. The drawer 3 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "e9e9eb5d73d3205199f2860ae4cc7451b5236ac65e7979edbf1235fdfacffc9a",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 1, a glassbottle 1, a mug 2, and a papertowelroll 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "take mug 2 from countertop 1",
+      "raw_model_output": "take mug 2 from countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "91de6da94d65d8372bbd7087da03e5dc54b4726b8684d07ec8e8bc6f991d2000",
+      "observation": "You pick up the mug 2 from the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "heat mug 2 with microwave 1",
+      "raw_model_output": "heat mug 2 with microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "4c0223ae9696071ff02b8c25bc7636ccd2054e132536a3a98e63eb9dd206a611",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "go to microwave 1",
+      "raw_model_output": "go to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "ce0be5a31b0f7757ba6f2d776b48abd31384f8f51c0cbc81c384fa5ce2135c51",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "open microwave 1",
+      "raw_model_output": "open microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "b6e871c7fdce9ccfd2a4f72d4645301412c3084df39a4af49800310c5c4b05f4",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a egg 1, and a potato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "heat mug 2 with microwave 1",
+      "raw_model_output": "heat mug 2 with microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "7b2de4dc664599e26a0acacbd709ad3ff7f3727d6d6f0aa1efc0e5a1166b9d1d",
+      "observation": "You heat the mug 2 using the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 12,
+      "action": "move mug 2 to coffeemachine 1",
+      "raw_model_output": "move mug 2 to coffeemachine 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "232a460adc0bfef52be520c9db78b8c1049f54bc57ec923dab4bb9fbdd15a50e",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 13,
+      "action": "move mug 2 to coffeemachine 1",
+      "raw_model_output": "move mug 2 to coffeemachine 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "fbc0a5636921d7bbe816cd593ae98ae046da778f481b766620f4b4c2569262d4",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 14,
+      "action": "go to coffeemachine 1",
+      "raw_model_output": "go to coffeemachine 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "61e08a65051277b0a2bb103d4abd412074619acd5e8de55d09dc17e01a6e141e",
+      "observation": "You arrive at coffeemachine 1. On the coffeemachine 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 15,
+      "action": "move mug 2 to coffeemachine 1",
+      "raw_model_output": "move mug 2 to coffeemachine 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "afa173bf71f855ff18ce14a7f8e0a4bbf5e3a5770b00c2df3264e70434a4c6bd",
+      "observation": "You move the mug 2 to the coffeemachine 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

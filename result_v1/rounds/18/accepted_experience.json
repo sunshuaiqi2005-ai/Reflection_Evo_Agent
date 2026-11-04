@@ -1,0 +1,21 @@
+{
+  "trigger": "Attempting to process an object that is not the correct type for the task.",
+  "advice": "Before attempting to process an object, verify that it matches the required type for the task. If it does not, search for the correct object and ensure it is picked up before proceeding with processing.",
+  "exceptions": [],
+  "id": "r18-candidate",
+  "validated_by": [
+    "r18-candidate-original",
+    "r18-candidate-extension"
+  ],
+  "reviewed_on": [],
+  "acceptance": {
+    "basis": "original_and_extension_pass",
+    "original_validation_episode": "r18-candidate-original",
+    "extension_validation_episode": "r18-candidate-extension",
+    "originally_validated_candidate": "r18-candidate",
+    "extension_success": true,
+    "extension_review_performed": false,
+    "revised": false,
+    "post_review_revalidated": false
+  }
+}

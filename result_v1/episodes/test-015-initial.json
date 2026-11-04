@@ -1,0 +1,123 @@
+{
+  "id": "test-015-initial",
+  "stage": "heldout-test",
+  "task": {
+    "id": "valid_unseen/pick_clean_then_place_in_recep-Bowl-None-Cabinet-10/trial_T20190909_061158_110530/game.tw-pddl",
+    "game_path": "valid_unseen/pick_clean_then_place_in_recep-Bowl-None-Cabinet-10/trial_T20190909_061158_110530/game.tw-pddl",
+    "official_split": "valid_unseen",
+    "task_type": "pick_clean_then_place_in_recep",
+    "object": "Bowl",
+    "target": "Cabinet",
+    "scene": "10",
+    "game_sha256": "1c774dcf5623079489d3a80ccb4d260cafeb684425413ba4ff875fa32552b00e"
+  },
+  "input_hash": "4839ed109791a07f355345fec587550aad886b57e3cac3a92f042eac82c27828",
+  "memory_hash": "ac828d4799ff013c2a71269c082f6cbc02fce7b736522571773e5a4d25485771",
+  "actor_seed": 505421238,
+  "environment_seed": 307244615,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a clean bowl in cabinet.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "a4e7077d528049403c3a25a37a6ef78df1bd021fba3d22f847a232a906e38013",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "5a9190c5eec3522a67e145202ed7d1f02917c5c8aef57bd8d6e4abce86b45958",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "go to cabinet 1",
+      "raw_model_output": "go to cabinet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "5239e7be9cc1967dc8f2649052cf06cf364a65037b85f96f84fe352a9ceb21c1",
+      "observation": "You arrive at cabinet 1. On the cabinet 1, you see a bowl 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "take bowl 1 from cabinet 1",
+      "raw_model_output": "take bowl 1 from cabinet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "2f9a7fe60227cf12872717dd5063dd9a5bc5cc8b76d73da42bd313db8fc64099",
+      "observation": "You pick up the bowl 1 from the cabinet 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "clean bowl 1 with sinkbasin 1",
+      "raw_model_output": "clean bowl 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "d72cb2b3abb6de4f6311c462acaff0599179dd6155055da0e8c2b98a2e888720",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "ee6a02bda91dd30cb1033d223e9559ece8abe67ca8aea2049cc091b46f77e518",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "clean bowl 1 with sinkbasin 1",
+      "raw_model_output": "clean bowl 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "8197081504e71a07baf38c6abfc87359ba364d9da5e8c4a7033500ea711f67d3",
+      "observation": "You clean the bowl 1 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "go to cabinet 1",
+      "raw_model_output": "go to cabinet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "f1f554a3e808ea8317bff8268caef1400714a330c95921b504c9ffc01d62e7b0",
+      "observation": "You arrive at cabinet 1. On the cabinet 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "move bowl 1 to cabinet 1",
+      "raw_model_output": "move bowl 1 to cabinet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "78a567b9cf782179422825271737610657a0e9dbc729d0bd02e5e10113347dc5",
+      "observation": "You move the bowl 1 to the cabinet 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

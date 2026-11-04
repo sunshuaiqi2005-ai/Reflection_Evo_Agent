@@ -1,0 +1,21 @@
+{
+  "trigger": "Attempting to move an object to a location without being in the correct location or without the object being in the correct state.",
+  "advice": "Ensure that the agent is in the correct location and that the object is in the correct state before attempting to move it to the target location.",
+  "exceptions": [],
+  "id": "r03-candidate",
+  "validated_by": [
+    "r03-candidate-original",
+    "r03-candidate-extension"
+  ],
+  "reviewed_on": [],
+  "acceptance": {
+    "basis": "original_and_extension_pass",
+    "original_validation_episode": "r03-candidate-original",
+    "extension_validation_episode": "r03-candidate-extension",
+    "originally_validated_candidate": "r03-candidate",
+    "extension_success": true,
+    "extension_review_performed": false,
+    "revised": false,
+    "post_review_revalidated": false
+  }
+}

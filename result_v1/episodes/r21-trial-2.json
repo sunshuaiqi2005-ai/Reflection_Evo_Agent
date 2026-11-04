@@ -1,0 +1,112 @@
+{
+  "id": "r21-trial-2",
+  "stage": "trial",
+  "task": {
+    "id": "valid_seen/pick_clean_then_place_in_recep-Ladle-None-DiningTable-16/trial_T20190909_183724_205399/game.tw-pddl",
+    "game_path": "valid_seen/pick_clean_then_place_in_recep-Ladle-None-DiningTable-16/trial_T20190909_183724_205399/game.tw-pddl",
+    "official_split": "valid_seen",
+    "task_type": "pick_clean_then_place_in_recep",
+    "object": "Ladle",
+    "target": "DiningTable",
+    "scene": "16",
+    "game_sha256": "b1ecc9feeadd11664e8aa0494cd45e4c7b39365bf5362c61bf0f6cd80e52bc6b"
+  },
+  "input_hash": "0e5f16bfa537990b1cd618d721d844d4fd0597cad30220e0b10d7c80a2160b46",
+  "memory_hash": "c41a24ce8282ad153cd6029d1018dacc9f89990d449d830b9397843270ae76df",
+  "actor_seed": 1057748246,
+  "environment_seed": 718415031,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 27, a cabinet 26, a cabinet 25, a cabinet 24, a cabinet 23, a cabinet 22, a cabinet 21, a cabinet 20, a cabinet 19, a cabinet 18, a cabinet 17, a cabinet 16, a cabinet 15, a cabinet 14, a cabinet 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a diningtable 1, a drawer 12, a drawer 11, a drawer 10, a drawer 9, a drawer 8, a drawer 7, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a clean ladle in diningtable.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "go to diningtable 1",
+      "raw_model_output": "go to diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "431a844470cda72098c1c9cf2771482f07fc61a3e9aa988068254726e72518f0",
+      "observation": "You arrive at diningtable 1. On the diningtable 1, you see a bread 2, a bread 1, a butterknife 2, a cup 1, a fork 1, a knife 2, a knife 1, a ladle 1, a lettuce 2, a lettuce 1, a potato 1, a saltshaker 1, a soapbottle 1, a spatula 1, a spoon 1, a tomato 1, and a winebottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "take ladle 1 from diningtable 1",
+      "raw_model_output": "take ladle 1 from diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "997e60093b1cd2f18faf56c7c3dedffa69d784c4d005edb6775b261794606c67",
+      "observation": "You pick up the ladle 1 from the diningtable 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "clean ladle 1 with sinkbasin 1",
+      "raw_model_output": "clean ladle 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "920e96000ae3ff3fcf9335c385856f1942cb34c19d491482c1f5c466fc70f139",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "68242a08b497dafb500bbd46c79dffe92f5eea89fc8ebeab2dee08994a410e03",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see a dishsponge 2, a egg 3, a fork 2, and a mug 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "clean ladle 1 with sinkbasin 1",
+      "raw_model_output": "clean ladle 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "70d45c53b2d9166011ca8632d48014cd61466cea40f24756b3c24ad8fe87ecfd",
+      "observation": "You clean the ladle 1 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "move ladle 1 to diningtable 1",
+      "raw_model_output": "move ladle 1 to diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "bbd0e7caf309f15c10e99e705852e8cd6ce88da5b9b1a1f7dc32bd4bf823acb9",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "go to diningtable 1",
+      "raw_model_output": "go to diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "1eb58343649baba2b4d512f3b99737dc684209391dbb910910132e7cf3f97f4f",
+      "observation": "You arrive at diningtable 1. On the diningtable 1, you see a bread 2, a bread 1, a butterknife 2, a cup 1, a fork 1, a knife 2, a knife 1, a lettuce 2, a lettuce 1, a potato 1, a saltshaker 1, a soapbottle 1, a spatula 1, a spoon 1, a tomato 1, and a winebottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "move ladle 1 to diningtable 1",
+      "raw_model_output": "move ladle 1 to diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "3d0b10bf505115916272a123eab662d306a5996a74a75a9819c71834a7b59d54",
+      "observation": "You move the ladle 1 to the diningtable 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

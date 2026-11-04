@@ -1,0 +1,200 @@
+{
+  "id": "test-001-final",
+  "stage": "heldout-test",
+  "task": {
+    "id": "valid_unseen/pick_clean_then_place_in_recep-Plate-None-CounterTop-10/trial_T20190908_213420_728917/game.tw-pddl",
+    "game_path": "valid_unseen/pick_clean_then_place_in_recep-Plate-None-CounterTop-10/trial_T20190908_213420_728917/game.tw-pddl",
+    "official_split": "valid_unseen",
+    "task_type": "pick_clean_then_place_in_recep",
+    "object": "Plate",
+    "target": "CounterTop",
+    "scene": "10",
+    "game_sha256": "ff028de687d6a878e7d9661b09cd07c1f0fdc12c22cb1165d5b8bb756238b4d1"
+  },
+  "input_hash": "6693922ded859968b0fb44191363a40418023b16fa198afad3599f5aa240de87",
+  "memory_hash": "1187b7faad6aba91b945000e6d7145d8efd150d05009a1a123bbd555296ed2d2",
+  "actor_seed": 1402196427,
+  "environment_seed": 871024439,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a clean plate in countertop.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "c2f22df14c183c4668cd86ec2fed7db3f80cf7a03ac3ac0cd395ac87789f19de",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "d8c996fe478b6180b3070fd3355195c95e476dc8d2083c14fe98ad988146f636",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a apple 2, a dishsponge 2, a potato 3, and a potato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "5ba295b83b7bc250773717ba2768398b7f53887f208def062801e15d5d1f8534",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "go to cabinet 1",
+      "raw_model_output": "go to cabinet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "324f2bd0777ee2ffcd973479f35588139ad48b706cc0cec9efd6e6208c31eb68",
+      "observation": "You arrive at cabinet 1. On the cabinet 1, you see a plate 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "take plate 1 from cabinet 1",
+      "raw_model_output": "take plate 1 from cabinet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "185423a3f4086388f09dd2ee8cd29f0e2efbb12c9d37107668537c9b18815c7d",
+      "observation": "You pick up the plate 1 from the cabinet 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "clean plate 1 with sinkbasin 1",
+      "raw_model_output": "clean plate 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "937beb5603ee5ef1ce5fe1d805008ba0a46ece01d5ae724779c2ed774165afa1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "clean plate 1 with sinkbasin 1",
+      "raw_model_output": "clean plate 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "a1c347b668e0a0c561a4982a2b24cc082da4626377a5fa2039186468aa8f0384",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "d7062fc79e0e28852bdc8510d9c931fadb82365a9e9b0050f0ef1431bd51f592",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a apple 2, a dishsponge 2, a potato 3, and a potato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "clean plate 1 with sinkbasin 1",
+      "raw_model_output": "clean plate 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "ac4af758e5982249e523604c80df4ec4df44d43937ea5dd37c5b7dbed54f12cf",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "8b76d0aa15289d28280828f34cb6d678bc178cf11fbcb82ac497a008cfa3cfec",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "clean plate 1 with sinkbasin 1",
+      "raw_model_output": "clean plate 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "84d7f7e96e2ee4cf7d089b0f1692e4d7f795e1b4314e6e0a3a503585bfb9d0a6",
+      "observation": "You clean the plate 1 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 12,
+      "action": "move plate 1 to countertop 1",
+      "raw_model_output": "move plate 1 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "28288aac7e23cf2b182e5d1b4e4be7ab3c8549d41183f98c9cb01243cee80a4e",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 13,
+      "action": "move plate 1 to countertop 1",
+      "raw_model_output": "move plate 1 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "fcf07b5d6c18077c2895e799163d06dbf0cf4d1c430706190360e3a8a25f1099",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 14,
+      "action": "move plate 1 to countertop 1",
+      "raw_model_output": "move plate 1 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "d93cfb49399016919fa1c4b215f8c25d9f4911bd14546be7c001b8c11fea927b",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 15,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "d2fb36552c36657387d2d87e46fb63b881631b4f20bb276d76501a8a218ecb6d",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a apple 2, a dishsponge 2, a potato 3, and a potato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 16,
+      "action": "move plate 1 to countertop 1",
+      "raw_model_output": "move plate 1 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "9d17590986e1f0cd69a1472d9c7b9fa6c6dd969e168c5b25cba6192d84c2d527",
+      "observation": "You move the plate 1 to the countertop 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

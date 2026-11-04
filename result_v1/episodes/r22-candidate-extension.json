@@ -1,0 +1,167 @@
+{
+  "id": "r22-candidate-extension",
+  "stage": "candidate-extension",
+  "task": {
+    "id": "valid_seen/pick_cool_then_place_in_recep-WineBottle-None-DiningTable-17/trial_T20190908_024426_412044/game.tw-pddl",
+    "game_path": "valid_seen/pick_cool_then_place_in_recep-WineBottle-None-DiningTable-17/trial_T20190908_024426_412044/game.tw-pddl",
+    "official_split": "valid_seen",
+    "task_type": "pick_cool_then_place_in_recep",
+    "object": "WineBottle",
+    "target": "DiningTable",
+    "scene": "17",
+    "game_sha256": "e311eb061e08158bdc0d618ddc73c02df0c83f6a6d5d3291ec00796b42c0b55d"
+  },
+  "input_hash": "d958d471a8aa70f9f9a72ecded68de546efdaf0538042696378e80ff8703954f",
+  "memory_hash": "010225fb34135414ef5614675e8bea9567b89e4fc4c1f857b5b01d725ba2a207",
+  "actor_seed": 1576049622,
+  "environment_seed": 533192147,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 20, a cabinet 19, a cabinet 18, a cabinet 17, a cabinet 16, a cabinet 15, a cabinet 14, a cabinet 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a diningtable 2, a diningtable 1, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: cool some winebottle and put it in diningtable.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "604cc6cbc673ccba6b7fb5d8f742ef53e733dd143e3bd0fd4afad3d4c50850a0",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to diningtable 2",
+      "raw_model_output": "go to diningtable 2",
+      "legacy_placement_alias_applied": false,
+      "model_call": "3aa6ab2f727e7b2cacaad2beb889e8192b2165676fbfaf5703917d74be7efa8c",
+      "observation": "You arrive at diningtable 2. On the diningtable 2, you see a butterknife 3, a cellphone 2, a cellphone 1, a dishsponge 2, a knife 3, a knife 2, a knife 1, a lettuce 1, a plate 3, a plate 2, a soapbottle 3, a spraybottle 1, and a tomato 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "9601c9f4dea0dbb36d82ded2c46b37d3ea0dfd968a0fa4deddd7d54faf53887c",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "open fridge 1",
+      "raw_model_output": "open fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "38aca8b15712514df9c755322e49192882ce12b3fa27675baf1d2d11f4038fca",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a apple 2, a bowl 3, a cup 2, and a potato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "go to diningtable 1",
+      "raw_model_output": "go to diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "adbaa6a6503b4821bcd9934e40f73e1f9eb4bcef44c513786cf7aad753ce6562",
+      "observation": "You arrive at diningtable 1. On the diningtable 1, you see a bowl 2, a bread 1, a butterknife 1, a dishsponge 1, a kettle 1, a spatula 2, a spatula 1, a tomato 1, and a winebottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "take winebottle 1 from diningtable 1",
+      "raw_model_output": "take winebottle 1 from diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "7921cfee7361f8fdcbd560428099b86f652622bd6d24116c9cf68ca5e50c846c",
+      "observation": "You pick up the winebottle 1 from the diningtable 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "cool winebottle 1 with fridge 1",
+      "raw_model_output": "cool winebottle 1 with fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "887ad7a72eb8c40b8da08f5a8c04e25795587264207966e19f32eeacad89a877",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "2522c6d2b5f57cb4816b42e3c11314c6e538793ba1fc8d7a822c012de5daed99",
+      "observation": "You arrive at fridge 1. The fridge 1 is open. In it, you see a apple 2, a bowl 3, a cup 2, and a potato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "cool winebottle 1 with fridge 1",
+      "raw_model_output": "cool winebottle 1 with fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "b91f030e1d5bbe8bdb784249e2e440bb34dbad291df0412f07b92f6d41112569",
+      "observation": "You cool the winebottle 1 using the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "move winebottle 1 to diningtable 2",
+      "raw_model_output": "move winebottle 1 to diningtable 2",
+      "legacy_placement_alias_applied": false,
+      "model_call": "bf295a3c81bd995c8641fd27a02549c0df16c14f1be4d28e67f91fe06493e63c",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "move winebottle 1 to diningtable 2",
+      "raw_model_output": "move winebottle 1 to diningtable 2",
+      "legacy_placement_alias_applied": false,
+      "model_call": "a26fcfcf3b0f5e87c9357400134e7c36d6292132155d9c4ec5108fa9b6e14706",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 12,
+      "action": "go to diningtable 2",
+      "raw_model_output": "go to diningtable 2",
+      "legacy_placement_alias_applied": false,
+      "model_call": "39123058a1b4e5edd232176afbb4e67fbde91cfb3fbb5d105b0c326d02a87e3d",
+      "observation": "You arrive at diningtable 2. On the diningtable 2, you see a butterknife 3, a cellphone 2, a cellphone 1, a dishsponge 2, a knife 3, a knife 2, a knife 1, a lettuce 1, a plate 3, a plate 2, a soapbottle 3, a spraybottle 1, and a tomato 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 13,
+      "action": "move winebottle 1 to diningtable 2",
+      "raw_model_output": "move winebottle 1 to diningtable 2",
+      "legacy_placement_alias_applied": false,
+      "model_call": "7eb5d3da396694b819b101836dd4beac87ebb0192e1d0f8e80d750f5f95e5223",
+      "observation": "You move the winebottle 1 to the diningtable 2.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

@@ -1,0 +1,21 @@
+{
+  "trigger": "cleaning an object with a sinkbasin when the cleaning action is ineffective",
+  "advice": "Verify that the object is in a cleanable state before attempting to clean it. If the cleaning action is ineffective, reposition the object and retry the cleaning action.",
+  "exceptions": [],
+  "id": "r16-candidate",
+  "validated_by": [
+    "r16-candidate-original",
+    "r16-candidate-extension"
+  ],
+  "reviewed_on": [],
+  "acceptance": {
+    "basis": "original_and_extension_pass",
+    "original_validation_episode": "r16-candidate-original",
+    "extension_validation_episode": "r16-candidate-extension",
+    "originally_validated_candidate": "r16-candidate",
+    "extension_success": true,
+    "extension_review_performed": false,
+    "revised": false,
+    "post_review_revalidated": false
+  }
+}

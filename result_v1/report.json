@@ -1,0 +1,469 @@
+{
+  "completed_rounds": 40,
+  "accepted_rounds": 9,
+  "rounds": [
+    {
+      "round": 1,
+      "status": "accepted",
+      "memory_version": 1
+    },
+    {
+      "round": 2,
+      "status": "skipped_all_success",
+      "memory_version": 1
+    },
+    {
+      "round": 3,
+      "status": "accepted",
+      "memory_version": 2
+    },
+    {
+      "round": 4,
+      "status": "skipped_all_success",
+      "memory_version": 2
+    },
+    {
+      "round": 5,
+      "status": "rejected_original",
+      "memory_version": 2
+    },
+    {
+      "round": 6,
+      "status": "skipped_all_success",
+      "memory_version": 2
+    },
+    {
+      "round": 7,
+      "status": "skipped_all_success",
+      "memory_version": 2
+    },
+    {
+      "round": 8,
+      "status": "skipped_all_success",
+      "memory_version": 2
+    },
+    {
+      "round": 9,
+      "status": "accepted",
+      "memory_version": 3
+    },
+    {
+      "round": 10,
+      "status": "skipped_all_success",
+      "memory_version": 3
+    },
+    {
+      "round": 11,
+      "status": "skipped_all_success",
+      "memory_version": 3
+    },
+    {
+      "round": 12,
+      "status": "skipped_all_success",
+      "memory_version": 3
+    },
+    {
+      "round": 13,
+      "status": "skipped_all_success",
+      "memory_version": 3
+    },
+    {
+      "round": 14,
+      "status": "rejected_original",
+      "memory_version": 3
+    },
+    {
+      "round": 15,
+      "status": "skipped_all_success",
+      "memory_version": 3
+    },
+    {
+      "round": 16,
+      "status": "accepted",
+      "memory_version": 4
+    },
+    {
+      "round": 17,
+      "status": "skipped_all_success",
+      "memory_version": 4
+    },
+    {
+      "round": 18,
+      "status": "accepted",
+      "memory_version": 5
+    },
+    {
+      "round": 19,
+      "status": "rejected_original",
+      "memory_version": 5
+    },
+    {
+      "round": 20,
+      "status": "accepted",
+      "memory_version": 6
+    },
+    {
+      "round": 21,
+      "status": "skipped_all_success",
+      "memory_version": 6
+    },
+    {
+      "round": 22,
+      "status": "accepted",
+      "memory_version": 7
+    },
+    {
+      "round": 23,
+      "status": "rejected_original",
+      "memory_version": 7
+    },
+    {
+      "round": 24,
+      "status": "accepted",
+      "memory_version": 8
+    },
+    {
+      "round": 25,
+      "status": "accepted",
+      "memory_version": 9
+    },
+    {
+      "round": 26,
+      "status": "rejected_original",
+      "memory_version": 9
+    },
+    {
+      "round": 27,
+      "status": "rejected_original",
+      "memory_version": 9
+    },
+    {
+      "round": 28,
+      "status": "rejected_original",
+      "memory_version": 9
+    },
+    {
+      "round": 29,
+      "status": "skipped_all_success",
+      "memory_version": 9
+    },
+    {
+      "round": 30,
+      "status": "skipped_all_success",
+      "memory_version": 9
+    },
+    {
+      "round": 31,
+      "status": "skipped_all_success",
+      "memory_version": 9
+    },
+    {
+      "round": 32,
+      "status": "skipped_all_success",
+      "memory_version": 9
+    },
+    {
+      "round": 33,
+      "status": "skipped_all_success",
+      "memory_version": 9
+    },
+    {
+      "round": 34,
+      "status": "skipped_all_success",
+      "memory_version": 9
+    },
+    {
+      "round": 35,
+      "status": "rejected_original",
+      "memory_version": 9
+    },
+    {
+      "round": 36,
+      "status": "rejected_protocol",
+      "memory_version": 9
+    },
+    {
+      "round": 37,
+      "status": "skipped_all_success",
+      "memory_version": 9
+    },
+    {
+      "round": 38,
+      "status": "skipped_all_success",
+      "memory_version": 9
+    },
+    {
+      "round": 39,
+      "status": "skipped_all_success",
+      "memory_version": 9
+    },
+    {
+      "round": 40,
+      "status": "skipped_all_success",
+      "memory_version": 9
+    }
+  ],
+  "heldout_test": {
+    "frozen_memory_hash": "1187b7faad6aba91b945000e6d7145d8efd150d05009a1a123bbd555296ed2d2",
+    "tasks": 20,
+    "outcomes": {
+      "initial": [
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Plate-None-CounterTop-10/trial_T20190908_213420_728917/game.tw-pddl",
+          "success": true,
+          "steps": 17,
+          "episode_id": "test-001-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-10/trial_T20190909_123133_763972/game.tw-pddl",
+          "success": false,
+          "steps": 50,
+          "episode_id": "test-002-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120554_888709/game.tw-pddl",
+          "success": true,
+          "steps": 48,
+          "episode_id": "test-003-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_heat_then_place_in_recep-Tomato-None-GarbageCan-10/trial_T20190908_225046_020282/game.tw-pddl",
+          "success": true,
+          "steps": 21,
+          "episode_id": "test-004-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_171933_349922/game.tw-pddl",
+          "success": false,
+          "steps": 50,
+          "episode_id": "test-005-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Cloth-None-Cabinet-424/trial_T20190908_022321_380927/game.tw-pddl",
+          "success": true,
+          "steps": 16,
+          "episode_id": "test-006-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_heat_then_place_in_recep-Egg-None-GarbageCan-10/trial_T20190908_113523_123938/game.tw-pddl",
+          "success": false,
+          "steps": 50,
+          "episode_id": "test-007-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Spatula-None-Drawer-10/trial_T20190907_080730_211959/game.tw-pddl",
+          "success": false,
+          "steps": 50,
+          "episode_id": "test-008-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_cool_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_183807_477267/game.tw-pddl",
+          "success": true,
+          "steps": 25,
+          "episode_id": "test-009-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120632_691361/game.tw-pddl",
+          "success": true,
+          "steps": 14,
+          "episode_id": "test-010-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Pan-None-CounterTop-10/trial_T20190908_032434_013084/game.tw-pddl",
+          "success": false,
+          "steps": 50,
+          "episode_id": "test-011-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_cool_then_place_in_recep-Mug-None-Cabinet-10/trial_T20190909_121710_650938/game.tw-pddl",
+          "success": true,
+          "steps": 21,
+          "episode_id": "test-012-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_cool_then_place_in_recep-Tomato-None-Microwave-10/trial_T20190909_102710_795182/game.tw-pddl",
+          "success": true,
+          "steps": 11,
+          "episode_id": "test-013-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Cloth-None-CounterTop-424/trial_T20190908_114340_674467/game.tw-pddl",
+          "success": true,
+          "steps": 11,
+          "episode_id": "test-014-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Bowl-None-Cabinet-10/trial_T20190909_061158_110530/game.tw-pddl",
+          "success": true,
+          "steps": 9,
+          "episode_id": "test-015-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120712_273910/game.tw-pddl",
+          "success": true,
+          "steps": 17,
+          "episode_id": "test-016-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Pan-None-CounterTop-10/trial_T20190908_032543_712058/game.tw-pddl",
+          "success": true,
+          "steps": 11,
+          "episode_id": "test-017-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-10/trial_T20190909_174840_771703/game.tw-pddl",
+          "success": false,
+          "steps": 50,
+          "episode_id": "test-018-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_171850_960211/game.tw-pddl",
+          "success": false,
+          "steps": 50,
+          "episode_id": "test-019-initial"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Spatula-None-Drawer-10/trial_T20190907_080800_275989/game.tw-pddl",
+          "success": false,
+          "steps": 50,
+          "episode_id": "test-020-initial"
+        }
+      ],
+      "final": [
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Plate-None-CounterTop-10/trial_T20190908_213420_728917/game.tw-pddl",
+          "success": true,
+          "steps": 16,
+          "episode_id": "test-001-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-10/trial_T20190909_123133_763972/game.tw-pddl",
+          "success": false,
+          "steps": 50,
+          "episode_id": "test-002-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120554_888709/game.tw-pddl",
+          "success": true,
+          "steps": 13,
+          "episode_id": "test-003-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_heat_then_place_in_recep-Tomato-None-GarbageCan-10/trial_T20190908_225046_020282/game.tw-pddl",
+          "success": true,
+          "steps": 10,
+          "episode_id": "test-004-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_171933_349922/game.tw-pddl",
+          "success": true,
+          "steps": 12,
+          "episode_id": "test-005-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Cloth-None-Cabinet-424/trial_T20190908_022321_380927/game.tw-pddl",
+          "success": true,
+          "steps": 15,
+          "episode_id": "test-006-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_heat_then_place_in_recep-Egg-None-GarbageCan-10/trial_T20190908_113523_123938/game.tw-pddl",
+          "success": false,
+          "steps": 50,
+          "episode_id": "test-007-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Spatula-None-Drawer-10/trial_T20190907_080730_211959/game.tw-pddl",
+          "success": false,
+          "steps": 50,
+          "episode_id": "test-008-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_cool_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_183807_477267/game.tw-pddl",
+          "success": true,
+          "steps": 16,
+          "episode_id": "test-009-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120632_691361/game.tw-pddl",
+          "success": true,
+          "steps": 15,
+          "episode_id": "test-010-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Pan-None-CounterTop-10/trial_T20190908_032434_013084/game.tw-pddl",
+          "success": false,
+          "steps": 50,
+          "episode_id": "test-011-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_cool_then_place_in_recep-Mug-None-Cabinet-10/trial_T20190909_121710_650938/game.tw-pddl",
+          "success": true,
+          "steps": 13,
+          "episode_id": "test-012-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_cool_then_place_in_recep-Tomato-None-Microwave-10/trial_T20190909_102710_795182/game.tw-pddl",
+          "success": true,
+          "steps": 10,
+          "episode_id": "test-013-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Cloth-None-CounterTop-424/trial_T20190908_114340_674467/game.tw-pddl",
+          "success": true,
+          "steps": 13,
+          "episode_id": "test-014-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Bowl-None-Cabinet-10/trial_T20190909_061158_110530/game.tw-pddl",
+          "success": true,
+          "steps": 10,
+          "episode_id": "test-015-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120712_273910/game.tw-pddl",
+          "success": true,
+          "steps": 11,
+          "episode_id": "test-016-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Pan-None-CounterTop-10/trial_T20190908_032543_712058/game.tw-pddl",
+          "success": true,
+          "steps": 13,
+          "episode_id": "test-017-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-10/trial_T20190909_174840_771703/game.tw-pddl",
+          "success": true,
+          "steps": 13,
+          "episode_id": "test-018-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_171850_960211/game.tw-pddl",
+          "success": true,
+          "steps": 15,
+          "episode_id": "test-019-final"
+        },
+        {
+          "task_id": "valid_unseen/pick_clean_then_place_in_recep-Spatula-None-Drawer-10/trial_T20190907_080800_275989/game.tw-pddl",
+          "success": false,
+          "steps": 50,
+          "episode_id": "test-020-final"
+        }
+      ]
+    },
+    "metrics": {
+      "initial": {
+        "successes": 12,
+        "success_rate": 0.6,
+        "mean_steps": 31.05
+      },
+      "final": {
+        "successes": 15,
+        "success_rate": 0.75,
+        "mean_steps": 22.25
+      }
+    },
+    "success_rate_delta": 0.15000000000000002
+  }
+}

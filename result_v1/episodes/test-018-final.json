@@ -1,0 +1,167 @@
+{
+  "id": "test-018-final",
+  "stage": "heldout-test",
+  "task": {
+    "id": "valid_unseen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-10/trial_T20190909_174840_771703/game.tw-pddl",
+    "game_path": "valid_unseen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-10/trial_T20190909_174840_771703/game.tw-pddl",
+    "official_split": "valid_unseen",
+    "task_type": "pick_cool_then_place_in_recep",
+    "object": "Lettuce",
+    "target": "CounterTop",
+    "scene": "10",
+    "game_sha256": "ca96ae5d83766405d4c150752cc7fdae4d9f3c0c0f31a76e8c8c16aebb40cf21"
+  },
+  "input_hash": "52a24a8e3f031c4d589ccd876137a39d15b16df86ec7d349229fed15443499fe",
+  "memory_hash": "1187b7faad6aba91b945000e6d7145d8efd150d05009a1a123bbd555296ed2d2",
+  "actor_seed": 467724735,
+  "environment_seed": 1836209635,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: cool some lettuce and put it in countertop.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "5890693b033922c46d51fd3f1a002ec7fc940231e9d544195b0c4a419a31dde9",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "7c638e68e4bb6cfb5ebf7d647dfc172964fce2878c69303b56510686ee142210",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3, a bowl 2, a creditcard 2, a creditcard 1, a dishsponge 1, and a glassbottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "7d587bc826d7b34088e5e3779943a2768f3e999d59419c4a87bab8854829df85",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "open fridge 1",
+      "raw_model_output": "open fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "01d747ccdbc9cdc731ef676c97e0a0f5ecfe89cdacf438078d7994591bb8f8ce",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a bowl 1, a bread 2, a cup 3, a egg 1, a mug 1, a plate 3, a potato 1, and a tomato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "go to countertop 3",
+      "raw_model_output": "go to countertop 3",
+      "legacy_placement_alias_applied": false,
+      "model_call": "3949529f323c745aa6fa2755d4fb7e60af6e08c245e31d7c7b1f667e32759341",
+      "observation": "You arrive at countertop 3. On the countertop 3, you see a bread 3, a cellphone 2, a houseplant 1, a knife 3, a lettuce 3, a papertowelroll 1, and a statue 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "take lettuce 3 from countertop 3",
+      "raw_model_output": "take lettuce 3 from countertop 3",
+      "legacy_placement_alias_applied": false,
+      "model_call": "ce16188f08bd1cf87a1249c36be8b4b3fe23a87be971de6489bde5755474092b",
+      "observation": "You pick up the lettuce 3 from the countertop 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "cool lettuce 3 with fridge 1",
+      "raw_model_output": "cool lettuce 3 with fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "32c02f83844df0464dd631ab38a19780697388c48ddf1817b43ea68458894c80",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "41798131e4a62da631ff601c1c28c81151ea9505392b7c4b7abeba7df63c6adc",
+      "observation": "You arrive at fridge 1. The fridge 1 is open. In it, you see a bowl 1, a bread 2, a cup 3, a egg 1, a mug 1, a plate 3, a potato 1, and a tomato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "cool lettuce 3 with fridge 1",
+      "raw_model_output": "cool lettuce 3 with fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "42162ee06ec7b90c761448b6839dfd92e11b290ffc3ea7e7edb2cf3f085d8986",
+      "observation": "You cool the lettuce 3 using the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "move lettuce 3 to countertop 1",
+      "raw_model_output": "move lettuce 3 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "08c09f2f6a14b01a1ab335979078253e2c65d580cf7a7ab07fc307edcc6c4d33",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "move lettuce 3 to countertop 1",
+      "raw_model_output": "move lettuce 3 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "ce416a58d842ca7a949035f9b49402abcb5467a226f17d05c731ba341dc43298",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 12,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "6bdb0f6bab4d218da1ad159683a407d83794726dee60cf7ae84dc7654a359c07",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3, a bowl 2, a creditcard 2, a creditcard 1, a dishsponge 1, and a glassbottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 13,
+      "action": "move lettuce 3 to countertop 1",
+      "raw_model_output": "move lettuce 3 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "faa86158b92cb64728415900a8b7d890f450df9138ed2a757acc3f3d4d450d8c",
+      "observation": "You move the lettuce 3 to the countertop 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

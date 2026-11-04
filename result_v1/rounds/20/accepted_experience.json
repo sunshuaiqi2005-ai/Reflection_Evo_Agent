@@ -1,0 +1,21 @@
+{
+  "trigger": "尝试冷却物体但未成功",
+  "advice": "在尝试冷却物体之前，确保物体已被正确获取，并且冷却设备（如 fridge）处于可用状态。如果冷却操作无效，应重新检查冷却设备的状态或尝试其他冷却方法。",
+  "exceptions": [],
+  "id": "r20-candidate",
+  "validated_by": [
+    "r20-candidate-original",
+    "r20-candidate-extension"
+  ],
+  "reviewed_on": [],
+  "acceptance": {
+    "basis": "original_and_extension_pass",
+    "original_validation_episode": "r20-candidate-original",
+    "extension_validation_episode": "r20-candidate-extension",
+    "originally_validated_candidate": "r20-candidate",
+    "extension_success": true,
+    "extension_review_performed": false,
+    "revised": false,
+    "post_review_revalidated": false
+  }
+}

@@ -1,0 +1,39 @@
+seed: 42
+data_root: data/alfworld/json_2.1.1
+tokenizer: data/tokenizer/tokenizer.json
+task_selection:
+  train_task_types: [pick_clean_then_place_in_recep, pick_heat_then_place_in_recep, pick_cool_then_place_in_recep]
+  extension_task_types: [pick_clean_then_place_in_recep, pick_heat_then_place_in_recep, pick_cool_then_place_in_recep]
+  test_task_types: [pick_clean_then_place_in_recep, pick_heat_then_place_in_recep, pick_cool_then_place_in_recep]
+splits:
+  train: 40
+  extension: 48
+  test: 20
+  allow_reduce: true
+pool_transfer:
+  extension_to_train: 20
+evolution:
+  protocol: original_once_extension_failure_review_append_v2
+  rounds: 40
+  original_order: manifest
+  trials_per_task: 3
+  max_revisions: 1
+  extension_without_replacement: true
+episode:
+  max_steps: 50
+  history_tokens: 1000
+  state_tokens: 550
+model:
+  url: http://127.0.0.1:11434
+  name: qwen14b-local
+  actor_context: 4096
+  reflection_context: 8192
+  actor_output_tokens: 64
+  reflection_output_tokens: 1536
+  actor_temperature: 0.7
+  reflection_temperature: 0.2
+  timeout_seconds: 300
+  retries: 2
+evaluation:
+  compare_initial_memory: true
+  baseline_before_training: true

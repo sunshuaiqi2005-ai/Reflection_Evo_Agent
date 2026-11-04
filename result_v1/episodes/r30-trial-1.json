@@ -1,0 +1,156 @@
+{
+  "id": "r30-trial-1",
+  "stage": "trial",
+  "task": {
+    "id": "valid_seen/pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-26/trial_T20190907_233056_022802/game.tw-pddl",
+    "game_path": "valid_seen/pick_clean_then_place_in_recep-Mug-None-CoffeeMachine-26/trial_T20190907_233056_022802/game.tw-pddl",
+    "official_split": "valid_seen",
+    "task_type": "pick_clean_then_place_in_recep",
+    "object": "Mug",
+    "target": "CoffeeMachine",
+    "scene": "26",
+    "game_sha256": "f366616a4675098054e99418abbb95cc179e6648f47cb6056f4efd63c850887b"
+  },
+  "input_hash": "b1adbad674449f720c0d3e2ac7a6144714cceaab85e9ba6f7228234f1e8ba90c",
+  "memory_hash": "1187b7faad6aba91b945000e6d7145d8efd150d05009a1a123bbd555296ed2d2",
+  "actor_seed": 131137108,
+  "environment_seed": 2108654165,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a diningtable 2, a diningtable 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: clean some mug and put it in coffeemachine.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "6ebb310e68d18cd99114a2449726b96a5d27e93337b572482ec4d25258e15eb4",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to coffeemachine 1",
+      "raw_model_output": "go to coffeemachine 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "402b0178b89d4a8fd58bc06f1c3af94affd987010f695506d6367b5c31616859",
+      "observation": "You arrive at coffeemachine 1. On the coffeemachine 1, you see a mug 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "take mug 2 from coffeemachine 1",
+      "raw_model_output": "take mug 2 from coffeemachine 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "e9b48be3242b058a27d0cbbdf052f6590854a9408cce4e5cc7ec97cb742633dc",
+      "observation": "You pick up the mug 2 from the coffeemachine 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "clean mug 2 with sinkbasin 1",
+      "raw_model_output": "clean mug 2 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "b5e7eb8c8e3b1dfcc262e2f66e2874520716baef1921c23f716e3978650bf3ba",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "5a86e1ddfbae873c040b454045ef158442941d41961727a119cf1926499cc5a7",
+      "observation": "You are facing the coffeemachine 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "clean mug 2 with sinkbasin 1",
+      "raw_model_output": "clean mug 2 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "22c84f759ebee32d7a53eb270da5797d5daa64279fd787ccffab8441f3e340e9",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "114995737776f52aaf365f4dfb200fbdd6e6e6ead41043a082bf6d04cccd1908",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see a egg 1, a plate 2, a spatula 3, and a spoon 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "clean mug 2 with sinkbasin 1",
+      "raw_model_output": "clean mug 2 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "5767076b19f2be2a8a45cd522e2ff9f71b407ee4416c07d068861d2df205ad91",
+      "observation": "You clean the mug 2 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "move mug 2 to coffeemachine 1",
+      "raw_model_output": "move mug 2 to coffeemachine 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "9b593aa79d358162cda9ea12f54d15be6d1ac02991a762ba6d886fa8a69dfbb0",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "move mug 2 to coffeemachine 1",
+      "raw_model_output": "move mug 2 to coffeemachine 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "b176f2b9758b2bb81fbdc66d28351d54d3792ba70927056d7703fd7c558d8062",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "go to coffeemachine 1",
+      "raw_model_output": "go to coffeemachine 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "61cc227a819a7b03f9d2bdb211240c4dc0221bb8cf3a24609ca59218788f02b5",
+      "observation": "You arrive at coffeemachine 1. On the coffeemachine 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 12,
+      "action": "move mug 2 to coffeemachine 1",
+      "raw_model_output": "move mug 2 to coffeemachine 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "fab92f68a49d52767358f8083b3e9f65f9ebad7cfa09ac7cd4448933c5fa6ecb",
+      "observation": "You move the mug 2 to the coffeemachine 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

@@ -1,0 +1,211 @@
+{
+  "id": "r03-candidate-original",
+  "stage": "candidate-original",
+  "task": {
+    "id": "train/pick_heat_then_place_in_recep-Apple-None-CounterTop-2/trial_T20190908_112607_841503/game.tw-pddl",
+    "game_path": "train/pick_heat_then_place_in_recep-Apple-None-CounterTop-2/trial_T20190908_112607_841503/game.tw-pddl",
+    "official_split": "train",
+    "task_type": "pick_heat_then_place_in_recep",
+    "object": "Apple",
+    "target": "CounterTop",
+    "scene": "2",
+    "game_sha256": "3ddb3f6a9d200c070f22e082a334dc1921a7e3a9bb0f170a8a148ee46bbacb7c"
+  },
+  "input_hash": "767283bca7e22fc436f14c0f7334ab04feccbfa9a434f54cb42344399d3520a5",
+  "memory_hash": "29d3f501b81f93ef19f43e6e110cd1eac6c5e427e4c7f64a7a4812b90839da0c",
+  "actor_seed": 1992620026,
+  "environment_seed": 449913569,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a drawer 13, a drawer 12, a drawer 11, a drawer 10, a drawer 9, a drawer 8, a drawer 7, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 6, a stoveburner 5, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a hot apple in countertop.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "0cc4cb446655f8504f1babf494824a5c8b653faf1635e489f09dba8251011ea5",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "62a7a006add2b1adcaf6e31d7015020da1a4e05e86375d4b2f734e8d4c72af2e",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a butterknife 1, a fork 2, a knife 1, a lettuce 1, a pan 1, a plate 1, a soapbottle 2, a spatula 3, a spoon 1, a window 3, and a window 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "005da7fd86cde46c806a9db5e580a3c37d241fa435ba867937061e8704932d20",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "open fridge 1",
+      "raw_model_output": "open fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "df40ebf17895122b679d71e11c447d1ba0da2186c2bd53a8f721987e832b7fb3",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a apple 1, a cup 1, and a potato 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "take apple 1 from fridge 1",
+      "raw_model_output": "take apple 1 from fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "864763284f1dac5925be14745a76e0ee629fa52e77a880761107e95fd84b138f",
+      "observation": "You pick up the apple 1 from the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "heat apple 1 with microwave 1",
+      "raw_model_output": "heat apple 1 with microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "9f61c2de4ca0cfe02c1a8394315535eb370f40856bf8cbd6e6581a8678f6b19c",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "go to microwave 1",
+      "raw_model_output": "go to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "5cef7293d529524457964839a2a6aa569d663bd45c32f24e219591a039942a32",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "open microwave 1",
+      "raw_model_output": "open microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "ea4b9aa803361aea2cc0d5f77c914da7eb5b881c6e9baecffe35792db56db39e",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a mug 2, and a mug 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "go to stoveburner 1",
+      "raw_model_output": "go to stoveburner 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "53f51b3ec5b04e142afcc02edf2475ee8b3bb742e1492509de44cd4020f58377",
+      "observation": "You arrive at stoveburner 1. On the stoveburner 1, you see a pot 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "heat apple 1 with stoveburner 1",
+      "raw_model_output": "heat apple 1 with stoveburner 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "517fc82b87211c1a887108bda1804737ba846be0ad574d0d932e7f004680e5e5",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "go to microwave 1",
+      "raw_model_output": "go to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "fd7c656aed5c5fc3d1a0a745453616b75e6e8eb4ec8d9fc6c4f092d3e7ace10e",
+      "observation": "You arrive at microwave 1. The microwave 1 is open. In it, you see a mug 2, and a mug 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 12,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "69f9af1c22c578e4f581a050c3c4278fe0ae068723ef83c97b1f31fb6bbb8a43",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a butterknife 1, a fork 2, a knife 1, a lettuce 1, a pan 1, a plate 1, a soapbottle 2, a spatula 3, a spoon 1, a window 3, and a window 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 13,
+      "action": "go to microwave 1",
+      "raw_model_output": "go to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "565dae587e5dc12f6167f4bcec0a2a9fd2b1a20e6551688a5cba4aa0aedc2932",
+      "observation": "You arrive at microwave 1. The microwave 1 is open. In it, you see a mug 2, and a mug 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 14,
+      "action": "heat apple 1 with microwave 1",
+      "raw_model_output": "heat apple 1 with microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "298309f1c75cbc357e15310f2d9b6820261f7ea006527935dbf3e15ce7dc97ad",
+      "observation": "You heat the apple 1 using the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 15,
+      "action": "move apple 1 to countertop 1",
+      "raw_model_output": "move apple 1 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "21eb2a9e34763218498dbb146166c7ff65d03a28973593b96d3db87b2ccf7655",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 16,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "38f6b6c267811a928949a7832dc874c27e535ad44e80cb457ddb79eb36fea554",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a butterknife 1, a fork 2, a knife 1, a lettuce 1, a pan 1, a plate 1, a soapbottle 2, a spatula 3, a spoon 1, a window 3, and a window 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 17,
+      "action": "move apple 1 to countertop 1",
+      "raw_model_output": "move apple 1 to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "be6c2f2f6fb7b3fdee442a48cf35dce4060c7474e85a7afee136f71e86ac3500",
+      "observation": "You move the apple 1 to the countertop 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

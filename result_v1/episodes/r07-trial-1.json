@@ -1,0 +1,200 @@
+{
+  "id": "r07-trial-1",
+  "stage": "trial",
+  "task": {
+    "id": "train/pick_clean_then_place_in_recep-SoapBar-None-Toilet-419/trial_T20190907_005338_967686/game.tw-pddl",
+    "game_path": "train/pick_clean_then_place_in_recep-SoapBar-None-Toilet-419/trial_T20190907_005338_967686/game.tw-pddl",
+    "official_split": "train",
+    "task_type": "pick_clean_then_place_in_recep",
+    "object": "SoapBar",
+    "target": "Toilet",
+    "scene": "419",
+    "game_sha256": "8e3bf0f09d1bb8826db69a6a0e15fca142688c515f9d1e559d98d02823080356"
+  },
+  "input_hash": "390c41c60ef3da282e5cdfe96d21bbacb77f4055f064fee0fc2bf32f6f6374a2",
+  "memory_hash": "186bd1ef943e2b05e33059ad3a1cfada3d3aa3e4b53a8bb4a9b0c783bd5712ee",
+  "actor_seed": 1329733772,
+  "environment_seed": 2070261249,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a bathtubbasin 1, a drawer 2, a drawer 1, a garbagecan 1, a handtowelholder 1, a sidetable 1, a sinkbasin 1, a toilet 1, a toiletpaperhanger 1, and a towelholder 1.\n\nYour task is to: clean some soapbar and put it in toilet.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "6f94b25eb42df7ec800e98dcb88b4874a0bfbc9cf68fa459d770fb249f1ecfdb",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see a cloth 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "fad18b91f6887f39afc6f5c98c475745f21f868dfaadeccd1d51ebffa15fd1fd",
+      "observation": "You are facing the sinkbasin 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "871331333d9fd85fe3681f279af6330fc0a46e9daacdbdc1f83e4a3c1431585c",
+      "observation": "You are facing the sinkbasin 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "184ac2b91d58dc801d24c085d717c8c398455c2093163747c02c71b59ccbe061",
+      "observation": "You are facing the sinkbasin 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "6276065530e9635e20ba0f2d83731e36f3b4f4c158bb7e9f82802d0f7d3cd726",
+      "observation": "You are facing the sinkbasin 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "23898570e3e35080515ffc8bcd4ba94d3434b23d40a0ef4062d94ba7245b004e",
+      "observation": "You are facing the sinkbasin 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "go to sidetable 1",
+      "raw_model_output": "go to sidetable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "834ce5f64a410f5620b6f33c528d5aba5c66be3b550924a69a5969bf3ccbb355",
+      "observation": "You arrive at sidetable 1. On the sidetable 1, you see a candle 1, a soapbar 1, a spraybottle 2, a spraybottle 1, and a tissuebox 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "take soapbar 1 from sidetable 1",
+      "raw_model_output": "take soapbar 1 from sidetable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "6c6985b896e7cdd1cba5cfeb9a48a8f7aac993f1f6c60f9fd5bab624dee4c208",
+      "observation": "You pick up the soapbar 1 from the sidetable 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "clean soapbar 1 with sinkbasin 1",
+      "raw_model_output": "clean soapbar 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "78219f9e9eb95aa4e46fe857a16eb388a411dc1d266f7ce76de1f8bd5b6b84c6",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "clean soapbar 1 with sinkbasin 1",
+      "raw_model_output": "clean soapbar 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "6d69240fa53b457da5f5ba6ad2b576eab2752bd018939a1aded32a4fb0e4f36c",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "9042e951af7b4b065c39ca01a00852455b4e676e7584d401066ba5967ba33e43",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see a cloth 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 12,
+      "action": "clean soapbar 1 with sinkbasin 1",
+      "raw_model_output": "clean soapbar 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "214bc90bb127fc52372fb329e5f5ffdd93e0b5115b1570b2c91ac86f52608dba",
+      "observation": "You clean the soapbar 1 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 13,
+      "action": "move soapbar 1 to toilet 1",
+      "raw_model_output": "move soapbar 1 to toilet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "7029c9c340656d8678fb44805ba464ecfc1faebec49ae58785b8618c5f8355a1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 14,
+      "action": "move soapbar 1 to toilet 1",
+      "raw_model_output": "move soapbar 1 to toilet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "0c11bc1655eb0e01c0e583523c354f256c856b777528ed619f998a7a292062cd",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 15,
+      "action": "go to toilet 1",
+      "raw_model_output": "go to toilet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "9789c61a1e8bed63f734dca661c02eab74045b541117a3ea4cf5181a9ad3355d",
+      "observation": "You arrive at toilet 1. On the toilet 1, you see a spraybottle 3, and a tissuebox 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 16,
+      "action": "move soapbar 1 to toilet 1",
+      "raw_model_output": "move soapbar 1 to toilet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "cd14c52f1d2a5733e0f5e3c5572f974ec21e929312c80d3429fb659493bce64e",
+      "observation": "You move the soapbar 1 to the toilet 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

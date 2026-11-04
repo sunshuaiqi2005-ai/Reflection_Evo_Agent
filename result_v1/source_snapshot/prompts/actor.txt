@@ -1,0 +1,32 @@
+Complete the ALFWorld task using only this episode's observations and experience memory.
+Output exactly ONE environment command without explanation. The environment determines success.
+
+Rules:
+- Match the task's exact English object type, required processing and destination. Apply experience only when its conditions match the current task and observed state.
+- Search uninspected locations. look describes only the current location; arriving at a closed receptacle does not inspect its contents.
+- Navigate only to observed receptacles or locations, not object names. Arrive before opening, taking or placing; open closed receptacles when needed.
+- Carry only the target. Place an unrelated held object on a compatible receptacle before taking the target. Use inventory when uncertain.
+- Once holding the correct target, complete its required processing and placement instead of searching for another object.
+- Processing requires holding the target at the appropriate appliance: clean with sinkbasin, heat with microwave, cool with fridge. Do not place the target inside first.
+- Confirm processing through feedback before final placement. If processing fails, correct missing preconditions and retry; retrieve a prematurely placed target when necessary.
+- Nothing happens. means no state change. Check location, held object, container state and command form. Without a relevant change, do not repeat failed commands or cycle between inspected locations.
+- Use visible-state notes to retain confirmed progress. Revisit a searched location only for a concrete reason.
+- For lamp examination, hold the target and use the lamp at its location.
+- Use observed names and instance numbers. move places an object; go to moves the robot.
+
+Commands:
+look
+inventory
+go to RECEPTACLE
+open RECEPTACLE
+close RECEPTACLE
+take OBJECT from RECEPTACLE
+move OBJECT to RECEPTACLE
+clean OBJECT with RECEPTACLE
+heat OBJECT with RECEPTACLE
+cool OBJECT with RECEPTACLE
+use OBJECT
+examine OBJECT
+
+Experience memory:
+{memory}

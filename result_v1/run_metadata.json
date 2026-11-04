@@ -1,0 +1,94 @@
+{
+  "config": {
+    "seed": 42,
+    "data_root": "data/alfworld/json_2.1.1",
+    "tokenizer": "data/tokenizer/tokenizer.json",
+    "task_selection": {
+      "train_task_types": [
+        "pick_clean_then_place_in_recep",
+        "pick_heat_then_place_in_recep",
+        "pick_cool_then_place_in_recep"
+      ],
+      "extension_task_types": [
+        "pick_clean_then_place_in_recep",
+        "pick_heat_then_place_in_recep",
+        "pick_cool_then_place_in_recep"
+      ],
+      "test_task_types": [
+        "pick_clean_then_place_in_recep",
+        "pick_heat_then_place_in_recep",
+        "pick_cool_then_place_in_recep"
+      ]
+    },
+    "splits": {
+      "train": 40,
+      "extension": 48,
+      "test": 20,
+      "allow_reduce": true
+    },
+    "pool_transfer": {
+      "extension_to_train": 20
+    },
+    "evolution": {
+      "protocol": "original_once_extension_failure_review_append_v2",
+      "rounds": 40,
+      "original_order": "manifest",
+      "trials_per_task": 3,
+      "max_revisions": 1,
+      "extension_without_replacement": true
+    },
+    "episode": {
+      "max_steps": 50,
+      "history_tokens": 1000,
+      "state_tokens": 550
+    },
+    "model": {
+      "url": "http://127.0.0.1:11434",
+      "name": "qwen14b-local",
+      "actor_context": 4096,
+      "reflection_context": 8192,
+      "actor_output_tokens": 64,
+      "reflection_output_tokens": 1536,
+      "actor_temperature": 0.7,
+      "reflection_temperature": 0.2,
+      "timeout_seconds": 300,
+      "retries": 2
+    },
+    "evaluation": {
+      "compare_initial_memory": true,
+      "baseline_before_training": true
+    }
+  },
+  "manifests": {
+    "development.json": "b17b7a4fc53009a95983b80531bb7ecae53567f1061ceebc0814fb4a627ccbc8",
+    "test.json": "949b431de6f77c74139ea33666071c1f5d74768f0b0b01b659d9ebfa4ab7bbc0",
+    "plan.json": "c9c43d9d212c9c5dbd9b3a36360adfd7bec2d242cc16fb51fadc3176871060e9"
+  },
+  "source_hash": "63217fa3d3408ea61d359c759405a071b0707ec9acf4bf31a41d91c4213ab827",
+  "model": {
+    "name": "qwen14b-local:latest",
+    "digest": "bbb10b973b83688c09ca760f9d616d3b56e9770fbfe05cb454b8f4ba2c5dcdf1",
+    "details": {
+      "parent_model": "qwen3:14b-q4_K_M",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "14.8B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 40960,
+      "embedding_length": 5120,
+      "runner": "llamacpp"
+    }
+  },
+  "software": {
+    "python": "3.9.6",
+    "alfworld": "0.4.2",
+    "textworld": "1.7.0",
+    "fast-downward-textworld": "20.6.4",
+    "tokenizers": "0.22.2",
+    "jsonschema": "4.25.1"
+  },
+  "tokenizer_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+}

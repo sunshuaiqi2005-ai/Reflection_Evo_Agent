@@ -1,0 +1,145 @@
+{
+  "id": "r38-trial-2",
+  "stage": "trial",
+  "task": {
+    "id": "valid_seen/pick_heat_then_place_in_recep-Tomato-None-Fridge-23/trial_T20190909_082320_103350/game.tw-pddl",
+    "game_path": "valid_seen/pick_heat_then_place_in_recep-Tomato-None-Fridge-23/trial_T20190909_082320_103350/game.tw-pddl",
+    "official_split": "valid_seen",
+    "task_type": "pick_heat_then_place_in_recep",
+    "object": "Tomato",
+    "target": "Fridge",
+    "scene": "23",
+    "game_sha256": "2d3cb73d8f274ef626b6c8992f164438d78f351a5eaa771643d627106c39a09e"
+  },
+  "input_hash": "4671e800afa3bedd4a1239db113b5a33926af84f7930a245ee985a9242ab5258",
+  "memory_hash": "1187b7faad6aba91b945000e6d7145d8efd150d05009a1a123bbd555296ed2d2",
+  "actor_seed": 696760376,
+  "environment_seed": 1040202571,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 1, a diningtable 1, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: heat some tomato and put it in fridge.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "fc50853cfca6e787d004db2b6fc1bcbe88860cc119aa17a10f2f692e8ea23bea",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to diningtable 1",
+      "raw_model_output": "go to diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "1f4ef1074586020743078cd6c3fb7c0dd3812798b96062c5cfa33c20c26f6b85",
+      "observation": "You arrive at diningtable 1. On the diningtable 1, you see a bowl 1, a butterknife 1, a dishsponge 1, a glassbottle 1, a knife 1, a lettuce 3, a lettuce 2, a lettuce 1, a pan 1, a pen 3, a pen 2, a pen 1, a potato 1, a saltshaker 2, a saltshaker 1, a soapbottle 3, a soapbottle 2, a soapbottle 1, a spoon 2, a spoon 1, and a tomato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "take tomato 1 from diningtable 1",
+      "raw_model_output": "take tomato 1 from diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "2feb49abc4c052e632aa8e1a764233869d8adf8c96519a7822f9995aadcea26a",
+      "observation": "You pick up the tomato 1 from the diningtable 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "heat tomato 1 with microwave 1",
+      "raw_model_output": "heat tomato 1 with microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "44ec7454136ba2419bdc9d03575b6ad1e6bcf5d57b98b1a8cb4171bca615d19e",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "go to microwave 1",
+      "raw_model_output": "go to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "42cc4a1c0c096de0dfd0f09528b8e0f50e7c7af57031bb5c08241ffd65b5d9b0",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "open microwave 1",
+      "raw_model_output": "open microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "7978673df87255bf5086e0f239f17d9f81f8272eb1ad2e6a06c91af3063ee3f3",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a egg 1, and a potato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "heat tomato 1 with microwave 1",
+      "raw_model_output": "heat tomato 1 with microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "c3db7a66a9de5718294059ef9c04084f51a86ee33de0b2f281d96fb4a8c7f410",
+      "observation": "You heat the tomato 1 using the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "move tomato 1 to fridge 1",
+      "raw_model_output": "move tomato 1 to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "f60db6e4834f0d01033a51357b74422d050f2e34fcb2d7078d4a83ad9dc194f1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "435aed02c91c65b026a1dc9c5c2b0c528d56ed9ce8242b0057cd8b08f7c455c3",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "open fridge 1",
+      "raw_model_output": "open fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "2f402bdf15a205d4fbe1ae072f5d2b32ca3d258637b1d6bf5da4fa10cc90b72f",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a apple 3, a cup 1, a mug 1, a potato 3, a tomato 4, and a tomato 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "move tomato 1 to fridge 1",
+      "raw_model_output": "move tomato 1 to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "c4a28b4159c8aa718d40dea2a0c494c8ac883a3fe1f1567d7edfc63658848b85",
+      "observation": "You move the tomato 1 to the fridge 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

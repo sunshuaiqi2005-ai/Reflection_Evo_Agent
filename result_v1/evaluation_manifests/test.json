@@ -1,0 +1,204 @@
+{
+  "test": [
+    {
+      "id": "valid_unseen/pick_clean_then_place_in_recep-Plate-None-CounterTop-10/trial_T20190908_213420_728917/game.tw-pddl",
+      "game_path": "valid_unseen/pick_clean_then_place_in_recep-Plate-None-CounterTop-10/trial_T20190908_213420_728917/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_clean_then_place_in_recep",
+      "object": "Plate",
+      "target": "CounterTop",
+      "scene": "10",
+      "game_sha256": "ff028de687d6a878e7d9661b09cd07c1f0fdc12c22cb1165d5b8bb756238b4d1"
+    },
+    {
+      "id": "valid_unseen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-10/trial_T20190909_123133_763972/game.tw-pddl",
+      "game_path": "valid_unseen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-10/trial_T20190909_123133_763972/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_cool_then_place_in_recep",
+      "object": "Lettuce",
+      "target": "CounterTop",
+      "scene": "10",
+      "game_sha256": "02d540d2357da71f8a6850ed3298d0dd408b72f037bfd8313fc398858ebc4159"
+    },
+    {
+      "id": "valid_unseen/pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120554_888709/game.tw-pddl",
+      "game_path": "valid_unseen/pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120554_888709/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_clean_then_place_in_recep",
+      "object": "Egg",
+      "target": "Microwave",
+      "scene": "10",
+      "game_sha256": "26ebd12f5972aff6dffed16e560ed8a8abdb6a7f832ba94305a2f10aacc717fc"
+    },
+    {
+      "id": "valid_unseen/pick_heat_then_place_in_recep-Tomato-None-GarbageCan-10/trial_T20190908_225046_020282/game.tw-pddl",
+      "game_path": "valid_unseen/pick_heat_then_place_in_recep-Tomato-None-GarbageCan-10/trial_T20190908_225046_020282/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_heat_then_place_in_recep",
+      "object": "Tomato",
+      "target": "GarbageCan",
+      "scene": "10",
+      "game_sha256": "729e21d96156592822736e691a4efd7e48a54974aaf6cabef096662cd89d2c5b"
+    },
+    {
+      "id": "valid_unseen/pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_171933_349922/game.tw-pddl",
+      "game_path": "valid_unseen/pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_171933_349922/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_heat_then_place_in_recep",
+      "object": "Mug",
+      "target": "CoffeeMachine",
+      "scene": "10",
+      "game_sha256": "6fe7e3977b4f0258111554e9af6c44ca8cb8300def14ac99e0a0f0210fc6521f"
+    },
+    {
+      "id": "valid_unseen/pick_clean_then_place_in_recep-Cloth-None-Cabinet-424/trial_T20190908_022321_380927/game.tw-pddl",
+      "game_path": "valid_unseen/pick_clean_then_place_in_recep-Cloth-None-Cabinet-424/trial_T20190908_022321_380927/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_clean_then_place_in_recep",
+      "object": "Cloth",
+      "target": "Cabinet",
+      "scene": "424",
+      "game_sha256": "505e6afa6c1f55ff68638f69427874cf7c911c6d5a603015ed6ede3b5c2bed1f"
+    },
+    {
+      "id": "valid_unseen/pick_heat_then_place_in_recep-Egg-None-GarbageCan-10/trial_T20190908_113523_123938/game.tw-pddl",
+      "game_path": "valid_unseen/pick_heat_then_place_in_recep-Egg-None-GarbageCan-10/trial_T20190908_113523_123938/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_heat_then_place_in_recep",
+      "object": "Egg",
+      "target": "GarbageCan",
+      "scene": "10",
+      "game_sha256": "3cf3c37d8dab940bcff6b988715e08f0148f0406705b417c0ac72e506e31ec8d"
+    },
+    {
+      "id": "valid_unseen/pick_clean_then_place_in_recep-Spatula-None-Drawer-10/trial_T20190907_080730_211959/game.tw-pddl",
+      "game_path": "valid_unseen/pick_clean_then_place_in_recep-Spatula-None-Drawer-10/trial_T20190907_080730_211959/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_clean_then_place_in_recep",
+      "object": "Spatula",
+      "target": "Drawer",
+      "scene": "10",
+      "game_sha256": "a14bfe1400f0f253bdc9de8553cded3ed788437ecdb4421517851cb305dacb19"
+    },
+    {
+      "id": "valid_unseen/pick_cool_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_183807_477267/game.tw-pddl",
+      "game_path": "valid_unseen/pick_cool_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_183807_477267/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_cool_then_place_in_recep",
+      "object": "Mug",
+      "target": "CoffeeMachine",
+      "scene": "10",
+      "game_sha256": "5092a44350a94fee78b1f8fe57c7fd6038deda6daf41f4e7caf05e9de911e8e5"
+    },
+    {
+      "id": "valid_unseen/pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120632_691361/game.tw-pddl",
+      "game_path": "valid_unseen/pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120632_691361/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_clean_then_place_in_recep",
+      "object": "Egg",
+      "target": "Microwave",
+      "scene": "10",
+      "game_sha256": "063ea0d60a2f53b3772b8b36e12fbfa879d7af27c6b8a3f6609f4c596ff15f5c"
+    },
+    {
+      "id": "valid_unseen/pick_clean_then_place_in_recep-Pan-None-CounterTop-10/trial_T20190908_032434_013084/game.tw-pddl",
+      "game_path": "valid_unseen/pick_clean_then_place_in_recep-Pan-None-CounterTop-10/trial_T20190908_032434_013084/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_clean_then_place_in_recep",
+      "object": "Pan",
+      "target": "CounterTop",
+      "scene": "10",
+      "game_sha256": "fcbd6e7e61a5dab6ef40d66b06faf787c4dc75c8d958cccffbec46230af7b767"
+    },
+    {
+      "id": "valid_unseen/pick_cool_then_place_in_recep-Mug-None-Cabinet-10/trial_T20190909_121710_650938/game.tw-pddl",
+      "game_path": "valid_unseen/pick_cool_then_place_in_recep-Mug-None-Cabinet-10/trial_T20190909_121710_650938/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_cool_then_place_in_recep",
+      "object": "Mug",
+      "target": "Cabinet",
+      "scene": "10",
+      "game_sha256": "77e6c83aa8d991e796bcab3352352ac51ab378c3b75cba85016174a8cfe95bfd"
+    },
+    {
+      "id": "valid_unseen/pick_cool_then_place_in_recep-Tomato-None-Microwave-10/trial_T20190909_102710_795182/game.tw-pddl",
+      "game_path": "valid_unseen/pick_cool_then_place_in_recep-Tomato-None-Microwave-10/trial_T20190909_102710_795182/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_cool_then_place_in_recep",
+      "object": "Tomato",
+      "target": "Microwave",
+      "scene": "10",
+      "game_sha256": "cd0ec2e58b65b39eeaceb353f80f9dc68c5764ccba498732702ff9f4704d6098"
+    },
+    {
+      "id": "valid_unseen/pick_clean_then_place_in_recep-Cloth-None-CounterTop-424/trial_T20190908_114340_674467/game.tw-pddl",
+      "game_path": "valid_unseen/pick_clean_then_place_in_recep-Cloth-None-CounterTop-424/trial_T20190908_114340_674467/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_clean_then_place_in_recep",
+      "object": "Cloth",
+      "target": "CounterTop",
+      "scene": "424",
+      "game_sha256": "42896a9bf6146efba08010d0721c0b43e99a9cd49e922033602531dece8d3a41"
+    },
+    {
+      "id": "valid_unseen/pick_clean_then_place_in_recep-Bowl-None-Cabinet-10/trial_T20190909_061158_110530/game.tw-pddl",
+      "game_path": "valid_unseen/pick_clean_then_place_in_recep-Bowl-None-Cabinet-10/trial_T20190909_061158_110530/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_clean_then_place_in_recep",
+      "object": "Bowl",
+      "target": "Cabinet",
+      "scene": "10",
+      "game_sha256": "1c774dcf5623079489d3a80ccb4d260cafeb684425413ba4ff875fa32552b00e"
+    },
+    {
+      "id": "valid_unseen/pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120712_273910/game.tw-pddl",
+      "game_path": "valid_unseen/pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120712_273910/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_clean_then_place_in_recep",
+      "object": "Egg",
+      "target": "Microwave",
+      "scene": "10",
+      "game_sha256": "ff294d1acfc0cddee2e82786b11aed57e552097410c35a57394263b668c41d56"
+    },
+    {
+      "id": "valid_unseen/pick_clean_then_place_in_recep-Pan-None-CounterTop-10/trial_T20190908_032543_712058/game.tw-pddl",
+      "game_path": "valid_unseen/pick_clean_then_place_in_recep-Pan-None-CounterTop-10/trial_T20190908_032543_712058/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_clean_then_place_in_recep",
+      "object": "Pan",
+      "target": "CounterTop",
+      "scene": "10",
+      "game_sha256": "328eefc03242a86072f5dd8a1dc7c0f95cbcb89450194994ec8517b79445c064"
+    },
+    {
+      "id": "valid_unseen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-10/trial_T20190909_174840_771703/game.tw-pddl",
+      "game_path": "valid_unseen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-10/trial_T20190909_174840_771703/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_cool_then_place_in_recep",
+      "object": "Lettuce",
+      "target": "CounterTop",
+      "scene": "10",
+      "game_sha256": "ca96ae5d83766405d4c150752cc7fdae4d9f3c0c0f31a76e8c8c16aebb40cf21"
+    },
+    {
+      "id": "valid_unseen/pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_171850_960211/game.tw-pddl",
+      "game_path": "valid_unseen/pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_171850_960211/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_heat_then_place_in_recep",
+      "object": "Mug",
+      "target": "CoffeeMachine",
+      "scene": "10",
+      "game_sha256": "799fb7dc0adbc8311c57bd376d5e1101564b4cc1a1f41690964bda8fd7a05714"
+    },
+    {
+      "id": "valid_unseen/pick_clean_then_place_in_recep-Spatula-None-Drawer-10/trial_T20190907_080800_275989/game.tw-pddl",
+      "game_path": "valid_unseen/pick_clean_then_place_in_recep-Spatula-None-Drawer-10/trial_T20190907_080800_275989/game.tw-pddl",
+      "official_split": "valid_unseen",
+      "task_type": "pick_clean_then_place_in_recep",
+      "object": "Spatula",
+      "target": "Drawer",
+      "scene": "10",
+      "game_sha256": "f8fcaa506aab7f2a03a01bc5d241be83f340e86172dfa6c2115ce6c17b1ca7bf"
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "id": "test-004-final",
+  "stage": "heldout-test",
+  "task": {
+    "id": "valid_unseen/pick_heat_then_place_in_recep-Tomato-None-GarbageCan-10/trial_T20190908_225046_020282/game.tw-pddl",
+    "game_path": "valid_unseen/pick_heat_then_place_in_recep-Tomato-None-GarbageCan-10/trial_T20190908_225046_020282/game.tw-pddl",
+    "official_split": "valid_unseen",
+    "task_type": "pick_heat_then_place_in_recep",
+    "object": "Tomato",
+    "target": "GarbageCan",
+    "scene": "10",
+    "game_sha256": "729e21d96156592822736e691a4efd7e48a54974aaf6cabef096662cd89d2c5b"
+  },
+  "input_hash": "2ddf9b211b38f79c0f2bcc86d7ae631ddbdc17e85dfde00a5e612f7dc37476b2",
+  "memory_hash": "1187b7faad6aba91b945000e6d7145d8efd150d05009a1a123bbd555296ed2d2",
+  "actor_seed": 826736374,
+  "environment_seed": 855832364,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a hot tomato in garbagecan.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "435b7300816eaef2a3242e23739b8931e59c369378f05eb09b769e32d74122f9",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "3e0a2cf44ff1ceaa5f38b9485ece693258c0a0912a6efb5ce5f8e16e1d0e3a51",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a dishsponge 1, and a tomato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "take tomato 1 from countertop 1",
+      "raw_model_output": "take tomato 1 from countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "997a47d32653af0dcd65256e084162b2c15ad47561dd1fcdffbbdab1c009dc22",
+      "observation": "You pick up the tomato 1 from the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "heat tomato 1 with microwave 1",
+      "raw_model_output": "heat tomato 1 with microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "362c47296bcce53f373c6e32da39dd2739ae575bc21e4af2109b35716a242bf7",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "go to microwave 1",
+      "raw_model_output": "go to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "24ef01901c7106f50b8958dd21fe9895e27189e00c39715ae7848080ec1fa188",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "open microwave 1",
+      "raw_model_output": "open microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "1dab0ed390f02d6c1b0b562a058fae911c2189176fbb4fe9d96071aaad200467",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "heat tomato 1 with microwave 1",
+      "raw_model_output": "heat tomato 1 with microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "f927801e04b14b0cb8c016c691efb4071cc27155b1ee012cf1f414f5c875ea3a",
+      "observation": "You heat the tomato 1 using the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "move tomato 1 to garbagecan 1",
+      "raw_model_output": "move tomato 1 to garbagecan 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "8bdbf972b6c6f4f08de33b08a307c7e02a04d411733d3bd346edcbc1a356efe0",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "go to garbagecan 1",
+      "raw_model_output": "go to garbagecan 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "2c5155372ac65998dbed6e0b5d22dc741366c9ec958e24f40cc813b8bdd60da3",
+      "observation": "You arrive at garbagecan 1. On the garbagecan 1, you see a egg 3, and a papertowelroll 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "move tomato 1 to garbagecan 1",
+      "raw_model_output": "move tomato 1 to garbagecan 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "f33d169e3939a070c9a1f7965473206090799356457b2a9935e6dd94d40badfe",
+      "observation": "You move the tomato 1 to the garbagecan 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

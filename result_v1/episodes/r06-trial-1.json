@@ -1,0 +1,189 @@
+{
+  "id": "r06-trial-1",
+  "stage": "trial",
+  "task": {
+    "id": "train/pick_clean_then_place_in_recep-Apple-None-Microwave-24/trial_T20190907_133245_678353/game.tw-pddl",
+    "game_path": "train/pick_clean_then_place_in_recep-Apple-None-Microwave-24/trial_T20190907_133245_678353/game.tw-pddl",
+    "official_split": "train",
+    "task_type": "pick_clean_then_place_in_recep",
+    "object": "Apple",
+    "target": "Microwave",
+    "scene": "24",
+    "game_sha256": "95304291fdd8d7544ee22153edf4f4ddc94bea389f4aca368f72be348b214f7b"
+  },
+  "input_hash": "a5f26dcb49bbaee6565605674dfb3dc283bfff81dde25ad0715acf5642aef9d5",
+  "memory_hash": "186bd1ef943e2b05e33059ad3a1cfada3d3aa3e4b53a8bb4a9b0c783bd5712ee",
+  "actor_seed": 2105272764,
+  "environment_seed": 751807114,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 23, a cabinet 22, a cabinet 21, a cabinet 20, a cabinet 19, a cabinet 18, a cabinet 17, a cabinet 16, a cabinet 15, a cabinet 14, a cabinet 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a diningtable 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: clean some apple and put it in microwave.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "8c29beee31379b02e13666ea6b9aaf44ea9aff4ec7ae752ce931251714564c96",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "b35bbef9294d7cc305017f748e515640ed0378cd2a362c7422fdad2caf563968",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see a dishsponge 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "71f28c9d3473b410ec625ec2e0bc714b95f73f143c07f98be0cf5e4884d50282",
+      "observation": "You are facing the sinkbasin 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "0d3accb2c9f03f70cc126ff3df49bb5b5fa4a70dade583ae72b2b428b8731802",
+      "observation": "You are facing the sinkbasin 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "go to diningtable 1",
+      "raw_model_output": "go to diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "16621efed9c8a6288ff7a01e26853e23a964ea83ca0fd0d4856a9260d50eedcf",
+      "observation": "You arrive at diningtable 1. On the diningtable 1, you see a egg 2, a egg 1, a knife 3, a knife 2, a lettuce 1, a mug 2, a peppershaker 2, a soapbottle 3, a soapbottle 2, a soapbottle 1, a spatula 2, and a spoon 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "f690de26e6adb4162a06d734a70b58ee395f293c49fede8df039778d396846ec",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "open fridge 1",
+      "raw_model_output": "open fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "5419104b8e7c50cb0fff13868317cf87247228c392c4c521068b45a3cd12d266",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a apple 3, a bowl 2, a bowl 1, a cup 2, and a potato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "take apple 3 from fridge 1",
+      "raw_model_output": "take apple 3 from fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "eec01eb0c838392d48d33b6bf0f64b5d6e57949429f538c2c6df90bca8ff08ca",
+      "observation": "You pick up the apple 3 from the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "clean apple 3 with sinkbasin 1",
+      "raw_model_output": "clean apple 3 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "47c177adb754e84bb36fe84e2dc6b756e460965bb02442099e3990faaf815181",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "clean apple 3 with sinkbasin 1",
+      "raw_model_output": "clean apple 3 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "7becb06cedb5521bfdc943abbec42560bb9ada34827d8d43235041f2425a432f",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "1bec2310c4e38990612a7cec082e6cd1adf9df1cb359d779b918e3ab9287f8a9",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see a dishsponge 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 12,
+      "action": "clean apple 3 with sinkbasin 1",
+      "raw_model_output": "clean apple 3 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "16aae886673e70ebe3a10376edc714b38059febf77a08ff07e451a475522742f",
+      "observation": "You clean the apple 3 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 13,
+      "action": "go to microwave 1",
+      "raw_model_output": "go to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "7ba8a9feb23a39c6d16f8f5e0a953234c179f098900efbdf943cf02a3e3df0b8",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 14,
+      "action": "open microwave 1",
+      "raw_model_output": "open microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "452021de768efd38f75abd5a7b0334a7ccf6db44a8aa80b1f0e6c7deae27ff7a",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a apple 4, and a bowl 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 15,
+      "action": "move apple 3 to microwave 1",
+      "raw_model_output": "move apple 3 to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "b8856110b6c4c842d3beeef40a38075a420d680705eb175eb352bcb6415f3d6b",
+      "observation": "You move the apple 3 to the microwave 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

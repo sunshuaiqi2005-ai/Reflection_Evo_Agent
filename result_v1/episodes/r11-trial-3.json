@@ -1,0 +1,178 @@
+{
+  "id": "r11-trial-3",
+  "stage": "trial",
+  "task": {
+    "id": "train/pick_clean_then_place_in_recep-Tomato-None-DiningTable-4/trial_T20190907_142426_940554/game.tw-pddl",
+    "game_path": "train/pick_clean_then_place_in_recep-Tomato-None-DiningTable-4/trial_T20190907_142426_940554/game.tw-pddl",
+    "official_split": "train",
+    "task_type": "pick_clean_then_place_in_recep",
+    "object": "Tomato",
+    "target": "DiningTable",
+    "scene": "4",
+    "game_sha256": "33ece45cad3ef0277a63da53aa67cafcb2f287c33dffb0d9f90ab170b5138070"
+  },
+  "input_hash": "6608919f67134b279bca30e157155d49eeb7cc0e2ed33ca96a3fd9494438c1ec",
+  "memory_hash": "5a751888179793903f2a1e8ad3271afb29c34a908c9872b7751a28c486225505",
+  "actor_seed": 1619408227,
+  "environment_seed": 1336497000,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a diningtable 1, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a clean tomato in diningtable.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "4f66bef6fd1bed0e94a5b2e921167c6fc706a344c28640ea9372eed9b07899f5",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "571db6b7316114e0e255590824ccd92047de8b157f06e3ff6645d9d4d4624384",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a potato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "go to countertop 2",
+      "raw_model_output": "go to countertop 2",
+      "legacy_placement_alias_applied": false,
+      "model_call": "7b75ed7c36aad74106903441ba17b1b7efa7f494ecdd251456c424079dd0004c",
+      "observation": "You arrive at countertop 2. On the countertop 2, you see a apple 2, a butterknife 1, a houseplant 1, a knife 1, a saltshaker 2, and a saltshaker 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "go to countertop 3",
+      "raw_model_output": "go to countertop 3",
+      "legacy_placement_alias_applied": false,
+      "model_call": "83cfd095505d043d387dfec4a4f27533aad2b20909f0450c1ecd14e7af456347",
+      "observation": "You arrive at countertop 3. On the countertop 3, you see a peppershaker 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "3ed0cf44b6e2b5398c3118e0fd465654e6e706c0f3457df3ce45a8f8ce6155fb",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "open fridge 1",
+      "raw_model_output": "open fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "3c292b3dbe610d389e4afdc1f1e40ada8ac6aff26b913dbdc4d4ebc768a0ad15",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a apple 1, a bowl 1, a cup 2, a cup 1, a plate 1, and a pot 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "go to diningtable 1",
+      "raw_model_output": "go to diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "838e0ea58f4b387e6f2aa01712dc03beb22dda39a51987852e430b58bab55317",
+      "observation": "You arrive at diningtable 1. On the diningtable 1, you see a bread 2, a bread 1, a butterknife 2, a dishsponge 1, a egg 3, a fork 1, a ladle 2, a lettuce 1, a pan 1, a peppershaker 3, a saltshaker 3, a spatula 1, a tomato 3, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "take tomato 2 from diningtable 1",
+      "raw_model_output": "take tomato 2 from diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "4ca47389c186bea7d526679bfa4c4de347759aaeb9353664cde7bae78606e8e0",
+      "observation": "You pick up the tomato 2 from the diningtable 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "clean tomato 2 with sinkbasin 1",
+      "raw_model_output": "clean tomato 2 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "e4a8fed1bc4a98cf91fb2c2d8453b9725538a558991fb53af08fc3f68fa7feb4",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "f9f52e7b22d0b42037755299572d78b6a4c8a3a7c98449a2bd1ecb97196c1c34",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see a egg 2, a knife 2, a ladle 1, a pot 3, and a potato 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "clean tomato 2 with sinkbasin 1",
+      "raw_model_output": "clean tomato 2 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "d127f0eb9d57aa21d53d786908885cbb80130839f0dfd255e47460d4eddf7c04",
+      "observation": "You clean the tomato 2 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 12,
+      "action": "move tomato 2 to diningtable 1",
+      "raw_model_output": "move tomato 2 to diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "35250a377181738fdd604af2328170167f52e75288d58251713398b0e4ede505",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 13,
+      "action": "go to diningtable 1",
+      "raw_model_output": "go to diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "386912a396e455bd9a8266b73d5de7a491e9777d60ad6d38d63729bd17914f13",
+      "observation": "You arrive at diningtable 1. On the diningtable 1, you see a bread 2, a bread 1, a butterknife 2, a dishsponge 1, a egg 3, a fork 1, a ladle 2, a lettuce 1, a pan 1, a peppershaker 3, a saltshaker 3, a spatula 1, and a tomato 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 14,
+      "action": "move tomato 2 to diningtable 1",
+      "raw_model_output": "move tomato 2 to diningtable 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "93e30128948c393b41c9f2adec1d938efb37b68a6522d9819b2da3bef02c218a",
+      "observation": "You move the tomato 2 to the diningtable 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

@@ -1,0 +1,134 @@
+{
+  "id": "r02-trial-1",
+  "stage": "trial",
+  "task": {
+    "id": "train/pick_heat_then_place_in_recep-Potato-None-GarbageCan-14/trial_T20190909_114015_210188/game.tw-pddl",
+    "game_path": "train/pick_heat_then_place_in_recep-Potato-None-GarbageCan-14/trial_T20190909_114015_210188/game.tw-pddl",
+    "official_split": "train",
+    "task_type": "pick_heat_then_place_in_recep",
+    "object": "Potato",
+    "target": "GarbageCan",
+    "scene": "14",
+    "game_sha256": "c76390c84bd20c0a4d563e0fe483407b644a7df404b4a02b99bbae439d4344fd"
+  },
+  "input_hash": "940b456aa6226d4b58cf41e6ada847a07bc2419142d575687ec9a2f0b07e4eb2",
+  "memory_hash": "af2c22da1d006cb667652305879711e9a256a9e214cde9b2f98a8d6fc2b9a24b",
+  "actor_seed": 566910646,
+  "environment_seed": 885974876,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: heat some potato and put it in garbagecan.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "eb45dbda1836176595178732c1061da780d287c20f018f25f1c2355aa5acf58d",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a butterknife 3, a butterknife 2, a butterknife 1, a cup 2, a egg 1, a fork 2, a knife 2, a knife 1, a lettuce 3, a lettuce 2, a lettuce 1, a pan 1, a potato 2, a potato 1, a saltshaker 3, a saltshaker 1, and a tomato 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "take potato 1 from countertop 1",
+      "raw_model_output": "take potato 1 from countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "ade043c7cddabf121050f3a845296d38744383113936434cade32429a05a5a97",
+      "observation": "You pick up the potato 1 from the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "heat potato 1 with microwave 1",
+      "raw_model_output": "heat potato 1 with microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "690678a539956d29504e6397a0c3fc2da136bf82955d5bfa879e460e929204cd",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "go to microwave 1",
+      "raw_model_output": "go to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "accbba5ac664ab76f914d3b0a94aae3f9f1e1ebcb0077720a9a4513593cd1ca6",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "open microwave 1",
+      "raw_model_output": "open microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "b95a76f560c0e6a917547e35fd15e47dab80f3feef7b332e9762f75fc332d3b9",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "heat potato 1 with microwave 1",
+      "raw_model_output": "heat potato 1 with microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "fa34a626e1f2caffa036c5b50c8f26300f826ceaf10ddbb16397a3df55f87dcf",
+      "observation": "You heat the potato 1 using the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "move potato 1 to garbagecan 1",
+      "raw_model_output": "move potato 1 to garbagecan 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "93a0e4c429aa63ef6ca6904505ec89007b32036c8940bbf89119a233e01241d7",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "move potato 1 to garbagecan 1",
+      "raw_model_output": "move potato 1 to garbagecan 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "22d6b52ca5720052b5140f81337fe07e81ccadfbf96b81423d93f6ccf7c3464a",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "go to garbagecan 1",
+      "raw_model_output": "go to garbagecan 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "23b8a7ec875d0ef8624924e176e6b9699016e7aa89aaf1e9d5e54ea24e0965d9",
+      "observation": "You arrive at garbagecan 1. On the garbagecan 1, you see a dishsponge 2, and a tomato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "move potato 1 to garbagecan 1",
+      "raw_model_output": "move potato 1 to garbagecan 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "9b612e1d6f64efbabf09681be74e6a193b7a6b905359bbd202e0ff61b93cc092",
+      "observation": "You move the potato 1 to the garbagecan 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

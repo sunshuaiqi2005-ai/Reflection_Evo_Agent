@@ -1,0 +1,21 @@
+{
+  "trigger": "Attempting to heat an object without first ensuring the heating appliance is open and accessible.",
+  "advice": "Before attempting to heat an object, ensure the heating appliance is open and accessible. If the appliance is closed, open it first before proceeding with the heating action.",
+  "exceptions": [],
+  "id": "r25-candidate",
+  "validated_by": [
+    "r25-candidate-original",
+    "r25-candidate-extension"
+  ],
+  "reviewed_on": [],
+  "acceptance": {
+    "basis": "original_and_extension_pass",
+    "original_validation_episode": "r25-candidate-original",
+    "extension_validation_episode": "r25-candidate-extension",
+    "originally_validated_candidate": "r25-candidate",
+    "extension_success": true,
+    "extension_review_performed": false,
+    "revised": false,
+    "post_review_revalidated": false
+  }
+}

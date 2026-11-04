@@ -1,0 +1,101 @@
+{
+  "id": "r39-trial-2",
+  "stage": "trial",
+  "task": {
+    "id": "valid_seen/pick_cool_then_place_in_recep-Pan-None-StoveBurner-23/trial_T20190906_215856_374127/game.tw-pddl",
+    "game_path": "valid_seen/pick_cool_then_place_in_recep-Pan-None-StoveBurner-23/trial_T20190906_215856_374127/game.tw-pddl",
+    "official_split": "valid_seen",
+    "task_type": "pick_cool_then_place_in_recep",
+    "object": "Pan",
+    "target": "StoveBurner",
+    "scene": "23",
+    "game_sha256": "f11af65a2d438e2e7c4aee1b42ca45ff58e2487c849f81b954c8aaa00a3b217f"
+  },
+  "input_hash": "e8928925040b0c0dd93a18c5a3a1dd0df31b464bd1b40a2aab4e3fa299dded68",
+  "memory_hash": "1187b7faad6aba91b945000e6d7145d8efd150d05009a1a123bbd555296ed2d2",
+  "actor_seed": 688321820,
+  "environment_seed": 804085328,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 1, a diningtable 1, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: cool some pan and put it in stoveburner.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "04fa11d4756066c681cbe1d7894bc0359e251b1e9cb90bccc6b97cd8461d78fe",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "go to stoveburner 1",
+      "raw_model_output": "go to stoveburner 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "89138e8627d5a38b01d479c1c24aab640938cb91c0f2e1bf2dabb22328f6a159",
+      "observation": "You arrive at stoveburner 1. On the stoveburner 1, you see a pan 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "take pan 1 from stoveburner 1",
+      "raw_model_output": "take pan 1 from stoveburner 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "a9adcdfac208113d358a4beef3fa1a15b52144aa826d7c34672d131e4a4d2f70",
+      "observation": "You pick up the pan 1 from the stoveburner 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "cool pan 1 with fridge 1",
+      "raw_model_output": "cool pan 1 with fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "7f5408464a35230732acd2927ef81db3dbb8081dc338e96b08d771cae0c30290",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "50a01420f292b0a291ab7e1cedb1538bef200b3ac4698ad4680fdc7d7d06addf",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "open fridge 1",
+      "raw_model_output": "open fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "7b9925e78bddc80e4530c70f7ee8af17ee149c775230210ae1aca322eb9b123f",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "cool pan 1 with fridge 1",
+      "raw_model_output": "cool pan 1 with fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "5675a7b10eaadb486a2850b2d92f5173151b7434075e800c410a7e30b1e2558d",
+      "observation": "You cool the pan 1 using the fridge 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

@@ -1,0 +1,189 @@
+{
+  "id": "r01-trial-3",
+  "stage": "trial",
+  "task": {
+    "id": "train/pick_clean_then_place_in_recep-Bowl-None-Microwave-30/trial_T20190907_063817_005458/game.tw-pddl",
+    "game_path": "train/pick_clean_then_place_in_recep-Bowl-None-Microwave-30/trial_T20190907_063817_005458/game.tw-pddl",
+    "official_split": "train",
+    "task_type": "pick_clean_then_place_in_recep",
+    "object": "Bowl",
+    "target": "Microwave",
+    "scene": "30",
+    "game_sha256": "4238df51a45809607e033d581f60680cc7f960882d90c3c5d1319f5672c8447a"
+  },
+  "input_hash": "0c0e3338cada5a2c1f22dd1c17bd380dd30edefd359184b4c4e92749c4205024",
+  "memory_hash": "ac828d4799ff013c2a71269c082f6cbc02fce7b736522571773e5a4d25485771",
+  "actor_seed": 840717245,
+  "environment_seed": 1538004522,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 4, a countertop 3, a countertop 2, a countertop 1, a drawer 27, a drawer 26, a drawer 25, a drawer 24, a drawer 23, a drawer 22, a drawer 21, a drawer 20, a drawer 19, a drawer 18, a drawer 17, a drawer 16, a drawer 15, a drawer 14, a drawer 13, a drawer 12, a drawer 11, a drawer 10, a drawer 9, a drawer 8, a drawer 7, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a clean bowl in microwave.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "fceac3899ed96adb93baadd253c4a98ead381b4980adc5a672a54b32553f83c9",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "695188c8d01a9397949dc1b27194f8131c5d0a3061c13ece4b51627f9148509e",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "4c2230e3c1d23ddb98cb7243b9fc2436daa908c36e81aa73b980eb3a685ab47d",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "55b6405214aec540ed0f6115e94e0fc341e08b4727a99b12373fa8bb211483aa",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "19f5d73b87d95b6818d33a93ca308b049a1a6a2a1242770f41b40134942433fe",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "go to cabinet 1",
+      "raw_model_output": "go to cabinet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "bdc759b7b4d48e5c7aaf7540f4e4a8bf9035c2d9d6324bfcc5db7f3347a39ede",
+      "observation": "You arrive at cabinet 1. The cabinet 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "open cabinet 1",
+      "raw_model_output": "open cabinet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "b0e9db9870634e59c4b2f4c646ee67de1560a01d5beb384c00cbfd3ddbbbadb3",
+      "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see a bowl 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "take bowl 2 from cabinet 1",
+      "raw_model_output": "take bowl 2 from cabinet 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "5ed5cf705dd2ddb3be39ca66e44fbcb02889f497c11c47f2937a8fe9e6c6bb35",
+      "observation": "You pick up the bowl 2 from the cabinet 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "clean bowl 2 with sinkbasin 1",
+      "raw_model_output": "clean bowl 2 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "6489999e4c2909b338e04e68acddbf344be371cdf75a618d57689c01b87e15b7",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "clean bowl 2 with sinkbasin 1",
+      "raw_model_output": "clean bowl 2 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "96b981f8f4a45c100f12f5e360a692f14635897c5c2606c2d86eb76c99f1839d",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "8990d886774145d90418dd646c92889fd4e0fc5e3ea493c5c7603f58f7026e20",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 12,
+      "action": "clean bowl 2 with sinkbasin 1",
+      "raw_model_output": "clean bowl 2 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "832bc908ac3a6c3104d643b648ee29ef37c04b2010b7321fce0a410e4fe212cd",
+      "observation": "You clean the bowl 2 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 13,
+      "action": "go to microwave 1",
+      "raw_model_output": "go to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "23bd85c0596c36cce2e9f433a5ac494fb4e571291a18e91ddd0a81b8ae38df6c",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 14,
+      "action": "open microwave 1",
+      "raw_model_output": "open microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "3a6d01fa26c4722aaaa6e1a8060febaef6ce8c5aeb4ab20c6d7fb6a3c410a9a8",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 15,
+      "action": "move bowl 2 to microwave 1",
+      "raw_model_output": "move bowl 2 to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "8ec49613106b3fc6ba43eec090f9e1537b1484aef7f6ab2fd62cd0c4c3b08ddb",
+      "observation": "You move the bowl 2 to the microwave 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}

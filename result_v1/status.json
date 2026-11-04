@@ -1,0 +1,15 @@
+{
+  "phase": "complete",
+  "test_metrics": {
+    "initial": {
+      "successes": 12,
+      "success_rate": 0.6,
+      "mean_steps": 31.05
+    },
+    "final": {
+      "successes": 15,
+      "success_rate": 0.75,
+      "mean_steps": 22.25
+    }
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "id": "test-010-initial",
+  "stage": "heldout-test",
+  "task": {
+    "id": "valid_unseen/pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120632_691361/game.tw-pddl",
+    "game_path": "valid_unseen/pick_clean_then_place_in_recep-Egg-None-Microwave-10/trial_T20190909_120632_691361/game.tw-pddl",
+    "official_split": "valid_unseen",
+    "task_type": "pick_clean_then_place_in_recep",
+    "object": "Egg",
+    "target": "Microwave",
+    "scene": "10",
+    "game_sha256": "063ea0d60a2f53b3772b8b36e12fbfa879d7af27c6b8a3f6609f4c596ff15f5c"
+  },
+  "input_hash": "1f683dd1c8b662b018493e6a3e4bef7fa1ec401ee93997397c225d5740e1e1e7",
+  "memory_hash": "ac828d4799ff013c2a71269c082f6cbc02fce7b736522571773e5a4d25485771",
+  "actor_seed": 1224187243,
+  "environment_seed": 1737483117,
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a clean egg in microwave.",
+  "steps": [
+    {
+      "step": 1,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "61e38cced8eeab601cf3a666af3a951548b8ba1631bfce382a2aa37d91efed26",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 2,
+      "action": "look",
+      "raw_model_output": "look",
+      "legacy_placement_alias_applied": false,
+      "model_call": "979d462317cbc2b3d35a8c3b47d5ca058c92befbdc295496de689d9b08599334",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 3,
+      "action": "go to countertop 1",
+      "raw_model_output": "go to countertop 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "ae9654796bb52c8c2ed6699786c284c2cb6383ef07433298c8bbb51960f7e4bb",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a cup 2, a peppershaker 3, a saltshaker 1, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 4,
+      "action": "go to fridge 1",
+      "raw_model_output": "go to fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "76cdbcca1eaf4e1e1440d6eeb1fb58274b70e4988d902f740cd7b39bde975bbc",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 5,
+      "action": "open fridge 1",
+      "raw_model_output": "open fridge 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "8d2f3a2b5aa54bec00b0d3f22cfb20f969cc725b107121a8a6d5f56c8d8f802e",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a cup 3, a cup 1, a lettuce 1, a plate 2, a plate 1, a potato 1, and a tomato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 6,
+      "action": "go to countertop 2",
+      "raw_model_output": "go to countertop 2",
+      "legacy_placement_alias_applied": false,
+      "model_call": "6e684fc3527b7e7da1a905b0d711d90a4723c12a76f61d69246996c7a7306b01",
+      "observation": "You arrive at countertop 2. On the countertop 2, you see a bread 1, a butterknife 1, a creditcard 1, a dishsponge 1, a glassbottle 3, a knife 1, and a spoon 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 7,
+      "action": "go to countertop 3",
+      "raw_model_output": "go to countertop 3",
+      "legacy_placement_alias_applied": false,
+      "model_call": "9da9342dc550c41adcedb19577431b3983378be2340bd7cd5385aa09642504a8",
+      "observation": "You arrive at countertop 3. On the countertop 3, you see a bread 3, a bread 2, a butterknife 3, a butterknife 2, a cellphone 1, a egg 1, a fork 3, a houseplant 1, a mug 3, and a statue 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 8,
+      "action": "take egg 1 from countertop 3",
+      "raw_model_output": "take egg 1 from countertop 3",
+      "legacy_placement_alias_applied": false,
+      "model_call": "f27e2e4641befee4b715c8d08806993b6c453381da87611aaeeabae7b0b7e2e6",
+      "observation": "You pick up the egg 1 from the countertop 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 9,
+      "action": "clean egg 1 with sinkbasin 1",
+      "raw_model_output": "clean egg 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "134d834ba1924e4cc2499460845e01c264659f1de1124d8c63afd1407b91716e",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 10,
+      "action": "go to sinkbasin 1",
+      "raw_model_output": "go to sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "ac4934e6aa80f835ad4e0c85295d5b5e83222404525df27b68404558a2d65c42",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see a bowl 3, a spatula 2, and a spatula 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 11,
+      "action": "clean egg 1 with sinkbasin 1",
+      "raw_model_output": "clean egg 1 with sinkbasin 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "60fb1d97af7d25af747297660268ae3241f1b470fd70d91b08695ad693eda585",
+      "observation": "You clean the egg 1 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 12,
+      "action": "go to microwave 1",
+      "raw_model_output": "go to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "383b727fd5e8d0171f75bfd17f33887db1e114a9a7089bc5fabb7a7ad5f4e620",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 13,
+      "action": "open microwave 1",
+      "raw_model_output": "open microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "f923f3339e9a3775cc5e115379ac8a3323b31d15e70371089edc86b07f640cc6",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a mug 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "step": 14,
+      "action": "move egg 1 to microwave 1",
+      "raw_model_output": "move egg 1 to microwave 1",
+      "legacy_placement_alias_applied": false,
+      "model_call": "df470f1ea6c4ad761c4976ebf7cdfcd84be45c22762b88584b37eb8f156ba7a9",
+      "observation": "You move the egg 1 to the microwave 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "success": true,
+  "completed": true,
+  "termination": "won"
+}
