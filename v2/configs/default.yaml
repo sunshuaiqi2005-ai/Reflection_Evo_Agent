@@ -18,7 +18,7 @@ model:
 
 memory:
   full_threshold: 8
-  similarity_threshold: 0.80
+  similarity_threshold: 0.60
 
 episode:
   max_steps: 50

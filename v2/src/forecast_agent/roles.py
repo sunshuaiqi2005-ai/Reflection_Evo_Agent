@@ -1,4 +1,5 @@
 from .io import dumps
+from .environment import task_goal
 
 
 def object_schema(properties):
@@ -31,7 +32,8 @@ class Roles:
                                        {"role": "user", "content": dumps(data)}], schema, seed, purpose)
 
     def plan(self, initial, experiences, seed, purpose):
-        return self.call("planner", {"initial_observation": initial, "experiences": experiences},
+        return self.call("planner", {"task_goal": task_goal(initial), "initial_observation": initial,
+                                     "experiences": experiences},
                          PLANS, seed, purpose)["plans"]
 
     def forecast(self, phase, context, judgments, catalogue, seed, purpose):
@@ -46,7 +48,7 @@ class Roles:
 
     def critique(self, initial, plans, traces, seed, purpose):
         # The compact representation keeps every action and observation; no diagnostic labels are supplied.
-        data = {"initial_observation": initial, "plans": plans,
+        data = {"task_goal": task_goal(initial), "initial_observation": initial, "plans": plans,
                 "step_fields": ["action", "observation", "won"],
                 "trajectories": [{"plan_index": i, "won": t["won"], "termination": t["termination"],
                                   "steps": [[s["action"], s["observation"], s["won"]] for s in t["steps"]]}

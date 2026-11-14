@@ -3,12 +3,14 @@ from pathlib import Path
 import json
 import tempfile
 import unittest
+from unittest.mock import Mock
 
 import numpy as np
 
 from forecast_agent.experiment import Experiment, metrics
 from forecast_agent.io import dumps, read_json
 from forecast_agent.memory import Memory, vectors
+from forecast_agent.roles import Roles
 
 
 def content(state="尚未确认前序结果，缺少后续需要的信息"):
@@ -66,7 +68,7 @@ class FakeEnvironment:
 
     def reset(self):
         self.actions = []
-        return "Visible initial state and task.", False
+        return "Visible initial state.\nYour task is to: find the target object.", False
 
     def step(self, action):
         self.actions.append(action)
@@ -204,6 +206,58 @@ class ProtocolTests(unittest.TestCase):
         config = {"seed": 42, "data_root": "data", "episode": {"max_steps": 2, "history_tokens": 2000},
                   "memory": {"full_threshold": 1, "similarity_threshold": .8}}
         return Experiment(config, self.directory, self.directory, self.roles, FakeEnvironment)
+
+    def test_planner_preserves_raw_goal_when_experience_mentions_another_task(self):
+        goal = "put a clean Plate in/on the DiningTable."
+        initial = "You are in the middle of a room.\nYour task is to: " + goal
+        experiences = [{**content(), "advice": ["Your task is to: heat a mug and put it in/on the fridge."]}]
+        client = Mock()
+        client.chat.return_value = {"plans": []}
+        roles = Roles(client, Path(__file__).resolve().parents[1] / "prompts")
+
+        roles.plan(initial, experiences, 42, "planner-goal")
+
+        payload = json.loads(client.chat.call_args.args[1][1]["content"])
+        self.assertEqual(payload["task_goal"], goal)
+        self.assertEqual(payload["initial_observation"], initial)
+        self.assertEqual(payload["experiences"], experiences)
+
+    def test_critic_preserves_raw_goal_when_plan_mentions_another_task(self):
+        goal = "put a clean Plate in/on the DiningTable."
+        initial = "You are in the middle of a room.\nYour task is to: " + goal
+        plans = [{"name": "other goal", "strategy": "heat a mug and put it in/on the fridge.", "steps": []}]
+        traces = [{"won": False, "termination": "step_limit", "steps": []}]
+        client = Mock()
+        client.chat.return_value = {"judge_experiences": [], "planner_experiences": [], "actor_experiences": []}
+        roles = Roles(client, Path(__file__).resolve().parents[1] / "prompts")
+
+        roles.critique(initial, plans, traces, 42, "critic-goal")
+
+        payload = json.loads(client.chat.call_args.args[1][1]["content"])
+        self.assertEqual(payload["task_goal"], goal)
+        self.assertEqual(payload["initial_observation"], initial)
+        self.assertEqual(payload["plans"], plans)
+
+    def test_actor_keeps_raw_goal_when_recent_history_is_trimmed(self):
+        experiment = self.experiment()
+        experiment.config["episode"]["history_tokens"] = 50
+        goal = "put a clean Plate in/on the DiningTable."
+        initial = "You are in the middle of a room.\nYour task is to: " + goal
+        plan = {"name": "other goal", "strategy": "heat a mug and put it in/on the fridge.", "steps": []}
+        experiences = [{**content(), "advice": ["Your task is to: heat a mug and put it in/on the fridge."]}]
+        steps = [{"action": "look", "observation": "old feedback " * 100, "won": False},
+                 {"action": "look", "observation": "latest feedback", "won": False}]
+
+        early = json.loads(experiment.actor_messages(initial, plan, experiences, [])[1]["content"])
+        later = json.loads(experiment.actor_messages(initial, plan, experiences, steps)[1]["content"])
+
+        self.assertEqual(early["task_goal"], goal)
+        self.assertEqual(later["task_goal"], goal)
+        self.assertEqual(later["initial_observation"], initial)
+        self.assertEqual(later["recent_interaction"], [steps[-1]])
+        self.assertEqual(later["omitted_history_steps"], 1)
+        self.assertEqual(later["plan"], plan)
+        self.assertEqual(later["experiences"], experiences)
 
     def test_training_injects_once_per_plan_and_commits_once_per_task(self):
         experiment = self.experiment()

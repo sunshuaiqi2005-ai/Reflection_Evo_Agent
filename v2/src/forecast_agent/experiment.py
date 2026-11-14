@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from .environment import Alfworld
+from .environment import Alfworld, task_goal
 from .io import dumps, event, read_json, seed_for, write_json
 from .memory import Memory
 
@@ -27,7 +27,8 @@ class Experiment:
                 break
             history = candidate
         return [{"role": "system", "content": self.roles.prompts["actor"]},
-                {"role": "user", "content": dumps({"initial_observation": initial, "plan": plan,
+                {"role": "user", "content": dumps({"task_goal": task_goal(initial),
+                 "initial_observation": initial, "plan": plan,
                  "experiences": experiences, "omitted_history_steps": len(steps) - len(history),
                  "recent_interaction": history})}]
 

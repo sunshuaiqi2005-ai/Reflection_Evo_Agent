@@ -2,6 +2,10 @@ import os
 from pathlib import Path
 
 
+def task_goal(initial_observation):
+    return initial_observation.split("Your task is to: ", 1)[1]
+
+
 class Alfworld:
     def __init__(self, gamefile, seed):
         import textworld
