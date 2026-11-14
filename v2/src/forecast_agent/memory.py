@@ -22,7 +22,7 @@ class Memory:
             "experiences": [], "clusters": [],
         }
 
-    def select(self, target, context, roles, threshold, seed, purpose, directory, max_experiences=12):
+    def select(self, target, context, roles, threshold, seed, purpose, directory, max_experiences=20):
         entries = [e for e in self.data["experiences"] if e["type"] == target]
         phase = {"planner": "planning", "actor": "execution"}[target]
         clusters = [c for c in self.data["clusters"] if (c["type"], c["phase"]) == (target, phase)]

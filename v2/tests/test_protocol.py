@@ -115,36 +115,36 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(self.roles.forecasts[0][0], "execution")
 
     def test_selected_state_injects_all_members_within_budget_and_excludes_other_states(self):
-        memory = self.memory_with(12)
+        memory = self.memory_with(20)
         extra = memory.add("actor", "execution", content("B"))
         extra["state_id"] = "S00002"
         memory.data["clusters"].append({**memory.data["clusters"][0], "state_id": "S00002",
                                         "state": "B", "experience_ids": [extra["id"]]})
         self.roles.choose = ["S00001"]
         selected = memory.select("actor", {}, self.roles, 8, 1, "select", self.directory)
-        self.assertEqual(len(selected["experiences"]), 12)
-        self.assertEqual(selected["candidate_count"], 12)
+        self.assertEqual(len(selected["experiences"]), 20)
+        self.assertEqual(selected["candidate_count"], 20)
         self.assertFalse(selected["budget_applied"])
         self.assertNotIn(extra["id"], [e["id"] for e in selected["experiences"]])
 
     def test_oversized_single_state_is_capped_without_new_embeddings(self):
-        memory = self.memory_with(17)
+        memory = self.memory_with(25)
         embedded = len(self.roles.client.embedded)
         before = deepcopy(memory.data)
 
         selected = memory.select("actor", {}, self.roles, 8, 1, "oversized", self.directory)
 
-        self.assertEqual(len(selected["experiences"]), 12)
-        self.assertEqual(selected["candidate_count"], 17)
+        self.assertEqual(len(selected["experiences"]), 20)
+        self.assertEqual(selected["candidate_count"], 25)
         self.assertTrue(selected["budget_applied"])
         self.assertEqual(selected["state_ids"], ["S00001"])
         self.assertEqual([e["id"] for e in selected["experiences"]],
-                         [e["id"] for e in memory.data["experiences"][:12]])
+                         [e["id"] for e in memory.data["experiences"][:20]])
         self.assertEqual(len(self.roles.client.embedded), embedded)
         self.assertEqual(memory.data, before)
 
     def test_budget_round_robins_ranked_states_and_skips_exhausted_groups(self):
-        memory = self.memory_with(13)
+        memory = self.memory_with(21)
         groups = {"S00001": list(memory.data["experiences"])}
         for state_id, state, count in (("S00002", "B", 2), ("S00003", "C", 1)):
             entries = [memory.add("actor", "execution", content(state)) for _ in range(count)]
@@ -159,10 +159,10 @@ class ProtocolTests(unittest.TestCase):
 
         first, second, third = groups["S00001"], groups["S00002"], groups["S00003"]
         expected = [third[0]["id"], second[0]["id"], first[0]["id"], second[1]["id"]]
-        expected.extend(e["id"] for e in first[1:9])
+        expected.extend(e["id"] for e in first[1:17])
         self.assertEqual([e["id"] for e in selected["experiences"]], expected)
         self.assertEqual(selected["state_ids"], self.roles.choose)
-        self.assertEqual(selected["candidate_count"], 16)
+        self.assertEqual(selected["candidate_count"], 24)
         self.assertTrue(selected["budget_applied"])
 
     def test_selection_within_budget_preserves_all_members_in_global_order(self):
@@ -276,7 +276,7 @@ class ProtocolTests(unittest.TestCase):
 
     def experiment(self):
         config = {"seed": 42, "data_root": "data", "episode": {"max_steps": 2, "history_tokens": 3200},
-                  "memory": {"full_threshold": 1, "similarity_threshold": .8, "max_injected_experiences": 12}}
+                  "memory": {"full_threshold": 1, "similarity_threshold": .8, "max_injected_experiences": 20}}
         return Experiment(config, self.directory, self.directory, self.roles, FakeEnvironment)
 
     def test_experiment_forwards_configured_experience_budget(self):

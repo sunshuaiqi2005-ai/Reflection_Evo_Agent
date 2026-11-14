@@ -18,7 +18,7 @@ model:
 
 memory:
   full_threshold: 8
-  max_injected_experiences: 12
+  max_injected_experiences: 20
   similarity_threshold: 0.60
 
 episode:
