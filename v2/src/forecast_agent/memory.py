@@ -1,4 +1,5 @@
 from copy import deepcopy
+from itertools import islice, zip_longest
 
 import numpy as np
 
@@ -21,27 +22,39 @@ class Memory:
             "experiences": [], "clusters": [],
         }
 
-    def select(self, target, context, roles, threshold, seed, purpose, directory):
+    def select(self, target, context, roles, threshold, seed, purpose, directory, max_experiences=12):
         entries = [e for e in self.data["experiences"] if e["type"] == target]
         phase = {"planner": "planning", "actor": "execution"}[target]
+        clusters = [c for c in self.data["clusters"] if (c["type"], c["phase"]) == (target, phase)]
         if len(entries) < threshold:
             result = {"mode": "full", "possible_problems": [], "state_ids": [],
                       "experiences": [body(e) for e in entries]}
         else:
             catalogue = [{k: c[k] for k in ("state_id", "state")}
-                         for c in self.data["clusters"]
-                         if (c["type"], c["phase"]) == (target, phase)]
+                         for c in clusters]
             judgments = [body(e) for e in self.data["experiences"]
                          if e["type"] == "judge" and e["phase"] == phase]
             choice = roles.forecast(phase, context, judgments, catalogue, seed, purpose)
             selected = set(choice["selected_state_ids"])
-            member_ids = {identifier for c in self.data["clusters"] if c["state_id"] in selected
+            member_ids = {identifier for c in clusters if c["state_id"] in selected
                           for identifier in c["experience_ids"]}
             result = {"mode": "catalogue", "possible_problems": choice["possible_problems"],
                       "state_ids": choice["selected_state_ids"],
                       "experiences": [body(e) for e in entries if e["id"] in member_ids]}
+        result["candidate_count"] = len(result["experiences"])
+        result["budget_applied"] = result["candidate_count"] > max_experiences
+        if result["budget_applied"]:
+            state_order = result["state_ids"] or [c["state_id"] for c in clusters]
+            members = {c["state_id"]: c["experience_ids"] for c in clusters}
+            groups = [members[state_id] for state_id in state_order]
+            ordered_ids = (identifier for row in zip_longest(*groups) for identifier in row
+                           if identifier is not None)
+            lookup = {e["id"]: e for e in result["experiences"]}
+            result["experiences"] = [lookup[i] for i in islice(ordered_ids, max_experiences)]
         event(directory, "injection", purpose=purpose, target=target, memory_version=self.data["version"],
               mode=result["mode"], possible_problems=result["possible_problems"],
+              candidate_count=result["candidate_count"], max_experiences=max_experiences,
+              budget_applied=result["budget_applied"],
               state_ids=result["state_ids"], experience_ids=[e["id"] for e in result["experiences"]])
         return result
 

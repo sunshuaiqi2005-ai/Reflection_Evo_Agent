@@ -17,7 +17,8 @@ class Experiment:
 
     def injection(self, memory, target, context, seed, purpose):
         return memory.select(target, context, self.roles, self.config["memory"]["full_threshold"],
-                             seed, purpose, self.directory)
+                             seed, purpose, self.directory,
+                             max_experiences=self.config["memory"]["max_injected_experiences"])
 
     def actor_messages(self, initial, plan, experiences, steps):
         history = []

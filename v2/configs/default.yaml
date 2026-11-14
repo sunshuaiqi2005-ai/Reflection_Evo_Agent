@@ -18,8 +18,9 @@ model:
 
 memory:
   full_threshold: 8
+  max_injected_experiences: 12
   similarity_threshold: 0.60
 
 episode:
   max_steps: 50
-  history_tokens: 1600
+  history_tokens: 3200

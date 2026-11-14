@@ -102,6 +102,8 @@ class ProtocolTests(unittest.TestCase):
         selected = memory.select("actor", {"plan": "p"}, self.roles, 8, 1, "full", self.directory)
         self.assertEqual(selected["mode"], "full")
         self.assertEqual(len(selected["experiences"]), 7)
+        self.assertEqual(selected["candidate_count"], 7)
+        self.assertFalse(selected["budget_applied"])
         self.assertEqual(self.roles.forecasts, [])
 
     def test_at_threshold_reads_selected_state_in_full(self):
@@ -112,16 +114,86 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(selected["state_ids"], ["S00001"])
         self.assertEqual(self.roles.forecasts[0][0], "execution")
 
-    def test_selected_state_injects_all_members_and_excludes_other_states(self):
-        memory = self.memory_with(13)
+    def test_selected_state_injects_all_members_within_budget_and_excludes_other_states(self):
+        memory = self.memory_with(12)
         extra = memory.add("actor", "execution", content("B"))
         extra["state_id"] = "S00002"
         memory.data["clusters"].append({**memory.data["clusters"][0], "state_id": "S00002",
                                         "state": "B", "experience_ids": [extra["id"]]})
         self.roles.choose = ["S00001"]
         selected = memory.select("actor", {}, self.roles, 8, 1, "select", self.directory)
-        self.assertEqual(len(selected["experiences"]), 13)
+        self.assertEqual(len(selected["experiences"]), 12)
+        self.assertEqual(selected["candidate_count"], 12)
+        self.assertFalse(selected["budget_applied"])
         self.assertNotIn(extra["id"], [e["id"] for e in selected["experiences"]])
+
+    def test_oversized_single_state_is_capped_without_new_embeddings(self):
+        memory = self.memory_with(17)
+        embedded = len(self.roles.client.embedded)
+        before = deepcopy(memory.data)
+
+        selected = memory.select("actor", {}, self.roles, 8, 1, "oversized", self.directory)
+
+        self.assertEqual(len(selected["experiences"]), 12)
+        self.assertEqual(selected["candidate_count"], 17)
+        self.assertTrue(selected["budget_applied"])
+        self.assertEqual(selected["state_ids"], ["S00001"])
+        self.assertEqual([e["id"] for e in selected["experiences"]],
+                         [e["id"] for e in memory.data["experiences"][:12]])
+        self.assertEqual(len(self.roles.client.embedded), embedded)
+        self.assertEqual(memory.data, before)
+
+    def test_budget_round_robins_ranked_states_and_skips_exhausted_groups(self):
+        memory = self.memory_with(13)
+        groups = {"S00001": list(memory.data["experiences"])}
+        for state_id, state, count in (("S00002", "B", 2), ("S00003", "C", 1)):
+            entries = [memory.add("actor", "execution", content(state)) for _ in range(count)]
+            for entry in entries:
+                entry["state_id"] = state_id
+            memory.data["clusters"].append({"state_id": state_id, "type": "actor", "phase": "execution",
+                "state": state, "experience_ids": [e["id"] for e in entries], "centroid": [0., 1.]})
+            groups[state_id] = entries
+        self.roles.choose = ["S00003", "S00002", "S00001"]
+
+        selected = memory.select("actor", {}, self.roles, 8, 1, "round-robin", self.directory)
+
+        first, second, third = groups["S00001"], groups["S00002"], groups["S00003"]
+        expected = [third[0]["id"], second[0]["id"], first[0]["id"], second[1]["id"]]
+        expected.extend(e["id"] for e in first[1:9])
+        self.assertEqual([e["id"] for e in selected["experiences"]], expected)
+        self.assertEqual(selected["state_ids"], self.roles.choose)
+        self.assertEqual(selected["candidate_count"], 16)
+        self.assertTrue(selected["budget_applied"])
+
+    def test_selection_within_budget_preserves_all_members_in_global_order(self):
+        memory = self.memory_with(4)
+        entries = [memory.add("actor", "execution", content("B")) for _ in range(4)]
+        for entry in entries:
+            entry["state_id"] = "S00002"
+        memory.data["clusters"].append({"state_id": "S00002", "type": "actor", "phase": "execution",
+            "state": "B", "experience_ids": [e["id"] for e in entries], "centroid": [0., 1.]})
+        self.roles.choose = ["S00002", "S00001"]
+
+        selected = memory.select("actor", {}, self.roles, 8, 1, "uncapped", self.directory)
+
+        self.assertEqual([e["id"] for e in selected["experiences"]],
+                         [e["id"] for e in memory.data["experiences"]])
+        self.assertEqual(selected["candidate_count"], 8)
+        self.assertFalse(selected["budget_applied"])
+
+    def test_configurable_budget_applies_to_full_and_catalogue_selection(self):
+        for count, budget in ((7, 3), (17, 4), (17, 20)):
+            with self.subTest(count=count, budget=budget):
+                memory = self.memory_with(count)
+                forecasts = len(self.roles.forecasts)
+
+                selected = memory.select("actor", {}, self.roles, 8, 1, f"budget-{count}-{budget}",
+                                         self.directory, max_experiences=budget)
+
+                self.assertEqual(len(selected["experiences"]), min(count, budget))
+                self.assertEqual(selected["candidate_count"], count)
+                self.assertEqual(selected["budget_applied"], count > budget)
+                self.assertEqual(len(self.roles.forecasts) - forecasts, int(count >= 8))
 
     def test_forecaster_receives_only_target_state_index(self):
         memory = self.memory_with(8)
@@ -203,9 +275,22 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(len(after.data["clusters"]), 2)
 
     def experiment(self):
-        config = {"seed": 42, "data_root": "data", "episode": {"max_steps": 2, "history_tokens": 2000},
-                  "memory": {"full_threshold": 1, "similarity_threshold": .8}}
+        config = {"seed": 42, "data_root": "data", "episode": {"max_steps": 2, "history_tokens": 3200},
+                  "memory": {"full_threshold": 1, "similarity_threshold": .8, "max_injected_experiences": 12}}
         return Experiment(config, self.directory, self.directory, self.roles, FakeEnvironment)
+
+    def test_experiment_forwards_configured_experience_budget(self):
+        experiment = self.experiment()
+        experiment.config["memory"]["full_threshold"] = 8
+        experiment.config["memory"]["max_injected_experiences"] = 3
+
+        selected = experiment.injection(self.memory_with(7), "actor", {}, 1, "configured-budget")
+
+        self.assertEqual(selected["mode"], "full")
+        self.assertEqual(len(selected["experiences"]), 3)
+        self.assertEqual(selected["candidate_count"], 7)
+        self.assertTrue(selected["budget_applied"])
+        self.assertEqual(self.roles.forecasts, [])
 
     def test_planner_preserves_raw_goal_when_experience_mentions_another_task(self):
         goal = "put a clean Plate in/on the DiningTable."
