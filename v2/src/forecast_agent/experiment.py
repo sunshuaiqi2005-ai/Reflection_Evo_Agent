@@ -100,8 +100,7 @@ class Experiment:
             result = self.solve(task, memory, f"train-{index:03d}", "train")
             critique = self.roles.critique(result["initial_observation"], result["plans"], result["episodes"],
                                           seed_for(self.seed, "critic", index), f"round-{index:03d}/critic")
-            after = memory.updated(critique, self.client, self.roles,
-                                   self.config["memory"]["similarity_threshold"], self.seed, index)
+            after = memory.updated(critique, self.client, self.config["memory"]["similarity_threshold"])
             # The round file is the commit: the three episodes only read the old snapshot.
             write_json(path, {**result, "critique": critique, "memory_after": after.data})
             memory = after

@@ -9,8 +9,7 @@ def object_schema(properties):
 TEXT = {"type": "string"}
 TEXTS = {"type": "array", "items": TEXT}
 EXPERIENCE = object_schema({
-    "context": TEXT, "problem": TEXT, "explanation": TEXT,
-    "methods": TEXTS, "advice": TEXTS, "exceptions": TEXTS,
+    "state": TEXT, "explanation": TEXT, "advice": TEXTS, "exceptions": TEXTS,
 })
 JUDGMENT = object_schema({**EXPERIENCE["properties"], "phase": {"enum": ["planning", "execution"]}})
 PLAN = object_schema({"name": TEXT, "strategy": TEXT, "steps": TEXTS})
@@ -37,8 +36,8 @@ class Roles:
 
     def forecast(self, phase, context, judgments, catalogue, seed, purpose):
         schema = object_schema({"possible_problems": TEXTS,
-                                "selected_project_ids": {"type": "array", "uniqueItems": True,
-                                  "items": {"enum": [c["id"] for c in catalogue]}}})
+                                "selected_state_ids": {"type": "array", "uniqueItems": True,
+                                  "items": {"enum": [c["state_id"] for c in catalogue]}}})
         return self.call("forecaster", {"phase": phase, "context": context,
                          "judgment_experiences": judgments, "catalogue": catalogue}, schema, seed, purpose)
 
@@ -54,8 +53,3 @@ class Roles:
                                  for i, t in enumerate(traces)]}
         return self.call("critic", data, CRITIQUE, seed, purpose)
 
-    def consolidate(self, clusters, seed, purpose):
-        group_schema = object_schema({"state_name": TEXT, "problem_name": TEXT, "scope": TEXT,
-                                      "experiences": {"type": "array", "items": EXPERIENCE, "minItems": 1}})
-        return self.call("consolidate", {"clusters": clusters},
-                         object_schema({c["id"]: group_schema for c in clusters}), seed, purpose)

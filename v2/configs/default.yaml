@@ -15,10 +15,9 @@ model:
     actor: {context: 8192, output: 64, temperature: 0.7}
     forecaster: {context: 8192, output: 1024, temperature: 0.2}
     critic: {context: 16384, output: 4096, temperature: 0.2}
-    consolidate: {context: 16384, output: 4096, temperature: 0.2}
 
 memory:
-  full_threshold: 20
+  full_threshold: 8
   similarity_threshold: 0.80
 
 episode:

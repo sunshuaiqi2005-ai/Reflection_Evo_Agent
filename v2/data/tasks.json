@@ -399,9 +399,7 @@
       "target": "Microwave",
       "scene": "17",
       "game_sha256": "4c58377775876b971aeec717b67e2b1a06d212644d75e5e7c673bea58925f682"
-    }
-  ],
-  "development": [
+    },
     {
       "id": "valid_seen/pick_cool_then_place_in_recep-Egg-None-Microwave-24/trial_T20190908_234112_645480/game.tw-pddl",
       "game_path": "valid_seen/pick_cool_then_place_in_recep-Egg-None-Microwave-24/trial_T20190908_234112_645480/game.tw-pddl",
@@ -501,7 +499,9 @@
       "target": "DiningTable",
       "scene": "4",
       "game_sha256": "4e4160b058e149953e1286ae25904b06642c6d4dece7b9b05b93f64e939a058f"
-    },
+    }
+  ],
+  "development": [
     {
       "id": "valid_seen/pick_clean_then_place_in_recep-Lettuce-None-CounterTop-16/trial_T20190909_051630_092360/game.tw-pddl",
       "game_path": "valid_seen/pick_clean_then_place_in_recep-Lettuce-None-CounterTop-16/trial_T20190909_051630_092360/game.tw-pddl",

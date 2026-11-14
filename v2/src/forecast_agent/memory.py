@@ -2,26 +2,22 @@ from copy import deepcopy
 
 import numpy as np
 
-from .io import event, seed_for
+from .io import event
 
 
 def body(experience):
-    return {key: experience[key] for key in ("id", "context", "problem", "explanation",
-                                            "methods", "advice", "exceptions")}
+    return {key: experience[key] for key in ("id", "state", "explanation", "advice", "exceptions")}
 
 
 def vectors(client, experiences):
-    encoded = client.embed([e["context"] for e in experiences] + [e["problem"] for e in experiences])
-    contexts, problems = np.split(encoded, 2)
-    contexts = contexts / np.linalg.norm(contexts, axis=1, keepdims=True)
-    problems = problems / np.linalg.norm(problems, axis=1, keepdims=True)
-    return np.concatenate([contexts, problems], axis=1) / np.sqrt(2)
+    encoded = client.embed([e["state"] for e in experiences])
+    return encoded / np.linalg.norm(encoded, axis=1, keepdims=True)
 
 
 class Memory:
     def __init__(self, data=None):
         self.data = deepcopy(data) if data is not None else {
-            "version": 0, "next_experience": 1, "next_cluster": 1,
+            "version": 0, "next_experience": 1, "next_state": 1,
             "experiences": [], "clusters": [],
         }
 
@@ -29,23 +25,24 @@ class Memory:
         entries = [e for e in self.data["experiences"] if e["type"] == target]
         phase = {"planner": "planning", "actor": "execution"}[target]
         if len(entries) < threshold:
-            result = {"mode": "full", "possible_problems": [], "project_ids": [],
+            result = {"mode": "full", "possible_problems": [], "state_ids": [],
                       "experiences": [body(e) for e in entries]}
         else:
-            catalogue = [{k: c[k] for k in ("id", "state_name", "problem_name", "scope")}
-                         for c in self.data["clusters"] if c["type"] == target]
+            catalogue = [{k: c[k] for k in ("state_id", "state")}
+                         for c in self.data["clusters"]
+                         if (c["type"], c["phase"]) == (target, phase)]
             judgments = [body(e) for e in self.data["experiences"]
                          if e["type"] == "judge" and e["phase"] == phase]
             choice = roles.forecast(phase, context, judgments, catalogue, seed, purpose)
-            selected = set(choice["selected_project_ids"])
-            member_ids = {identifier for c in self.data["clusters"] if c["id"] in selected
+            selected = set(choice["selected_state_ids"])
+            member_ids = {identifier for c in self.data["clusters"] if c["state_id"] in selected
                           for identifier in c["experience_ids"]}
             result = {"mode": "catalogue", "possible_problems": choice["possible_problems"],
-                      "project_ids": choice["selected_project_ids"],
+                      "state_ids": choice["selected_state_ids"],
                       "experiences": [body(e) for e in entries if e["id"] in member_ids]}
         event(directory, "injection", purpose=purpose, target=target, memory_version=self.data["version"],
               mode=result["mode"], possible_problems=result["possible_problems"],
-              project_ids=result["project_ids"], experience_ids=[e["id"] for e in result["experiences"]])
+              state_ids=result["state_ids"], experience_ids=[e["id"] for e in result["experiences"]])
         return result
 
     def add(self, experience_type, phase, content):
@@ -55,7 +52,7 @@ class Memory:
         self.data["experiences"].append(entry)
         return entry
 
-    def updated(self, critique, client, roles, similarity_threshold, seed, round_index):
+    def updated(self, critique, client, similarity_threshold):
         result = Memory(self.data)
         pending = []
         for key, kind in (("judge_experiences", "judge"), ("planner_experiences", "planner"),
@@ -66,50 +63,27 @@ class Memory:
         if not pending:
             result.data["version"] += 1
             return result
-        encoded = vectors(client, pending)
-        touched = set()
-        for entry, vector in zip(pending, encoded):
+        entries = result.data["experiences"]
+        lookup = {e["id"]: e for e in entries}
+        encoded = {e["id"]: v for e, v in zip(entries, vectors(client, entries))}
+        for entry in pending:
+            vector = encoded[entry["id"]]
             candidates = [c for c in result.data["clusters"]
                           if (c["type"], c["phase"]) == (entry["type"], entry["phase"])]
             nearest = max(candidates, key=lambda c: np.dot(vector, c["centroid"]), default=None)
             if nearest is None or np.dot(vector, nearest["centroid"]) < similarity_threshold:
-                nearest = {"id": f"C{result.data['next_cluster']:05d}", "type": entry["type"],
-                           "phase": entry["phase"], "state_name": entry["context"],
-                           "problem_name": entry["problem"], "scope": entry["context"],
+                nearest = {"state_id": f"S{result.data['next_state']:05d}", "type": entry["type"],
+                           "phase": entry["phase"], "state": entry["state"],
                            "experience_ids": [], "centroid": vector.tolist()}
-                result.data["next_cluster"] += 1
+                result.data["next_state"] += 1
                 result.data["clusters"].append(nearest)
-            size = len(nearest["experience_ids"])
-            center = (np.asarray(nearest["centroid"]) * size + vector) / (size + 1)
-            nearest["centroid"] = (center / np.linalg.norm(center)).tolist()
             nearest["experience_ids"].append(entry["id"])
-            entry["cluster_id"] = nearest["id"]
-            touched.add(nearest["id"])
-
-        changed = [c for c in result.data["clusters"] if c["id"] in touched and len(c["experience_ids"]) > 1]
-        if not changed:
-            result.data["version"] += 1
-            return result
-        lookup = {e["id"]: e for e in result.data["experiences"]}
-        groups = [{"id": c["id"], "type": c["type"], "phase": c["phase"],
-                   "experiences": [body(lookup[i]) for i in c["experience_ids"]]} for c in changed]
-        merged = roles.consolidate(groups, seed_for(seed, "consolidate", round_index),
-                                   f"round-{round_index:03d}/consolidate")
-        for cluster in changed:
-            combined = merged[cluster["id"]]
-            old_ids = set(cluster["experience_ids"])
-            result.data["experiences"] = [e for e in result.data["experiences"] if e["id"] not in old_ids]
-            entries = [result.add(cluster["type"], cluster["phase"], content)
-                       for content in combined["experiences"]]
-            for entry in entries:
-                entry["cluster_id"] = cluster["id"]
-            cluster["experience_ids"] = [e["id"] for e in entries]
-            cluster.update({k: combined[k] for k in ("state_name", "problem_name", "scope")})
-        lookup = {e["id"]: e for e in result.data["experiences"]}
-        changed_entries = [lookup[i] for c in changed for i in c["experience_ids"]]
-        encoded = {e["id"]: v for e, v in zip(changed_entries, vectors(client, changed_entries))}
-        for cluster in changed:
-            center = np.mean([encoded[i] for i in cluster["experience_ids"]], axis=0)
-            cluster["centroid"] = (center / np.linalg.norm(center)).tolist()
+            entry["state_id"] = nearest["state_id"]
+            members = np.asarray([encoded[i] for i in nearest["experience_ids"]])
+            center = members.mean(axis=0)
+            center /= np.linalg.norm(center)
+            nearest["centroid"] = center.tolist()
+            representative = nearest["experience_ids"][int(np.argmax(members @ center))]
+            nearest["state"] = lookup[representative]["state"]
         result.data["version"] += 1
         return result

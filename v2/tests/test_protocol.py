@@ -11,18 +11,23 @@ from forecast_agent.io import dumps, read_json
 from forecast_agent.memory import Memory, vectors
 
 
-def content(context="尚未确认前序结果", problem="缺少后续需要的信息"):
-    return {"context": context, "problem": problem, "explanation": "暂时解释",
-            "methods": ["确认信息后继续"], "advice": ["根据反馈决定后续动作"], "exceptions": []}
+def content(state="尚未确认前序结果，缺少后续需要的信息"):
+    return {"state": state, "explanation": "暂时解释",
+            "advice": ["根据反馈决定后续动作"], "exceptions": []}
 
 
 class FakeClient:
+    def __init__(self):
+        self.embedded = []
+
     def tokens(self, text):
         return len(text) // 4
 
     def embed(self, texts):
-        return np.asarray([[1., 0.] if text in ("A", "尚未确认前序结果", "缺少后续需要的信息")
-                           else [0., 1.] for text in texts])
+        self.embedded.append(list(texts))
+        known = {"A": [1., 0.], "尚未确认前序结果，缺少后续需要的信息": [1., 0.],
+                 "near": [4., 3.], "middle": [3., 1.]}
+        return np.asarray([known.get(text, [0., 1.]) for text in texts])
 
 
 class FakeRoles:
@@ -31,14 +36,13 @@ class FakeRoles:
         self.prompts = {"actor": "Return an action."}
         self.forecasts = []
         self.critiques = 0
-        self.consolidations = 0
         self.actions = []
         self.choose = None
 
     def forecast(self, phase, context, judgments, catalogue, seed, purpose):
         self.forecasts.append((phase, deepcopy(context), deepcopy(judgments), deepcopy(catalogue)))
         return {"possible_problems": ["候选问题"],
-                "selected_project_ids": self.choose if self.choose is not None else [c["id"] for c in catalogue]}
+                "selected_state_ids": self.choose if self.choose is not None else [c["state_id"] for c in catalogue]}
 
     def plan(self, initial, experiences, seed, purpose):
         return [{"name": str(i), "strategy": f"strategy {i}", "steps": ["探索", "完成任务"]} for i in range(3)]
@@ -51,13 +55,6 @@ class FakeRoles:
         self.critiques += 1
         return {"judge_experiences": [{**content(), "phase": phase} for phase in ("planning", "execution")],
                 "planner_experiences": [content()], "actor_experiences": [content()]}
-
-    def consolidate(self, clusters, seed, purpose):
-        self.consolidations += 1
-        return {c["id"]: {"state_name": "训练中归纳的状态", "problem_name": "训练中归纳的问题", "scope": "适用条件",
-                            "experiences": [{k: v for k, v in e.items() if k != "id"} for e in c["experiences"]]}
-                for c in clusters}
-
 
 class FakeEnvironment:
     instances = []
@@ -91,65 +88,77 @@ class ProtocolTests(unittest.TestCase):
         memory = Memory()
         entries = [memory.add(target, phase, content()) for _ in range(count)]
         for e in entries:
-            e["cluster_id"] = "C1"
-        memory.data["clusters"] = [{"id": "C1", "type": target, "phase": phase,
-            "state_name": "状态", "problem_name": "问题", "scope": "条件",
+            e["state_id"] = "S00001"
+        memory.data["clusters"] = [{"state_id": "S00001", "type": target, "phase": phase,
+            "state": entries[0]["state"],
             "experience_ids": [e["id"] for e in entries], "centroid": vectors(self.roles.client, entries).mean(axis=0).tolist()}]
-        memory.data["next_cluster"] = 2
+        memory.data["next_state"] = 2
         return memory
 
     def test_below_threshold_injects_all_without_forecaster(self):
-        memory = self.memory_with(19)
-        selected = memory.select("actor", {"plan": "p"}, self.roles, 20, 1, "full", self.directory)
+        memory = self.memory_with(7)
+        selected = memory.select("actor", {"plan": "p"}, self.roles, 8, 1, "full", self.directory)
         self.assertEqual(selected["mode"], "full")
-        self.assertEqual(len(selected["experiences"]), 19)
+        self.assertEqual(len(selected["experiences"]), 7)
         self.assertEqual(self.roles.forecasts, [])
 
-    def test_at_threshold_reads_selected_project_in_full(self):
-        memory = self.memory_with(20)
-        selected = memory.select("actor", {}, self.roles, 20, 1, "catalogue", self.directory)
+    def test_at_threshold_reads_selected_state_in_full(self):
+        memory = self.memory_with(8)
+        selected = memory.select("actor", {}, self.roles, 8, 1, "catalogue", self.directory)
         self.assertEqual(selected["mode"], "catalogue")
-        self.assertEqual(len(selected["experiences"]), 20)
+        self.assertEqual(len(selected["experiences"]), 8)
+        self.assertEqual(selected["state_ids"], ["S00001"])
         self.assertEqual(self.roles.forecasts[0][0], "execution")
 
-    def test_unselected_project_is_not_injected(self):
-        memory = self.memory_with(9)
-        extra = memory.add("actor", "execution", content("B", "B"))
-        extra["cluster_id"] = "C2"
-        memory.data["clusters"].append({**memory.data["clusters"][0], "id": "C2", "experience_ids": [extra["id"]]})
-        self.roles.choose = ["C1"]
-        selected = memory.select("actor", {}, self.roles, 1, 1, "select", self.directory)
-        self.assertEqual(len(selected["experiences"]), 9)
+    def test_selected_state_injects_all_members_and_excludes_other_states(self):
+        memory = self.memory_with(13)
+        extra = memory.add("actor", "execution", content("B"))
+        extra["state_id"] = "S00002"
+        memory.data["clusters"].append({**memory.data["clusters"][0], "state_id": "S00002",
+                                        "state": "B", "experience_ids": [extra["id"]]})
+        self.roles.choose = ["S00001"]
+        selected = memory.select("actor", {}, self.roles, 8, 1, "select", self.directory)
+        self.assertEqual(len(selected["experiences"]), 13)
         self.assertNotIn(extra["id"], [e["id"] for e in selected["experiences"]])
 
-    def test_forecaster_can_select_no_projects(self):
-        memory = self.memory_with(2)
+    def test_forecaster_receives_only_target_state_index(self):
+        memory = self.memory_with(8)
+        memory.select("actor", {"plan": "p"}, self.roles, 8, 1, "catalogue", self.directory)
+        _, context, _, catalogue = self.roles.forecasts[0]
+        self.assertEqual(context, {"plan": "p"})
+        self.assertEqual(catalogue, [{"state_id": "S00001", "state": content()["state"]}])
+
+    def test_forecaster_can_select_no_states(self):
+        memory = self.memory_with(8)
         self.roles.choose = []
-        selected = memory.select("actor", {}, self.roles, 1, 1, "none", self.directory)
+        selected = memory.select("actor", {}, self.roles, 8, 1, "none", self.directory)
         self.assertEqual(selected["experiences"], [])
 
     def test_judgment_phase_matches_receiving_module(self):
-        memory = self.memory_with(1, "planner", "planning")
-        memory.add("judge", "planning", content("planning-only", "risk"))
-        memory.add("judge", "execution", content("execution-only", "risk"))
-        memory.select("planner", {}, self.roles, 1, 1, "planner", self.directory)
+        memory = self.memory_with(8, "planner", "planning")
+        memory.add("judge", "planning", content("planning-only"))
+        memory.add("judge", "execution", content("execution-only"))
+        memory.select("planner", {}, self.roles, 8, 1, "planner", self.directory)
         phase, _, judgments, _ = self.roles.forecasts[0]
         self.assertEqual(phase, "planning")
-        self.assertEqual([e["context"] for e in judgments], ["planning-only"])
+        self.assertEqual([e["state"] for e in judgments], ["planning-only"])
 
-    def test_embedding_uses_both_context_and_problem(self):
-        encoded = vectors(self.roles.client, [content("A", "A"), content("A", "B"), content("B", "A")])
-        self.assertAlmostEqual(float(encoded[0] @ encoded[1]), 0.5)
-        self.assertAlmostEqual(float(encoded[0] @ encoded[2]), 0.5)
+    def test_embedding_uses_only_state_and_ignores_experience_body(self):
+        changed = {**content("A"), "explanation": "完全不同的解释", "advice": ["另一种做法"],
+                   "exceptions": ["另一种例外"]}
+        encoded = vectors(self.roles.client, [content("A"), changed, content("B")])
+        self.assertEqual(self.roles.client.embedded[-1], ["A", "A", "B"])
+        np.testing.assert_allclose(encoded[0], encoded[1])
+        self.assertAlmostEqual(float(encoded[0] @ encoded[2]), 0.)
+        np.testing.assert_allclose(np.linalg.norm(encoded, axis=1), 1.)
 
     def test_four_collections_remain_separate_after_clustering(self):
         before = Memory()
         critique = self.roles.critique("", [], [], 0, "")
-        after = before.updated(critique, self.roles.client, self.roles, .8, 42, 1)
+        after = before.updated(critique, self.roles.client, .8)
         self.assertEqual(before.data["version"], 0)
         self.assertEqual(before.data["experiences"], [])
         self.assertEqual(len(after.data["clusters"]), 4)
-        self.assertEqual(self.roles.consolidations, 0)
         self.assertEqual({(c["type"], c["phase"]) for c in after.data["clusters"]},
                          {("judge", "planning"), ("judge", "execution"),
                           ("planner", "planning"), ("actor", "execution")})
@@ -157,21 +166,38 @@ class ProtocolTests(unittest.TestCase):
             self.assertNotIn("evidence", e)
             self.assertNotIn("sources", e)
 
-    def test_new_method_can_join_existing_cluster(self):
+    def test_different_advice_joins_same_state_without_rewriting_originals(self):
         memory = self.memory_with(1)
+        original = deepcopy(memory.data["experiences"][0])
         fresh = content()
-        fresh["methods"] = ["另一种方法"]
+        fresh["explanation"] = "另一个解释"
+        fresh["advice"] = ["另一种做法"]
         after = memory.updated({"judge_experiences": [], "planner_experiences": [], "actor_experiences": [fresh]},
-                               self.roles.client, self.roles, .8, 42, 1)
+                               self.roles.client, .8)
         self.assertEqual(len(after.data["clusters"]), 1)
-        self.assertEqual({m for e in after.data["experiences"] for m in e["methods"]},
-                         {"确认信息后继续", "另一种方法"})
+        self.assertEqual(after.data["experiences"][0], original)
+        self.assertEqual(memory.data["experiences"], [original])
+        self.assertEqual({a for e in after.data["experiences"] for a in e["advice"]},
+                         {"根据反馈决定后续动作", "另一种做法"})
+        self.assertEqual({e["explanation"] for e in after.data["experiences"]}, {"暂时解释", "另一个解释"})
+        self.assertEqual(after.data["clusters"][0]["experience_ids"], [e["id"] for e in after.data["experiences"]])
+
+    def test_state_index_uses_member_nearest_centroid(self):
+        critique = {"judge_experiences": [], "planner_experiences": [],
+                    "actor_experiences": [content("A"), content("near"), content("middle")]}
+        after = Memory().updated(critique, self.roles.client, .75)
+        self.assertEqual(len(after.data["clusters"]), 1)
+        cluster = after.data["clusters"][0]
+        self.assertEqual(cluster["state"], "middle")
+        self.assertEqual([e["state"] for e in after.data["experiences"]], ["A", "near", "middle"])
+        center = vectors(self.roles.client, after.data["experiences"]).mean(axis=0)
+        np.testing.assert_allclose(cluster["centroid"], center / np.linalg.norm(center))
 
     def test_unrelated_experience_creates_a_cluster(self):
         memory = self.memory_with(1)
         after = memory.updated({"judge_experiences": [], "planner_experiences": [],
-                                "actor_experiences": [content("B", "B")]},
-                               self.roles.client, self.roles, .8, 42, 1)
+                                "actor_experiences": [content("B")]},
+                               self.roles.client, .8)
         self.assertEqual(len(after.data["clusters"]), 2)
 
     def experiment(self):
@@ -185,7 +211,6 @@ class ProtocolTests(unittest.TestCase):
         memory = experiment.train(tasks)
         self.assertEqual(memory.data["version"], 2)
         self.assertEqual(self.roles.critiques, 2)
-        self.assertEqual(self.roles.consolidations, 1)
         self.assertEqual(len(self.roles.forecasts), 4)  # Second task: Planner once, Actor three times.
         self.assertEqual([f[0] for f in self.roles.forecasts], ["planning", "execution", "execution", "execution"])
         actor_contexts = [f[1] for f in self.roles.forecasts if f[0] == "execution"]
