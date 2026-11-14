@@ -149,6 +149,7 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(before.data["version"], 0)
         self.assertEqual(before.data["experiences"], [])
         self.assertEqual(len(after.data["clusters"]), 4)
+        self.assertEqual(self.roles.consolidations, 0)
         self.assertEqual({(c["type"], c["phase"]) for c in after.data["clusters"]},
                          {("judge", "planning"), ("judge", "execution"),
                           ("planner", "planning"), ("actor", "execution")})
@@ -184,7 +185,7 @@ class ProtocolTests(unittest.TestCase):
         memory = experiment.train(tasks)
         self.assertEqual(memory.data["version"], 2)
         self.assertEqual(self.roles.critiques, 2)
-        self.assertEqual(self.roles.consolidations, 2)
+        self.assertEqual(self.roles.consolidations, 1)
         self.assertEqual(len(self.roles.forecasts), 4)  # Second task: Planner once, Actor three times.
         self.assertEqual([f[0] for f in self.roles.forecasts], ["planning", "execution", "execution", "execution"])
         actor_contexts = [f[1] for f in self.roles.forecasts if f[0] == "execution"]

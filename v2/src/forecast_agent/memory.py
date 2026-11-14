@@ -11,8 +11,8 @@ def body(experience):
 
 
 def vectors(client, experiences):
-    contexts = client.embed([e["context"] for e in experiences])
-    problems = client.embed([e["problem"] for e in experiences])
+    encoded = client.embed([e["context"] for e in experiences] + [e["problem"] for e in experiences])
+    contexts, problems = np.split(encoded, 2)
     contexts = contexts / np.linalg.norm(contexts, axis=1, keepdims=True)
     problems = problems / np.linalg.norm(problems, axis=1, keepdims=True)
     return np.concatenate([contexts, problems], axis=1) / np.sqrt(2)
@@ -86,7 +86,10 @@ class Memory:
             entry["cluster_id"] = nearest["id"]
             touched.add(nearest["id"])
 
-        changed = [c for c in result.data["clusters"] if c["id"] in touched]
+        changed = [c for c in result.data["clusters"] if c["id"] in touched and len(c["experience_ids"]) > 1]
+        if not changed:
+            result.data["version"] += 1
+            return result
         lookup = {e["id"]: e for e in result.data["experiences"]}
         groups = [{"id": c["id"], "type": c["type"], "phase": c["phase"],
                    "experiences": [body(lookup[i]) for i in c["experience_ids"]]} for c in changed]
@@ -102,7 +105,11 @@ class Memory:
                 entry["cluster_id"] = cluster["id"]
             cluster["experience_ids"] = [e["id"] for e in entries]
             cluster.update({k: combined[k] for k in ("state_name", "problem_name", "scope")})
-            center = vectors(client, entries).mean(axis=0)
+        lookup = {e["id"]: e for e in result.data["experiences"]}
+        changed_entries = [lookup[i] for c in changed for i in c["experience_ids"]]
+        encoded = {e["id"]: v for e, v in zip(changed_entries, vectors(client, changed_entries))}
+        for cluster in changed:
+            center = np.mean([encoded[i] for i in cluster["experience_ids"]], axis=0)
             cluster["centroid"] = (center / np.linalg.norm(center)).tolist()
         result.data["version"] += 1
         return result
