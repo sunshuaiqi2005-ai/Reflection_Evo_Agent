@@ -72,7 +72,12 @@ class Memory:
                           ("actor_experiences", "actor")):
             for content in critique[key]:
                 phase = content["phase"] if kind == "judge" else {"planner": "planning", "actor": "execution"}[kind]
-                pending.append(result.add(kind, phase, {k: v for k, v in content.items() if k != "phase"}))
+                value = {k: v for k, v in content.items() if k != "phase"}
+                if any(e["type"] == kind and e["phase"] == phase
+                       and {k: e[k] for k in value} == value
+                       for e in result.data["experiences"]):
+                    continue
+                pending.append(result.add(kind, phase, value))
         if not pending:
             result.data["version"] += 1
             return result

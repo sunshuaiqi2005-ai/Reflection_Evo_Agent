@@ -16,6 +16,7 @@ JUDGMENT = object_schema({**EXPERIENCE["properties"], "phase": {"enum": ["planni
 PLAN = object_schema({"name": TEXT, "strategy": TEXT, "steps": TEXTS})
 PLANS = object_schema({"plans": {"type": "array", "items": PLAN, "minItems": 3, "maxItems": 3}})
 CRITIQUE = object_schema({
+    "trajectory_reviews": {"type": "array", "items": TEXT, "minItems": 3, "maxItems": 3},
     "judge_experiences": {"type": "array", "items": JUDGMENT},
     "planner_experiences": {"type": "array", "items": EXPERIENCE},
     "actor_experiences": {"type": "array", "items": EXPERIENCE},

@@ -55,7 +55,8 @@ class FakeRoles:
 
     def critique(self, initial, plans, traces, seed, purpose):
         self.critiques += 1
-        return {"judge_experiences": [{**content(), "phase": phase} for phase in ("planning", "execution")],
+        return {"trajectory_reviews": ["反馈确认两步完成任务。"] * 3,
+                "judge_experiences": [{**content(), "phase": phase} for phase in ("planning", "execution")],
                 "planner_experiences": [content()], "actor_experiences": [content()]}
 
 class FakeEnvironment:
@@ -256,6 +257,38 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual({e["explanation"] for e in after.data["experiences"]}, {"暂时解释", "另一个解释"})
         self.assertEqual(after.data["clusters"][0]["experience_ids"], [e["id"] for e in after.data["experiences"]])
 
+    def test_exact_duplicates_within_and_across_rounds_do_not_allocate_ids_or_reweight_centroid(self):
+        first, second = content("A"), content("near")
+        reordered = dict(reversed(list(first.items())))
+        critique = {"judge_experiences": [], "planner_experiences": [],
+                    "actor_experiences": [first, reordered, second, deepcopy(second)]}
+
+        memory = Memory().updated(critique, self.roles.client, .75)
+
+        self.assertEqual([e["id"] for e in memory.data["experiences"]], ["E00001", "E00002"])
+        self.assertEqual(memory.data["next_experience"], 3)
+        self.assertEqual(memory.data["clusters"][0]["experience_ids"], ["E00001", "E00002"])
+        center = np.asarray([[1., 0.], [.8, .6]]).mean(axis=0)
+        np.testing.assert_allclose(memory.data["clusters"][0]["centroid"], center / np.linalg.norm(center))
+        before = deepcopy(memory.data)
+        embedding_calls = len(self.roles.client.embedded)
+
+        after = memory.updated(critique, self.roles.client, .75)
+
+        self.assertEqual(memory.data, before)
+        self.assertEqual(after.data, {**before, "version": 2})
+        self.assertEqual(len(self.roles.client.embedded), embedding_calls)
+
+    def test_same_state_with_different_body_fields_is_preserved(self):
+        fresh = [content("A"), {**content("A"), "explanation": "另一个解释"},
+                 {**content("A"), "advice": ["另一种做法"]},
+                 {**content("A"), "exceptions": ["另一种例外"]}]
+        after = Memory().updated({"judge_experiences": [], "planner_experiences": [],
+                                  "actor_experiences": fresh}, self.roles.client, .75)
+
+        self.assertEqual(len(after.data["clusters"]), 1)
+        self.assertEqual([{k: e[k] for k in content()} for e in after.data["experiences"]], fresh)
+
     def test_state_index_uses_member_nearest_centroid(self):
         critique = {"judge_experiences": [], "planner_experiences": [],
                     "actor_experiences": [content("A"), content("near"), content("middle")]}
@@ -322,6 +355,10 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(payload["task_goal"], goal)
         self.assertEqual(payload["initial_observation"], initial)
         self.assertEqual(payload["plans"], plans)
+        self.assertEqual(set(payload), {"task_goal", "initial_observation", "plans", "step_fields", "trajectories"})
+        review_schema = client.chat.call_args.args[2]["properties"]["trajectory_reviews"]
+        self.assertEqual(review_schema, {"type": "array", "items": {"type": "string"},
+                                         "minItems": 3, "maxItems": 3})
 
     def test_actor_keeps_raw_goal_when_recent_history_is_trimmed(self):
         experiment = self.experiment()
@@ -362,6 +399,11 @@ class ProtocolTests(unittest.TestCase):
         self.assertTrue(all(len(e["steps"]) == 2 for e in episodes))
         self.assertEqual([e["memory_version"] for e in episodes].count(0), 3)
         self.assertEqual([e["memory_version"] for e in episodes].count(1), 3)
+        rounds = [read_json(p) for p in sorted((self.directory / "rounds").glob("*.json"))]
+        self.assertTrue(all(r["critique"]["trajectory_reviews"] == ["反馈确认两步完成任务。"] * 3 for r in rounds))
+        self.assertEqual(len(memory.data["experiences"]), 4)
+        self.assertTrue(all(set(e) == {"id", "type", "phase", "state_id", "state", "explanation", "advice", "exceptions"}
+                            for e in memory.data["experiences"]))
 
     def test_resume_does_not_repeat_completed_tasks_or_memory_writes(self):
         experiment = self.experiment()
