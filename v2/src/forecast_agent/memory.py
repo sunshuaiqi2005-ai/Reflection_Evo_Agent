@@ -35,11 +35,12 @@ class Memory:
             judgments = [body(e) for e in self.data["experiences"]
                          if e["type"] == "judge" and e["phase"] == phase]
             choice = roles.forecast(phase, context, judgments, catalogue, seed, purpose)
-            selected = set(choice["selected_state_ids"])
+            state_ids = list(dict.fromkeys(choice["selected_state_ids"]))
+            selected = set(state_ids)
             member_ids = {identifier for c in clusters if c["state_id"] in selected
                           for identifier in c["experience_ids"]}
             result = {"mode": "catalogue", "possible_problems": choice["possible_problems"],
-                      "state_ids": choice["selected_state_ids"],
+                      "state_ids": state_ids,
                       "experiences": [body(e) for e in entries if e["id"] in member_ids]}
         result["candidate_count"] = len(result["experiences"])
         result["budget_applied"] = result["candidate_count"] > max_experiences

@@ -359,6 +359,11 @@ class ProtocolTests(unittest.TestCase):
         review_schema = client.chat.call_args.args[2]["properties"]["trajectory_reviews"]
         self.assertEqual(review_schema, {"type": "array", "items": {"type": "string"},
                                          "minItems": 3, "maxItems": 3})
+        for kind in ("judge_experiences", "planner_experiences", "actor_experiences"):
+            properties = client.chat.call_args.args[2]["properties"][kind]["items"]["properties"]
+            self.assertEqual(properties["exceptions"], {"type": "array", "items": {"type": "string"},
+                                                       "maxItems": 3})
+            self.assertEqual(properties["advice"], {"type": "array", "items": {"type": "string"}})
 
     def test_actor_keeps_raw_goal_when_recent_history_is_trimmed(self):
         experiment = self.experiment()
@@ -367,16 +372,25 @@ class ProtocolTests(unittest.TestCase):
         initial = "You are in the middle of a room.\nYour task is to: " + goal
         plan = {"name": "other goal", "strategy": "heat a mug and put it in/on the fridge.", "steps": []}
         experiences = [{**content(), "advice": ["Your task is to: heat a mug and put it in/on the fridge."]}]
-        steps = [{"action": "look", "observation": "old feedback " * 100, "won": False},
-                 {"action": "look", "observation": "latest feedback", "won": False}]
+        steps = [{"action": "look", "observation": "old feedback " * 100,
+                  "score": 0.0, "done": False, "won": False},
+                 {"action": "look", "observation": "latest feedback",
+                  "score": 0.0, "done": False, "won": False}]
 
-        early = json.loads(experiment.actor_messages(initial, plan, experiences, [])[1]["content"])
-        later = json.loads(experiment.actor_messages(initial, plan, experiences, steps)[1]["content"])
+        early_messages = experiment.actor_messages(initial, plan, experiences, [])
+        later_messages = experiment.actor_messages(initial, plan, experiences, steps)
+        early = json.loads(early_messages[1]["content"])
+        later = json.loads(later_messages[1]["content"])
 
         self.assertEqual(early["task_goal"], goal)
         self.assertEqual(later["task_goal"], goal)
         self.assertEqual(later["initial_observation"], initial)
-        self.assertEqual(later["recent_interaction"], [steps[-1]])
+        self.assertEqual([m["role"] for m in later_messages],
+                         ["system", "user", "assistant", "user"])
+        self.assertEqual(json.loads(later_messages[-2]["content"]), {"action": "look"})
+        self.assertEqual(json.loads(later_messages[-1]["content"]),
+                         {"observation": "latest feedback", "task_score": 0.0,
+                          "task_done": False, "task_won": False})
         self.assertEqual(later["omitted_history_steps"], 1)
         self.assertEqual(later["plan"], plan)
         self.assertEqual(later["experiences"], experiences)
@@ -404,6 +418,18 @@ class ProtocolTests(unittest.TestCase):
         self.assertEqual(len(memory.data["experiences"]), 4)
         self.assertTrue(all(set(e) == {"id", "type", "phase", "state_id", "state", "explanation", "advice", "exceptions"}
                             for e in memory.data["experiences"]))
+
+    def test_duplicate_state_ids_do_not_repeat_experiences_when_capped(self):
+        memory = self.memory_with(25)
+        for i, entry in enumerate(memory.data["experiences"]):
+            entry["advice"] = [f"建议{i}"]
+        self.roles.choose = ["S00001", "S00001"]
+        selected = memory.select("actor", {}, self.roles, 8, 1,
+                                 "duplicate-indices", self.directory, max_experiences=20)
+        self.assertEqual(selected["state_ids"], ["S00001"])
+        self.assertEqual(selected["candidate_count"], 25)
+        self.assertEqual(len(selected["experiences"]), 20)
+        self.assertEqual(len({e["id"] for e in selected["experiences"]}), 20)
 
     def test_resume_does_not_repeat_completed_tasks_or_memory_writes(self):
         experiment = self.experiment()

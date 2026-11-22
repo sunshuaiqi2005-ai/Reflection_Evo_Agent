@@ -19,3 +19,12 @@ use OBJECT
 examine OBJECT
 
 Use names and instance numbers that have appeared in observations. The environment determines whether the task succeeds.
+
+
+Environment operation rules:
+- look takes no argument and observes the current location; it does not move you or search the whole room. Reach a receptacle before examining it.
+- take requires an empty hand, being at the source, and an open source if it is openable. A successful take leaves the object in your hand.
+- move requires holding the object, being at the destination, and an open destination if it is openable. A successful move puts the object down and leaves your hand empty.
+- clean, heat, and cool require holding the object while standing at the corresponding device, and leave the processed object in your hand.
+- clean uses a sink or sinkbasin, heat uses a microwave, and cool uses a fridge. These state-change commands do not require putting the object inside, waiting, or opening the device.
+- Use the provided command forms with observed names. Determine effects from actual feedback; an attempted action is not a completed action.

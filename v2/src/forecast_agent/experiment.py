@@ -27,11 +27,16 @@ class Experiment:
             if self.client.tokens(dumps(candidate)) > self.config["episode"]["history_tokens"]:
                 break
             history = candidate
-        return [{"role": "system", "content": self.roles.prompts["actor"]},
-                {"role": "user", "content": dumps({"task_goal": task_goal(initial),
-                 "initial_observation": initial, "plan": plan,
-                 "experiences": experiences, "omitted_history_steps": len(steps) - len(history),
-                 "recent_interaction": history})}]
+        messages = [{"role": "system", "content": self.roles.prompts["actor"]},
+                    {"role": "user", "content": dumps({"task_goal": task_goal(initial),
+                     "initial_observation": initial, "plan": plan,
+                     "experiences": experiences, "omitted_history_steps": len(steps) - len(history)})}]
+        for step in history:
+            messages.append({"role": "assistant", "content": dumps({"action": step["action"]})})
+            messages.append({"role": "user", "content": dumps({
+                "observation": step["observation"], "task_score": step["score"],
+                "task_done": step["done"], "task_won": step["won"]})})
+        return messages
 
     def episode(self, task, plan, memory, plan_index, label, sampling_tag):
         identifier = f"{label}-plan{plan_index + 1}"

@@ -10,7 +10,8 @@ def object_schema(properties):
 TEXT = {"type": "string"}
 TEXTS = {"type": "array", "items": TEXT}
 EXPERIENCE = object_schema({
-    "state": TEXT, "explanation": TEXT, "advice": TEXTS, "exceptions": TEXTS,
+    "state": TEXT, "explanation": TEXT, "advice": TEXTS,
+    "exceptions": {"type": "array", "items": TEXT, "maxItems": 3},
 })
 JUDGMENT = object_schema({**EXPERIENCE["properties"], "phase": {"enum": ["planning", "execution"]}})
 PLAN = object_schema({"name": TEXT, "strategy": TEXT, "steps": TEXTS})
