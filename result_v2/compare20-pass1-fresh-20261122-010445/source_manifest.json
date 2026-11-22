@@ -1,0 +1,19 @@
+{
+  "README.md": "4c900dbd272f881438d2e26264de194734746c4e59ef24b3425cb3ffb6d7751b",
+  "configs/default.yaml": "b037e7f892055ee42cf337516d57f9174d94de4691efc11339b9ed6f027f2da9",
+  "data/tasks.json": "0d2bbfa8b533b5df60c54beccc43d7192a2e1a5d86f332129c9762b8eb3e5402",
+  "prompts/actor.txt": "6ec363139b0006e800fb0973342d9329116aef6ea1ca0283f6e8a512c2240c88",
+  "prompts/critic.txt": "c95cfc7adad2f2653c9e688e731d4987daa0dca4fc18261923447feab8c1ab8f",
+  "prompts/forecaster.txt": "b77d67c9610eb8caaa60a5657eb6588b650301265372ce37954537b9513869ed",
+  "prompts/planner.txt": "e75373b42d7f0d0853824dc9942a50369a5d9f57153a0150e5f3b0e35a5ce8ac",
+  "pyproject.toml": "161f3374b1d297987c45c65cb9291ae468673e78f14972b7f3cb79ac0c8a6677",
+  "src/forecast_agent/__init__.py": "7df347762132fc5bfeacfc03eb1aeead454ee9f725a8a925b544b83ec853c4f8",
+  "src/forecast_agent/cli.py": "e98d2ad3a94bb3d86a229739d0d02f9b7ff640efd032fc4e56608f437dfcef84",
+  "src/forecast_agent/client.py": "03dce549d06048578e64fa8deec42dfe4bd5a3100f07c43d414ac83f23dc1ad8",
+  "src/forecast_agent/environment.py": "5f7599b8e8e59d4b8fff772dd73ea6520e194d849f4dbfa81413e60b0adfe7bb",
+  "src/forecast_agent/experiment.py": "90a62837b7c4b8dd74f7fa644ab1ffc9f9500f233853ae4b1204237d0a49408e",
+  "src/forecast_agent/io.py": "b1d06a2679a83f0380e5fc917345ea84e6d79b8e667583bffbed949c02a3c194",
+  "src/forecast_agent/memory.py": "d43e818a8ed0be45beebebfaa0bc9c2fcb9ef84e6e9e7379ebcd015e7c5166ef",
+  "src/forecast_agent/roles.py": "707d02e1531271ff963b9b19bd0c9e7df781cf1dd6cf5cd731043f0292a6e23e",
+  "tests/test_protocol.py": "bf796d957be900d7d18f334566c78c367fe51fa41f7e618e1afea65e3d07072e"
+}

@@ -1,0 +1,16 @@
+{
+  "empty_memory": {
+    "questions": 20,
+    "trajectories": 60,
+    "successful_trajectories": 42,
+    "pass_at_1": 0.7,
+    "mean_steps": 29.933333333333334
+  },
+  "frozen_evolved_memory": {
+    "questions": 20,
+    "trajectories": 60,
+    "successful_trajectories": 45,
+    "pass_at_1": 0.75,
+    "mean_steps": 24.216666666666665
+  }
+}

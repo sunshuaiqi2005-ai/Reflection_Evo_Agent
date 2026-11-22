@@ -1,0 +1,26 @@
+seed: 42
+data_root: assets/alfworld/json_2.1.1
+tasks: data/tasks.json
+tokenizer: assets/tokenizer/tokenizer.json
+
+model:
+  url: http://127.0.0.1:11434
+  name: qwen14b-local
+  embedding: embeddinggemma
+  timeout: 1800
+  batch_size: 128
+  keep_alive: 2m
+  roles:
+    planner: {context: 8192, output: 1536, temperature: 0.7}
+    actor: {context: 8192, output: 64, temperature: 0.7}
+    forecaster: {context: 8192, output: 1024, temperature: 0.2}
+    critic: {context: 16384, output: 4096, temperature: 0.2}
+
+memory:
+  full_threshold: 8
+  max_injected_experiences: 20
+  similarity_threshold: 0.60
+
+episode:
+  max_steps: 50
+  history_tokens: 3200
