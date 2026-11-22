@@ -1,0 +1,199 @@
+{
+  "id": "train-011-plan2",
+  "task_id": "train/pick_clean_then_place_in_recep-Tomato-None-DiningTable-4/trial_T20190907_142426_940554/game.tw-pddl",
+  "plan": {
+    "name": "系统性搜索所有可能的存放位置",
+    "strategy": "根据经验E00055，系统性搜索所有可能的存放位置，以确保不会遗漏番茄。",
+    "steps": [
+      "首先前往餐桌1，检查是否有干净的番茄。",
+      "如果餐桌1上没有番茄，前往冰箱1检查。",
+      "如果冰箱中没有番茄，前往柜子1和柜子2检查。",
+      "如果未在柜子中找到番茄，检查所有台面（台面1、台面2、台面3）。",
+      "如果仍未找到番茄，检查抽屉1至抽屉6。",
+      "如果找到番茄，检查是否干净，必要时进行清洗。",
+      "将番茄放置在餐桌1上。"
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a diningtable 1, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a clean tomato in diningtable.",
+  "memory_version": 10,
+  "injection": {
+    "mode": "catalogue",
+    "possible_problems": [
+      "番茄可能未被找到，需要检查所有可能的存储位置。",
+      "找到的番茄可能未被清洁，需要进行清洗。",
+      "在放置番茄时可能遇到餐桌1上的障碍或冲突。",
+      "番茄可能在冰箱中，但未被正确识别或取出。",
+      "在搜索过程中可能遗漏某些位置，导致任务未完成。"
+    ],
+    "state_ids": [
+      "S00030",
+      "S00017",
+      "S00004",
+      "S00005",
+      "S00022"
+    ],
+    "experiences": [
+      {
+        "id": "E00005",
+        "state": "碗在柜子中，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从柜子中取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00006",
+        "state": "碗在台面上，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从台面上取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00007",
+        "state": "微波炉未打开，无法放置碗。",
+        "explanation": "",
+        "advice": [
+          "在放置碗之前，确保微波炉已打开。",
+          "若微波炉未打开，先打开微波炉再放置碗。",
+          "避免在未打开的微波炉中放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00029",
+        "state": "The initial 'clean' action may fail if the agent is not at the correct location (e.g., sinkbasin).",
+        "explanation": "",
+        "advice": [
+          "Move to the sinkbasin before attempting to clean the sponge.",
+          "If the 'clean' action fails, check if the agent is at the correct location for cleaning."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00039",
+        "state": "目标物品（mug）在搜索阶段被找到。",
+        "explanation": "可能需要在找到目标物品后立即进行加热操作。",
+        "advice": [
+          "在找到目标物品后立即进行加热操作",
+          "确保加热设备（如 microwave）可用",
+          "检查加热设备是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00057",
+        "state": "When the cleaning action fails, the actor should attempt the action again.",
+        "explanation": "",
+        "advice": [
+          "Repeat the cleaning action if it fails the first time.",
+          "Ensure the object is in the correct location for cleaning."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00058",
+        "state": "When the object is found in an unexpected location, the actor should adjust the plan accordingly.",
+        "explanation": "",
+        "advice": [
+          "Check the object's location before proceeding with the cleaning action.",
+          "Adjust the plan if the object is not found in the expected location."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00059",
+        "state": "When the object is successfully cleaned and moved to the target location, the actor should confirm the action's success.",
+        "explanation": "",
+        "advice": [
+          "Verify that the object is in the correct location after the action is completed.",
+          "Ensure the task is fully completed before ending the interaction."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00078",
+        "state": "杯子在柜子中，但需要打开柜子才能看到。",
+        "explanation": "柜子可能关闭，需先打开才能查看内容。",
+        "advice": [
+          "先打开柜子再检查内容",
+          "若柜子关闭，先打开再检查",
+          "确保柜子打开后内容可见"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00079",
+        "state": "杯子在台面上，但需要移动才能获取。",
+        "explanation": "杯子可能被其他物品遮挡，需先移动物品。",
+        "advice": [
+          "先检查台面是否有其他物品",
+          "若物品遮挡，先移动物品",
+          "确保杯子可见且可获取"
+        ],
+        "exceptions": []
+      }
+    ],
+    "candidate_count": 10,
+    "budget_applied": false
+  },
+  "steps": [
+    {
+      "action": "go to diningtable 1",
+      "observation": "You arrive at diningtable 1. On the diningtable 1, you see a bread 2, a bread 1, a butterknife 2, a dishsponge 1, a egg 3, a fork 1, a ladle 2, a lettuce 1, a pan 1, a peppershaker 3, a saltshaker 3, a spatula 1, a tomato 3, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take tomato 2 from diningtable 1",
+      "observation": "You pick up the tomato 2 from the diningtable 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "clean tomato 2 with sinkbasin 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see a egg 2, a knife 2, a ladle 1, a pot 3, and a potato 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "clean tomato 2 with sinkbasin 1",
+      "observation": "You clean the tomato 2 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to diningtable 1",
+      "observation": "You arrive at diningtable 1. On the diningtable 1, you see a bread 2, a bread 1, a butterknife 2, a dishsponge 1, a egg 3, a fork 1, a ladle 2, a lettuce 1, a pan 1, a peppershaker 3, a saltshaker 3, a spatula 1, and a tomato 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move tomato 2 to diningtable 1",
+      "observation": "You move the tomato 2 to the diningtable 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "won": true,
+  "termination": "won"
+}

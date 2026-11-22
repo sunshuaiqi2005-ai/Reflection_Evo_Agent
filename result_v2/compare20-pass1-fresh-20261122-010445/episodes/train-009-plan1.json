@@ -1,0 +1,306 @@
+{
+  "id": "train-009-plan1",
+  "task_id": "train/pick_cool_then_place_in_recep-Mug-None-Shelf-1/trial_T20190908_073555_430020/game.tw-pddl",
+  "plan": {
+    "name": "Systematic Search and Cool in Fridge",
+    "strategy": "First, search for a mug systematically in cabinets and drawers. Once found, cool it in the fridge and place it on the shelf.",
+    "steps": [
+      "Check cabinets 1 through 9 in order to locate a mug.",
+      "If a mug is not found in cabinets, search drawers 1 through 9 next.",
+      "Once a mug is located, take it to the fridge.",
+      "Place the mug in the fridge to cool it.",
+      "After cooling, retrieve the mug from the fridge.",
+      "Move the cooled mug to one of the shelves (shelf 1, 2, or 3)."
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 9, a drawer 8, a drawer 7, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: cool some mug and put it in shelf.",
+  "memory_version": 8,
+  "injection": {
+    "mode": "catalogue",
+    "possible_problems": [
+      "目标物品（mug）在放置过程中未被正确放置在目标位置（shelf）。",
+      "使用冰箱冷却杯子是有效的，但需确保杯子已被正确拾取。",
+      "目标物品（mug）在搜索阶段被找到。",
+      "使用水槽冷却杯子失败，可能与水槽功能或方法有关。",
+      "冷却步骤失败可能与冷却设备或方法有关。"
+    ],
+    "state_ids": [
+      "S00023",
+      "S00033",
+      "S00022",
+      "S00034",
+      "S00036"
+    ],
+    "experiences": [
+      {
+        "id": "E00039",
+        "state": "目标物品（mug）在搜索阶段被找到。",
+        "explanation": "可能需要在找到目标物品后立即进行加热操作。",
+        "advice": [
+          "在找到目标物品后立即进行加热操作",
+          "确保加热设备（如 microwave）可用",
+          "检查加热设备是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00040",
+        "state": "目标物品（mug）在加热后需要被放置在目标位置（shelf）。",
+        "explanation": "可能需要在加热完成后立即进行放置操作。",
+        "advice": [
+          "在加热完成后立即进行放置操作",
+          "确保目标位置（shelf）可用",
+          "检查目标位置（shelf）是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00041",
+        "state": "目标物品（mug）在加热过程中未被正确加热。",
+        "explanation": "可能需要检查加热设备（如 microwave）是否正常工作。",
+        "advice": [
+          "检查加热设备（如 microwave）是否正常工作",
+          "确保目标物品（mug）已被正确放置在加热设备中",
+          "检查加热设备是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00042",
+        "state": "目标物品（mug）在放置过程中未被正确放置在目标位置（shelf）。",
+        "explanation": "可能需要检查目标位置（shelf）是否正常工作。",
+        "advice": [
+          "检查目标位置（shelf）是否正常工作",
+          "确保目标物品（mug）已被正确放置在目标位置（shelf）中",
+          "检查目标位置（shelf）是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00068",
+        "state": "使用冰箱冷却杯子是有效的，但需确保杯子已被正确拾取。",
+        "explanation": "",
+        "advice": [
+          "在冷却前确保杯子已被正确拾取并携带至冷却设备。",
+          "若冷却失败，应检查杯子是否在冷却设备附近。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00069",
+        "state": "使用水槽冷却杯子失败，可能与水槽功能或方法有关。",
+        "explanation": "",
+        "advice": [
+          "若水槽无法用于冷却，应尝试使用其他设备（如冰箱）。",
+          "检查水槽是否正常工作或是否适合用于冷却。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00071",
+        "state": "重复尝试冷却失败的操作可能浪费时间。",
+        "explanation": "",
+        "advice": [
+          "若冷却失败，应尝试其他方法或设备，避免重复无效操作。",
+          "记录失败操作以避免重复尝试。"
+        ],
+        "exceptions": []
+      }
+    ],
+    "candidate_count": 7,
+    "budget_applied": false
+  },
+  "steps": [
+    {
+      "action": "go to cabinet 1",
+      "observation": "You arrive at cabinet 1. The cabinet 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 1",
+      "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 1",
+      "observation": "You close the cabinet 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 2",
+      "observation": "You arrive at cabinet 2. The cabinet 2 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 2",
+      "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see a winebottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 2",
+      "observation": "You close the cabinet 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 3",
+      "observation": "You arrive at cabinet 3. The cabinet 3 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 3",
+      "observation": "You open the cabinet 3. The cabinet 3 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 3",
+      "observation": "You close the cabinet 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 4",
+      "observation": "You arrive at cabinet 4. On the cabinet 4, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 5",
+      "observation": "You arrive at cabinet 5. The cabinet 5 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 5",
+      "observation": "You open the cabinet 5. The cabinet 5 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 5",
+      "observation": "You close the cabinet 5.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 6",
+      "observation": "You arrive at cabinet 6. The cabinet 6 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 6",
+      "observation": "You open the cabinet 6. The cabinet 6 is open. In it, you see a bowl 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 6",
+      "observation": "You close the cabinet 6.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 7",
+      "observation": "You arrive at cabinet 7. The cabinet 7 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 7",
+      "observation": "You open the cabinet 7. The cabinet 7 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 7",
+      "observation": "You close the cabinet 7.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 8",
+      "observation": "You arrive at cabinet 8. The cabinet 8 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 8",
+      "observation": "You open the cabinet 8. The cabinet 8 is open. In it, you see a mug 2, a soapbottle 2, and a vase 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take mug 2 from cabinet 8",
+      "observation": "You pick up the mug 2 from the cabinet 8.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open fridge 1",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a apple 1, a plate 1, a potato 2, and a tomato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "cool mug 2 with fridge 1",
+      "observation": "You cool the mug 2 using the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to shelf 1",
+      "observation": "You arrive at shelf 1. On the shelf 1, you see a glassbottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move mug 2 to shelf 1",
+      "observation": "You move the mug 2 to the shelf 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "won": true,
+  "termination": "won"
+}

@@ -1,0 +1,377 @@
+{
+  "id": "test-initial-v0-005-plan3",
+  "task_id": "valid_unseen/pick_heat_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_171933_349922/game.tw-pddl",
+  "plan": {
+    "name": "Check if there is already a hot mug available",
+    "strategy": "Assume there may be a hot mug already in the room, and locate and use it directly.",
+    "steps": [
+      "Survey the room to see if a hot mug is already on the countertop, shelf, or in a cabinet.",
+      "If a hot mug is found, take it directly to the coffeemachine.",
+      "If no hot mug is found, proceed to search for a mug and heat it using either the microwave or stove."
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a hot mug in coffeemachine.",
+  "memory_version": 0,
+  "injection": {
+    "mode": "full",
+    "possible_problems": [],
+    "state_ids": [],
+    "experiences": [],
+    "candidate_count": 0,
+    "budget_applied": false
+  },
+  "steps": [
+    {
+      "action": "look",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to coffeemachine 1",
+      "observation": "You arrive at coffeemachine 1. On the coffeemachine 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 2",
+      "observation": "You arrive at countertop 2. On the countertop 2, you see a apple 1, a cellphone 2, a cellphone 1, a knife 1, a lettuce 2, a lettuce 1, a peppershaker 3, and a plate 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 3",
+      "observation": "You arrive at countertop 3. On the countertop 3, you see a bread 1, a butterknife 1, a cellphone 3, a creditcard 1, a glassbottle 3, a houseplant 1, a knife 2, a mug 2, a papertowelroll 1, a plate 3, a spatula 3, and a spoon 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take mug 2 from countertop 3",
+      "observation": "You pick up the mug 2 from the countertop 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to microwave 1",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open microwave 1",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a cup 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close microwave 1",
+      "observation": "You close the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to coffeemachine 1",
+      "observation": "You arrive at coffeemachine 1. On the coffeemachine 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "heat mug 2 with microwave 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to microwave 1",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open microwave 1",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a cup 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move mug 2 to microwave 1",
+      "observation": "You move the mug 2 to the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close microwave 1",
+      "observation": "You close the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "heat mug 2 with microwave 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open microwave 1",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a cup 1, and a mug 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take mug 2 from microwave 1",
+      "observation": "You pick up the mug 2 from the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to coffeemachine 1",
+      "observation": "You arrive at coffeemachine 1. On the coffeemachine 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move mug 2 to coffeemachine 1",
+      "observation": "You move the mug 2 to the coffeemachine 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "put mug 2 in coffeemachine 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "use coffeemachine 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "examine coffeemachine 1",
+      "observation": "On the coffeemachine 1, you see a mug 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "heat mug 2 with microwave 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to microwave 1",
+      "observation": "You arrive at microwave 1. The microwave 1 is open. In it, you see a cup 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close microwave 1",
+      "observation": "You close the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to coffeemachine 1",
+      "observation": "You arrive at coffeemachine 1. On the coffeemachine 1, you see a mug 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "heat mug 2 with coffeemachine 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "examine mug 2",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 3",
+      "observation": "You arrive at countertop 3. On the countertop 3, you see a bread 1, a butterknife 1, a cellphone 3, a creditcard 1, a glassbottle 3, a houseplant 1, a knife 2, a papertowelroll 1, a plate 3, a spatula 3, and a spoon 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open fridge 1",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a bowl 1, a egg 2, a egg 1, a mug 1, a plate 1, a potato 1, and a tomato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take mug 1 from fridge 1",
+      "observation": "You pick up the mug 1 from the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to microwave 1",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open microwave 1",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a cup 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move mug 1 to microwave 1",
+      "observation": "You move the mug 1 to the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close microwave 1",
+      "observation": "You close the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "heat mug 1 with microwave 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open microwave 1",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a cup 1, and a mug 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take mug 1 from microwave 1",
+      "observation": "You pick up the mug 1 from the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to coffeemachine 1",
+      "observation": "You arrive at coffeemachine 1. On the coffeemachine 1, you see a mug 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move mug 1 to coffeemachine 1",
+      "observation": "You move the mug 1 to the coffeemachine 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "put mug 1 in coffeemachine 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "use coffeemachine 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "examine coffeemachine 1",
+      "observation": "On the coffeemachine 1, you see a mug 2, and a mug 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "heat mug 1 with microwave 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to microwave 1",
+      "observation": "You arrive at microwave 1. The microwave 1 is open. In it, you see a cup 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    }
+  ],
+  "won": false,
+  "termination": "step_limit"
+}

@@ -1,0 +1,23 @@
+{
+  "phase": "complete",
+  "metrics": {
+    "initial": {
+      "tasks": 20,
+      "trajectories": 60,
+      "successes": 42,
+      "success_rate": 0.7,
+      "task_any_success_rate": 0.9,
+      "mean_steps": 29.933333333333334,
+      "successful_mean_steps": 21.333333333333332
+    },
+    "final": {
+      "tasks": 20,
+      "trajectories": 60,
+      "successes": 45,
+      "success_rate": 0.75,
+      "task_any_success_rate": 0.95,
+      "mean_steps": 24.216666666666665,
+      "successful_mean_steps": 15.622222222222222
+    }
+  }
+}

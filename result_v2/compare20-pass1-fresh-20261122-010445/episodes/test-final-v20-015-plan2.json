@@ -1,0 +1,380 @@
+{
+  "id": "test-final-v20-015-plan2",
+  "task_id": "valid_unseen/pick_clean_then_place_in_recep-Bowl-None-Cabinet-10/trial_T20190909_061158_110530/game.tw-pddl",
+  "plan": {
+    "name": "Strategy 2: Prioritize Likely Storage Locations",
+    "strategy": "Prioritize checking the most likely storage locations for a clean bowl, such as cabinets and countertops, in a logical order to increase efficiency.",
+    "steps": [
+      "Check cabinet 6, as it is the highest-numbered cabinet and may be more likely to contain a clean bowl.",
+      "If not found, check cabinet 5, then cabinet 4, and continue down to cabinet 1.",
+      "If no clean bowl is found in any cabinet, check countertops (1-3) for a clean bowl.",
+      "If still not found, check the sinkbasin for a clean bowl.",
+      "Once a clean bowl is found, place it in the first available cabinet."
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a clean bowl in cabinet.",
+  "memory_version": 20,
+  "injection": {
+    "mode": "catalogue",
+    "possible_problems": [
+      "碗在柜子中，但未被清洁。",
+      "微波炉未打开，无法放置碗。",
+      "方案一在检查完所有柜子后终于在 countertop 3 找到土豆并加热，但未将土豆放入垃圾箱，任务未完成。",
+      "苹果在水槽中，但未被检查。",
+      "When the cleaning action fails, the actor should attempt the action again.",
+      "目标物品（mug）在搜索阶段被找到。",
+      "目标物品（mug）在放置过程中未被正确放置在目标位置（shelf）。",
+      "When the object is found in an unexpected location, the actor should adjust the plan accordingly.",
+      "杯子需要冷却，但冰箱可能关闭。",
+      "使用水槽冷却杯子失败，可能与水槽功能或方法有关。",
+      "放置杯子到咖啡机前应确保咖啡机无冲突。",
+      "重复尝试冷却失败的操作可能浪费时间。",
+      "物品可能存在于多个位置，如柜子、台面或抽屉。",
+      "加热设备可能包含其他物品。",
+      "When a bowl is found in the fridge, it is important to take it and clean it before placing it on the shelf.",
+      "When a bowl is not found in the initial search, it is important to continue searching in other locations.",
+      "Searching for an apple in a large number of cabinets may be inefficient and may not complete before the step limit."
+    ],
+    "state_ids": [
+      "S00004",
+      "S00005",
+      "S00009",
+      "S00012",
+      "S00017",
+      "S00022",
+      "S00023",
+      "S00030",
+      "S00033",
+      "S00034",
+      "S00035",
+      "S00036",
+      "S00046",
+      "S00047",
+      "S00048",
+      "S00053",
+      "S00059"
+    ],
+    "experiences": [
+      {
+        "id": "E00005",
+        "state": "碗在柜子中，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从柜子中取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00007",
+        "state": "微波炉未打开，无法放置碗。",
+        "explanation": "",
+        "advice": [
+          "在放置碗之前，确保微波炉已打开。",
+          "若微波炉未打开，先打开微波炉再放置碗。",
+          "避免在未打开的微波炉中放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00013",
+        "state": "在冰箱中找到土豆后，需将其放入微波炉并加热。",
+        "explanation": "",
+        "advice": [
+          "将土豆放入微波炉",
+          "确认微波炉已打开",
+          "执行加热操作"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00022",
+        "state": "苹果在冰箱中，但未在抽屉或柜子中。",
+        "explanation": "苹果可能储存在冰箱中，而未在抽屉或柜子中。",
+        "advice": [
+          "优先检查冰箱以获取苹果。",
+          "若未找到苹果，应检查其他常见存储位置。",
+          "若未找到苹果，可能需要重新确认任务条件。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00029",
+        "state": "The initial 'clean' action may fail if the agent is not at the correct location (e.g., sinkbasin).",
+        "explanation": "",
+        "advice": [
+          "Move to the sinkbasin before attempting to clean the sponge.",
+          "If the 'clean' action fails, check if the agent is at the correct location for cleaning."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00039",
+        "state": "目标物品（mug）在搜索阶段被找到。",
+        "explanation": "可能需要在找到目标物品后立即进行加热操作。",
+        "advice": [
+          "在找到目标物品后立即进行加热操作",
+          "确保加热设备（如 microwave）可用",
+          "检查加热设备是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00040",
+        "state": "目标物品（mug）在加热后需要被放置在目标位置（shelf）。",
+        "explanation": "可能需要在加热完成后立即进行放置操作。",
+        "advice": [
+          "在加热完成后立即进行放置操作",
+          "确保目标位置（shelf）可用",
+          "检查目标位置（shelf）是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00058",
+        "state": "When the object is found in an unexpected location, the actor should adjust the plan accordingly.",
+        "explanation": "",
+        "advice": [
+          "Check the object's location before proceeding with the cleaning action.",
+          "Adjust the plan if the object is not found in the expected location."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00068",
+        "state": "使用冰箱冷却杯子是有效的，但需确保杯子已被正确拾取。",
+        "explanation": "",
+        "advice": [
+          "在冷却前确保杯子已被正确拾取并携带至冷却设备。",
+          "若冷却失败，应检查杯子是否在冷却设备附近。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00069",
+        "state": "使用水槽冷却杯子失败，可能与水槽功能或方法有关。",
+        "explanation": "",
+        "advice": [
+          "若水槽无法用于冷却，应尝试使用其他设备（如冰箱）。",
+          "检查水槽是否正常工作或是否适合用于冷却。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00070",
+        "state": "放置杯子到咖啡机前应确保咖啡机无冲突。",
+        "explanation": "",
+        "advice": [
+          "在放置杯子前检查咖啡机是否已有杯子，避免冲突。",
+          "若咖啡机已有杯子，应先移除或调整放置策略。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00071",
+        "state": "重复尝试冷却失败的操作可能浪费时间。",
+        "explanation": "",
+        "advice": [
+          "若冷却失败，应尝试其他方法或设备，避免重复无效操作。",
+          "记录失败操作以避免重复尝试。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00110",
+        "state": "物品可能存在于多个位置，如柜子、台面或抽屉。",
+        "explanation": "物品可能被隐藏或未被发现，需要检查多个位置。",
+        "advice": [
+          "优先检查常见存放位置，如台面和柜子",
+          "避免对非目标物品进行操作",
+          "确认物品状态后再进行加热"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00111",
+        "state": "加热设备可能包含其他物品。",
+        "explanation": "微波炉中可能有其他物品，如土豆，可能影响加热效果。",
+        "advice": [
+          "加热前检查设备内部",
+          "确保目标物品是唯一加热对象",
+          "避免加热非目标物品"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00112",
+        "state": "物品可能需要被清洁后才能放入冰箱。",
+        "explanation": "物品可能被污染或需要清洁，才能放入冰箱。",
+        "advice": [
+          "加热后检查物品状态",
+          "必要时清洁物品",
+          "确认物品状态后再放入冰箱"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00127",
+        "state": "When a bowl is not found in the initial search, it is important to continue searching in other locations.",
+        "explanation": "Strategies 1 and 3 did not find a bowl in their initial search and had to continue searching.",
+        "advice": [
+          "Continue searching in other locations if a bowl is not found in the initial search."
+        ],
+        "exceptions": [
+          "If the task goal is to place a clean mug on the shelf, this advice may not apply."
+        ]
+      },
+      {
+        "id": "E00161",
+        "state": "Searching for an apple in a large number of cabinets may be inefficient and may not complete before the step limit.",
+        "explanation": "",
+        "advice": [
+          "Limit the number of cabinets searched to avoid exceeding the step limit.",
+          "Prioritize cabinets that are more likely to contain the apple."
+        ],
+        "exceptions": [
+          "The apple may be in a cabinet that is not checked due to step limit constraints.",
+          "The apple may not exist in the environment.",
+          "The apple may be in a location that is not accessible."
+        ]
+      },
+      {
+        "id": "E00006",
+        "state": "碗在台面上，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从台面上取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00014",
+        "state": "若加热操作失败，需检查微波炉是否已打开并包含土豆。",
+        "explanation": "",
+        "advice": [
+          "确认微波炉已打开",
+          "确保土豆已放入微波炉",
+          "重新执行加热操作"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00048",
+        "state": "苹果在冰箱中，但未被立即识别。",
+        "explanation": "苹果可能被其他物品遮挡或未被注意到。",
+        "advice": [
+          "打开冰箱后仔细检查内部物品",
+          "确认苹果是否在视野范围内"
+        ],
+        "exceptions": []
+      }
+    ],
+    "candidate_count": 49,
+    "budget_applied": true
+  },
+  "steps": [
+    {
+      "action": "go to cabinet 6",
+      "observation": "You arrive at cabinet 6. The cabinet 6 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 6",
+      "observation": "You open the cabinet 6. The cabinet 6 is open. In it, you see a soapbottle 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 5",
+      "observation": "You arrive at cabinet 5. The cabinet 5 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 5",
+      "observation": "You open the cabinet 5. The cabinet 5 is open. In it, you see a dishsponge 2, and a glassbottle 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 4",
+      "observation": "You arrive at cabinet 4. On the cabinet 4, you see a soapbottle 2, and a soapbottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 3",
+      "observation": "You arrive at cabinet 3. On the cabinet 3, you see a plate 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 2",
+      "observation": "You arrive at cabinet 2. The cabinet 2 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 2",
+      "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see a vase 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 1",
+      "observation": "You arrive at cabinet 1. On the cabinet 1, you see a bowl 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take bowl 1 from cabinet 1",
+      "observation": "You pick up the bowl 1 from the cabinet 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "clean bowl 1 with sinkbasin 1",
+      "observation": "You clean the bowl 1 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 1",
+      "observation": "You arrive at cabinet 1. On the cabinet 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move bowl 1 to cabinet 1",
+      "observation": "You move the bowl 1 to the cabinet 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "won": true,
+  "termination": "won"
+}

@@ -1,0 +1,284 @@
+{
+  "id": "train-005-plan3",
+  "task_id": "train/pick_heat_then_place_in_recep-Mug-None-Shelf-7/trial_T20190907_022430_495851/game.tw-pddl",
+  "plan": {
+    "name": "Target Location First Strategy",
+    "strategy": "Check the shelf first to see if the mug is already there, then proceed to heat it if necessary, and ensure it is placed on the shelf.",
+    "steps": [
+      "Check the shelves (shelf 1, shelf 2, shelf 3) to see if the mug is already present.",
+      "If the mug is not on the shelf, search the room for it, starting with cabinets and drawers.",
+      "Once the mug is located, heat it using the microwave.",
+      "Place the heated mug on the shelf."
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a diningtable 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: heat some mug and put it in shelf.",
+  "memory_version": 4,
+  "injection": {
+    "mode": "catalogue",
+    "possible_problems": [
+      "The mug may not be found on the shelves or in the cabinets/drawers, requiring a check of the fridge.",
+      "The microwave may not be available or not properly used for heating the mug.",
+      "The mug may not be cleaned before heating, leading to potential failure in the heating process.",
+      "The shelf may not be accessible or may not be the correct location for placing the heated mug."
+    ],
+    "state_ids": [
+      "S00012",
+      "S00005",
+      "S00004",
+      "S00009"
+    ],
+    "experiences": [
+      {
+        "id": "E00005",
+        "state": "碗在柜子中，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从柜子中取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00006",
+        "state": "碗在台面上，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从台面上取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00007",
+        "state": "微波炉未打开，无法放置碗。",
+        "explanation": "",
+        "advice": [
+          "在放置碗之前，确保微波炉已打开。",
+          "若微波炉未打开，先打开微波炉再放置碗。",
+          "避免在未打开的微波炉中放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00013",
+        "state": "在冰箱中找到土豆后，需将其放入微波炉并加热。",
+        "explanation": "",
+        "advice": [
+          "将土豆放入微波炉",
+          "确认微波炉已打开",
+          "执行加热操作"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00014",
+        "state": "若加热操作失败，需检查微波炉是否已打开并包含土豆。",
+        "explanation": "",
+        "advice": [
+          "确认微波炉已打开",
+          "确保土豆已放入微波炉",
+          "重新执行加热操作"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00015",
+        "state": "在垃圾箱中放置加热后的土豆时，需确保垃圾箱可用。",
+        "explanation": "",
+        "advice": [
+          "确认垃圾箱已打开",
+          "将土豆放入垃圾箱",
+          "检查垃圾箱是否接受该物品"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00022",
+        "state": "苹果在冰箱中，但未在抽屉或柜子中。",
+        "explanation": "苹果可能储存在冰箱中，而未在抽屉或柜子中。",
+        "advice": [
+          "优先检查冰箱以获取苹果。",
+          "若未找到苹果，应检查其他常见存储位置。",
+          "若未找到苹果，可能需要重新确认任务条件。"
+        ],
+        "exceptions": []
+      }
+    ],
+    "candidate_count": 7,
+    "budget_applied": false
+  },
+  "steps": [
+    {
+      "action": "look",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to shelf 1",
+      "observation": "You arrive at shelf 1. On the shelf 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to shelf 2",
+      "observation": "You arrive at shelf 2. On the shelf 2, you see a book 1, and a statue 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to shelf 3",
+      "observation": "You arrive at shelf 3. On the shelf 3, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 1",
+      "observation": "You arrive at cabinet 1. The cabinet 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 1",
+      "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 2",
+      "observation": "You arrive at cabinet 2. The cabinet 2 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 2",
+      "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 3",
+      "observation": "You arrive at cabinet 3. The cabinet 3 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 3",
+      "observation": "You open the cabinet 3. The cabinet 3 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 4",
+      "observation": "You arrive at cabinet 4. The cabinet 4 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 4",
+      "observation": "You open the cabinet 4. The cabinet 4 is open. In it, you see a kettle 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 5",
+      "observation": "You arrive at cabinet 5. The cabinet 5 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 5",
+      "observation": "You open the cabinet 5. The cabinet 5 is open. In it, you see a dishsponge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 6",
+      "observation": "You arrive at cabinet 6. The cabinet 6 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 6",
+      "observation": "You open the cabinet 6. The cabinet 6 is open. In it, you see a peppershaker 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 7",
+      "observation": "You arrive at cabinet 7. The cabinet 7 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 7",
+      "observation": "You open the cabinet 7. The cabinet 7 is open. In it, you see a mug 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take mug 1 from cabinet 7",
+      "observation": "You pick up the mug 1 from the cabinet 7.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to microwave 1",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open microwave 1",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a potato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "heat mug 1 with microwave 1",
+      "observation": "You heat the mug 1 using the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to shelf 1",
+      "observation": "You arrive at shelf 1. On the shelf 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move mug 1 to shelf 1",
+      "observation": "You move the mug 1 to the shelf 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "won": true,
+  "termination": "won"
+}

@@ -1,0 +1,386 @@
+{
+  "id": "train-015-plan2",
+  "task_id": "train/pick_clean_then_place_in_recep-Bowl-None-Shelf-7/trial_T20190908_152915_959135/game.tw-pddl",
+  "plan": {
+    "name": "Strategy 2: Prioritize Shelf and Nearby Locations",
+    "strategy": "Directly check the shelf first for an existing bowl, and if not found, check nearby locations like countertops and cabinets.",
+    "steps": [
+      "Check shelf 1 for an existing bowl.",
+      "If no bowl is found on shelf 1, search nearby locations such as countertops, cabinets, and drawers.",
+      "Once a bowl is found, clean it if necessary.",
+      "Place the clean bowl on shelf 1."
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a diningtable 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a clean bowl in shelf.",
+  "memory_version": 14,
+  "injection": {
+    "mode": "catalogue",
+    "possible_problems": [
+      "碗可能未被清洁或未被正确放置。",
+      "方案二未能找到碗，但检查了所有柜子和抽屉。",
+      "微波炉未打开，无法放置碗。",
+      "碗在柜子中，但未冷却。",
+      "目标物品（碗）在放置过程中未被正确放置在目标位置（shelf）。"
+    ],
+    "state_ids": [
+      "S00004",
+      "S00005",
+      "S00023",
+      "S00030",
+      "S00046"
+    ],
+    "experiences": [
+      {
+        "id": "E00005",
+        "state": "碗在柜子中，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从柜子中取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00006",
+        "state": "碗在台面上，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从台面上取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00007",
+        "state": "微波炉未打开，无法放置碗。",
+        "explanation": "",
+        "advice": [
+          "在放置碗之前，确保微波炉已打开。",
+          "若微波炉未打开，先打开微波炉再放置碗。",
+          "避免在未打开的微波炉中放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00040",
+        "state": "目标物品（mug）在加热后需要被放置在目标位置（shelf）。",
+        "explanation": "可能需要在加热完成后立即进行放置操作。",
+        "advice": [
+          "在加热完成后立即进行放置操作",
+          "确保目标位置（shelf）可用",
+          "检查目标位置（shelf）是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00041",
+        "state": "目标物品（mug）在加热过程中未被正确加热。",
+        "explanation": "可能需要检查加热设备（如 microwave）是否正常工作。",
+        "advice": [
+          "检查加热设备（如 microwave）是否正常工作",
+          "确保目标物品（mug）已被正确放置在加热设备中",
+          "检查加热设备是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00042",
+        "state": "目标物品（mug）在放置过程中未被正确放置在目标位置（shelf）。",
+        "explanation": "可能需要检查目标位置（shelf）是否正常工作。",
+        "advice": [
+          "检查目标位置（shelf）是否正常工作",
+          "确保目标物品（mug）已被正确放置在目标位置（shelf）中",
+          "检查目标位置（shelf）是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00058",
+        "state": "When the object is found in an unexpected location, the actor should adjust the plan accordingly.",
+        "explanation": "",
+        "advice": [
+          "Check the object's location before proceeding with the cleaning action.",
+          "Adjust the plan if the object is not found in the expected location."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00078",
+        "state": "杯子在柜子中，但需要打开柜子才能看到。",
+        "explanation": "柜子可能关闭，需先打开才能查看内容。",
+        "advice": [
+          "先打开柜子再检查内容",
+          "若柜子关闭，先打开再检查",
+          "确保柜子打开后内容可见"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00079",
+        "state": "杯子在台面上，但需要移动才能获取。",
+        "explanation": "杯子可能被其他物品遮挡，需先移动物品。",
+        "advice": [
+          "先检查台面是否有其他物品",
+          "若物品遮挡，先移动物品",
+          "确保杯子可见且可获取"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00102",
+        "state": "碗在柜子中，但未冷却。",
+        "explanation": "需先取出碗，再使用冰箱进行冷却。",
+        "advice": [
+          "取出碗",
+          "使用冰箱进行冷却",
+          "冷却后放置在餐桌"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00103",
+        "state": "碗在冰箱中，但未冷却。",
+        "explanation": "需检查碗的温度状态，若未冷却则需进一步冷却。",
+        "advice": [
+          "检查碗的温度",
+          "若未冷却，使用冰箱进行冷却",
+          "冷却后放置在餐桌"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00104",
+        "state": "碗在台面上，但未冷却。",
+        "explanation": "需检查碗的温度状态，若未冷却则需使用冰箱进行冷却。",
+        "advice": [
+          "检查碗的温度",
+          "若未冷却，使用冰箱进行冷却",
+          "冷却后放置在餐桌"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00110",
+        "state": "物品可能存在于多个位置，如柜子、台面或抽屉。",
+        "explanation": "物品可能被隐藏或未被发现，需要检查多个位置。",
+        "advice": [
+          "优先检查常见存放位置，如台面和柜子",
+          "避免对非目标物品进行操作",
+          "确认物品状态后再进行加热"
+        ],
+        "exceptions": []
+      }
+    ],
+    "candidate_count": 13,
+    "budget_applied": false
+  },
+  "steps": [
+    {
+      "action": "look",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to shelf 1",
+      "observation": "You arrive at shelf 1. On the shelf 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a saltshaker 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 2",
+      "observation": "You arrive at countertop 2. On the countertop 2, you see a bread 1, a dishsponge 3, a pot 1, a sink 1, a soapbottle 1, a statue 3, a vase 3, a vase 2, and a winebottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 1",
+      "observation": "You arrive at cabinet 1. The cabinet 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 1",
+      "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 2",
+      "observation": "You arrive at cabinet 2. The cabinet 2 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 2",
+      "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see a saltshaker 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 3",
+      "observation": "You arrive at cabinet 3. The cabinet 3 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 3",
+      "observation": "You open the cabinet 3. The cabinet 3 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 4",
+      "observation": "You arrive at cabinet 4. The cabinet 4 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 4",
+      "observation": "You open the cabinet 4. The cabinet 4 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to drawer 1",
+      "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open drawer 1",
+      "observation": "You open the drawer 1. The drawer 1 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to drawer 2",
+      "observation": "You arrive at drawer 2. The drawer 2 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open drawer 2",
+      "observation": "You open the drawer 2. The drawer 2 is open. In it, you see a book 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to drawer 3",
+      "observation": "You arrive at drawer 3. The drawer 3 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open drawer 3",
+      "observation": "You open the drawer 3. The drawer 3 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to drawer 4",
+      "observation": "You arrive at drawer 4. The drawer 4 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open drawer 4",
+      "observation": "You open the drawer 4. The drawer 4 is open. In it, you see a book 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open fridge 1",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a bowl 3, a cup 2, a egg 2, a egg 1, and a pan 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take bowl 3 from fridge 1",
+      "observation": "You pick up the bowl 3 from the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "clean bowl 3 with sinkbasin 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "clean bowl 3 with sinkbasin 1",
+      "observation": "You clean the bowl 3 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to shelf 1",
+      "observation": "You arrive at shelf 1. On the shelf 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move bowl 3 to shelf 1",
+      "observation": "You move the bowl 3 to the shelf 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "won": true,
+  "termination": "won"
+}

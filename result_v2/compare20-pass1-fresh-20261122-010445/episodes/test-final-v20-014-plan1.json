@@ -1,0 +1,186 @@
+{
+  "id": "test-final-v20-014-plan1",
+  "task_id": "valid_unseen/pick_clean_then_place_in_recep-Cloth-None-CounterTop-424/trial_T20190908_114340_674467/game.tw-pddl",
+  "plan": {
+    "name": "Strategy 1: Direct Search and Clean",
+    "strategy": "Directly search for the cloth in common storage areas and clean it immediately if found.",
+    "steps": [
+      "Check the countertop first, as the task goal specifies placing the cloth there, and it might already be there.",
+      "If the cloth is not on the countertop, search the cabinets (starting with cabinet 1) as they are common storage locations for items like cloth.",
+      "If the cloth is found in a cabinet, take it to the sinkbasin to clean it.",
+      "After cleaning, place the cloth on the countertop as instructed."
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a countertop 1, a garbagecan 1, a handtowelholder 2, a handtowelholder 1, a sinkbasin 2, a sinkbasin 1, a toilet 1, a toiletpaperhanger 1, and a towelholder 1.\n\nYour task is to: clean some cloth and put it in countertop.",
+  "memory_version": 20,
+  "injection": {
+    "mode": "catalogue",
+    "possible_problems": [
+      "If the initial 'clean' action fails, the agent may need to move to a specific location (e.g., sinkbasin) to perform the cleaning.",
+      "The cloth may not be found in the initial search locations (e.g., countertop or cabinets).",
+      "After cleaning, the cloth may not be placed correctly on the countertop.",
+      "If the cloth is found in an unexpected location, the actor should adjust the plan accordingly.",
+      "Searching for the cloth in a large number of cabinets may be inefficient and may not complete before the step limit."
+    ],
+    "state_ids": [
+      "S00017",
+      "S00030",
+      "S00059",
+      "S00053",
+      "S00019"
+    ],
+    "experiences": [
+      {
+        "id": "E00029",
+        "state": "The initial 'clean' action may fail if the agent is not at the correct location (e.g., sinkbasin).",
+        "explanation": "",
+        "advice": [
+          "Move to the sinkbasin before attempting to clean the sponge.",
+          "If the 'clean' action fails, check if the agent is at the correct location for cleaning."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00031",
+        "state": "After cleaning, the sponge must be moved back to the countertop to complete the task.",
+        "explanation": "",
+        "advice": [
+          "After cleaning, move the sponge back to the countertop.",
+          "Ensure the sponge is placed in the correct location after cleaning."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00057",
+        "state": "When the cleaning action fails, the actor should attempt the action again.",
+        "explanation": "",
+        "advice": [
+          "Repeat the cleaning action if it fails the first time.",
+          "Ensure the object is in the correct location for cleaning."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00058",
+        "state": "When the object is found in an unexpected location, the actor should adjust the plan accordingly.",
+        "explanation": "",
+        "advice": [
+          "Check the object's location before proceeding with the cleaning action.",
+          "Adjust the plan if the object is not found in the expected location."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00059",
+        "state": "When the object is successfully cleaned and moved to the target location, the actor should confirm the action's success.",
+        "explanation": "",
+        "advice": [
+          "Verify that the object is in the correct location after the action is completed.",
+          "Ensure the task is fully completed before ending the interaction."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00127",
+        "state": "When a bowl is not found in the initial search, it is important to continue searching in other locations.",
+        "explanation": "Strategies 1 and 3 did not find a bowl in their initial search and had to continue searching.",
+        "advice": [
+          "Continue searching in other locations if a bowl is not found in the initial search."
+        ],
+        "exceptions": [
+          "If the task goal is to place a clean mug on the shelf, this advice may not apply."
+        ]
+      },
+      {
+        "id": "E00161",
+        "state": "Searching for an apple in a large number of cabinets may be inefficient and may not complete before the step limit.",
+        "explanation": "",
+        "advice": [
+          "Limit the number of cabinets searched to avoid exceeding the step limit.",
+          "Prioritize cabinets that are more likely to contain the apple."
+        ],
+        "exceptions": [
+          "The apple may be in a cabinet that is not checked due to step limit constraints.",
+          "The apple may not exist in the environment.",
+          "The apple may be in a location that is not accessible."
+        ]
+      }
+    ],
+    "candidate_count": 7,
+    "budget_applied": false
+  },
+  "steps": [
+    {
+      "action": "look",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a soapbottle 1, and a spraybottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 1",
+      "observation": "You arrive at cabinet 1. The cabinet 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 1",
+      "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see a cloth 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take cloth 2 from cabinet 1",
+      "observation": "You pick up the cloth 2 from the cabinet 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "clean cloth 2 with sinkbasin 1",
+      "observation": "You clean the cloth 2 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a soapbottle 1, and a spraybottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move cloth 2 to countertop 1",
+      "observation": "You move the cloth 2 to the countertop 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "won": true,
+  "termination": "won"
+}

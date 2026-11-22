@@ -1,0 +1,40 @@
+{
+  "kind": "fresh_20_round_evolution_and_20_task_frozen_vs_empty_evaluation",
+  "created_at_utc": "2026-11-21T17:04:45.539146+00:00",
+  "created_at_shanghai": "2026-11-22T01:04:45.539157+08:00",
+  "initial_memory_version": 0,
+  "initial_experience_count": 0,
+  "training_rounds": 20,
+  "training_trajectories": 60,
+  "evaluation_tasks": 20,
+  "evaluation_trajectories_per_group": 60,
+  "evaluation_groups": [
+    "empty_memory",
+    "frozen_evolved_memory"
+  ],
+  "evaluation_memory_updates": false,
+  "primary_metric": {
+    "name": "pass@1",
+    "definition": "successful individual plan trajectories / 60 per evaluation group; equivalently mean of per-task successes / 3"
+  },
+  "plan_execution": "three generated plans per task; each plan resets the environment",
+  "fixed_seed": 42,
+  "max_steps_per_trajectory": 50,
+  "train_test_overlap": [],
+  "notes": [
+    "No production code, prompt, or hyperparameter changes for this experiment.",
+    "Evaluation tasks and environment/action seeds match between the two groups.",
+    "Evaluation does not call Critic or update memory.",
+    "The existing runner trains first, then evaluates empty and frozen memory sequentially."
+  ],
+  "started_at_utc": "2026-11-21T17:06:39.770894+00:00",
+  "process_pid": 36563,
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "/Users/sch_macbook/Desktop/科研/v2/.venv/bin/python",
+    "-u",
+    "/Users/sch_macbook/Desktop/科研/v2/runs/compare20-pass1-fresh-20261122-010445/run_comparison.py"
+  ],
+  "completed_at_utc": "2026-11-21T22:55:29.962571+00:00"
+}

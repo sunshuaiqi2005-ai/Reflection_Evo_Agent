@@ -1,0 +1,621 @@
+{
+  "id": "test-final-v20-011-plan2",
+  "task_id": "valid_unseen/pick_clean_then_place_in_recep-Pan-None-CounterTop-10/trial_T20190908_032434_013084/game.tw-pddl",
+  "plan": {
+    "name": "Strategy 2: Targeted Search and Clean",
+    "strategy": "Focus on likely storage locations first, clean if needed, and place on the countertop.",
+    "steps": [
+      "Check the most likely storage locations first, such as cabinets 5 and 6.",
+      "If not found, check the sink basin and stove burners.",
+      "If a pan is found, check if it is already clean.",
+      "If the pan is not clean, use the sink basin to clean it.",
+      "After cleaning, place the pan on the countertop (1-3)."
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: clean some pan and put it in countertop.",
+  "memory_version": 20,
+  "injection": {
+    "mode": "catalogue",
+    "possible_problems": [
+      "任务执行过程中，碗可能未被清洁或未被正确放置。",
+      "If the initial 'clean' action fails, the agent may need to move to a specific location (e.g., sinkbasin) to perform the cleaning.",
+      "If the initial cleaning action fails, the system should attempt the action again.",
+      "方案二未能找到苹果，但检查了所有柜子和抽屉。",
+      "Searching for an apple in a large number of cabinets may be inefficient and may not complete before the step limit.",
+      "微波炉未打开，无法放置碗。",
+      "When a bowl is not found in the initial search, it is important to continue searching in other locations."
+    ],
+    "state_ids": [
+      "S00004",
+      "S00017",
+      "S00059",
+      "S00005",
+      "S00053",
+      "S00012"
+    ],
+    "experiences": [
+      {
+        "id": "E00005",
+        "state": "碗在柜子中，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从柜子中取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00029",
+        "state": "The initial 'clean' action may fail if the agent is not at the correct location (e.g., sinkbasin).",
+        "explanation": "",
+        "advice": [
+          "Move to the sinkbasin before attempting to clean the sponge.",
+          "If the 'clean' action fails, check if the agent is at the correct location for cleaning."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00161",
+        "state": "Searching for an apple in a large number of cabinets may be inefficient and may not complete before the step limit.",
+        "explanation": "",
+        "advice": [
+          "Limit the number of cabinets searched to avoid exceeding the step limit.",
+          "Prioritize cabinets that are more likely to contain the apple."
+        ],
+        "exceptions": [
+          "The apple may be in a cabinet that is not checked due to step limit constraints.",
+          "The apple may not exist in the environment.",
+          "The apple may be in a location that is not accessible."
+        ]
+      },
+      {
+        "id": "E00007",
+        "state": "微波炉未打开，无法放置碗。",
+        "explanation": "",
+        "advice": [
+          "在放置碗之前，确保微波炉已打开。",
+          "若微波炉未打开，先打开微波炉再放置碗。",
+          "避免在未打开的微波炉中放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00127",
+        "state": "When a bowl is not found in the initial search, it is important to continue searching in other locations.",
+        "explanation": "Strategies 1 and 3 did not find a bowl in their initial search and had to continue searching.",
+        "advice": [
+          "Continue searching in other locations if a bowl is not found in the initial search."
+        ],
+        "exceptions": [
+          "If the task goal is to place a clean mug on the shelf, this advice may not apply."
+        ]
+      },
+      {
+        "id": "E00022",
+        "state": "苹果在冰箱中，但未在抽屉或柜子中。",
+        "explanation": "苹果可能储存在冰箱中，而未在抽屉或柜子中。",
+        "advice": [
+          "优先检查冰箱以获取苹果。",
+          "若未找到苹果，应检查其他常见存储位置。",
+          "若未找到苹果，可能需要重新确认任务条件。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00006",
+        "state": "碗在台面上，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从台面上取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00057",
+        "state": "When the cleaning action fails, the actor should attempt the action again.",
+        "explanation": "",
+        "advice": [
+          "Repeat the cleaning action if it fails the first time.",
+          "Ensure the object is in the correct location for cleaning."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00048",
+        "state": "苹果在冰箱中，但未被立即识别。",
+        "explanation": "苹果可能被其他物品遮挡或未被注意到。",
+        "advice": [
+          "打开冰箱后仔细检查内部物品",
+          "确认苹果是否在视野范围内"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00078",
+        "state": "杯子在柜子中，但需要打开柜子才能看到。",
+        "explanation": "柜子可能关闭，需先打开才能查看内容。",
+        "advice": [
+          "先打开柜子再检查内容",
+          "若柜子关闭，先打开再检查",
+          "确保柜子打开后内容可见"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00059",
+        "state": "When the object is successfully cleaned and moved to the target location, the actor should confirm the action's success.",
+        "explanation": "",
+        "advice": [
+          "Verify that the object is in the correct location after the action is completed.",
+          "Ensure the task is fully completed before ending the interaction."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00049",
+        "state": "微波炉内已有苹果，但未被处理。",
+        "explanation": "微波炉内已有苹果可能未被识别为任务目标的一部分。",
+        "advice": [
+          "检查微波炉内是否已有苹果",
+          "确认是否需要替换或补充"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00079",
+        "state": "杯子在台面上，但需要移动才能获取。",
+        "explanation": "杯子可能被其他物品遮挡，需先移动物品。",
+        "advice": [
+          "先检查台面是否有其他物品",
+          "若物品遮挡，先移动物品",
+          "确保杯子可见且可获取"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00050",
+        "state": "清洁苹果时未检查微波炉内是否已有苹果。",
+        "explanation": "清洁苹果后直接放入微波炉，未确认微波炉内是否已有苹果。",
+        "advice": [
+          "清洁苹果后检查微波炉内是否已有苹果",
+          "确认微波炉是否已打开并准备好接收苹果"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00102",
+        "state": "碗在柜子中，但未冷却。",
+        "explanation": "需先取出碗，再使用冰箱进行冷却。",
+        "advice": [
+          "取出碗",
+          "使用冰箱进行冷却",
+          "冷却后放置在餐桌"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00095",
+        "state": "番茄可能存在于餐桌，但未被正确识别或处理。",
+        "explanation": "方案1未能正确识别餐桌上的番茄，导致任务失败。",
+        "advice": [
+          "在检查目标位置时，应明确识别番茄的存在。",
+          "如果番茄在目标位置，应优先处理。"
+        ],
+        "exceptions": [
+          "番茄可能在目标位置但未被识别。",
+          "番茄可能在目标位置但未被正确处理。",
+          "番茄可能在目标位置但未被正确识别。"
+        ]
+      },
+      {
+        "id": "E00103",
+        "state": "碗在冰箱中，但未冷却。",
+        "explanation": "需检查碗的温度状态，若未冷却则需进一步冷却。",
+        "advice": [
+          "检查碗的温度",
+          "若未冷却，使用冰箱进行冷却",
+          "冷却后放置在餐桌"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00159",
+        "state": "Searching for an apple in the fridge, countertops, and cabinets may not be effective if the apple is not in those locations.",
+        "explanation": "",
+        "advice": [
+          "Consider checking less common storage areas if the apple is not found in the initial locations.",
+          "Verify if the apple exists in the environment before proceeding with a search."
+        ],
+        "exceptions": [
+          "The apple may be in a location not checked due to step limit constraints.",
+          "The apple may not exist in the environment.",
+          "The apple may be in a location that is not accessible."
+        ]
+      },
+      {
+        "id": "E00104",
+        "state": "碗在台面上，但未冷却。",
+        "explanation": "需检查碗的温度状态，若未冷却则需使用冰箱进行冷却。",
+        "advice": [
+          "检查碗的温度",
+          "若未冷却，使用冰箱进行冷却",
+          "冷却后放置在餐桌"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00160",
+        "state": "Focusing on finding a cool apple directly by checking the fridge first may be effective if the apple is already cool and stored there.",
+        "explanation": "",
+        "advice": [
+          "Check the fridge first for a cool apple to avoid unnecessary steps.",
+          "If the apple is not cool, place it in the fridge to cool before proceeding."
+        ],
+        "exceptions": [
+          "The apple may not be in the fridge.",
+          "The apple may not exist in the environment.",
+          "The apple may be in a location that is not accessible."
+        ]
+      }
+    ],
+    "candidate_count": 28,
+    "budget_applied": true
+  },
+  "steps": [
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 5",
+      "observation": "You arrive at cabinet 5. The cabinet 5 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 5",
+      "observation": "You open the cabinet 5. The cabinet 5 is open. In it, you see a mug 2, and a peppershaker 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 6",
+      "observation": "You arrive at cabinet 6. The cabinet 6 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 6",
+      "observation": "You open the cabinet 6. The cabinet 6 is open. In it, you see a bowl 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take bowl 3 from cabinet 6",
+      "observation": "You pick up the bowl 3 from the cabinet 6.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "clean bowl 3 with sinkbasin 1",
+      "observation": "You clean the bowl 3 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move bowl 3 to countertop 1",
+      "observation": "You move the bowl 3 to the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the coffeemachine 1, and countertop 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    }
+  ],
+  "won": false,
+  "termination": "step_limit"
+}

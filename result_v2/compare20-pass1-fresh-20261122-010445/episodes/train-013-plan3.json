@@ -1,0 +1,589 @@
+{
+  "id": "train-013-plan3",
+  "task_id": "train/pick_heat_then_place_in_recep-Egg-None-Fridge-6/trial_T20190907_184715_099476/game.tw-pddl",
+  "plan": {
+    "name": "Efficient Search with Immediate Action",
+    "strategy": "Focus on high-probability locations for the egg, and take immediate action once the egg is found to minimize time spent.",
+    "steps": [
+      "Check the most likely locations for the egg, such as cabinets or drawers, without systematically searching all locations.",
+      "Once the egg is found, proceed to the stoveburner or microwave to heat it.",
+      "After heating, place the egg directly in the fridge."
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 15, a cabinet 14, a cabinet 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 4, a countertop 3, a countertop 2, a countertop 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: heat some egg and put it in fridge.",
+  "memory_version": 12,
+  "injection": {
+    "mode": "catalogue",
+    "possible_problems": [
+      "微波炉未打开，无法放置碗。",
+      "目标物品（mug）在搜索阶段被找到。",
+      "微波炉内已有苹果，但未被处理。",
+      "碗在柜子中，但未冷却。",
+      "使用水槽冷却杯子失败，可能与水槽功能或方法有关。",
+      "杯子需要冷却，但冰箱可能关闭。",
+      "When the object is found in an unexpected location, the actor should adjust the plan accordingly."
+    ],
+    "state_ids": [
+      "S00005",
+      "S00022",
+      "S00012",
+      "S00004",
+      "S00034",
+      "S00033",
+      "S00030"
+    ],
+    "experiences": [
+      {
+        "id": "E00005",
+        "state": "碗在柜子中，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从柜子中取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00006",
+        "state": "碗在台面上，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从台面上取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00007",
+        "state": "微波炉未打开，无法放置碗。",
+        "explanation": "",
+        "advice": [
+          "在放置碗之前，确保微波炉已打开。",
+          "若微波炉未打开，先打开微波炉再放置碗。",
+          "避免在未打开的微波炉中放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00022",
+        "state": "苹果在冰箱中，但未在抽屉或柜子中。",
+        "explanation": "苹果可能储存在冰箱中，而未在抽屉或柜子中。",
+        "advice": [
+          "优先检查冰箱以获取苹果。",
+          "若未找到苹果，应检查其他常见存储位置。",
+          "若未找到苹果，可能需要重新确认任务条件。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00039",
+        "state": "目标物品（mug）在搜索阶段被找到。",
+        "explanation": "可能需要在找到目标物品后立即进行加热操作。",
+        "advice": [
+          "在找到目标物品后立即进行加热操作",
+          "确保加热设备（如 microwave）可用",
+          "检查加热设备是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00048",
+        "state": "苹果在冰箱中，但未被立即识别。",
+        "explanation": "苹果可能被其他物品遮挡或未被注意到。",
+        "advice": [
+          "打开冰箱后仔细检查内部物品",
+          "确认苹果是否在视野范围内"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00049",
+        "state": "微波炉内已有苹果，但未被处理。",
+        "explanation": "微波炉内已有苹果可能未被识别为任务目标的一部分。",
+        "advice": [
+          "检查微波炉内是否已有苹果",
+          "确认是否需要替换或补充"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00050",
+        "state": "清洁苹果时未检查微波炉内是否已有苹果。",
+        "explanation": "清洁苹果后直接放入微波炉，未确认微波炉内是否已有苹果。",
+        "advice": [
+          "清洁苹果后检查微波炉内是否已有苹果",
+          "确认微波炉是否已打开并准备好接收苹果"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00058",
+        "state": "When the object is found in an unexpected location, the actor should adjust the plan accordingly.",
+        "explanation": "",
+        "advice": [
+          "Check the object's location before proceeding with the cleaning action.",
+          "Adjust the plan if the object is not found in the expected location."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00068",
+        "state": "使用冰箱冷却杯子是有效的，但需确保杯子已被正确拾取。",
+        "explanation": "",
+        "advice": [
+          "在冷却前确保杯子已被正确拾取并携带至冷却设备。",
+          "若冷却失败，应检查杯子是否在冷却设备附近。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00069",
+        "state": "使用水槽冷却杯子失败，可能与水槽功能或方法有关。",
+        "explanation": "",
+        "advice": [
+          "若水槽无法用于冷却，应尝试使用其他设备（如冰箱）。",
+          "检查水槽是否正常工作或是否适合用于冷却。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00078",
+        "state": "杯子在柜子中，但需要打开柜子才能看到。",
+        "explanation": "柜子可能关闭，需先打开才能查看内容。",
+        "advice": [
+          "先打开柜子再检查内容",
+          "若柜子关闭，先打开再检查",
+          "确保柜子打开后内容可见"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00079",
+        "state": "杯子在台面上，但需要移动才能获取。",
+        "explanation": "杯子可能被其他物品遮挡，需先移动物品。",
+        "advice": [
+          "先检查台面是否有其他物品",
+          "若物品遮挡，先移动物品",
+          "确保杯子可见且可获取"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00080",
+        "state": "杯子需要冷却，但冰箱可能关闭。",
+        "explanation": "冰箱可能关闭，需先打开才能使用。",
+        "advice": [
+          "先打开冰箱再使用",
+          "若冰箱关闭，先打开再使用",
+          "确保冰箱打开后可用"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00095",
+        "state": "番茄可能存在于餐桌，但未被正确识别或处理。",
+        "explanation": "方案1未能正确识别餐桌上的番茄，导致任务失败。",
+        "advice": [
+          "在检查目标位置时，应明确识别番茄的存在。",
+          "如果番茄在目标位置，应优先处理。"
+        ],
+        "exceptions": [
+          "番茄可能在目标位置但未被识别。",
+          "番茄可能在目标位置但未被正确处理。",
+          "番茄可能在目标位置但未被正确识别。"
+        ]
+      },
+      {
+        "id": "E00102",
+        "state": "碗在柜子中，但未冷却。",
+        "explanation": "需先取出碗，再使用冰箱进行冷却。",
+        "advice": [
+          "取出碗",
+          "使用冰箱进行冷却",
+          "冷却后放置在餐桌"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00103",
+        "state": "碗在冰箱中，但未冷却。",
+        "explanation": "需检查碗的温度状态，若未冷却则需进一步冷却。",
+        "advice": [
+          "检查碗的温度",
+          "若未冷却，使用冰箱进行冷却",
+          "冷却后放置在餐桌"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00104",
+        "state": "碗在台面上，但未冷却。",
+        "explanation": "需检查碗的温度状态，若未冷却则需使用冰箱进行冷却。",
+        "advice": [
+          "检查碗的温度",
+          "若未冷却，使用冰箱进行冷却",
+          "冷却后放置在餐桌"
+        ],
+        "exceptions": []
+      }
+    ],
+    "candidate_count": 18,
+    "budget_applied": false
+  },
+  "steps": [
+    {
+      "action": "go to cabinet 1",
+      "observation": "You arrive at cabinet 1. The cabinet 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 1",
+      "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see a plate 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 2",
+      "observation": "You arrive at cabinet 2. The cabinet 2 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 2",
+      "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see a saltshaker 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 3",
+      "observation": "You arrive at cabinet 3. The cabinet 3 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 3",
+      "observation": "You open the cabinet 3. The cabinet 3 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 4",
+      "observation": "You arrive at cabinet 4. The cabinet 4 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 4",
+      "observation": "You open the cabinet 4. The cabinet 4 is open. In it, you see a peppershaker 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 5",
+      "observation": "You arrive at cabinet 5. The cabinet 5 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 5",
+      "observation": "You open the cabinet 5. The cabinet 5 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 6",
+      "observation": "You arrive at cabinet 6. The cabinet 6 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 6",
+      "observation": "You open the cabinet 6. The cabinet 6 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 7",
+      "observation": "You arrive at cabinet 7. The cabinet 7 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 7",
+      "observation": "You open the cabinet 7. The cabinet 7 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 8",
+      "observation": "You arrive at cabinet 8. The cabinet 8 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 8",
+      "observation": "You open the cabinet 8. The cabinet 8 is open. In it, you see a soapbottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 9",
+      "observation": "You arrive at cabinet 9. The cabinet 9 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 9",
+      "observation": "You open the cabinet 9. The cabinet 9 is open. In it, you see a soapbottle 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 10",
+      "observation": "You arrive at cabinet 10. The cabinet 10 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 10",
+      "observation": "You open the cabinet 10. The cabinet 10 is open. In it, you see a bowl 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take bowl 1 from cabinet 10",
+      "observation": "You pick up the bowl 1 from the cabinet 10.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to microwave 1",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open microwave 1",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a potato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "heat bowl 1 with microwave 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "clean bowl 1 with sinkbasin 1",
+      "observation": "You clean the bowl 1 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to microwave 1",
+      "observation": "You arrive at microwave 1. The microwave 1 is open. In it, you see a potato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "heat bowl 1 with microwave 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open fridge 1",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a apple 1, a bowl 2, a cup 1, and a pan 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move bowl 1 to fridge 1",
+      "observation": "You move the bowl 1 to the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to microwave 1",
+      "observation": "You arrive at microwave 1. The microwave 1 is open. In it, you see a potato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "heat bowl 1 with microwave 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is open. In it, you see a apple 1, a bowl 2, a bowl 1, a cup 1, and a pan 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 11",
+      "observation": "You arrive at cabinet 11. The cabinet 11 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 11",
+      "observation": "You open the cabinet 11. The cabinet 11 is open. In it, you see a peppershaker 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 12",
+      "observation": "You arrive at cabinet 12. The cabinet 12 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 12",
+      "observation": "You open the cabinet 12. The cabinet 12 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 13",
+      "observation": "You arrive at cabinet 13. The cabinet 13 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 13",
+      "observation": "You open the cabinet 13. The cabinet 13 is open. In it, you see a pot 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 14",
+      "observation": "You arrive at cabinet 14. The cabinet 14 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 14",
+      "observation": "You open the cabinet 14. The cabinet 14 is open. In it, you see a saltshaker 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 15",
+      "observation": "You arrive at cabinet 15. The cabinet 15 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 15",
+      "observation": "You open the cabinet 15. The cabinet 15 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a egg 2, and a spoon 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take egg 2 from countertop 1",
+      "observation": "You pick up the egg 2 from the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to microwave 1",
+      "observation": "You arrive at microwave 1. The microwave 1 is open. In it, you see a potato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "heat egg 2 with microwave 1",
+      "observation": "You heat the egg 2 using the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is open. In it, you see a apple 1, a bowl 2, a bowl 1, a cup 1, and a pan 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move egg 2 to fridge 1",
+      "observation": "You move the egg 2 to the fridge 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "won": true,
+  "termination": "won"
+}

@@ -1,0 +1,268 @@
+{
+  "id": "test-final-v20-009-plan2",
+  "task_id": "valid_unseen/pick_cool_then_place_in_recep-Mug-None-CoffeeMachine-10/trial_T20190907_183807_477267/game.tw-pddl",
+  "plan": {
+    "name": "Strategy 2: Check Fridge First, Then Cool and Place",
+    "strategy": "Check the fridge first for the mug, assuming it may be stored there, then cool and place it in the coffeemachine.",
+    "steps": [
+      "Check the fridge 1 for the mug.",
+      "If the mug is found, cool it in the fridge.",
+      "If the mug is not in the fridge, search other locations such as cabinets or countertops.",
+      "Once the mug is located and cooled, move it to the coffeemachine."
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: cool some mug and put it in coffeemachine.",
+  "memory_version": 20,
+  "injection": {
+    "mode": "catalogue",
+    "possible_problems": [
+      "目标物品（mug）在搜索阶段被找到。",
+      "冷却步骤失败可能与冷却设备或方法有关。",
+      "放置杯子到咖啡机前应确保咖啡机无冲突。",
+      "目标物品（mug）在放置过程中未被正确放置在目标位置（shelf）。",
+      "Searching for an apple in a large number of cabinets may be inefficient and may not complete before the step limit.",
+      "When the object is found in an unexpected location, the actor should adjust the plan accordingly."
+    ],
+    "state_ids": [
+      "S00022",
+      "S00033",
+      "S00035",
+      "S00023",
+      "S00059",
+      "S00030"
+    ],
+    "experiences": [
+      {
+        "id": "E00039",
+        "state": "目标物品（mug）在搜索阶段被找到。",
+        "explanation": "可能需要在找到目标物品后立即进行加热操作。",
+        "advice": [
+          "在找到目标物品后立即进行加热操作",
+          "确保加热设备（如 microwave）可用",
+          "检查加热设备是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00040",
+        "state": "目标物品（mug）在加热后需要被放置在目标位置（shelf）。",
+        "explanation": "可能需要在加热完成后立即进行放置操作。",
+        "advice": [
+          "在加热完成后立即进行放置操作",
+          "确保目标位置（shelf）可用",
+          "检查目标位置（shelf）是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00041",
+        "state": "目标物品（mug）在加热过程中未被正确加热。",
+        "explanation": "可能需要检查加热设备（如 microwave）是否正常工作。",
+        "advice": [
+          "检查加热设备（如 microwave）是否正常工作",
+          "确保目标物品（mug）已被正确放置在加热设备中",
+          "检查加热设备是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00042",
+        "state": "目标物品（mug）在放置过程中未被正确放置在目标位置（shelf）。",
+        "explanation": "可能需要检查目标位置（shelf）是否正常工作。",
+        "advice": [
+          "检查目标位置（shelf）是否正常工作",
+          "确保目标物品（mug）已被正确放置在目标位置（shelf）中",
+          "检查目标位置（shelf）是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00058",
+        "state": "When the object is found in an unexpected location, the actor should adjust the plan accordingly.",
+        "explanation": "",
+        "advice": [
+          "Check the object's location before proceeding with the cleaning action.",
+          "Adjust the plan if the object is not found in the expected location."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00068",
+        "state": "使用冰箱冷却杯子是有效的，但需确保杯子已被正确拾取。",
+        "explanation": "",
+        "advice": [
+          "在冷却前确保杯子已被正确拾取并携带至冷却设备。",
+          "若冷却失败，应检查杯子是否在冷却设备附近。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00070",
+        "state": "放置杯子到咖啡机前应确保咖啡机无冲突。",
+        "explanation": "",
+        "advice": [
+          "在放置杯子前检查咖啡机是否已有杯子，避免冲突。",
+          "若咖啡机已有杯子，应先移除或调整放置策略。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00080",
+        "state": "杯子需要冷却，但冰箱可能关闭。",
+        "explanation": "冰箱可能关闭，需先打开才能使用。",
+        "advice": [
+          "先打开冰箱再使用",
+          "若冰箱关闭，先打开再使用",
+          "确保冰箱打开后可用"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00161",
+        "state": "Searching for an apple in a large number of cabinets may be inefficient and may not complete before the step limit.",
+        "explanation": "",
+        "advice": [
+          "Limit the number of cabinets searched to avoid exceeding the step limit.",
+          "Prioritize cabinets that are more likely to contain the apple."
+        ],
+        "exceptions": [
+          "The apple may be in a cabinet that is not checked due to step limit constraints.",
+          "The apple may not exist in the environment.",
+          "The apple may be in a location that is not accessible."
+        ]
+      }
+    ],
+    "candidate_count": 9,
+    "budget_applied": false
+  },
+  "steps": [
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open fridge 1",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a bread 2, and a egg 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the fridge 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 1",
+      "observation": "You arrive at cabinet 1. On the cabinet 1, you see a bowl 1, and a soapbottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 2",
+      "observation": "You arrive at cabinet 2. The cabinet 2 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 2",
+      "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see a peppershaker 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 3",
+      "observation": "You arrive at cabinet 3. On the cabinet 3, you see a peppershaker 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 4",
+      "observation": "You arrive at cabinet 4. On the cabinet 4, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 5",
+      "observation": "You arrive at cabinet 5. The cabinet 5 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 5",
+      "observation": "You open the cabinet 5. The cabinet 5 is open. In it, you see a bowl 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 6",
+      "observation": "You arrive at cabinet 6. The cabinet 6 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 6",
+      "observation": "You open the cabinet 6. The cabinet 6 is open. In it, you see a glassbottle 2, a soapbottle 2, and a vase 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a cellphone 2, a mug 1, and a spoon 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take mug 1 from countertop 1",
+      "observation": "You pick up the mug 1 from the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is open. In it, you see a bread 2, and a egg 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "cool mug 1 with fridge 1",
+      "observation": "You cool the mug 1 using the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to coffeemachine 1",
+      "observation": "You arrive at coffeemachine 1. On the coffeemachine 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move mug 1 to coffeemachine 1",
+      "observation": "You move the mug 1 to the coffeemachine 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "won": true,
+  "termination": "won"
+}

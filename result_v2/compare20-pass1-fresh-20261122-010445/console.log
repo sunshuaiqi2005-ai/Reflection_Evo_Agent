@@ -1,0 +1,5156 @@
+  train-001-plan1: start
+    step 1: go to cabinet 1
+    step 2: open cabinet 1
+    step 3: take bowl 2 from cabinet 1
+    step 4: go to sinkbasin 1
+    step 5: clean bowl 2 with sinkbasin 1
+    step 6: go to microwave 1
+    step 7: open microwave 1
+    step 8: move bowl 2 to microwave 1
+  train-001-plan2: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to countertop 2
+    step 4: take bowl 3 from countertop 2
+    step 5: go to microwave 1
+    step 6: open microwave 1
+    step 7: move bowl 3 to microwave 1
+    step 8: close microwave 1
+    step 9: go to sinkbasin 1
+    step 10: go to countertop 3
+    step 11: go to countertop 4
+    step 12: go to cabinet 1
+    step 13: open cabinet 1
+    step 14: take bowl 2 from cabinet 1
+    step 15: go to microwave 1
+    step 16: open microwave 1
+    step 17: move bowl 2 to microwave 1
+    step 18: close microwave 1
+    step 19: go to sinkbasin 1
+    step 20: go to microwave 1
+    step 21: open microwave 1
+    step 22: close microwave 1
+    step 23: go to sinkbasin 1
+    step 24: go to cabinet 2
+    step 25: open cabinet 2
+    step 26: go to cabinet 3
+    step 27: open cabinet 3
+    step 28: go to cabinet 4
+    step 29: open cabinet 4
+    step 30: go to cabinet 5
+    step 31: open cabinet 5
+    step 32: go to cabinet 6
+    step 33: open cabinet 6
+    step 34: take bowl 1 from cabinet 6
+    step 35: go to sinkbasin 1
+    step 36: clean bowl 1 with sinkbasin 1
+    step 37: go to microwave 1
+    step 38: open microwave 1
+    step 39: move bowl 1 to microwave 1
+  train-001-plan3: start
+    step 1: go to sinkbasin 1
+    step 2: go to fridge 1
+    step 3: open fridge 1
+    step 4: close fridge 1
+    step 5: go to cabinet 1
+    step 6: open cabinet 1
+    step 7: take bowl 2 from cabinet 1
+    step 8: go to sinkbasin 1
+    step 9: clean bowl 2 with sinkbasin 1
+    step 10: go to microwave 1
+    step 11: open microwave 1
+    step 12: move bowl 2 to microwave 1
+Round 1/20: 7 experiences, 5 clusters
+  train-002-plan1: start
+    step 1: look
+    step 2: go to fridge 1
+    step 3: open fridge 1
+    step 4: take potato 3 from fridge 1
+    step 5: go to microwave 1
+    step 6: open microwave 1
+    step 7: heat potato 3 with microwave 1
+    step 8: go to garbagecan 1
+    step 9: move potato 3 to garbagecan 1
+  train-002-plan2: start
+    step 1: go to cabinet 1
+    step 2: go to cabinet 2
+    step 3: go to cabinet 3
+    step 4: open cabinet 3
+    step 5: take bowl 1 from cabinet 3
+    step 6: go to sinkbasin 1
+    step 7: clean bowl 1 with sinkbasin 1
+    step 8: go to countertop 1
+    step 9: take potato 1 from countertop 1
+    step 10: take potato 2 from countertop 1
+    step 11: go to microwave 1
+    step 12: open microwave 1
+    step 13: move bowl 1 to microwave 1
+    step 14: heat bowl 1 with microwave 1
+    step 15: take potato 1 from countertop 1
+    step 16: take potato 2 from countertop 1
+    step 17: go to bowl 1
+    step 18: go to countertop 1
+    step 19: take potato 1 from countertop 1
+    step 20: move potato 1 to microwave 1
+    step 21: go to microwave 1
+    step 22: move potato 1 to microwave 1
+    step 23: heat potato 1 with microwave 1
+    step 24: heat bowl 1 with microwave 1
+    step 25: heat potato 1 with microwave 1
+    step 26: go to garbagecan 1
+    step 27: move potato 1 to garbagecan 1
+    step 28: go to microwave 1
+    step 29: heat potato 1 with microwave 1
+    step 30: heat bowl 1 with microwave 1
+    step 31: go to garbagecan 1
+    step 32: move bowl 1 to garbagecan 1
+    step 33: go to microwave 1
+    step 34: heat potato 1 with microwave 1
+    step 35: heat bowl 1 with microwave 1
+    step 36: go to countertop 1
+    step 37: take potato 1 from countertop 1
+    step 38: go to microwave 1
+    step 39: heat potato 1 with microwave 1
+    step 40: heat bowl 1 with microwave 1
+    step 41: go to garbagecan 1
+    step 42: move potato 1 to garbagecan 1
+    step 43: go to microwave 1
+    step 44: heat potato 1 with microwave 1
+    step 45: heat bowl 1 with microwave 1
+    step 46: go to countertop 1
+    step 47: take potato 2 from countertop 1
+    step 48: go to microwave 1
+    step 49: move potato 2 to microwave 1
+    step 50: heat potato 2 with microwave 1
+  train-002-plan3: start
+    step 1: go to cabinet 1
+    step 2: go to cabinet 2
+    step 3: go to cabinet 3
+    step 4: open cabinet 3
+    step 5: take bowl 1 from cabinet 3
+    step 6: go to sinkbasin 1
+    step 7: clean bowl 1 with sinkbasin 1
+    step 8: go to microwave 1
+    step 9: open microwave 1
+    step 10: move bowl 1 to microwave 1
+    step 11: heat bowl 1 with microwave 1
+    step 12: go to cabinet 4
+    step 13: open cabinet 4
+    step 14: go to cabinet 5
+    step 15: open cabinet 5
+    step 16: go to cabinet 6
+    step 17: go to cabinet 7
+    step 18: go to cabinet 8
+    step 19: open cabinet 8
+    step 20: go to fridge 1
+    step 21: open fridge 1
+    step 22: take potato 3 from fridge 1
+    step 23: go to microwave 1
+    step 24: heat potato 3 with microwave 1
+    step 25: go to garbagecan 1
+    step 26: move potato 3 to garbagecan 1
+Round 2/20: 15 experiences, 9 clusters
+  train-003-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take apple 1 from fridge 1
+    step 4: go to microwave 1
+    step 5: open microwave 1
+    step 6: heat apple 1 with microwave 1
+    step 7: go to countertop 1
+    step 8: move apple 1 to countertop 1
+  train-003-plan2: start
+    step 1: go to cabinet 1
+    step 2: open cabinet 1
+    step 3: close cabinet 1
+    step 4: go to cabinet 2
+    step 5: go to cabinet 2
+    step 6: go to cabinet 3
+    step 7: open cabinet 3
+    step 8: close cabinet 3
+    step 9: go to cabinet 4
+    step 10: go to cabinet 4
+    step 11: go to cabinet 5
+    step 12: open cabinet 5
+    step 13: close cabinet 5
+    step 14: go to cabinet 6
+    step 15: open cabinet 6
+    step 16: close cabinet 6
+    step 17: go to cabinet 7
+    step 18: open cabinet 7
+    step 19: close cabinet 7
+    step 20: go to cabinet 8
+    step 21: open cabinet 8
+    step 22: close cabinet 8
+    step 23: go to cabinet 9
+    step 24: open cabinet 9
+    step 25: close cabinet 9
+    step 26: go to drawer 1
+    step 27: open drawer 1
+    step 28: close drawer 1
+    step 29: go to drawer 2
+    step 30: open drawer 2
+    step 31: close drawer 2
+    step 32: go to drawer 3
+    step 33: open drawer 3
+    step 34: close drawer 3
+    step 35: go to drawer 4
+    step 36: open drawer 4
+    step 37: close drawer 4
+    step 38: go to drawer 5
+    step 39: go to drawer 6
+    step 40: open drawer 6
+    step 41: close drawer 6
+    step 42: go to drawer 7
+    step 43: go to drawer 8
+    step 44: go to drawer 9
+    step 45: open drawer 9
+    step 46: close drawer 9
+    step 47: go to drawer 10
+    step 48: go to drawer 11
+    step 49: open drawer 11
+    step 50: close drawer 11
+  train-003-plan3: start
+    step 1: look
+    step 2: go to drawer 1
+    step 3: open drawer 1
+    step 4: close drawer 1
+    step 5: go to drawer 2
+    step 6: open drawer 2
+    step 7: close drawer 2
+    step 8: go to drawer 3
+    step 9: open drawer 3
+    step 10: close drawer 3
+    step 11: go to drawer 4
+    step 12: open drawer 4
+    step 13: close drawer 4
+    step 14: go to drawer 5
+    step 15: open drawer 5
+    step 16: look
+    step 17: go to drawer 5
+    step 18: go to drawer 6
+    step 19: open drawer 6
+    step 20: close drawer 6
+    step 21: go to drawer 7
+    step 22: open drawer 7
+    step 23: look
+    step 24: go to drawer 7
+    step 25: go to drawer 8
+    step 26: open drawer 8
+    step 27: look
+    step 28: go to drawer 8
+    step 29: go to drawer 9
+    step 30: open drawer 9
+    step 31: close drawer 9
+    step 32: go to drawer 10
+    step 33: open drawer 10
+    step 34: look
+    step 35: go to drawer 10
+    step 36: go to drawer 11
+    step 37: open drawer 11
+    step 38: close drawer 11
+    step 39: go to drawer 12
+    step 40: open drawer 12
+    step 41: close drawer 12
+    step 42: go to drawer 13
+    step 43: open drawer 13
+    step 44: close drawer 13
+    step 45: go to fridge 1
+    step 46: open fridge 1
+    step 47: take apple 1 from fridge 1
+    step 48: go to microwave 1
+    step 49: open microwave 1
+    step 50: heat apple 1 with microwave 1
+Round 3/20: 22 experiences, 12 clusters
+  train-004-plan1: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: take dishsponge 2 from countertop 1
+    step 4: clean dishsponge 2 with sinkbasin 1
+    step 5: go to sinkbasin 1
+    step 6: clean dishsponge 2 with sinkbasin 1
+    step 7: go to countertop 1
+    step 8: move dishsponge 2 to countertop 1
+  train-004-plan2: start
+    step 1: go to drawer 1
+    step 2: open drawer 1
+    step 3: go to drawer 2
+    step 4: go to drawer 3
+    step 5: open drawer 3
+    step 6: go to drawer 4
+    step 7: go to drawer 5
+    step 8: open drawer 5
+    step 9: go to drawer 6
+    step 10: go to drawer 7
+    step 11: open drawer 7
+    step 12: go to drawer 8
+    step 13: go to countertop 1
+    step 14: take dishsponge 2 from countertop 1
+    step 15: go to sinkbasin 1
+    step 16: clean dishsponge 2 with sinkbasin 1
+    step 17: go to countertop 1
+    step 18: move dishsponge 2 to countertop 1
+  train-004-plan3: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: take dishsponge 2 from countertop 1
+    step 4: clean dishsponge 2 with sinkbasin 1
+    step 5: go to sinkbasin 1
+    step 6: clean dishsponge 2 with sinkbasin 1
+    step 7: go to countertop 1
+    step 8: move dishsponge 2 to countertop 1
+Round 4/20: 31 experiences, 19 clusters
+  train-005-plan1: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to countertop 2
+    step 4: take bowl 2 from countertop 2
+    step 5: go to microwave 1
+    step 6: open microwave 1
+    step 7: heat bowl 2 with microwave 1
+    step 8: move bowl 2 to shelf 1
+    step 9: go to shelf 1
+    step 10: move bowl 2 to shelf 1
+    step 11: go to microwave 1
+    step 12: heat bowl 2 with microwave 1
+    step 13: go to shelf 1
+    step 14: go to countertop 2
+    step 15: take bowl 3 from countertop 2
+    step 16: go to microwave 1
+    step 17: heat bowl 3 with microwave 1
+    step 18: go to shelf 1
+    step 19: move bowl 3 to shelf 1
+    step 20: go to microwave 1
+    step 21: heat bowl 3 with microwave 1
+    step 22: go to sinkbasin 1
+    step 23: look
+    step 24: go to countertop 2
+    step 25: take apple 1 from countertop 2
+    step 26: go to fridge 1
+    step 27: open fridge 1
+    step 28: take bowl 1 from fridge 1
+    step 29: go to shelf 1
+    step 30: go to microwave 1
+    step 31: heat bowl 1 with microwave 1
+    step 32: go to fridge 1
+    step 33: take bowl 1 from fridge 1
+    step 34: go to shelf 1
+    step 35: go to countertop 2
+    step 36: go to sinkbasin 1
+    step 37: look
+    step 38: go to countertop 1
+    step 39: go to fridge 1
+    step 40: take bowl 1 from fridge 1
+    step 41: go to shelf 1
+    step 42: go to microwave 1
+    step 43: heat bowl 1 with microwave 1
+    step 44: go to sinkbasin 1
+    step 45: go to countertop 2
+    step 46: go to fridge 1
+    step 47: take bowl 1 from fridge 1
+    step 48: go to shelf 1
+    step 49: go to microwave 1
+    step 50: heat bowl 1 with microwave 1
+  train-005-plan2: start
+    step 1: go to cabinet 1
+    step 2: open cabinet 1
+    step 3: close cabinet 1
+    step 4: go to cabinet 2
+    step 5: open cabinet 2
+    step 6: close cabinet 2
+    step 7: go to cabinet 3
+    step 8: open cabinet 3
+    step 9: close cabinet 3
+    step 10: go to cabinet 4
+    step 11: open cabinet 4
+    step 12: close cabinet 4
+    step 13: go to cabinet 5
+    step 14: open cabinet 5
+    step 15: close cabinet 5
+    step 16: go to cabinet 6
+    step 17: open cabinet 6
+    step 18: close cabinet 6
+    step 19: go to cabinet 7
+    step 20: open cabinet 7
+    step 21: take mug 1 from cabinet 7
+    step 22: go to microwave 1
+    step 23: open microwave 1
+    step 24: heat mug 1 with microwave 1
+    step 25: go to shelf 1
+    step 26: move mug 1 to shelf 1
+  train-005-plan3: start
+    step 1: look
+    step 2: go to shelf 1
+    step 3: go to shelf 2
+    step 4: go to shelf 3
+    step 5: go to cabinet 1
+    step 6: open cabinet 1
+    step 7: go to cabinet 2
+    step 8: open cabinet 2
+    step 9: go to cabinet 3
+    step 10: open cabinet 3
+    step 11: go to cabinet 4
+    step 12: open cabinet 4
+    step 13: go to cabinet 5
+    step 14: open cabinet 5
+    step 15: go to cabinet 6
+    step 16: open cabinet 6
+    step 17: go to cabinet 7
+    step 18: open cabinet 7
+    step 19: take mug 1 from cabinet 7
+    step 20: go to microwave 1
+    step 21: open microwave 1
+    step 22: heat mug 1 with microwave 1
+    step 23: go to shelf 1
+    step 24: move mug 1 to shelf 1
+Round 5/20: 42 experiences, 23 clusters
+  train-006-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take apple 3 from fridge 1
+    step 4: go to sinkbasin 1
+    step 5: clean apple 3 with sinkbasin 1
+    step 6: go to microwave 1
+    step 7: open microwave 1
+    step 8: move apple 3 to microwave 1
+  train-006-plan2: start
+    step 1: go to cabinet 1
+    step 2: open cabinet 1
+    step 3: close cabinet 1
+    step 4: go to cabinet 2
+    step 5: open cabinet 2
+    step 6: close cabinet 2
+    step 7: go to cabinet 3
+    step 8: go to cabinet 4
+    step 9: open cabinet 4
+    step 10: close cabinet 4
+    step 11: go to cabinet 5
+    step 12: go to cabinet 5
+    step 13: go to fridge 1
+    step 14: open fridge 1
+    step 15: take apple 3 from fridge 1
+    step 16: go to sinkbasin 1
+    step 17: clean apple 3 with sinkbasin 1
+    step 18: go to microwave 1
+    step 19: open microwave 1
+    step 20: move apple 3 to microwave 1
+  train-006-plan3: start
+    step 1: go to sinkbasin 1
+    step 2: look
+    step 3: go to fridge 1
+    step 4: open fridge 1
+    step 5: take apple 3 from fridge 1
+    step 6: go to sinkbasin 1
+    step 7: clean apple 3 with sinkbasin 1
+    step 8: go to microwave 1
+    step 9: open microwave 1
+    step 10: move apple 3 to microwave 1
+Round 6/20: 50 experiences, 26 clusters
+  train-007-plan1: start
+    step 1: look
+    step 2: go to sinkbasin 1
+    step 3: look
+    step 4: go to sidetable 1
+    step 5: take soapbar 1 from sidetable 1
+    step 6: clean soapbar 1 with sinkbasin 1
+    step 7: go to sinkbasin 1
+    step 8: clean soapbar 1 with sinkbasin 1
+    step 9: go to toilet 1
+    step 10: move soapbar 1 to toilet 1
+  train-007-plan2: start
+    step 1: look
+    step 2: go to sinkbasin 1
+    step 3: look
+    step 4: go to sidetable 1
+    step 5: take soapbar 1 from sidetable 1
+    step 6: go to sinkbasin 1
+    step 7: clean soapbar 1 with sinkbasin 1
+    step 8: go to toilet 1
+    step 9: move soapbar 1 to toilet 1
+  train-007-plan3: start
+    step 1: go to toilet 1
+    step 2: go to sinkbasin 1
+    step 3: look
+    step 4: go to sidetable 1
+    step 5: take soapbar 1 from sidetable 1
+    step 6: clean soapbar 1 with sinkbasin 1
+    step 7: go to sinkbasin 1
+    step 8: clean soapbar 1 with sinkbasin 1
+    step 9: go to toilet 1
+    step 10: move soapbar 1 to toilet 1
+Round 7/20: 59 experiences, 30 clusters
+  train-008-plan1: start
+    step 1: go to cabinet 1
+    step 2: go to cabinet 2
+    step 3: go to cabinet 3
+    step 4: open cabinet 3
+    step 5: go to cabinet 4
+    step 6: open cabinet 4
+    step 7: go to cabinet 5
+    step 8: go to cabinet 6
+    step 9: open cabinet 6
+    step 10: go to cabinet 7
+    step 11: open cabinet 7
+    step 12: go to cabinet 8
+    step 13: open cabinet 8
+    step 14: go to cabinet 9
+    step 15: open cabinet 9
+    step 16: go to cabinet 10
+    step 17: open cabinet 10
+    step 18: go to cabinet 11
+    step 19: open cabinet 11
+    step 20: go to cabinet 12
+    step 21: open cabinet 12
+    step 22: go to cabinet 13
+    step 23: open cabinet 13
+    step 24: go to cabinet 14
+    step 25: open cabinet 14
+    step 26: go to cabinet 15
+    step 27: open cabinet 15
+    step 28: go to cabinet 16
+    step 29: go to cabinet 17
+    step 30: go to cabinet 18
+    step 31: go to cabinet 19
+    step 32: go to cabinet 20
+    step 33: take mug 2 from cabinet 20
+    step 34: go to fridge 1
+    step 35: open fridge 1
+    step 36: cool mug 2 with fridge 1
+    step 37: go to coffeemachine 1
+    step 38: move mug 2 to coffeemachine 1
+  train-008-plan2: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to countertop 1
+    step 4: go to countertop 2
+    step 5: go to cabinet 1
+    step 6: go to cabinet 2
+    step 7: go to cabinet 3
+    step 8: open cabinet 3
+    step 9: go to cabinet 4
+    step 10: open cabinet 4
+    step 11: go to cabinet 5
+    step 12: go to cabinet 6
+    step 13: open cabinet 6
+    step 14: go to cabinet 7
+    step 15: open cabinet 7
+    step 16: go to cabinet 8
+    step 17: open cabinet 8
+    step 18: go to cabinet 9
+    step 19: open cabinet 9
+    step 20: go to cabinet 10
+    step 21: open cabinet 10
+    step 22: go to cabinet 11
+    step 23: open cabinet 11
+    step 24: go to cabinet 12
+    step 25: open cabinet 12
+    step 26: go to cabinet 13
+    step 27: open cabinet 13
+    step 28: go to cabinet 14
+    step 29: open cabinet 14
+    step 30: go to cabinet 15
+    step 31: open cabinet 15
+    step 32: go to cabinet 16
+    step 33: go to cabinet 17
+    step 34: go to cabinet 18
+    step 35: go to cabinet 19
+    step 36: go to cabinet 20
+    step 37: take mug 2 from cabinet 20
+    step 38: go to fridge 1
+    step 39: go to sinkbasin 1
+    step 40: cool mug 2 with sinkbasin 1
+    step 41: go to coffeemachine 1
+    step 42: move mug 2 to coffeemachine 1
+    step 43: go to sinkbasin 1
+    step 44: cool mug 2 with sinkbasin 1
+    step 45: go to coffeemachine 1
+    step 46: go to sinkbasin 1
+    step 47: cool mug 2 with sinkbasin 1
+    step 48: go to coffeemachine 1
+    step 49: go to fridge 1
+    step 50: go to sinkbasin 1
+  train-008-plan3: start
+    step 1: go to coffeemachine 1
+    step 2: go to sinkbasin 1
+    step 3: go to countertop 1
+    step 4: go to countertop 2
+    step 5: go to cabinet 1
+    step 6: go to cabinet 2
+    step 7: go to cabinet 3
+    step 8: open cabinet 3
+    step 9: go to cabinet 4
+    step 10: open cabinet 4
+    step 11: go to cabinet 5
+    step 12: go to cabinet 6
+    step 13: open cabinet 6
+    step 14: go to cabinet 7
+    step 15: open cabinet 7
+    step 16: go to cabinet 8
+    step 17: open cabinet 8
+    step 18: go to cabinet 9
+    step 19: open cabinet 9
+    step 20: go to cabinet 10
+    step 21: open cabinet 10
+    step 22: go to cabinet 11
+    step 23: open cabinet 11
+    step 24: go to cabinet 12
+    step 25: open cabinet 12
+    step 26: go to cabinet 13
+    step 27: open cabinet 13
+    step 28: go to cabinet 14
+    step 29: open cabinet 14
+    step 30: go to cabinet 15
+    step 31: open cabinet 15
+    step 32: go to cabinet 16
+    step 33: go to cabinet 17
+    step 34: go to cabinet 18
+    step 35: go to cabinet 19
+    step 36: go to cabinet 20
+    step 37: take mug 2 from cabinet 20
+    step 38: go to sinkbasin 1
+    step 39: cool mug 2 with sinkbasin 1
+    step 40: go to coffeemachine 1
+    step 41: move mug 2 to coffeemachine 1
+    step 42: cool mug 2 with sinkbasin 1
+    step 43: go to sinkbasin 1
+    step 44: cool mug 2 with sinkbasin 1
+    step 45: go to coffeemachine 1
+    step 46: go to sinkbasin 1
+    step 47: cool mug 2 with sinkbasin 1
+    step 48: take mug 2 from sinkbasin 1
+    step 49: go to coffeemachine 1
+    step 50: take mug 2 from coffeemachine 1
+Round 8/20: 71 experiences, 36 clusters
+  train-009-plan1: start
+    step 1: go to cabinet 1
+    step 2: open cabinet 1
+    step 3: close cabinet 1
+    step 4: go to cabinet 2
+    step 5: open cabinet 2
+    step 6: close cabinet 2
+    step 7: go to cabinet 3
+    step 8: open cabinet 3
+    step 9: close cabinet 3
+    step 10: go to cabinet 4
+    step 11: go to cabinet 5
+    step 12: open cabinet 5
+    step 13: close cabinet 5
+    step 14: go to cabinet 6
+    step 15: open cabinet 6
+    step 16: close cabinet 6
+    step 17: go to cabinet 7
+    step 18: open cabinet 7
+    step 19: close cabinet 7
+    step 20: go to cabinet 8
+    step 21: open cabinet 8
+    step 22: take mug 2 from cabinet 8
+    step 23: go to fridge 1
+    step 24: open fridge 1
+    step 25: cool mug 2 with fridge 1
+    step 26: go to shelf 1
+    step 27: move mug 2 to shelf 1
+  train-009-plan2: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to countertop 2
+    step 4: take mug 1 from countertop 2
+    step 5: go to fridge 1
+    step 6: open fridge 1
+    step 7: cool mug 1 with fridge 1
+    step 8: go to shelf 1
+    step 9: move mug 1 to shelf 1
+  train-009-plan3: start
+    step 1: look
+    step 2: go to shelf 1
+    step 3: go to shelf 2
+    step 4: go to shelf 3
+    step 5: go to cabinet 1
+    step 6: open cabinet 1
+    step 7: go to cabinet 2
+    step 8: open cabinet 2
+    step 9: go to cabinet 3
+    step 10: open cabinet 3
+    step 11: go to cabinet 4
+    step 12: go to cabinet 5
+    step 13: open cabinet 5
+    step 14: go to cabinet 6
+    step 15: open cabinet 6
+    step 16: go to cabinet 7
+    step 17: open cabinet 7
+    step 18: go to cabinet 8
+    step 19: open cabinet 8
+    step 20: take mug 2 from cabinet 8
+    step 21: go to fridge 1
+    step 22: open fridge 1
+    step 23: cool mug 2 with fridge 1
+    step 24: go to shelf 1
+    step 25: move mug 2 to shelf 1
+Round 9/20: 80 experiences, 38 clusters
+  train-010-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to cabinet 1
+    step 4: open cabinet 1
+    step 5: go to cabinet 2
+    step 6: go to cabinet 2
+    step 7: go to cabinet 3
+    step 8: open cabinet 3
+    step 9: go to cabinet 4
+    step 10: open cabinet 4
+    step 11: go to cabinet 5
+    step 12: open cabinet 5
+    step 13: go to cabinet 6
+    step 14: open cabinet 6
+    step 15: go to cabinet 7
+    step 16: open cabinet 7
+    step 17: go to cabinet 8
+    step 18: open cabinet 8
+    step 19: go to cabinet 9
+    step 20: open cabinet 9
+    step 21: go to cabinet 10
+    step 22: open cabinet 10
+    step 23: go to cabinet 11
+    step 24: open cabinet 11
+    step 25: go to cabinet 12
+    step 26: open cabinet 12
+    step 27: go to cabinet 13
+    step 28: open cabinet 13
+    step 29: go to cabinet 14
+    step 30: open cabinet 14
+    step 31: go to cabinet 15
+    step 32: open cabinet 15
+    step 33: go to cabinet 16
+    step 34: open cabinet 16
+    step 35: go to cabinet 17
+    step 36: open cabinet 17
+    step 37: go to cabinet 18
+    step 38: open cabinet 18
+    step 39: go to cabinet 19
+    step 40: open cabinet 19
+    step 41: go to cabinet 20
+    step 42: open cabinet 20
+    step 43: go to fridge 1
+    step 44: go to countertop 1
+    step 45: go to countertop 2
+    step 46: go to countertop 3
+    step 47: take potato 1 from countertop 3
+    step 48: go to microwave 1
+    step 49: open microwave 1
+    step 50: heat potato 1 with microwave 1
+  train-010-plan2: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to countertop 1
+    step 4: go to countertop 2
+    step 5: go to countertop 3
+    step 6: take potato 1 from countertop 3
+    step 7: go to microwave 1
+    step 8: open microwave 1
+    step 9: heat potato 1 with microwave 1
+    step 10: go to garbagecan 1
+    step 11: move potato 1 to garbagecan 1
+  train-010-plan3: start
+    step 1: go to cabinet 1
+    step 2: open cabinet 1
+    step 3: close cabinet 1
+    step 4: go to cabinet 2
+    step 5: go to cabinet 2
+    step 6: go to cabinet 3
+    step 7: open cabinet 3
+    step 8: close cabinet 3
+    step 9: go to cabinet 4
+    step 10: open cabinet 4
+    step 11: close cabinet 4
+    step 12: go to cabinet 5
+    step 13: open cabinet 5
+    step 14: close cabinet 5
+    step 15: go to cabinet 6
+    step 16: open cabinet 6
+    step 17: close cabinet 6
+    step 18: go to cabinet 7
+    step 19: open cabinet 7
+    step 20: close cabinet 7
+    step 21: go to cabinet 8
+    step 22: open cabinet 8
+    step 23: close cabinet 8
+    step 24: go to cabinet 9
+    step 25: open cabinet 9
+    step 26: close cabinet 9
+    step 27: go to cabinet 10
+    step 28: open cabinet 10
+    step 29: close cabinet 10
+    step 30: go to cabinet 11
+    step 31: open cabinet 11
+    step 32: close cabinet 11
+    step 33: go to cabinet 12
+    step 34: open cabinet 12
+    step 35: close cabinet 12
+    step 36: go to cabinet 13
+    step 37: open cabinet 13
+    step 38: close cabinet 13
+    step 39: go to cabinet 14
+    step 40: open cabinet 14
+    step 41: close cabinet 14
+    step 42: go to cabinet 15
+    step 43: open cabinet 15
+    step 44: close cabinet 15
+    step 45: go to cabinet 16
+    step 46: open cabinet 16
+    step 47: close cabinet 16
+    step 48: go to cabinet 17
+    step 49: open cabinet 17
+    step 50: close cabinet 17
+Round 10/20: 90 experiences, 39 clusters
+  train-011-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: close fridge 1
+    step 4: go to countertop 1
+    step 5: take potato 1 from countertop 1
+    step 6: go to diningtable 1
+    step 7: take tomato 2 from diningtable 1
+    step 8: take tomato 3 from diningtable 1
+    step 9: look
+    step 10: go to countertop 2
+    step 11: go to countertop 3
+    step 12: go to sinkbasin 1
+    step 13: go to fridge 1
+    step 14: open fridge 1
+    step 15: close fridge 1
+    step 16: go to diningtable 1
+    step 17: take tomato 2 from diningtable 1
+    step 18: take tomato 3 from diningtable 1
+    step 19: look
+    step 20: go to sinkbasin 1
+    step 21: go to diningtable 1
+    step 22: take tomato 2 from diningtable 1
+    step 23: take tomato 3 from diningtable 1
+    step 24: look
+    step 25: go to fridge 1
+    step 26: open fridge 1
+    step 27: close fridge 1
+    step 28: go to countertop 1
+    step 29: go to countertop 2
+    step 30: go to countertop 3
+    step 31: go to sinkbasin 1
+    step 32: go to diningtable 1
+    step 33: take tomato 2 from diningtable 1
+    step 34: take tomato 3 from diningtable 1
+    step 35: look
+    step 36: go to fridge 1
+    step 37: open fridge 1
+    step 38: close fridge 1
+    step 39: go to sinkbasin 1
+    step 40: go to diningtable 1
+    step 41: take tomato 2 from diningtable 1
+    step 42: take tomato 3 from diningtable 1
+    step 43: look
+    step 44: go to fridge 1
+    step 45: open fridge 1
+    step 46: close fridge 1
+    step 47: go to countertop 1
+    step 48: go to countertop 2
+    step 49: go to countertop 3
+    step 50: go to sinkbasin 1
+  train-011-plan2: start
+    step 1: go to diningtable 1
+    step 2: take tomato 2 from diningtable 1
+    step 3: clean tomato 2 with sinkbasin 1
+    step 4: go to sinkbasin 1
+    step 5: clean tomato 2 with sinkbasin 1
+    step 6: go to diningtable 1
+    step 7: move tomato 2 to diningtable 1
+  train-011-plan3: start
+    step 1: go to diningtable 1
+    step 2: examine tomato 2
+    step 3: take tomato 2 from diningtable 1
+    step 4: go to sinkbasin 1
+    step 5: clean tomato 2 with sinkbasin 1
+    step 6: go to diningtable 1
+    step 7: move tomato 2 to diningtable 1
+Round 11/20: 95 experiences, 41 clusters
+  train-012-plan1: start
+    step 1: look
+    step 2: go to diningtable 1
+    step 3: go to fridge 1
+    step 4: open fridge 1
+    step 5: go to cabinet 1
+    step 6: open cabinet 1
+    step 7: go to cabinet 2
+    step 8: open cabinet 2
+    step 9: take bowl 2 from cabinet 2
+    step 10: go to fridge 1
+    step 11: cool bowl 2 with fridge 1
+    step 12: go to diningtable 1
+    step 13: move bowl 2 to diningtable 1
+  train-012-plan2: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to countertop 1
+    step 4: go to cabinet 1
+    step 5: open cabinet 1
+    step 6: go to cabinet 2
+    step 7: open cabinet 2
+    step 8: take bowl 2 from cabinet 2
+    step 9: go to fridge 1
+    step 10: cool bowl 2 with fridge 1
+    step 11: go to diningtable 1
+    step 12: move bowl 2 to diningtable 1
+  train-012-plan3: start
+    step 1: go to diningtable 1
+    step 2: look
+    step 3: go to fridge 1
+    step 4: open fridge 1
+    step 5: go to cabinet 1
+    step 6: open cabinet 1
+    step 7: go to cabinet 2
+    step 8: open cabinet 2
+    step 9: take bowl 2 from cabinet 2
+    step 10: go to fridge 1
+    step 11: cool bowl 2 with fridge 1
+    step 12: go to diningtable 1
+    step 13: move bowl 2 to diningtable 1
+Round 12/20: 104 experiences, 43 clusters
+  train-013-plan1: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: take egg 2 from countertop 1
+    step 4: go to microwave 1
+    step 5: open microwave 1
+    step 6: heat egg 2 with microwave 1
+    step 7: go to fridge 1
+    step 8: open fridge 1
+    step 9: move egg 2 to fridge 1
+  train-013-plan2: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: take egg 2 from countertop 1
+    step 4: go to microwave 1
+    step 5: open microwave 1
+    step 6: heat egg 2 with microwave 1
+    step 7: go to fridge 1
+    step 8: open fridge 1
+    step 9: move egg 2 to fridge 1
+  train-013-plan3: start
+    step 1: go to cabinet 1
+    step 2: open cabinet 1
+    step 3: go to cabinet 2
+    step 4: open cabinet 2
+    step 5: go to cabinet 3
+    step 6: open cabinet 3
+    step 7: go to cabinet 4
+    step 8: open cabinet 4
+    step 9: go to cabinet 5
+    step 10: open cabinet 5
+    step 11: go to cabinet 6
+    step 12: open cabinet 6
+    step 13: go to cabinet 7
+    step 14: open cabinet 7
+    step 15: go to cabinet 8
+    step 16: open cabinet 8
+    step 17: go to cabinet 9
+    step 18: open cabinet 9
+    step 19: go to cabinet 10
+    step 20: open cabinet 10
+    step 21: take bowl 1 from cabinet 10
+    step 22: go to microwave 1
+    step 23: open microwave 1
+    step 24: heat bowl 1 with microwave 1
+    step 25: go to sinkbasin 1
+    step 26: clean bowl 1 with sinkbasin 1
+    step 27: go to microwave 1
+    step 28: heat bowl 1 with microwave 1
+    step 29: go to fridge 1
+    step 30: open fridge 1
+    step 31: move bowl 1 to fridge 1
+    step 32: go to microwave 1
+    step 33: heat bowl 1 with microwave 1
+    step 34: go to fridge 1
+    step 35: go to cabinet 11
+    step 36: open cabinet 11
+    step 37: go to cabinet 12
+    step 38: open cabinet 12
+    step 39: go to cabinet 13
+    step 40: open cabinet 13
+    step 41: go to cabinet 14
+    step 42: open cabinet 14
+    step 43: go to cabinet 15
+    step 44: open cabinet 15
+    step 45: go to countertop 1
+    step 46: take egg 2 from countertop 1
+    step 47: go to microwave 1
+    step 48: heat egg 2 with microwave 1
+    step 49: go to fridge 1
+    step 50: move egg 2 to fridge 1
+Round 13/20: 112 experiences, 48 clusters
+  train-014-plan1: start
+    step 1: go to cabinet 1
+    step 2: open cabinet 1
+    step 3: close cabinet 1
+    step 4: go to cabinet 2
+    step 5: open cabinet 2
+    step 6: close cabinet 2
+    step 7: go to cabinet 3
+    step 8: open cabinet 3
+    step 9: close cabinet 3
+    step 10: go to cabinet 4
+    step 11: open cabinet 4
+    step 12: close cabinet 4
+    step 13: go to cabinet 5
+    step 14: open cabinet 5
+    step 15: close cabinet 5
+    step 16: go to cabinet 6
+    step 17: open cabinet 6
+    step 18: close cabinet 6
+    step 19: go to cabinet 7
+    step 20: go to cabinet 8
+    step 21: open cabinet 8
+    step 22: close cabinet 8
+    step 23: go to cabinet 9
+    step 24: open cabinet 9
+    step 25: close cabinet 9
+    step 26: go to cabinet 10
+    step 27: open cabinet 10
+    step 28: close cabinet 10
+    step 29: go to cabinet 11
+    step 30: open cabinet 11
+    step 31: close cabinet 11
+    step 32: go to cabinet 12
+    step 33: go to cabinet 13
+    step 34: go to cabinet 13
+    step 35: go to cabinet 14
+    step 36: open cabinet 14
+    step 37: close cabinet 14
+    step 38: go to cabinet 15
+    step 39: go to cabinet 16
+    step 40: open cabinet 16
+    step 41: close cabinet 16
+    step 42: go to cabinet 17
+    step 43: open cabinet 17
+    step 44: close cabinet 17
+    step 45: go to cabinet 18
+    step 46: open cabinet 18
+    step 47: close cabinet 18
+    step 48: go to cabinet 19
+    step 49: open cabinet 19
+    step 50: close cabinet 19
+  train-014-plan2: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: take pan 1 from countertop 1
+    step 4: cool pan 1 with fridge 1
+    step 5: go to fridge 1
+    step 6: open fridge 1
+    step 7: cool pan 1 with fridge 1
+  train-014-plan3: start
+    step 1: look
+    step 2: go to cabinet 1
+    step 3: open cabinet 1
+    step 4: close cabinet 1
+    step 5: go to cabinet 2
+    step 6: open cabinet 2
+    step 7: close cabinet 2
+    step 8: go to cabinet 3
+    step 9: open cabinet 3
+    step 10: close cabinet 3
+    step 11: go to cabinet 4
+    step 12: open cabinet 4
+    step 13: close cabinet 4
+    step 14: go to cabinet 5
+    step 15: open cabinet 5
+    step 16: close cabinet 5
+    step 17: go to cabinet 6
+    step 18: open cabinet 6
+    step 19: close cabinet 6
+    step 20: go to cabinet 7
+    step 21: go to cabinet 8
+    step 22: open cabinet 8
+    step 23: close cabinet 8
+    step 24: go to cabinet 9
+    step 25: open cabinet 9
+    step 26: close cabinet 9
+    step 27: go to cabinet 10
+    step 28: open cabinet 10
+    step 29: close cabinet 10
+    step 30: go to cabinet 11
+    step 31: open cabinet 11
+    step 32: close cabinet 11
+    step 33: go to cabinet 12
+    step 34: go to cabinet 13
+    step 35: go to cabinet 13
+    step 36: go to cabinet 14
+    step 37: open cabinet 14
+    step 38: close cabinet 14
+    step 39: go to cabinet 15
+    step 40: go to cabinet 16
+    step 41: open cabinet 16
+    step 42: close cabinet 16
+    step 43: go to cabinet 17
+    step 44: open cabinet 17
+    step 45: close cabinet 17
+    step 46: go to cabinet 18
+    step 47: open cabinet 18
+    step 48: close cabinet 18
+    step 49: go to cabinet 19
+    step 50: open cabinet 19
+Round 14/20: 119 experiences, 50 clusters
+  train-015-plan1: start
+    step 1: look
+    step 2: go to shelf 1
+    step 3: go to shelf 2
+    step 4: go to shelf 3
+    step 5: go to countertop 1
+    step 6: go to countertop 2
+    step 7: go to sinkbasin 1
+    step 8: go to cabinet 1
+    step 9: open cabinet 1
+    step 10: go to cabinet 2
+    step 11: open cabinet 2
+    step 12: go to cabinet 3
+    step 13: open cabinet 3
+    step 14: go to cabinet 4
+    step 15: open cabinet 4
+    step 16: go to cabinet 5
+    step 17: open cabinet 5
+    step 18: go to cabinet 6
+    step 19: open cabinet 6
+    step 20: go to cabinet 7
+    step 21: open cabinet 7
+    step 22: go to cabinet 8
+    step 23: open cabinet 8
+    step 24: go to cabinet 9
+    step 25: open cabinet 9
+    step 26: take mug 1 from cabinet 9
+    step 27: go to sinkbasin 1
+    step 28: clean mug 1 with sinkbasin 1
+    step 29: go to shelf 1
+    step 30: move mug 1 to shelf 1
+    step 31: go to shelf 1
+    step 32: look
+    step 33: go to shelf 1
+    step 34: look
+    step 35: go to shelf 2
+    step 36: go to shelf 3
+    step 37: go to cabinet 10
+    step 38: open cabinet 10
+    step 39: go to cabinet 11
+    step 40: open cabinet 11
+    step 41: go to cabinet 12
+    step 42: open cabinet 12
+    step 43: go to cabinet 13
+    step 44: open cabinet 13
+    step 45: go to drawer 1
+    step 46: open drawer 1
+    step 47: go to drawer 2
+    step 48: open drawer 2
+    step 49: go to drawer 3
+    step 50: open drawer 3
+  train-015-plan2: start
+    step 1: look
+    step 2: go to shelf 1
+    step 3: go to countertop 1
+    step 4: go to countertop 2
+    step 5: go to sinkbasin 1
+    step 6: go to cabinet 1
+    step 7: open cabinet 1
+    step 8: go to cabinet 2
+    step 9: open cabinet 2
+    step 10: go to cabinet 3
+    step 11: open cabinet 3
+    step 12: go to cabinet 4
+    step 13: open cabinet 4
+    step 14: go to drawer 1
+    step 15: open drawer 1
+    step 16: go to drawer 2
+    step 17: open drawer 2
+    step 18: go to drawer 3
+    step 19: open drawer 3
+    step 20: go to drawer 4
+    step 21: open drawer 4
+    step 22: go to fridge 1
+    step 23: open fridge 1
+    step 24: take bowl 3 from fridge 1
+    step 25: clean bowl 3 with sinkbasin 1
+    step 26: go to sinkbasin 1
+    step 27: clean bowl 3 with sinkbasin 1
+    step 28: go to shelf 1
+    step 29: move bowl 3 to shelf 1
+  train-015-plan3: start
+    step 1: look
+    step 2: go to shelf 1
+    step 3: go to shelf 2
+    step 4: go to shelf 3
+    step 5: go to sinkbasin 1
+    step 6: go to cabinet 1
+    step 7: open cabinet 1
+    step 8: go to cabinet 2
+    step 9: open cabinet 2
+    step 10: go to cabinet 3
+    step 11: open cabinet 3
+    step 12: go to cabinet 4
+    step 13: open cabinet 4
+    step 14: go to cabinet 5
+    step 15: open cabinet 5
+    step 16: go to cabinet 6
+    step 17: open cabinet 6
+    step 18: go to cabinet 7
+    step 19: open cabinet 7
+    step 20: go to cabinet 8
+    step 21: open cabinet 8
+    step 22: go to cabinet 9
+    step 23: open cabinet 9
+    step 24: take mug 1 from cabinet 9
+    step 25: go to sinkbasin 1
+    step 26: clean mug 1 with sinkbasin 1
+    step 27: go to shelf 1
+    step 28: move mug 1 to shelf 1
+    step 29: look
+    step 30: go to shelf 1
+    step 31: look
+    step 32: go to shelf 2
+    step 33: go to shelf 3
+    step 34: go to cabinet 10
+    step 35: open cabinet 10
+    step 36: go to cabinet 11
+    step 37: open cabinet 11
+    step 38: go to cabinet 12
+    step 39: open cabinet 12
+    step 40: go to cabinet 13
+    step 41: open cabinet 13
+    step 42: go to countertop 1
+    step 43: go to countertop 2
+    step 44: go to shelf 1
+    step 45: look
+    step 46: go to shelf 1
+    step 47: look
+    step 48: go to shelf 2
+    step 49: go to shelf 3
+    step 50: go to sinkbasin 1
+Round 15/20: 128 experiences, 53 clusters
+  train-016-plan1: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to countertop 2
+    step 4: take kettle 1 from countertop 2
+    step 5: go to sinkbasin 1
+    step 6: clean kettle 1 with sinkbasin 1
+    step 7: go to cabinet 1
+    step 8: open cabinet 1
+    step 9: move kettle 1 to cabinet 1
+  train-016-plan2: start
+    step 1: look
+    step 2: go to cabinet 1
+    step 3: open cabinet 1
+    step 4: close cabinet 1
+    step 5: go to cabinet 2
+    step 6: open cabinet 2
+    step 7: close cabinet 2
+    step 8: go to cabinet 3
+    step 9: open cabinet 3
+    step 10: close cabinet 3
+    step 11: go to cabinet 4
+    step 12: go to cabinet 5
+    step 13: go to cabinet 6
+    step 14: go to cabinet 7
+    step 15: open cabinet 7
+    step 16: close cabinet 7
+    step 17: go to cabinet 8
+    step 18: open cabinet 8
+    step 19: close cabinet 8
+    step 20: go to cabinet 9
+    step 21: open cabinet 9
+    step 22: close cabinet 9
+    step 23: go to cabinet 10
+    step 24: open cabinet 10
+    step 25: close cabinet 10
+    step 26: go to cabinet 11
+    step 27: open cabinet 11
+    step 28: close cabinet 11
+    step 29: go to cabinet 12
+    step 30: open cabinet 12
+    step 31: close cabinet 12
+    step 32: go to cabinet 13
+    step 33: open cabinet 13
+    step 34: close cabinet 13
+    step 35: go to cabinet 14
+    step 36: open cabinet 14
+    step 37: close cabinet 14
+    step 38: go to cabinet 15
+    step 39: open cabinet 15
+    step 40: close cabinet 15
+    step 41: go to cabinet 16
+    step 42: open cabinet 16
+    step 43: go to sinkbasin 1
+    step 44: look
+    step 45: go to cabinet 14
+    step 46: open cabinet 14
+    step 47: take mug 2 from cabinet 14
+    step 48: go to sinkbasin 1
+    step 49: clean mug 2 with sinkbasin 1
+    step 50: go to cabinet 1
+  train-016-plan3: start
+    step 1: look
+    step 2: go to cabinet 1
+    step 3: open cabinet 1
+    step 4: close cabinet 1
+    step 5: go to cabinet 2
+    step 6: open cabinet 2
+    step 7: close cabinet 2
+    step 8: go to cabinet 3
+    step 9: open cabinet 3
+    step 10: close cabinet 3
+    step 11: go to cabinet 4
+    step 12: go to cabinet 5
+    step 13: go to cabinet 6
+    step 14: go to cabinet 7
+    step 15: open cabinet 7
+    step 16: close cabinet 7
+    step 17: go to cabinet 8
+    step 18: open cabinet 8
+    step 19: close cabinet 8
+    step 20: go to cabinet 9
+    step 21: open cabinet 9
+    step 22: close cabinet 9
+    step 23: go to cabinet 10
+    step 24: open cabinet 10
+    step 25: close cabinet 10
+    step 26: go to cabinet 11
+    step 27: open cabinet 11
+    step 28: close cabinet 11
+    step 29: go to cabinet 12
+    step 30: open cabinet 12
+    step 31: close cabinet 12
+    step 32: go to cabinet 13
+    step 33: open cabinet 13
+    step 34: close cabinet 13
+    step 35: go to cabinet 14
+    step 36: open cabinet 14
+    step 37: close cabinet 14
+    step 38: go to cabinet 15
+    step 39: open cabinet 15
+    step 40: close cabinet 15
+    step 41: go to cabinet 16
+    step 42: open cabinet 16
+    step 43: go to countertop 1
+    step 44: go to countertop 2
+    step 45: take kettle 1 from countertop 2
+    step 46: go to sinkbasin 1
+    step 47: clean kettle 1 with sinkbasin 1
+    step 48: go to cabinet 1
+    step 49: open cabinet 1
+    step 50: move kettle 1 to cabinet 1
+Round 16/20: 136 experiences, 54 clusters
+  train-017-plan1: start
+    step 1: go to garbagecan 1
+    step 2: look
+    step 3: go to drawer 1
+    step 4: open drawer 1
+    step 5: take soapbar 3 from drawer 1
+    step 6: go to sinkbasin 1
+    step 7: clean soapbar 3 with sinkbasin 1
+    step 8: go to garbagecan 1
+    step 9: move soapbar 3 to garbagecan 1
+  train-017-plan2: start
+    step 1: look
+    step 2: go to drawer 1
+    step 3: open drawer 1
+    step 4: take soapbar 3 from drawer 1
+    step 5: go to sinkbasin 1
+    step 6: clean soapbar 3 with sinkbasin 1
+    step 7: go to garbagecan 1
+    step 8: move soapbar 3 to garbagecan 1
+  train-017-plan3: start
+    step 1: go to drawer 1
+    step 2: open drawer 1
+    step 3: take soapbar 3 from drawer 1
+    step 4: go to sinkbasin 1
+    step 5: clean soapbar 3 with sinkbasin 1
+    step 6: go to garbagecan 1
+    step 7: move soapbar 3 to garbagecan 1
+Round 17/20: 145 experiences, 55 clusters
+  train-018-plan1: start
+    step 1: look
+    step 2: go to diningtable 1
+    step 3: go to countertop 1
+    step 4: go to cabinet 1
+    step 5: open cabinet 1
+    step 6: close cabinet 1
+    step 7: go to cabinet 2
+    step 8: open cabinet 2
+    step 9: close cabinet 2
+    step 10: go to cabinet 3
+    step 11: open cabinet 3
+    step 12: close cabinet 3
+    step 13: go to cabinet 4
+    step 14: open cabinet 4
+    step 15: close cabinet 4
+    step 16: go to fridge 1
+    step 17: open fridge 1
+    step 18: close fridge 1
+    step 19: go to sinkbasin 1
+    step 20: go to countertop 1
+    step 21: go to diningtable 1
+    step 22: look
+    step 23: go to fridge 1
+    step 24: open fridge 1
+    step 25: close fridge 1
+    step 26: go to cabinet 5
+    step 27: open cabinet 5
+    step 28: close cabinet 5
+    step 29: go to cabinet 6
+    step 30: open cabinet 6
+    step 31: close cabinet 6
+    step 32: go to cabinet 7
+    step 33: go to cabinet 8
+    step 34: go to cabinet 9
+    step 35: go to cabinet 10
+    step 36: go to diningtable 1
+    step 37: take potato 1 from diningtable 1
+    step 38: go to fridge 1
+    step 39: open fridge 1
+    step 40: cool potato 1 with fridge 1
+    step 41: go to diningtable 1
+    step 42: move potato 1 to diningtable 1
+    step 43: look
+    step 44: inventory
+    step 45: look
+    step 46: go to fridge 1
+    step 47: close fridge 1
+    step 48: go to diningtable 1
+    step 49: look
+    step 50: inventory
+  train-018-plan2: start
+    step 1: look
+    step 2: go to diningtable 1
+    step 3: go to fridge 1
+    step 4: open fridge 1
+    step 5: go to countertop 1
+    step 6: go to sinkbasin 1
+    step 7: go to stoveburner 1
+    step 8: go to stoveburner 2
+    step 9: take pot 1 from stoveburner 2
+    step 10: cool pot 1 with fridge 1
+    step 11: go to fridge 1
+    step 12: cool pot 1 with fridge 1
+    step 13: go to diningtable 1
+    step 14: move pot 1 to diningtable 1
+  train-018-plan3: start
+    step 1: look
+    step 2: go to diningtable 1
+    step 3: go to countertop 1
+    step 4: go to fridge 1
+    step 5: open fridge 1
+    step 6: go to cabinet 1
+    step 7: open cabinet 1
+    step 8: go to cabinet 2
+    step 9: open cabinet 2
+    step 10: go to cabinet 3
+    step 11: open cabinet 3
+    step 12: go to cabinet 4
+    step 13: open cabinet 4
+    step 14: go to cabinet 5
+    step 15: open cabinet 5
+    step 16: go to cabinet 6
+    step 17: open cabinet 6
+    step 18: take bowl 1 from cabinet 6
+    step 19: go to fridge 1
+    step 20: cool bowl 1 with fridge 1
+    step 21: go to diningtable 1
+    step 22: move bowl 1 to diningtable 1
+    step 23: look
+    step 24: go to diningtable 1
+    step 25: look
+    step 26: go to countertop 1
+    step 27: go to diningtable 1
+    step 28: look
+    step 29: go to fridge 1
+    step 30: go to diningtable 1
+    step 31: look
+    step 32: go to countertop 1
+    step 33: go to diningtable 1
+    step 34: look
+    step 35: go to fridge 1
+    step 36: go to diningtable 1
+    step 37: look
+    step 38: go to fridge 1
+    step 39: go to diningtable 1
+    step 40: look
+    step 41: go to countertop 1
+    step 42: go to diningtable 1
+    step 43: look
+    step 44: go to fridge 1
+    step 45: go to diningtable 1
+    step 46: look
+    step 47: go to countertop 1
+    step 48: go to diningtable 1
+    step 49: look
+    step 50: go to fridge 1
+Round 18/20: 152 experiences, 55 clusters
+  train-019-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to countertop 1
+    step 4: go to countertop 2
+    step 5: go to cabinet 1
+    step 6: go to cabinet 2
+    step 7: go to cabinet 3
+    step 8: go to cabinet 4
+    step 9: go to cabinet 5
+    step 10: open cabinet 5
+    step 11: go to cabinet 6
+    step 12: open cabinet 6
+    step 13: go to cabinet 7
+    step 14: go to cabinet 8
+    step 15: open cabinet 8
+    step 16: go to cabinet 9
+    step 17: open cabinet 9
+    step 18: go to cabinet 10
+    step 19: open cabinet 10
+    step 20: go to cabinet 11
+    step 21: go to cabinet 12
+    step 22: go to cabinet 13
+    step 23: open cabinet 13
+    step 24: go to cabinet 14
+    step 25: go to cabinet 14
+    step 26: go to cabinet 15
+    step 27: open cabinet 15
+    step 28: go to cabinet 16
+    step 29: go to cabinet 17
+    step 30: open cabinet 17
+    step 31: go to cabinet 18
+    step 32: go to cabinet 19
+    step 33: go to cabinet 20
+    step 34: open cabinet 20
+    step 35: go to fridge 1
+    step 36: go to sinkbasin 1
+    step 37: go to countertop 1
+    step 38: go to fridge 1
+    step 39: go to garbagecan 1
+    step 40: go to fridge 1
+    step 41: go to countertop 2
+    step 42: go to sinkbasin 1
+    step 43: go to fridge 1
+    step 44: go to countertop 1
+    step 45: go to fridge 1
+    step 46: go to garbagecan 1
+    step 47: go to sinkbasin 1
+    step 48: go to fridge 1
+    step 49: go to countertop 1
+    step 50: go to fridge 1
+  train-019-plan2: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to countertop 1
+    step 4: go to countertop 2
+    step 5: go to cabinet 1
+    step 6: go to cabinet 2
+    step 7: go to cabinet 3
+    step 8: go to cabinet 4
+    step 9: go to cabinet 5
+    step 10: open cabinet 5
+    step 11: go to fridge 1
+    step 12: go to cabinet 6
+    step 13: open cabinet 6
+    step 14: go to cabinet 7
+    step 15: go to cabinet 8
+    step 16: open cabinet 8
+    step 17: go to cabinet 9
+    step 18: open cabinet 9
+    step 19: go to cabinet 10
+    step 20: open cabinet 10
+    step 21: go to fridge 1
+    step 22: go to countertop 1
+    step 23: go to countertop 2
+    step 24: go to sinkbasin 1
+    step 25: go to fridge 1
+    step 26: go to cabinet 11
+    step 27: go to cabinet 12
+    step 28: go to cabinet 13
+    step 29: open cabinet 13
+    step 30: go to cabinet 14
+    step 31: go to cabinet 14
+    step 32: go to cabinet 15
+    step 33: open cabinet 15
+    step 34: go to cabinet 16
+    step 35: go to cabinet 17
+    step 36: open cabinet 17
+    step 37: go to cabinet 18
+    step 38: go to cabinet 19
+    step 39: go to cabinet 20
+    step 40: open cabinet 20
+    step 41: go to fridge 1
+    step 42: go to garbagecan 1
+    step 43: go to countertop 1
+    step 44: go to fridge 1
+    step 45: go to sinkbasin 1
+    step 46: go to countertop 2
+    step 47: go to fridge 1
+    step 48: go to cabinet 1
+    step 49: go to cabinet 2
+    step 50: go to cabinet 3
+  train-019-plan3: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: look
+    step 4: close fridge 1
+    step 5: go to countertop 1
+    step 6: look
+    step 7: go to countertop 2
+    step 8: go to cabinet 1
+    step 9: go to cabinet 2
+    step 10: go to cabinet 3
+    step 11: go to cabinet 4
+    step 12: go to cabinet 5
+    step 13: open cabinet 5
+    step 14: close cabinet 5
+    step 15: go to cabinet 6
+    step 16: open cabinet 6
+    step 17: close cabinet 6
+    step 18: go to cabinet 7
+    step 19: go to cabinet 8
+    step 20: open cabinet 8
+    step 21: close cabinet 8
+    step 22: go to cabinet 9
+    step 23: open cabinet 9
+    step 24: close cabinet 9
+    step 25: go to cabinet 10
+    step 26: open cabinet 10
+    step 27: close cabinet 10
+    step 28: go to cabinet 11
+    step 29: go to cabinet 12
+    step 30: go to cabinet 13
+    step 31: open cabinet 13
+    step 32: close cabinet 13
+    step 33: go to cabinet 14
+    step 34: go to cabinet 14
+    step 35: go to cabinet 15
+    step 36: open cabinet 15
+    step 37: close cabinet 15
+    step 38: go to cabinet 16
+    step 39: go to cabinet 17
+    step 40: open cabinet 17
+    step 41: close cabinet 17
+    step 42: go to cabinet 18
+    step 43: go to cabinet 19
+    step 44: go to cabinet 20
+    step 45: open cabinet 20
+    step 46: go to fridge 1
+    step 47: open fridge 1
+    step 48: look
+    step 49: close fridge 1
+    step 50: go to garbagecan 1
+Round 19/20: 161 experiences, 59 clusters
+  train-020-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: close fridge 1
+    step 4: go to countertop 1
+    step 5: go to countertop 2
+    step 6: go to cabinet 1
+    step 7: open cabinet 1
+    step 8: close cabinet 1
+    step 9: go to cabinet 2
+    step 10: go to cabinet 3
+    step 11: open cabinet 3
+    step 12: close cabinet 3
+    step 13: go to cabinet 4
+    step 14: go to cabinet 5
+    step 15: open cabinet 5
+    step 16: close cabinet 5
+    step 17: go to cabinet 6
+    step 18: open cabinet 6
+    step 19: close cabinet 6
+    step 20: go to cabinet 7
+    step 21: open cabinet 7
+    step 22: close cabinet 7
+    step 23: go to cabinet 8
+    step 24: open cabinet 8
+    step 25: close cabinet 8
+    step 26: go to cabinet 9
+    step 27: open cabinet 9
+    step 28: go to drawer 1
+    step 29: open drawer 1
+    step 30: close drawer 1
+    step 31: go to drawer 2
+    step 32: open drawer 2
+    step 33: close drawer 2
+    step 34: go to drawer 3
+    step 35: open drawer 3
+    step 36: close drawer 3
+    step 37: go to drawer 4
+    step 38: open drawer 4
+    step 39: close drawer 4
+    step 40: go to drawer 5
+    step 41: go to drawer 6
+    step 42: open drawer 6
+    step 43: close drawer 6
+    step 44: go to drawer 7
+    step 45: go to drawer 8
+    step 46: go to drawer 9
+    step 47: open drawer 9
+    step 48: close drawer 9
+    step 49: go to sinkbasin 1
+    step 50: take apple 3 from sinkbasin 1
+  train-020-plan2: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: close fridge 1
+    step 4: go to cabinet 1
+    step 5: open cabinet 1
+    step 6: close cabinet 1
+    step 7: go to cabinet 2
+    step 8: go to cabinet 3
+    step 9: open cabinet 3
+    step 10: close cabinet 3
+    step 11: go to cabinet 4
+    step 12: go to cabinet 5
+    step 13: open cabinet 5
+    step 14: close cabinet 5
+    step 15: go to cabinet 6
+    step 16: open cabinet 6
+    step 17: close cabinet 6
+    step 18: go to cabinet 7
+    step 19: open cabinet 7
+    step 20: close cabinet 7
+    step 21: go to cabinet 8
+    step 22: open cabinet 8
+    step 23: close cabinet 8
+    step 24: go to cabinet 9
+    step 25: open cabinet 9
+    step 26: close cabinet 9
+    step 27: go to drawer 1
+    step 28: open drawer 1
+    step 29: close drawer 1
+    step 30: go to drawer 2
+    step 31: open drawer 2
+    step 32: close drawer 2
+    step 33: go to drawer 3
+    step 34: open drawer 3
+    step 35: close drawer 3
+    step 36: go to drawer 4
+    step 37: open drawer 4
+    step 38: close drawer 4
+    step 39: go to drawer 5
+    step 40: go to drawer 6
+    step 41: open drawer 6
+    step 42: close drawer 6
+    step 43: go to drawer 7
+    step 44: go to drawer 8
+    step 45: go to drawer 9
+    step 46: open drawer 9
+    step 47: close drawer 9
+    step 48: go to drawer 10
+    step 49: go to drawer 11
+    step 50: open drawer 11
+  train-020-plan3: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: look
+    step 4: close fridge 1
+    step 5: go to countertop 1
+    step 6: go to countertop 2
+    step 7: go to cabinet 1
+    step 8: open cabinet 1
+    step 9: close cabinet 1
+    step 10: go to cabinet 2
+    step 11: go to cabinet 3
+    step 12: open cabinet 3
+    step 13: close cabinet 3
+    step 14: go to cabinet 4
+    step 15: go to cabinet 5
+    step 16: open cabinet 5
+    step 17: close cabinet 5
+    step 18: go to cabinet 6
+    step 19: open cabinet 6
+    step 20: close cabinet 6
+    step 21: go to cabinet 7
+    step 22: open cabinet 7
+    step 23: close cabinet 7
+    step 24: go to cabinet 8
+    step 25: open cabinet 8
+    step 26: close cabinet 8
+    step 27: go to cabinet 9
+    step 28: open cabinet 9
+    step 29: close cabinet 9
+    step 30: go to fridge 1
+    step 31: open fridge 1
+    step 32: close fridge 1
+    step 33: go to sinkbasin 1
+    step 34: take apple 3 from sinkbasin 1
+    step 35: cool apple 3 with fridge 1
+    step 36: go to fridge 1
+    step 37: open fridge 1
+    step 38: cool apple 3 with fridge 1
+    step 39: go to garbagecan 1
+    step 40: move apple 3 to garbagecan 1
+Round 20/20: 170 experiences, 60 clusters
+  test-initial-v0-001-plan1: start
+    step 1: go to cabinet 1
+    step 2: open cabinet 1
+    step 3: look
+    step 4: go to cabinet 2
+    step 5: open cabinet 2
+    step 6: go to cabinet 3
+    step 7: go to cabinet 4
+    step 8: go to cabinet 5
+    step 9: open cabinet 5
+    step 10: go to cabinet 6
+    step 11: open cabinet 6
+    step 12: go to drawer 1
+    step 13: open drawer 1
+    step 14: go to drawer 2
+    step 15: open drawer 2
+    step 16: go to drawer 3
+    step 17: open drawer 3
+    step 18: go to cabinet 1
+    step 19: take plate 1 from cabinet 1
+    step 20: go to countertop 1
+    step 21: move plate 1 to countertop 1
+    step 22: go to sinkbasin 1
+    step 23: clean plate 1 with sinkbasin 1
+    step 24: look
+    step 25: go to countertop 1
+    step 26: take plate 1 from countertop 1
+    step 27: go to sinkbasin 1
+    step 28: clean plate 1 with sinkbasin 1
+    step 29: go to countertop 1
+    step 30: move plate 1 to countertop 1
+  test-initial-v0-001-plan2: start
+    step 1: look in sinkbasin 1
+    step 2: look at sinkbasin 1
+    step 3: go to sinkbasin 1
+    step 4: look in cabinet 1
+    step 5: look at cabinet 1
+    step 6: go to cabinet 1
+    step 7: take plate 1 from cabinet 1
+    step 8: clean plate 1 with sinkbasin 1
+    step 9: go to sinkbasin 1
+    step 10: clean plate 1 with sinkbasin 1
+    step 11: go to countertop 1
+    step 12: move plate 1 to countertop 1
+  test-initial-v0-001-plan3: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to countertop 2
+    step 4: take plate 2 from countertop 2
+    step 5: go to sinkbasin 1
+    step 6: clean plate 2 with sinkbasin 1
+    step 7: go to countertop 1
+    step 8: move plate 2 to countertop 1
+  test-initial-v0-002-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to countertop 1
+    step 4: go to fridge 1
+    step 5: go to shelf 1
+    step 6: go to shelf 2
+    step 7: go to shelf 3
+    step 8: go to cabinet 1
+    step 9: go to cabinet 2
+    step 10: open cabinet 2
+    step 11: go to cabinet 3
+    step 12: go to cabinet 4
+    step 13: go to cabinet 5
+    step 14: open cabinet 5
+    step 15: go to cabinet 6
+    step 16: open cabinet 6
+    step 17: go to fridge 1
+    step 18: go to drawer 1
+    step 19: open drawer 1
+    step 20: go to drawer 2
+    step 21: open drawer 2
+    step 22: go to drawer 3
+    step 23: open drawer 3
+    step 24: go to fridge 1
+    step 25: go to countertop 2
+    step 26: take lettuce 1 from countertop 2
+    step 27: go to fridge 1
+    step 28: cool lettuce 1 with fridge 1
+    step 29: go to countertop 1
+    step 30: move lettuce 1 to countertop 1
+  test-initial-v0-002-plan2: start
+    step 1: look
+    step 2: go to sinkbasin 1
+    step 3: look
+    step 4: go to countertop 1
+    step 5: go to cabinet 1
+    step 6: go to cabinet 2
+    step 7: open cabinet 2
+    step 8: go to cabinet 3
+    step 9: go to fridge 1
+    step 10: open fridge 1
+    step 11: go to sinkbasin 1
+    step 12: go to fridge 1
+    step 13: look
+    step 14: go to countertop 2
+    step 15: take lettuce 1 from countertop 2
+    step 16: go to fridge 1
+    step 17: cool lettuce 1 with fridge 1
+    step 18: go to countertop 1
+    step 19: move lettuce 1 to countertop 1
+  test-initial-v0-002-plan3: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to countertop 1
+    step 4: go to fridge 1
+    step 5: look
+    step 6: go to countertop 2
+    step 7: take lettuce 1 from countertop 2
+    step 8: go to fridge 1
+    step 9: go to microwave 1
+    step 10: open microwave 1
+    step 11: go to fridge 1
+    step 12: go to microwave 1
+    step 13: cool lettuce 1 with microwave 1
+    step 14: go to countertop 1
+    step 15: go to countertop 2
+    step 16: go to countertop 3
+    step 17: go to microwave 1
+    step 18: close microwave 1
+    step 19: go to fridge 1
+    step 20: go to countertop 2
+    step 21: go to countertop 1
+    step 22: go to microwave 1
+    step 23: open microwave 1
+    step 24: cool lettuce 1 with microwave 1
+    step 25: go to fridge 1
+    step 26: go to countertop 3
+    step 27: go to microwave 1
+    step 28: close microwave 1
+    step 29: go to countertop 2
+    step 30: go to fridge 1
+    step 31: go to countertop 1
+    step 32: go to microwave 1
+    step 33: open microwave 1
+    step 34: cool lettuce 1 with microwave 1
+    step 35: go to countertop 2
+    step 36: go to fridge 1
+    step 37: go to countertop 3
+    step 38: go to microwave 1
+    step 39: close microwave 1
+    step 40: go to countertop 2
+    step 41: go to fridge 1
+    step 42: go to countertop 1
+    step 43: go to microwave 1
+    step 44: open microwave 1
+    step 45: cool lettuce 1 with microwave 1
+    step 46: go to fridge 1
+    step 47: go to countertop 2
+    step 48: go to countertop 3
+    step 49: go to microwave 1
+    step 50: close microwave 1
+  test-initial-v0-003-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take egg 2 from fridge 1
+    step 4: go to sinkbasin 1
+    step 5: clean egg 2 with sinkbasin 1
+    step 6: go to microwave 1
+    step 7: open microwave 1
+    step 8: move egg 2 to microwave 1
+  test-initial-v0-003-plan2: start
+    step 1: go to sinkbasin 1
+    step 2: go to fridge 1
+    step 3: open fridge 1
+    step 4: take egg 2 from fridge 1
+    step 5: go to sinkbasin 1
+    step 6: clean egg 2 with sinkbasin 1
+    step 7: go to countertop 1
+    step 8: take bowl 2 from countertop 1
+    step 9: move bowl 2 to sinkbasin 1
+    step 10: take bowl 2 from countertop 1
+    step 11: go to cabinet 1
+    step 12: go to cabinet 2
+    step 13: open cabinet 2
+    step 14: go to cabinet 3
+    step 15: go to countertop 1
+    step 16: take bowl 2 from countertop 1
+    step 17: go to cabinet 4
+    step 18: go to cabinet 5
+    step 19: open cabinet 5
+    step 20: go to cabinet 6
+    step 21: open cabinet 6
+    step 22: go to drawer 1
+    step 23: open drawer 1
+    step 24: go to drawer 2
+    step 25: open drawer 2
+    step 26: go to drawer 3
+    step 27: open drawer 3
+    step 28: go to countertop 1
+    step 29: take bowl 2 from countertop 1
+    step 30: go to sinkbasin 1
+    step 31: go to microwave 1
+    step 32: open microwave 1
+    step 33: go to countertop 1
+    step 34: take bowl 2 from countertop 1
+    step 35: go to sinkbasin 1
+    step 36: go to microwave 1
+    step 37: move egg 2 to microwave 1
+  test-initial-v0-003-plan3: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take egg 2 from fridge 1
+    step 4: go to sinkbasin 1
+    step 5: look
+    step 6: clean egg 2 with sinkbasin 1
+    step 7: go to microwave 1
+    step 8: open microwave 1
+    step 9: move egg 2 to microwave 1
+  test-initial-v0-004-plan1: start
+    step 1: look
+    step 2: go to fridge 1
+    step 3: open fridge 1
+    step 4: go to countertop 1
+    step 5: take tomato 1 from countertop 1
+    step 6: go to microwave 1
+    step 7: open microwave 1
+    step 8: heat tomato 1 with microwave 1
+    step 9: go to garbagecan 1
+    step 10: move tomato 1 to garbagecan 1
+  test-initial-v0-004-plan2: start
+    step 1: look
+    step 2: go to cabinet 1
+    step 3: go to cabinet 2
+    step 4: open cabinet 2
+    step 5: go to cabinet 3
+    step 6: go to cabinet 4
+    step 7: go to cabinet 5
+    step 8: open cabinet 5
+    step 9: go to cabinet 6
+    step 10: open cabinet 6
+    step 11: go to drawer 1
+    step 12: open drawer 1
+    step 13: go to drawer 2
+    step 14: open drawer 2
+    step 15: go to drawer 3
+    step 16: open drawer 3
+    step 17: go to shelf 1
+    step 18: go to shelf 2
+    step 19: go to shelf 3
+    step 20: go to fridge 1
+    step 21: open fridge 1
+    step 22: go to countertop 1
+    step 23: take tomato 1 from countertop 1
+    step 24: go to stoveburner 1
+    step 25: heat tomato 1 with stoveburner 1
+    step 26: go to countertop 1
+    step 27: go to stoveburner 1
+    step 28: heat tomato 1 with stoveburner 1
+    step 29: go to microwave 1
+    step 30: open microwave 1
+    step 31: heat tomato 1 with microwave 1
+    step 32: go to garbagecan 1
+    step 33: move tomato 1 to garbagecan 1
+  test-initial-v0-004-plan3: start
+    step 1: look
+    step 2: go to garbagecan 1
+    step 3: look
+    step 4: go to fridge 1
+    step 5: open fridge 1
+    step 6: go to countertop 1
+    step 7: take tomato 1 from countertop 1
+    step 8: go to microwave 1
+    step 9: open microwave 1
+    step 10: heat tomato 1 with microwave 1
+    step 11: go to garbagecan 1
+    step 12: move tomato 1 to garbagecan 1
+  test-initial-v0-005-plan1: start
+    step 1: look
+    step 2: go to coffeemachine 1
+    step 3: go to microwave 1
+    step 4: open microwave 1
+    step 5: take cup 1 from microwave 1
+    step 6: go to microwave 1
+    step 7: go to coffeemachine 1
+    step 8: heat cup 1 with microwave 1
+    step 9: go to microwave 1
+    step 10: put cup 1 in microwave 1
+    step 11: move cup 1 to microwave 1
+    step 12: heat cup 1 with microwave 1
+    step 13: take cup 1 from microwave 1
+    step 14: go to coffeemachine 1
+    step 15: move cup 1 to coffeemachine 1
+    step 16: put cup 1 in coffeemachine 1
+    step 17: examine cup 1
+    step 18: go to microwave 1
+    step 19: put cup 1 in microwave 1
+    step 20: move cup 1 to microwave 1
+    step 21: heat cup 1 with microwave 1
+    step 22: close microwave 1
+    step 23: heat cup 1 with microwave 1
+    step 24: open microwave 1
+    step 25: take cup 1 from microwave 1
+    step 26: go to coffeemachine 1
+    step 27: put cup 1 in coffeemachine 1
+    step 28: move cup 1 to coffeemachine 1
+    step 29: examine coffeemachine 1
+    step 30: go to sinkbasin 1
+    step 31: look
+    step 32: go to coffeemachine 1
+    step 33: go to microwave 1
+    step 34: put cup 1 in microwave 1
+    step 35: move cup 1 to microwave 1
+    step 36: heat cup 1 with microwave 1
+    step 37: close microwave 1
+    step 38: heat cup 1 with microwave 1
+    step 39: open microwave 1
+    step 40: take cup 1 from microwave 1
+    step 41: go to coffeemachine 1
+    step 42: put cup 1 in coffeemachine 1
+    step 43: move cup 1 to coffeemachine 1
+    step 44: examine cup 1
+    step 45: go to sinkbasin 1
+    step 46: clean cup 1 with sinkbasin 1
+    step 47: go to microwave 1
+    step 48: put cup 1 in microwave 1
+    step 49: move cup 1 to microwave 1
+    step 50: heat cup 1 with microwave 1
+  test-initial-v0-005-plan2: start
+    step 1: look
+    step 2: look
+    step 3: look
+    step 4: look
+    step 5: look
+    step 6: look
+    step 7: look
+    step 8: look
+    step 9: look
+    step 10: look
+    step 11: look
+    step 12: look
+    step 13: look
+    step 14: look
+    step 15: look
+    step 16: look
+    step 17: look
+    step 18: look
+    step 19: look
+    step 20: look
+    step 21: look
+    step 22: look
+    step 23: look
+    step 24: look
+    step 25: look
+    step 26: look
+    step 27: look
+    step 28: look
+    step 29: look
+    step 30: look
+    step 31: look
+    step 32: look
+    step 33: look
+    step 34: look
+    step 35: look
+    step 36: look
+    step 37: look
+    step 38: look
+    step 39: look
+    step 40: look
+    step 41: look
+    step 42: look
+    step 43: look
+    step 44: look
+    step 45: look
+    step 46: look
+    step 47: look
+    step 48: look
+    step 49: look
+    step 50: look
+  test-initial-v0-005-plan3: start
+    step 1: look
+    step 2: look
+    step 3: go to coffeemachine 1
+    step 4: look
+    step 5: go to countertop 1
+    step 6: go to countertop 2
+    step 7: go to countertop 3
+    step 8: take mug 2 from countertop 3
+    step 9: go to microwave 1
+    step 10: open microwave 1
+    step 11: close microwave 1
+    step 12: go to coffeemachine 1
+    step 13: heat mug 2 with microwave 1
+    step 14: go to microwave 1
+    step 15: open microwave 1
+    step 16: move mug 2 to microwave 1
+    step 17: close microwave 1
+    step 18: heat mug 2 with microwave 1
+    step 19: open microwave 1
+    step 20: take mug 2 from microwave 1
+    step 21: go to coffeemachine 1
+    step 22: move mug 2 to coffeemachine 1
+    step 23: put mug 2 in coffeemachine 1
+    step 24: use coffeemachine 1
+    step 25: examine coffeemachine 1
+    step 26: heat mug 2 with microwave 1
+    step 27: go to microwave 1
+    step 28: close microwave 1
+    step 29: go to coffeemachine 1
+    step 30: heat mug 2 with coffeemachine 1
+    step 31: examine mug 2
+    step 32: look
+    step 33: go to countertop 3
+    step 34: go to fridge 1
+    step 35: open fridge 1
+    step 36: take mug 1 from fridge 1
+    step 37: go to microwave 1
+    step 38: open microwave 1
+    step 39: move mug 1 to microwave 1
+    step 40: close microwave 1
+    step 41: heat mug 1 with microwave 1
+    step 42: open microwave 1
+    step 43: take mug 1 from microwave 1
+    step 44: go to coffeemachine 1
+    step 45: move mug 1 to coffeemachine 1
+    step 46: put mug 1 in coffeemachine 1
+    step 47: use coffeemachine 1
+    step 48: examine coffeemachine 1
+    step 49: heat mug 1 with microwave 1
+    step 50: go to microwave 1
+  test-initial-v0-006-plan1: start
+    step 1: look
+    step 2: look
+    step 3: go to countertop 1
+    step 4: look
+    step 5: go to cabinet 1
+    step 6: open cabinet 1
+    step 7: go to sinkbasin 1
+    step 8: go to countertop 1
+    step 9: take soapbottle 1 from countertop 1
+    step 10: go to sinkbasin 1
+    step 11: clean soapbottle 1 with sinkbasin 1
+    step 12: go to countertop 1
+    step 13: go to handtowelholder 1
+    step 14: go to handtowelholder 2
+    step 15: take handtowel 1 from handtowelholder 2
+    step 16: take handtowel 1 from handtowelholder 2
+    step 17: go to cabinet 1
+    step 18: go to sinkbasin 1
+    step 19: go to towelholder 1
+    step 20: take towel 1 from towelholder 1
+    step 21: take towel 1 from towelholder 1
+    step 22: go to countertop 1
+    step 23: go to sinkbasin 2
+    step 24: go to towelholder 1
+    step 25: take towel 1 from towelholder 1
+    step 26: go to cabinet 1
+    step 27: go to sinkbasin 1
+    step 28: go to towelholder 1
+    step 29: take towel 1 from towelholder 1
+    step 30: go to countertop 1
+    step 31: go to sinkbasin 2
+    step 32: go to towelholder 1
+    step 33: take towel 1 from towelholder 1
+    step 34: go to cabinet 1
+    step 35: go to sinkbasin 1
+    step 36: go to towelholder 1
+    step 37: take towel 1 from towelholder 1
+    step 38: go to countertop 1
+    step 39: go to sinkbasin 2
+    step 40: go to towelholder 1
+    step 41: take towel 1 from towelholder 1
+    step 42: go to cabinet 1
+    step 43: go to sinkbasin 1
+    step 44: go to towelholder 1
+    step 45: take towel 1 from towelholder 1
+    step 46: go to countertop 1
+    step 47: go to cabinet 2
+    step 48: open cabinet 2
+    step 49: go to cabinet 1
+    step 50: go to sinkbasin 1
+  test-initial-v0-006-plan2: start
+    step 1: look
+    step 2: look
+    step 3: look
+    step 4: look
+    step 5: go to countertop 1
+    step 6: look
+    step 7: go to sinkbasin 1
+    step 8: go to towelholder 1
+    step 9: take towel 1 from towelholder 1
+    step 10: go to sinkbasin 1
+    step 11: clean towel 1 with sinkbasin 1
+    step 12: examine towel 1
+    step 13: go to towelholder 1
+    step 14: move towel 1 to towelholder 1
+    step 15: go to cabinet 1
+    step 16: open cabinet 1
+    step 17: go to towelholder 1
+    step 18: take towel 1 from towelholder 1
+    step 19: go to cabinet 1
+    step 20: move towel 1 to cabinet 1
+    step 21: move towel 1 to cabinet 1
+    step 22: put towel 1 in cabinet 1
+    step 23: move towel 1 to cabinet 1
+    step 24: put towel 1 in cabinet 1
+    step 25: go to cabinet 1
+    step 26: look
+    step 27: go to cabinet 1
+    step 28: look
+    step 29: go to towelholder 1
+    step 30: go to sinkbasin 1
+    step 31: clean towel 1 with sinkbasin 1
+    step 32: go to cabinet 1
+    step 33: move towel 1 to cabinet 1
+    step 34: put towel 1 in cabinet 1
+    step 35: go to cabinet 1
+    step 36: look
+    step 37: go to towelholder 1
+    step 38: go to sinkbasin 1
+    step 39: clean towel 1 with sinkbasin 1
+    step 40: go to cabinet 1
+    step 41: move towel 1 to cabinet 1
+    step 42: put towel 1 in cabinet 1
+    step 43: go to cabinet 1
+    step 44: look
+    step 45: go to towelholder 1
+    step 46: go to sinkbasin 1
+    step 47: clean towel 1 with sinkbasin 1
+    step 48: go to cabinet 1
+    step 49: move towel 1 to cabinet 1
+    step 50: put towel 1 in cabinet 1
+  test-initial-v0-006-plan3: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to sinkbasin 1
+    step 4: go to handtowelholder 1
+    step 5: go to cabinet 1
+    step 6: open cabinet 1
+    step 7: close cabinet 1
+    step 8: go to countertop 1
+    step 9: go to handtowelholder 1
+    step 10: go to sinkbasin 1
+    step 11: go to cabinet 2
+    step 12: open cabinet 2
+    step 13: close cabinet 2
+    step 14: go to cabinet 3
+    step 15: open cabinet 3
+    step 16: close cabinet 3
+    step 17: go to countertop 1
+    step 18: go to towelholder 1
+    step 19: take towel 1 from towelholder 1
+    step 20: go to sinkbasin 1
+    step 21: clean towel 1 with sinkbasin 1
+    step 22: examine towel 1
+    step 23: go to handtowelholder 1
+    step 24: move towel 1 to handtowelholder 1
+    step 25: use handtowelholder 1
+    step 26: put towel 1 in handtowelholder 1
+    step 27: go to cabinet 4
+    step 28: open cabinet 4
+    step 29: take cloth 1 from cabinet 4
+    step 30: take cloth 1 from cabinet 4
+    step 31: go to sinkbasin 1
+    step 32: clean cloth 1 with sinkbasin 1
+    step 33: go to cabinet 4
+    step 34: take cloth 1 from cabinet 4
+    step 35: go to countertop 1
+    step 36: go to cabinet 4
+    step 37: take cloth 1 from cabinet 4
+    step 38: go to handtowelholder 1
+    step 39: go to cabinet 4
+    step 40: take cloth 1 from cabinet 4
+    step 41: go to sinkbasin 1
+    step 42: clean cloth 1 with sinkbasin 1
+    step 43: go to cabinet 4
+    step 44: take cloth 1 from cabinet 4
+    step 45: go to handtowelholder 1
+    step 46: put cloth 1 in handtowelholder 1
+    step 47: go to cabinet 4
+    step 48: take cloth 1 from cabinet 4
+    step 49: go to sinkbasin 2
+    step 50: clean cloth 1 with sinkbasin 2
+  test-initial-v0-007-plan1: start
+    step 1: look
+    step 2: go to fridge 1
+    step 3: open fridge 1
+    step 4: close fridge 1
+    step 5: go to countertop 1
+    step 6: go to countertop 2
+    step 7: go to countertop 3
+    step 8: go to fridge 1
+    step 9: open fridge 1
+    step 10: close fridge 1
+    step 11: go to microwave 1
+    step 12: open microwave 1
+    step 13: go to fridge 1
+    step 14: open fridge 1
+    step 15: close fridge 1
+    step 16: go to microwave 1
+    step 17: look
+    step 18: go to fridge 1
+    step 19: open fridge 1
+    step 20: close fridge 1
+    step 21: go to countertop 1
+    step 22: go to countertop 2
+    step 23: go to countertop 3
+    step 24: go to fridge 1
+    step 25: open fridge 1
+    step 26: close fridge 1
+    step 27: go to microwave 1
+    step 28: look
+    step 29: go to fridge 1
+    step 30: open fridge 1
+    step 31: close fridge 1
+    step 32: go to countertop 1
+    step 33: go to countertop 2
+    step 34: go to countertop 3
+    step 35: go to fridge 1
+    step 36: open fridge 1
+    step 37: close fridge 1
+    step 38: go to microwave 1
+    step 39: look
+    step 40: go to fridge 1
+    step 41: open fridge 1
+    step 42: close fridge 1
+    step 43: go to countertop 1
+    step 44: go to countertop 2
+    step 45: go to countertop 3
+    step 46: go to fridge 1
+    step 47: open fridge 1
+    step 48: close fridge 1
+    step 49: go to microwave 1
+    step 50: look
+  test-initial-v0-007-plan2: start
+    step 1: look
+    step 2: go to fridge 1
+    step 3: open fridge 1
+    step 4: look
+    step 5: close fridge 1
+    step 6: go to countertop 1
+    step 7: look
+    step 8: go to countertop 2
+    step 9: look
+    step 10: go to countertop 3
+    step 11: look
+    step 12: go to fridge 1
+    step 13: open fridge 1
+    step 14: close fridge 1
+    step 15: go to stoveburner 1
+    step 16: look
+    step 17: go to fridge 1
+    step 18: open fridge 1
+    step 19: close fridge 1
+    step 20: go to microwave 1
+    step 21: open microwave 1
+    step 22: close microwave 1
+    step 23: go to stoveburner 1
+    step 24: take pan 1 from stoveburner 1
+    step 25: go to fridge 1
+    step 26: open fridge 1
+    step 27: close fridge 1
+    step 28: go to countertop 1
+    step 29: look
+    step 30: go to stoveburner 1
+    step 31: put pan 1 on stoveburner 1
+    step 32: move pan 1 to stoveburner 1
+    step 33: go to fridge 1
+    step 34: open fridge 1
+    step 35: look
+    step 36: close fridge 1
+    step 37: go to microwave 1
+    step 38: open microwave 1
+    step 39: close microwave 1
+    step 40: go to stoveburner 1
+    step 41: look
+    step 42: go to fridge 1
+    step 43: open fridge 1
+    step 44: close fridge 1
+    step 45: go to garbagecan 1
+    step 46: take egg 1 from garbagecan 1
+    step 47: go to stoveburner 1
+    step 48: heat egg 1 with stoveburner 1
+    step 49: put egg 1 on stoveburner 1
+    step 50: move egg 1 to stoveburner 1
+  test-initial-v0-007-plan3: start
+    step 1: look
+    step 2: go to fridge 1
+    step 3: open fridge 1
+    step 4: close fridge 1
+    step 5: go to countertop 1
+    step 6: go to countertop 2
+    step 7: go to countertop 3
+    step 8: go to fridge 1
+    step 9: open fridge 1
+    step 10: close fridge 1
+    step 11: go to microwave 1
+    step 12: open microwave 1
+    step 13: close microwave 1
+    step 14: go to fridge 1
+    step 15: open fridge 1
+    step 16: close fridge 1
+    step 17: go to garbagecan 1
+    step 18: take egg 1 from garbagecan 1
+    step 19: go to microwave 1
+    step 20: open microwave 1
+    step 21: heat egg 1 with microwave 1
+    step 22: go to garbagecan 1
+    step 23: move egg 1 to garbagecan 1
+  test-initial-v0-008-plan1: start
+    step 1: look
+    step 2: go to cabinet 1
+    step 3: open cabinet 1
+    step 4: close cabinet 1
+    step 5: go to cabinet 2
+    step 6: open cabinet 2
+    step 7: go to cabinet 3
+    step 8: open cabinet 3
+    step 9: close cabinet 3
+    step 10: go to cabinet 4
+    step 11: open cabinet 4
+    step 12: close cabinet 4
+    step 13: go to cabinet 5
+    step 14: open cabinet 5
+    step 15: go to cabinet 6
+    step 16: open cabinet 6
+    step 17: go to drawer 1
+    step 18: open drawer 1
+    step 19: close drawer 1
+    step 20: go to drawer 2
+    step 21: open drawer 2
+    step 22: close drawer 2
+    step 23: go to drawer 3
+    step 24: open drawer 3
+    step 25: close drawer 3
+    step 26: go to countertop 1
+    step 27: go to countertop 2
+    step 28: go to countertop 3
+    step 29: take spatula 1 from countertop 3
+    step 30: go to sinkbasin 1
+    step 31: clean spatula 1 with sinkbasin 1
+    step 32: go to drawer 1
+    step 33: open drawer 1
+    step 34: move spatula 1 to drawer 1
+  test-initial-v0-008-plan2: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to countertop 2
+    step 4: go to countertop 3
+    step 5: take spatula 1 from countertop 3
+    step 6: go to sinkbasin 1
+    step 7: clean spatula 1 with sinkbasin 1
+    step 8: go to drawer 1
+    step 9: open drawer 1
+    step 10: move spatula 1 to drawer 1
+  test-initial-v0-008-plan3: start
+    step 1: look
+    step 2: go to sinkbasin 1
+    step 3: look
+    step 4: go to fridge 1
+    step 5: open fridge 1
+    step 6: close fridge 1
+    step 7: go to drawer 1
+    step 8: open drawer 1
+    step 9: close drawer 1
+    step 10: go to drawer 2
+    step 11: open drawer 2
+    step 12: close drawer 2
+    step 13: go to drawer 3
+    step 14: open drawer 3
+    step 15: close drawer 3
+    step 16: go to sinkbasin 1
+    step 17: look
+    step 18: go to fridge 1
+    step 19: open fridge 1
+    step 20: close fridge 1
+    step 21: go to countertop 1
+    step 22: look
+    step 23: go to countertop 2
+    step 24: look
+    step 25: go to countertop 3
+    step 26: take spatula 1 from countertop 3
+    step 27: go to sinkbasin 1
+    step 28: clean spatula 1 with sinkbasin 1
+    step 29: go to drawer 1
+    step 30: open drawer 1
+    step 31: move spatula 1 to drawer 1
+  test-initial-v0-009-plan1: start
+    step 1: look
+    step 2: look
+    step 3: look
+    step 4: look
+    step 5: look
+    step 6: look
+    step 7: go to countertop 1
+    step 8: take mug 1 from countertop 1
+    step 9: go to fridge 1
+    step 10: open fridge 1
+    step 11: cool mug 1 with fridge 1
+    step 12: go to coffeemachine 1
+    step 13: move mug 1 to coffeemachine 1
+  test-initial-v0-009-plan2: start
+    step 1: look
+    step 2: look
+    step 3: look
+    step 4: look
+    step 5: go to sinkbasin 1
+    step 6: look
+    step 7: open sinkbasin 1
+    step 8: go to coffeemachine 1
+    step 9: go to cabinet 1
+    step 10: open cabinet 1
+    step 11: go to cabinet 2
+    step 12: open cabinet 2
+    step 13: go to cabinet 3
+    step 14: open cabinet 3
+    step 15: go to cabinet 4
+    step 16: open cabinet 4
+    step 17: go to cabinet 5
+    step 18: open cabinet 5
+    step 19: go to cabinet 6
+    step 20: open cabinet 6
+    step 21: go to countertop 1
+    step 22: take mug 1 from countertop 1
+    step 23: go to sinkbasin 1
+    step 24: cool mug 1 with sinkbasin 1
+    step 25: put mug 1 in sinkbasin 1
+    step 26: go to coffeemachine 1
+    step 27: move mug 1 to coffeemachine 1
+    step 28: cool mug 1 with sinkbasin 1
+    step 29: go to sinkbasin 1
+    step 30: put mug 1 in sinkbasin 1
+    step 31: cool mug 1 with sinkbasin 1
+    step 32: look
+    step 33: go to coffeemachine 1
+    step 34: take mug 1 from coffeemachine 1
+    step 35: go to sinkbasin 1
+    step 36: cool mug 1 with sinkbasin 1
+    step 37: put mug 1 in sinkbasin 1
+    step 38: go to fridge 1
+    step 39: open fridge 1
+    step 40: go to sinkbasin 1
+    step 41: cool mug 1 with sinkbasin 1
+    step 42: go to coffeemachine 1
+    step 43: move mug 1 to coffeemachine 1
+    step 44: cool mug 1 with sinkbasin 1
+    step 45: go to sinkbasin 1
+    step 46: take mug 1 from coffeemachine 1
+    step 47: go to coffeemachine 1
+    step 48: take mug 1 from coffeemachine 1
+    step 49: go to sinkbasin 1
+    step 50: cool mug 1 with sinkbasin 1
+  test-initial-v0-009-plan3: start
+    step 1: look
+    step 2: look
+    step 3: look
+    step 4: look
+    step 5: look
+    step 6: look
+    step 7: go to countertop 1
+    step 8: take mug 1 from countertop 1
+    step 9: go to stoveburner 1
+    step 10: heat mug 1 with stoveburner 1
+    step 11: go to fridge 1
+    step 12: open fridge 1
+    step 13: move mug 1 to fridge 1
+    step 14: close fridge 1
+    step 15: go to fridge 1
+    step 16: open fridge 1
+    step 17: take mug 1 from fridge 1
+    step 18: go to coffeemachine 1
+    step 19: move mug 1 to coffeemachine 1
+    step 20: cool mug 1 with fridge 1
+    step 21: go to fridge 1
+    step 22: close fridge 1
+    step 23: go to coffeemachine 1
+    step 24: cool mug 1 with coffeemachine 1
+    step 25: look
+    step 26: take mug 1 from coffeemachine 1
+    step 27: go to fridge 1
+    step 28: open fridge 1
+    step 29: cool mug 1 with fridge 1
+    step 30: move mug 1 to coffeemachine 1
+    step 31: go to coffeemachine 1
+    step 32: move mug 1 to coffeemachine 1
+  test-initial-v0-010-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to sinkbasin 1
+    step 4: go to fridge 1
+    step 5: take potato 1 from fridge 1
+    step 6: go to sinkbasin 1
+    step 7: clean potato 1 with sinkbasin 1
+    step 8: go to microwave 1
+    step 9: open microwave 1
+    step 10: move potato 1 to microwave 1
+    step 11: close microwave 1
+    step 12: go to fridge 1
+    step 13: take egg 1 from fridge 1
+    step 14: look
+    step 15: go to sinkbasin 1
+    step 16: go to fridge 1
+    step 17: take egg 1 from fridge 1
+    step 18: look
+    step 19: go to shelf 1
+    step 20: go to shelf 2
+    step 21: go to shelf 3
+    step 22: go to countertop 1
+    step 23: go to countertop 2
+    step 24: go to countertop 3
+    step 25: take egg 1 from countertop 3
+    step 26: go to sinkbasin 1
+    step 27: clean egg 1 with sinkbasin 1
+    step 28: go to microwave 1
+    step 29: open microwave 1
+    step 30: move egg 1 to microwave 1
+  test-initial-v0-010-plan2: start
+    step 1: go to drawer 1
+    step 2: open drawer 1
+    step 3: go to drawer 2
+    step 4: open drawer 2
+    step 5: go to drawer 3
+    step 6: open drawer 3
+    step 7: go to cabinet 1
+    step 8: go to cabinet 2
+    step 9: open cabinet 2
+    step 10: go to cabinet 3
+    step 11: go to cabinet 4
+    step 12: go to cabinet 5
+    step 13: open cabinet 5
+    step 14: go to cabinet 6
+    step 15: open cabinet 6
+    step 16: go to fridge 1
+    step 17: open fridge 1
+    step 18: go to sinkbasin 1
+    step 19: look
+    step 20: go to countertop 1
+    step 21: go to countertop 2
+    step 22: go to countertop 3
+    step 23: take egg 1 from countertop 3
+    step 24: go to sinkbasin 1
+    step 25: clean egg 1 with sinkbasin 1
+    step 26: go to microwave 1
+    step 27: open microwave 1
+    step 28: move egg 1 to microwave 1
+  test-initial-v0-010-plan3: start
+    step 1: go to shelf 1
+    step 2: go to shelf 2
+    step 3: go to shelf 3
+    step 4: go to cabinet 1
+    step 5: go to cabinet 2
+    step 6: open cabinet 2
+    step 7: go to cabinet 3
+    step 8: go to cabinet 4
+    step 9: go to cabinet 5
+    step 10: open cabinet 5
+    step 11: go to cabinet 6
+    step 12: open cabinet 6
+    step 13: go to fridge 1
+    step 14: open fridge 1
+    step 15: go to sinkbasin 1
+    step 16: look
+    step 17: go to countertop 1
+    step 18: go to countertop 2
+    step 19: go to countertop 3
+    step 20: take egg 1 from countertop 3
+    step 21: go to sinkbasin 1
+    step 22: clean egg 1 with sinkbasin 1
+    step 23: go to microwave 1
+    step 24: open microwave 1
+    step 25: move egg 1 to microwave 1
+  test-initial-v0-011-plan1: start
+    step 1: go to cabinet 1
+    step 2: go to cabinet 2
+    step 3: open cabinet 2
+    step 4: go to cabinet 3
+    step 5: go to cabinet 4
+    step 6: go to cabinet 5
+    step 7: open cabinet 5
+    step 8: go to cabinet 6
+    step 9: open cabinet 6
+    step 10: go to drawer 1
+    step 11: open drawer 1
+    step 12: go to drawer 2
+    step 13: open drawer 2
+    step 14: go to drawer 3
+    step 15: open drawer 3
+    step 16: go to sinkbasin 1
+    step 17: go to countertop 1
+    step 18: go to countertop 2
+    step 19: go to countertop 3
+    step 20: go to stoveburner 1
+    step 21: take pot 1 from stoveburner 1
+    step 22: go to sinkbasin 1
+    step 23: clean pot 1 with sinkbasin 1
+    step 24: go to countertop 1
+    step 25: move pot 1 to countertop 1
+    step 26: go to countertop 1
+    step 27: look
+    step 28: go to countertop 1
+    step 29: look
+    step 30: go to countertop 2
+    step 31: go to countertop 3
+    step 32: go to sinkbasin 1
+    step 33: go to stoveburner 1
+    step 34: go to countertop 1
+    step 35: look
+    step 36: go to sinkbasin 1
+    step 37: go to countertop 1
+    step 38: look
+    step 39: go to countertop 2
+    step 40: go to countertop 3
+    step 41: go to sinkbasin 1
+    step 42: go to stoveburner 1
+    step 43: go to countertop 1
+    step 44: look
+    step 45: go to sinkbasin 1
+    step 46: go to countertop 1
+    step 47: move pot 1 to countertop 2
+    step 48: go to countertop 2
+    step 49: move pot 1 to countertop 2
+    step 50: go to countertop 1
+  test-initial-v0-011-plan2: start
+    step 1: look
+    step 2: go to sinkbasin 1
+    step 3: look
+    step 4: go to cabinet 1
+    step 5: go to cabinet 2
+    step 6: open cabinet 2
+    step 7: go to cabinet 3
+    step 8: go to cabinet 4
+    step 9: go to cabinet 5
+    step 10: open cabinet 5
+    step 11: go to cabinet 6
+    step 12: open cabinet 6
+    step 13: go to drawer 1
+    step 14: open drawer 1
+    step 15: go to drawer 2
+    step 16: open drawer 2
+    step 17: go to drawer 3
+    step 18: open drawer 3
+    step 19: go to countertop 1
+    step 20: go to countertop 2
+    step 21: go to countertop 3
+    step 22: go to sinkbasin 1
+    step 23: look
+    step 24: go to stoveburner 1
+    step 25: take pot 1 from stoveburner 1
+    step 26: go to sinkbasin 1
+    step 27: clean pot 1 with sinkbasin 1
+    step 28: go to countertop 1
+    step 29: move pot 1 to countertop 1
+    step 30: go to countertop 1
+    step 31: look
+    step 32: go to countertop 1
+    step 33: look
+    step 34: go to countertop 2
+    step 35: go to countertop 3
+    step 36: go to countertop 1
+    step 37: look
+    step 38: go to sinkbasin 1
+    step 39: look
+    step 40: go to stoveburner 2
+    step 41: take pan 1 from stoveburner 2
+    step 42: go to sinkbasin 1
+    step 43: clean pan 1 with sinkbasin 1
+    step 44: go to countertop 1
+    step 45: move pan 1 to countertop 1
+  test-initial-v0-011-plan3: start
+    step 1: look
+    step 2: go to cabinet 1
+    step 3: go to cabinet 2
+    step 4: open cabinet 2
+    step 5: go to cabinet 3
+    step 6: go to cabinet 4
+    step 7: go to cabinet 5
+    step 8: open cabinet 5
+    step 9: go to cabinet 6
+    step 10: open cabinet 6
+    step 11: go to drawer 1
+    step 12: open drawer 1
+    step 13: go to drawer 2
+    step 14: open drawer 2
+    step 15: go to drawer 3
+    step 16: open drawer 3
+    step 17: go to shelf 1
+    step 18: go to shelf 2
+    step 19: go to shelf 3
+    step 20: go to stoveburner 1
+    step 21: go to stoveburner 2
+    step 22: take pan 1 from stoveburner 2
+    step 23: go to sinkbasin 1
+    step 24: clean pan 1 with sinkbasin 1
+    step 25: go to countertop 1
+    step 26: move pan 1 to countertop 1
+  test-initial-v0-012-plan1: start
+    step 1: look
+    step 2: look
+    step 3: look
+    step 4: look
+    step 5: look
+    step 6: look
+    step 7: look
+    step 8: look
+    step 9: look
+    step 10: go to countertop 1
+    step 11: take mug 2 from countertop 1
+    step 12: go to fridge 1
+    step 13: open fridge 1
+    step 14: move mug 2 to fridge 1
+    step 15: cool mug 2 with fridge 1
+    step 16: close fridge 1
+    step 17: go to fridge 1
+    step 18: open fridge 1
+    step 19: take mug 2 from fridge 1
+    step 20: go to cabinet 1
+    step 21: move mug 2 to cabinet 1
+    step 22: look
+    step 23: look
+    step 24: go to cabinet 1
+    step 25: look
+    step 26: open cabinet 1
+    step 27: examine cabinet 1
+    step 28: close cabinet 1
+    step 29: open cabinet 1
+    step 30: look
+    step 31: go to fridge 1
+    step 32: take mug 2 from fridge 1
+    step 33: look
+    step 34: go to cabinet 1
+    step 35: take mug 2 from cabinet 1
+    step 36: go to fridge 1
+    step 37: cool mug 2 with fridge 1
+    step 38: move mug 2 to cabinet 1
+    step 39: go to cabinet 1
+    step 40: move mug 2 to cabinet 1
+  test-initial-v0-012-plan2: start
+    step 1: look
+    step 2: look
+    step 3: look
+    step 4: look
+    step 5: look
+    step 6: look
+    step 7: look
+    step 8: look
+    step 9: look
+    step 10: look
+    step 11: look
+    step 12: look
+    step 13: look
+    step 14: look
+    step 15: look
+    step 16: look
+    step 17: look
+    step 18: look
+    step 19: look
+    step 20: look
+    step 21: look
+    step 22: look
+    step 23: look
+    step 24: look
+    step 25: look
+    step 26: look
+    step 27: look
+    step 28: look
+    step 29: look
+    step 30: look
+    step 31: look
+    step 32: look
+    step 33: look
+    step 34: look
+    step 35: look
+    step 36: look
+    step 37: look
+    step 38: look
+    step 39: look
+    step 40: look
+    step 41: look
+    step 42: look
+    step 43: look
+    step 44: look
+    step 45: look
+    step 46: look
+    step 47: look
+    step 48: look
+    step 49: look
+    step 50: look
+  test-initial-v0-012-plan3: start
+    step 1: look
+    step 2: look
+    step 3: look
+    step 4: look
+    step 5: look
+    step 6: look
+    step 7: look
+    step 8: look
+    step 9: look
+    step 10: look
+    step 11: look
+    step 12: look
+    step 13: inventory
+    step 14: go to fridge 1
+    step 15: open fridge 1
+    step 16: look
+    step 17: go to countertop 1
+    step 18: take mug 2 from countertop 1
+    step 19: go to fridge 1
+    step 20: move mug 2 to fridge 1
+    step 21: cool mug 2 with fridge 1
+    step 22: go to fridge 1
+    step 23: look
+    step 24: go to microwave 1
+    step 25: open microwave 1
+    step 26: go to fridge 1
+    step 27: take mug 2 from fridge 1
+    step 28: go to microwave 1
+    step 29: heat mug 2 with microwave 1
+    step 30: go to cabinet 1
+    step 31: move mug 2 to cabinet 1
+    step 32: look
+    step 33: look
+    step 34: inventory
+    step 35: look
+    step 36: go to cabinet 1
+    step 37: look
+    step 38: go to fridge 1
+    step 39: look
+    step 40: go to countertop 1
+    step 41: look
+    step 42: go to cabinet 1
+    step 43: look
+    step 44: take mug 2 from cabinet 1
+    step 45: go to fridge 1
+    step 46: cool mug 2 with fridge 1
+    step 47: go to cabinet 1
+    step 48: move mug 2 to cabinet 1
+  test-initial-v0-013-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to countertop 1
+    step 4: take tomato 1 from countertop 1
+    step 5: go to microwave 1
+    step 6: open microwave 1
+    step 7: move tomato 1 to microwave 1
+    step 8: close microwave 1
+    step 9: heat tomato 1 with microwave 1
+    step 10: go to fridge 1
+    step 11: go to countertop 1
+    step 12: go to sinkbasin 1
+    step 13: take tomato 3 from sinkbasin 1
+    step 14: go to microwave 1
+    step 15: open microwave 1
+    step 16: move tomato 3 to microwave 1
+    step 17: close microwave 1
+    step 18: heat tomato 3 with microwave 1
+    step 19: go to fridge 1
+    step 20: go to sinkbasin 1
+    step 21: go to countertop 1
+    step 22: go to fridge 1
+    step 23: go to countertop 2
+    step 24: go to countertop 3
+    step 25: go to fridge 1
+    step 26: go to microwave 1
+    step 27: open microwave 1
+    step 28: close microwave 1
+    step 29: go to sinkbasin 1
+    step 30: go to fridge 1
+    step 31: go to countertop 1
+    step 32: go to microwave 1
+    step 33: open microwave 1
+    step 34: close microwave 1
+    step 35: go to fridge 1
+    step 36: go to sinkbasin 1
+    step 37: go to countertop 3
+    step 38: go to fridge 1
+    step 39: go to microwave 1
+    step 40: open microwave 1
+    step 41: close microwave 1
+    step 42: go to sinkbasin 1
+    step 43: go to countertop 1
+    step 44: go to fridge 1
+    step 45: go to countertop 2
+    step 46: go to countertop 3
+    step 47: go to fridge 1
+    step 48: go to microwave 1
+    step 49: open microwave 1
+    step 50: close microwave 1
+  test-initial-v0-013-plan2: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to fridge 1
+    step 4: look
+    step 5: close fridge 1
+    step 6: go to shelf 1
+    step 7: go to shelf 2
+    step 8: go to shelf 3
+    step 9: go to countertop 1
+    step 10: take tomato 1 from countertop 1
+    step 11: go to sinkbasin 1
+    step 12: cool tomato 1 with sinkbasin 1
+    step 13: go to microwave 1
+    step 14: open microwave 1
+    step 15: move tomato 1 to microwave 1
+    step 16: close microwave 1
+    step 17: heat tomato 1 with microwave 1
+    step 18: look
+    step 19: go to sinkbasin 1
+    step 20: go to countertop 1
+    step 21: go to fridge 1
+    step 22: open fridge 1
+    step 23: close fridge 1
+    step 24: go to microwave 1
+    step 25: open microwave 1
+    step 26: close microwave 1
+    step 27: heat tomato 1 with microwave 1
+    step 28: look
+    step 29: go to sinkbasin 1
+    step 30: go to countertop 1
+    step 31: go to fridge 1
+    step 32: open fridge 1
+    step 33: close fridge 1
+    step 34: go to microwave 1
+    step 35: open microwave 1
+    step 36: close microwave 1
+    step 37: heat tomato 1 with microwave 1
+    step 38: look
+    step 39: go to sinkbasin 1
+    step 40: go to countertop 1
+    step 41: go to fridge 1
+    step 42: open fridge 1
+    step 43: close fridge 1
+    step 44: go to microwave 1
+    step 45: open microwave 1
+    step 46: close microwave 1
+    step 47: heat tomato 1 with microwave 1
+    step 48: look
+    step 49: go to sinkbasin 1
+    step 50: go to countertop 1
+  test-initial-v0-013-plan3: start
+    step 1: go to cabinet 1
+    step 2: go to cabinet 2
+    step 3: open cabinet 2
+    step 4: go to cabinet 3
+    step 5: go to cabinet 4
+    step 6: go to cabinet 5
+    step 7: open cabinet 5
+    step 8: go to cabinet 6
+    step 9: open cabinet 6
+    step 10: go to drawer 1
+    step 11: open drawer 1
+    step 12: go to drawer 2
+    step 13: open drawer 2
+    step 14: go to drawer 3
+    step 15: open drawer 3
+    step 16: go to shelf 1
+    step 17: go to shelf 2
+    step 18: go to shelf 3
+    step 19: go to fridge 1
+    step 20: open fridge 1
+    step 21: go to microwave 1
+    step 22: close microwave 1
+    step 23: open microwave 1
+    step 24: go to fridge 1
+    step 25: go to sinkbasin 1
+    step 26: take tomato 3 from sinkbasin 1
+    step 27: go to microwave 1
+    step 28: move tomato 3 to microwave 1
+    step 29: close microwave 1
+    step 30: heat tomato 3 with microwave 1
+    step 31: open microwave 1
+    step 32: take tomato 3 from microwave 1
+    step 33: go to fridge 1
+    step 34: cool tomato 3 with fridge 1
+    step 35: go to microwave 1
+    step 36: move tomato 3 to microwave 1
+  test-initial-v0-014-plan1: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: look
+    step 4: go to sinkbasin 1
+    step 5: look
+    step 6: go to countertop 1
+    step 7: look
+    step 8: go to sinkbasin 2
+    step 9: look
+    step 10: go to countertop 1
+    step 11: look
+    step 12: go to cabinet 1
+    step 13: open cabinet 1
+    step 14: take cloth 2 from cabinet 1
+    step 15: go to sinkbasin 1
+    step 16: clean cloth 2 with sinkbasin 1
+    step 17: go to countertop 1
+    step 18: move cloth 2 to countertop 1
+  test-initial-v0-014-plan2: start
+    step 1: look
+    step 2: go to cabinet 1
+    step 3: open cabinet 1
+    step 4: take cloth 2 from cabinet 1
+    step 5: go to sinkbasin 1
+    step 6: clean cloth 2 with sinkbasin 1
+    step 7: go to countertop 1
+    step 8: move cloth 2 to countertop 1
+  test-initial-v0-014-plan3: start
+    step 1: look
+    step 2: go to towelholder 1
+    step 3: take towel 1 from towelholder 1
+    step 4: go to sinkbasin 1
+    step 5: clean towel 1 with sinkbasin 1
+    step 6: look
+    step 7: go to sinkbasin 2
+    step 8: clean towel 1 with sinkbasin 2
+    step 9: go to countertop 1
+    step 10: move towel 1 to countertop 1
+    step 11: put towel 1 on countertop 1
+    step 12: examine towel 1
+    step 13: go to sinkbasin 1
+    step 14: clean towel 1 with sinkbasin 1
+    step 15: go to countertop 1
+    step 16: put towel 1 on countertop 1
+    step 17: move towel 1 to countertop 1
+    step 18: go to sinkbasin 2
+    step 19: clean towel 1 with sinkbasin 2
+    step 20: go to towelholder 1
+    step 21: go to countertop 1
+    step 22: put towel 1 on countertop 1
+    step 23: move towel 1 to countertop 1
+    step 24: look
+    step 25: go to sinkbasin 1
+    step 26: clean towel 1 with sinkbasin 1
+    step 27: go to towelholder 1
+    step 28: go to countertop 1
+    step 29: put towel 1 on countertop 1
+    step 30: move towel 1 to countertop 1
+    step 31: go to sinkbasin 2
+    step 32: clean towel 1 with sinkbasin 2
+    step 33: go to countertop 1
+    step 34: put towel 1 on countertop 1
+    step 35: move towel 1 to countertop 1
+    step 36: go to sinkbasin 1
+    step 37: clean towel 1 with sinkbasin 1
+    step 38: go to countertop 1
+    step 39: put towel 1 on countertop 1
+    step 40: move towel 1 to countertop 1
+    step 41: go to sinkbasin 2
+    step 42: clean towel 1 with sinkbasin 2
+    step 43: go to towelholder 1
+    step 44: go to countertop 1
+    step 45: put towel 1 on countertop 1
+    step 46: move towel 1 to countertop 1
+    step 47: look
+    step 48: go to sinkbasin 1
+    step 49: clean towel 1 with sinkbasin 1
+    step 50: go to countertop 1
+  test-initial-v0-015-plan1: start
+    step 1: look
+    step 2: go to cabinet 1
+    step 3: open cabinet 1
+    step 4: look
+    step 5: go to cabinet 2
+    step 6: open cabinet 2
+    step 7: close cabinet 2
+    step 8: go to cabinet 1
+    step 9: take bowl 1 from cabinet 1
+    step 10: go to sinkbasin 1
+    step 11: clean bowl 1 with sinkbasin 1
+    step 12: go to cabinet 3
+    step 13: open cabinet 3
+    step 14: go to cabinet 4
+    step 15: open cabinet 4
+    step 16: go to cabinet 5
+    step 17: open cabinet 5
+    step 18: close cabinet 5
+    step 19: go to cabinet 6
+    step 20: open cabinet 6
+    step 21: move bowl 1 to cabinet 6
+  test-initial-v0-015-plan2: start
+    step 1: go to cabinet 1
+    step 2: take bowl 1 from cabinet 1
+    step 3: go to sinkbasin 1
+    step 4: clean bowl 1 with sinkbasin 1
+    step 5: go to cabinet 1
+    step 6: move bowl 1 to cabinet 1
+  test-initial-v0-015-plan3: start
+    step 1: look
+    step 2: go to sinkbasin 1
+    step 3: look
+    step 4: go to cabinet 1
+    step 5: open cabinet 1
+    step 6: take bowl 1 from cabinet 1
+    step 7: go to sinkbasin 1
+    step 8: clean bowl 1 with sinkbasin 1
+    step 9: go to cabinet 1
+    step 10: move bowl 1 to cabinet 1
+  test-initial-v0-016-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take egg 1 from fridge 1
+    step 4: go to sinkbasin 1
+    step 5: clean egg 1 with sinkbasin 1
+    step 6: go to microwave 1
+    step 7: open microwave 1
+    step 8: move egg 1 to microwave 1
+  test-initial-v0-016-plan2: start
+    step 1: go to countertop 1
+    step 2: go to countertop 2
+    step 3: take egg 2 from countertop 2
+    step 4: go to microwave 1
+    step 5: open microwave 1
+    step 6: move egg 2 to microwave 1
+    step 7: close microwave 1
+    step 8: heat egg 2 with microwave 1
+    step 9: open microwave 1
+    step 10: take egg 2 from microwave 1
+    step 11: go to sinkbasin 1
+    step 12: clean egg 2 with sinkbasin 1
+    step 13: go to microwave 1
+    step 14: move egg 2 to microwave 1
+  test-initial-v0-016-plan3: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take egg 1 from fridge 1
+    step 4: go to sinkbasin 1
+    step 5: clean egg 1 with sinkbasin 1
+    step 6: go to microwave 1
+    step 7: open microwave 1
+    step 8: move egg 1 to microwave 1
+  test-initial-v0-017-plan1: start
+    step 1: go to cabinet 1
+    step 2: go to cabinet 2
+    step 3: open cabinet 2
+    step 4: go to cabinet 3
+    step 5: go to cabinet 4
+    step 6: go to cabinet 5
+    step 7: open cabinet 5
+    step 8: go to cabinet 6
+    step 9: open cabinet 6
+    step 10: go to drawer 1
+    step 11: open drawer 1
+    step 12: go to drawer 2
+    step 13: open drawer 2
+    step 14: go to drawer 3
+    step 15: open drawer 3
+    step 16: go to sinkbasin 1
+    step 17: go to countertop 1
+    step 18: take pan 1 from countertop 1
+    step 19: clean pan 1 with sinkbasin 1
+    step 20: go to sinkbasin 1
+    step 21: clean pan 1 with sinkbasin 1
+    step 22: go to countertop 1
+    step 23: move pan 1 to countertop 1
+  test-initial-v0-017-plan2: start
+    step 1: look
+    step 2: go to sinkbasin 1
+    step 3: go to stoveburner 1
+    step 4: take pan 1 from stoveburner 1
+    step 5: go to countertop 1
+    step 6: move pan 1 to countertop 1
+    step 7: look
+    step 8: go to sinkbasin 1
+    step 9: go to stoveburner 2
+    step 10: go to stoveburner 3
+    step 11: take pan 1 from stoveburner 3
+    step 12: go to countertop 1
+    step 13: move pan 1 to countertop 1
+    step 14: look
+    step 15: go to sinkbasin 1
+    step 16: go to stoveburner 4
+    step 17: go to countertop 1
+    step 18: clean pan 1 with sinkbasin 1
+    step 19: go to sinkbasin 1
+    step 20: clean pan 1 with sinkbasin 1
+    step 21: examine pan 1
+    step 22: go to countertop 1
+    step 23: take pan 1 from countertop 1
+    step 24: go to sinkbasin 1
+    step 25: clean pan 1 with sinkbasin 1
+    step 26: go to countertop 1
+    step 27: move pan 1 to countertop 1
+  test-initial-v0-017-plan3: start
+    step 1: look
+    step 2: go to cabinet 1
+    step 3: open cabinet 1
+    step 4: go to cabinet 2
+    step 5: open cabinet 2
+    step 6: go to cabinet 3
+    step 7: open cabinet 3
+    step 8: go to cabinet 4
+    step 9: open cabinet 4
+    step 10: go to cabinet 5
+    step 11: open cabinet 5
+    step 12: go to cabinet 6
+    step 13: open cabinet 6
+    step 14: go to drawer 1
+    step 15: open drawer 1
+    step 16: go to drawer 2
+    step 17: open drawer 2
+    step 18: go to drawer 3
+    step 19: open drawer 3
+    step 20: go to sinkbasin 1
+    step 21: go to stoveburner 1
+    step 22: take pan 1 from stoveburner 1
+    step 23: clean pan 1 with sinkbasin 1
+    step 24: go to countertop 3
+    step 25: move pan 1 to countertop 3
+    step 26: look
+    step 27: go to sinkbasin 1
+    step 28: clean pan 1 with sinkbasin 1
+    step 29: go to countertop 3
+    step 30: look
+    step 31: go to sinkbasin 1
+    step 32: clean pan 1 with sinkbasin 1
+    step 33: go to countertop 3
+    step 34: look
+    step 35: go to sinkbasin 1
+    step 36: clean pan 1 with sinkbasin 1
+    step 37: go to countertop 3
+    step 38: look
+    step 39: go to stoveburner 1
+    step 40: go to sinkbasin 1
+    step 41: clean pan 1 with sinkbasin 1
+    step 42: go to countertop 3
+    step 43: look
+    step 44: go to sinkbasin 1
+    step 45: clean pan 1 with sinkbasin 1
+    step 46: go to countertop 3
+    step 47: look
+    step 48: go to sinkbasin 1
+    step 49: clean pan 1 with sinkbasin 1
+    step 50: go to countertop 3
+  test-initial-v0-018-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to countertop 1
+    step 4: go back to fridge 1
+    step 5: go to fridge 1
+    step 6: look
+    step 7: close fridge 1
+    step 8: go to countertop 1
+    step 9: go to fridge 1
+    step 10: open fridge 1
+    step 11: look
+    step 12: close fridge 1
+    step 13: go to countertop 2
+    step 14: take lettuce 1 from countertop 2
+    step 15: go to fridge 1
+    step 16: open fridge 1
+    step 17: cool lettuce 1 with fridge 1
+    step 18: go to countertop 1
+    step 19: move lettuce 1 to countertop 1
+  test-initial-v0-018-plan2: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to countertop 1
+    step 4: go to fridge 1
+    step 5: take potato 1 from fridge 1
+    step 6: cool potato 1 with fridge 1
+    step 7: go to countertop 1
+    step 8: move potato 1 to countertop 1
+    step 9: go to fridge 1
+    step 10: take lettuce 1 from fridge 1
+    step 11: look
+    step 12: go to countertop 2
+    step 13: take lettuce 1 from countertop 2
+    step 14: cool lettuce 1 with fridge 1
+    step 15: go to fridge 1
+    step 16: put lettuce 1 in fridge 1
+    step 17: cool lettuce 1 with fridge 1
+    step 18: go to countertop 1
+    step 19: move lettuce 1 to countertop 1
+  test-initial-v0-018-plan3: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to countertop 1
+    step 4: go to fridge 1
+    step 5: take lettuce from fridge 1
+    step 6: look
+    step 7: go to countertop 1
+    step 8: go to fridge 1
+    step 9: look
+    step 10: go to shelf 1
+    step 11: go to shelf 2
+    step 12: go to shelf 3
+    step 13: go to fridge 1
+    step 14: go to countertop 3
+    step 15: take lettuce 3 from countertop 3
+    step 16: go to fridge 1
+    step 17: cool lettuce 3 with fridge 1
+    step 18: go to countertop 1
+    step 19: move lettuce 3 to countertop 1
+  test-initial-v0-019-plan1: start
+    step 1: go to microwave 1
+    step 2: open microwave 1
+    step 3: go to cabinet 1
+    step 4: go to cabinet 2
+    step 5: open cabinet 2
+    step 6: go to cabinet 3
+    step 7: take cup 1 from cabinet 3
+    step 8: go to microwave 1
+    step 9: move cup 1 to microwave 1
+    step 10: heat cup 1 with microwave 1
+    step 11: go to cabinet 4
+    step 12: go to cabinet 5
+    step 13: open cabinet 5
+    step 14: go to cabinet 6
+    step 15: open cabinet 6
+    step 16: take mug 1 from cabinet 6
+    step 17: go to microwave 1
+    step 18: move mug 1 to microwave 1
+    step 19: heat mug 1 with microwave 1
+    step 20: go to coffeemachine 1
+    step 21: move mug 1 to coffeemachine 1
+    step 22: take mug 1 from microwave 1
+    step 23: go to microwave 1
+    step 24: take mug 1 from microwave 1
+    step 25: go to coffeemachine 1
+    step 26: move mug 1 to coffeemachine 1
+    step 27: go to microwave 1
+    step 28: heat cup 1 with microwave 1
+    step 29: go to coffeemachine 1
+    step 30: go to microwave 1
+    step 31: go to sinkbasin 1
+    step 32: go to microwave 1
+    step 33: heat cup 1 with microwave 1
+    step 34: go to coffeemachine 1
+    step 35: go to sinkbasin 1
+    step 36: go to microwave 1
+    step 37: close microwave 1
+    step 38: open microwave 1
+    step 39: heat cup 1 with microwave 1
+    step 40: go to coffeemachine 1
+    step 41: go to microwave 1
+    step 42: take cup 1 from microwave 1
+    step 43: go to sinkbasin 1
+    step 44: clean cup 1 with sinkbasin 1
+    step 45: go to microwave 1
+    step 46: heat cup 1 with microwave 1
+    step 47: go to coffeemachine 1
+    step 48: move cup 1 to coffeemachine 1
+    step 49: take mug 1 from coffeemachine 1
+    step 50: go to coffeemachine 1
+  test-initial-v0-019-plan2: start
+    step 1: go to countertop 1
+    step 2: take mug 2 from countertop 1
+    step 3: go to stoveburner 1
+    step 4: go to countertop 2
+    step 5: go to stoveburner 2
+    step 6: go to stoveburner 3
+    step 7: go to stoveburner 4
+    step 8: go to microwave 1
+    step 9: open microwave 1
+    step 10: heat mug 2 with microwave 1
+    step 11: go to coffeemachine 1
+    step 12: move mug 2 to coffeemachine 1
+  test-initial-v0-019-plan3: start
+    step 1: look
+    step 2: look
+    step 3: look
+    step 4: look
+    step 5: look
+    step 6: go to countertop 1
+    step 7: take mug 2 from countertop 1
+    step 8: go to microwave 1
+    step 9: open microwave 1
+    step 10: heat mug 2 with microwave 1
+    step 11: go to coffeemachine 1
+    step 12: move mug 2 to coffeemachine 1
+  test-initial-v0-020-plan1: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to countertop 2
+    step 4: go to countertop 3
+    step 5: take spatula 1 from countertop 3
+    step 6: go to sinkbasin 1
+    step 7: clean spatula 1 with sinkbasin 1
+    step 8: go to drawer 1
+    step 9: open drawer 1
+    step 10: move spatula 1 to drawer 1
+  test-initial-v0-020-plan2: start
+    step 1: look
+    step 2: go to cabinet 1
+    step 3: go to cabinet 2
+    step 4: open cabinet 2
+    step 5: go to cabinet 3
+    step 6: go to cabinet 4
+    step 7: go to cabinet 5
+    step 8: open cabinet 5
+    step 9: go to cabinet 6
+    step 10: open cabinet 6
+    step 11: go to shelf 1
+    step 12: go to shelf 2
+    step 13: go to shelf 3
+    step 14: go to stoveburner 1
+    step 15: go to stoveburner 2
+    step 16: go to stoveburner 3
+    step 17: go to stoveburner 4
+    step 18: go to drawer 1
+    step 19: open drawer 1
+    step 20: go to drawer 2
+    step 21: open drawer 2
+    step 22: go to drawer 3
+    step 23: open drawer 3
+    step 24: go to sinkbasin 1
+    step 25: look
+    step 26: go to countertop 1
+    step 27: go to countertop 2
+    step 28: go to countertop 3
+    step 29: take spatula 1 from countertop 3
+    step 30: go to sinkbasin 1
+    step 31: clean spatula 1 with sinkbasin 1
+    step 32: go to drawer 1
+    step 33: move spatula 1 to drawer 1
+  test-initial-v0-020-plan3: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to countertop 2
+    step 4: take dishsponge 1 from countertop 2
+    step 5: go to countertop 3
+    step 6: take spatula 1 from countertop 3
+    step 7: go to sinkbasin 1
+    step 8: clean spatula 1 with sinkbasin 1
+    step 9: take spatula 1 from countertop 3
+    step 10: go to drawer 3
+    step 11: open drawer 3
+    step 12: go to countertop 3
+    step 13: take spatula 1 from countertop 3
+    step 14: go to sinkbasin 1
+    step 15: clean spatula 1 with sinkbasin 1
+    step 16: look
+    step 17: go to drawer 3
+    step 18: go to countertop 3
+    step 19: take spatula 1 from countertop 3
+    step 20: go to sinkbasin 1
+    step 21: clean spatula 1 with sinkbasin 1
+    step 22: look
+    step 23: go to drawer 3
+    step 24: go to countertop 3
+    step 25: take spatula 1 from countertop 3
+    step 26: go to sinkbasin 1
+    step 27: clean spatula 1 with sinkbasin 1
+    step 28: look
+    step 29: go to drawer 3
+    step 30: go to countertop 3
+    step 31: take spatula 1 from countertop 3
+    step 32: go to sinkbasin 1
+    step 33: clean spatula 1 with sinkbasin 1
+    step 34: look
+    step 35: go to drawer 3
+    step 36: go to countertop 3
+    step 37: take spatula 1 from countertop 3
+    step 38: go to sinkbasin 1
+    step 39: clean spatula 1 with sinkbasin 1
+    step 40: look
+    step 41: go to drawer 3
+    step 42: go to countertop 3
+    step 43: take spatula 1 from countertop 3
+    step 44: go to sinkbasin 1
+    step 45: clean spatula 1 with sinkbasin 1
+    step 46: look
+    step 47: go to drawer 3
+    step 48: go to countertop 3
+    step 49: take spatula 1 from countertop 3
+    step 50: go to sinkbasin 1
+  test-final-v20-001-plan1: start
+    step 1: go to cabinet 1
+    step 2: open cabinet 1
+    step 3: examine cabinet 1
+    step 4: take plate 1 from cabinet 1
+    step 5: go to sinkbasin 1
+    step 6: clean plate 1 with sinkbasin 1
+    step 7: go to countertop 1
+    step 8: move plate 1 to countertop 1
+  test-final-v20-001-plan2: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to countertop 2
+    step 4: take plate 2 from countertop 2
+    step 5: go to sinkbasin 1
+    step 6: clean plate 2 with sinkbasin 1
+    step 7: go to countertop 1
+    step 8: move plate 2 to countertop 1
+  test-final-v20-001-plan3: start
+    step 1: go to sinkbasin 1
+    step 2: go to fridge 1
+    step 3: open fridge 1
+    step 4: take bowl 1 from fridge 1
+    step 5: go to sinkbasin 1
+    step 6: clean bowl 1 with sinkbasin 1
+    step 7: go to countertop 1
+    step 8: move bowl 1 to countertop 1
+    step 9: go to countertop 1
+    step 10: look
+    step 11: go to countertop 1
+    step 12: examine countertop 1
+    step 13: go to countertop 2
+    step 14: take plate 2 from countertop 2
+    step 15: go to sinkbasin 1
+    step 16: clean plate 2 with sinkbasin 1
+    step 17: go to countertop 1
+    step 18: move plate 2 to countertop 1
+  test-final-v20-002-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take lettuce 1 from fridge 1
+    step 4: look
+    step 5: look inside fridge 1
+    step 6: look
+    step 7: examine fridge 1
+    step 8: cool lettuce 1 with fridge 1
+    step 9: take lettuce 1 from fridge 1
+    step 10: go to countertop 1
+    step 11: go to fridge 1
+    step 12: look inside fridge 1
+    step 13: examine fridge 1
+    step 14: go to countertop 2
+    step 15: take lettuce 1 from countertop 2
+    step 16: cool lettuce 1 with fridge 1
+    step 17: go to fridge 1
+    step 18: put lettuce 1 in fridge 1
+    step 19: move lettuce 1 to fridge 1
+    step 20: cool lettuce 1 with fridge 1
+    step 21: take lettuce 1 from fridge 1
+    step 22: go to countertop 1
+    step 23: move lettuce 1 to countertop 1
+    step 24: go to fridge 1
+    step 25: cool lettuce 1 with fridge 1
+    step 26: take lettuce 1 from countertop 1
+    step 27: go to countertop 1
+    step 28: take lettuce 1 from countertop 1
+    step 29: cool lettuce 1 with fridge 1
+    step 30: go to fridge 1
+    step 31: put lettuce 1 in fridge 1
+    step 32: move lettuce 1 to fridge 1
+    step 33: cool lettuce 1 with fridge 1
+    step 34: take lettuce 1 from fridge 1
+    step 35: go to countertop 1
+    step 36: move lettuce 1 to countertop 1
+    step 37: go to fridge 1
+    step 38: cool lettuce 1 with fridge 1
+    step 39: take lettuce 1 from countertop 1
+    step 40: go to countertop 1
+    step 41: take lettuce 1 from countertop 1
+    step 42: cool lettuce 1 with fridge 1
+    step 43: go to fridge 1
+    step 44: put lettuce 1 in fridge 1
+    step 45: move lettuce 1 to fridge 1
+    step 46: cool lettuce 1 with fridge 1
+    step 47: take lettuce 1 from fridge 1
+    step 48: go to countertop 1
+    step 49: move lettuce 1 to countertop 1
+    step 50: go to fridge 1
+  test-final-v20-002-plan2: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: close fridge 1
+    step 4: go to countertop 1
+    step 5: go to fridge 1
+    step 6: open fridge 1
+    step 7: close fridge 1
+    step 8: go to countertop 2
+    step 9: take lettuce 1 from countertop 2
+    step 10: go to fridge 1
+    step 11: open fridge 1
+    step 12: cool lettuce 1 with fridge 1
+    step 13: go to countertop 1
+    step 14: move lettuce 1 to countertop 1
+  test-final-v20-002-plan3: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: close fridge 1
+    step 4: go to countertop 1
+    step 5: go to fridge 1
+    step 6: open fridge 1
+    step 7: take potato 1 from fridge 1
+    step 8: go to microwave 1
+    step 9: open microwave 1
+    step 10: close microwave 1
+    step 11: go to fridge 1
+    step 12: take lettuce 1 from fridge 1
+    step 13: look
+    step 14: go to countertop 1
+    step 15: go to fridge 1
+    step 16: go to fridge 1
+    step 17: look
+    step 18: go to countertop 2
+    step 19: take lettuce 1 from countertop 2
+    step 20: go to fridge 1
+    step 21: go to countertop 2
+    step 22: take lettuce 1 from countertop 2
+    step 23: look
+    step 24: go to fridge 1
+    step 25: go to countertop 3
+    step 26: go to countertop 2
+    step 27: take lettuce 1 from countertop 2
+    step 28: look
+    step 29: go to fridge 1
+    step 30: go to countertop 1
+    step 31: go to countertop 2
+    step 32: take lettuce 1 from countertop 2
+    step 33: go to fridge 1
+    step 34: go to countertop 3
+    step 35: go to countertop 2
+    step 36: take lettuce 1 from countertop 2
+    step 37: look
+    step 38: go to fridge 1
+    step 39: go to countertop 2
+    step 40: take lettuce 1 from countertop 2
+    step 41: look
+    step 42: go to fridge 1
+    step 43: go to countertop 2
+    step 44: take lettuce 1 from countertop 2
+    step 45: go to fridge 1
+    step 46: go to countertop 3
+    step 47: go to countertop 2
+    step 48: take lettuce 1 from countertop 2
+    step 49: look
+    step 50: go to fridge 1
+  test-final-v20-003-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take egg 2 from fridge 1
+    step 4: go to sinkbasin 1
+    step 5: clean egg 2 with sinkbasin 1
+    step 6: go to microwave 1
+    step 7: open microwave 1
+    step 8: move egg 2 to microwave 1
+  test-final-v20-003-plan2: start
+    step 1: go to sinkbasin 1
+    step 2: look
+    step 3: go to countertop 1
+    step 4: take egg 3 from countertop 1
+    step 5: clean egg 3 with sinkbasin 1
+    step 6: go to sinkbasin 1
+    step 7: clean egg 3 with sinkbasin 1
+    step 8: go to microwave 1
+    step 9: open microwave 1
+    step 10: move egg 3 to microwave 1
+  test-final-v20-003-plan3: start
+    step 1: go to sinkbasin 1
+    step 2: look
+    step 3: go to fridge 1
+    step 4: open fridge 1
+    step 5: take egg 2 from fridge 1
+    step 6: go to sinkbasin 1
+    step 7: clean egg 2 with sinkbasin 1
+    step 8: go to microwave 1
+    step 9: open microwave 1
+    step 10: move egg 2 to microwave 1
+  test-final-v20-004-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take potato 1 from fridge 1
+    step 4: go to microwave 1
+    step 5: open microwave 1
+    step 6: heat potato 1 with microwave 1
+    step 7: go to garbagecan 1
+    step 8: move potato 1 to garbagecan 1
+    step 9: go to fridge 1
+    step 10: take potato 2 from fridge 1
+    step 11: go to microwave 1
+    step 12: heat potato 2 with microwave 1
+    step 13: go to garbagecan 1
+    step 14: move potato 2 to garbagecan 1
+    step 15: go to fridge 1
+    step 16: go to countertop 1
+    step 17: take tomato 1 from countertop 1
+    step 18: go to microwave 1
+    step 19: heat tomato 1 with microwave 1
+    step 20: go to garbagecan 1
+    step 21: move tomato 1 to garbagecan 1
+  test-final-v20-004-plan2: start
+    step 1: look
+    step 2: go to garbagecan 1
+    step 3: look
+    step 4: go to fridge 1
+    step 5: open fridge 1
+    step 6: take potato 1 from fridge 1
+    step 7: go to microwave 1
+    step 8: open microwave 1
+    step 9: heat potato 1 with microwave 1
+    step 10: go to garbagecan 1
+    step 11: move potato 1 to garbagecan 1
+    step 12: look
+    step 13: go to fridge 1
+    step 14: take potato 2 from fridge 1
+    step 15: go to microwave 1
+    step 16: heat potato 2 with microwave 1
+    step 17: go to garbagecan 1
+    step 18: move potato 2 to garbagecan 1
+    step 19: look
+    step 20: go to fridge 1
+    step 21: go to countertop 1
+    step 22: take tomato 1 from countertop 1
+    step 23: go to microwave 1
+    step 24: heat tomato 1 with microwave 1
+    step 25: go to garbagecan 1
+    step 26: move tomato 1 to garbagecan 1
+  test-final-v20-004-plan3: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take potato 1 from fridge 1
+    step 4: go to microwave 1
+    step 5: open microwave 1
+    step 6: heat potato 1 with microwave 1
+    step 7: go to garbagecan 1
+    step 8: move potato 1 to garbagecan 1
+    step 9: look
+    step 10: go to fridge 1
+    step 11: take potato 2 from fridge 1
+    step 12: go to microwave 1
+    step 13: heat potato 2 with microwave 1
+    step 14: go to garbagecan 1
+    step 15: move potato 2 to garbagecan 1
+    step 16: look
+    step 17: go to fridge 1
+    step 18: look
+    step 19: go to countertop 1
+    step 20: take tomato 1 from countertop 1
+    step 21: go to microwave 1
+    step 22: heat tomato 1 with microwave 1
+    step 23: go to garbagecan 1
+    step 24: move tomato 1 to garbagecan 1
+  test-final-v20-005-plan1: start
+    step 1: go to cabinet 1
+    step 2: go to cabinet 2
+    step 3: open cabinet 2
+    step 4: go to cabinet 3
+    step 5: go to cabinet 4
+    step 6: go to cabinet 5
+    step 7: open cabinet 5
+    step 8: go to cabinet 6
+    step 9: open cabinet 6
+    step 10: go to countertop 1
+    step 11: go to countertop 2
+    step 12: go to countertop 3
+    step 13: take mug 2 from countertop 3
+    step 14: go to microwave 1
+    step 15: open microwave 1
+    step 16: heat mug 2 with microwave 1
+    step 17: go to coffeemachine 1
+    step 18: move mug 2 to coffeemachine 1
+  test-final-v20-005-plan2: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to countertop 2
+    step 4: go to countertop 3
+    step 5: take mug 2 from countertop 3
+    step 6: heat mug 2 with microwave 1
+    step 7: go to microwave 1
+    step 8: open microwave 1
+    step 9: heat mug 2 with microwave 1
+    step 10: go to coffeemachine 1
+    step 11: move mug 2 to coffeemachine 1
+  test-final-v20-005-plan3: start
+    step 1: go to microwave 1
+    step 2: open microwave 1
+    step 3: take cup 1 from microwave 1
+    step 4: heat cup 1 with microwave 1
+    step 5: go to coffeemachine 1
+    step 6: move cup 1 to coffeemachine 1
+    step 7: put cup 1 in coffeemachine 1
+    step 8: examine cup 1
+    step 9: go to microwave 1
+    step 10: go to countertop 1
+    step 11: go to countertop 2
+    step 12: go to countertop 3
+    step 13: take mug 2 from countertop 3
+    step 14: examine mug 2
+    step 15: go to microwave 1
+    step 16: heat mug 2 with microwave 1
+    step 17: take mug 2 from countertop 3
+    step 18: go to coffeemachine 1
+    step 19: put mug 2 in coffeemachine 1
+    step 20: go to countertop 3
+    step 21: take mug 2 from countertop 3
+    step 22: examine mug 2
+    step 23: go to sinkbasin 1
+    step 24: go to microwave 1
+    step 25: go to countertop 3
+    step 26: take mug 2 from countertop 3
+    step 27: examine countertop 3
+    step 28: go to coffeemachine 1
+    step 29: go to countertop 3
+    step 30: take mug 2 from countertop 3
+    step 31: go to microwave 1
+    step 32: go to countertop 3
+    step 33: take mug 2 from countertop 3
+    step 34: examine mug 2
+    step 35: go to coffeemachine 1
+    step 36: go to countertop 3
+    step 37: take mug 2 from countertop 3
+    step 38: go to microwave 1
+    step 39: go to countertop 3
+    step 40: take mug 2 from countertop 3
+    step 41: examine countertop 3
+    step 42: go to coffeemachine 1
+    step 43: go to countertop 3
+    step 44: take mug 2 from countertop 3
+    step 45: go to microwave 1
+    step 46: go to countertop 3
+    step 47: take mug 2 from countertop 3
+    step 48: examine mug 2
+    step 49: go to coffeemachine 1
+    step 50: go to countertop 3
+  test-final-v20-006-plan1: start
+    step 1: go to cabinet 1
+    step 2: open cabinet 1
+    step 3: go to cabinet 2
+    step 4: open cabinet 2
+    step 5: go to cabinet 3
+    step 6: open cabinet 3
+    step 7: go to cabinet 4
+    step 8: open cabinet 4
+    step 9: take cloth 1 from cabinet 4
+    step 10: go to sinkbasin 1
+    step 11: clean cloth 1 with sinkbasin 1
+    step 12: go to cabinet 4
+    step 13: move cloth 1 to cabinet 4
+  test-final-v20-006-plan2: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: look
+    step 4: go to sinkbasin 1
+    step 5: go to cabinet 1
+    step 6: open cabinet 1
+    step 7: go to cabinet 2
+    step 8: open cabinet 2
+    step 9: go to cabinet 3
+    step 10: open cabinet 3
+    step 11: go to cabinet 4
+    step 12: open cabinet 4
+    step 13: take cloth 1 from cabinet 4
+    step 14: go to sinkbasin 1
+    step 15: clean cloth 1 with sinkbasin 1
+    step 16: go to cabinet 1
+    step 17: move cloth 1 to cabinet 1
+  test-final-v20-006-plan3: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: take soapbar 1 from countertop 1
+    step 4: go to sinkbasin 1
+    step 5: clean soapbar 1 with sinkbasin 1
+    step 6: go to cabinet 1
+    step 7: open cabinet 1
+    step 8: move soapbar 1 to cabinet 1
+    step 9: close cabinet 1
+    step 10: look
+    step 11: go to cabinet 1
+    step 12: open cabinet 1
+    step 13: close cabinet 1
+    step 14: go to cabinet 2
+    step 15: open cabinet 2
+    step 16: close cabinet 2
+    step 17: go to cabinet 3
+    step 18: open cabinet 3
+    step 19: move soapbar 1 from cabinet 1 to cabinet 3
+    step 20: go to cabinet 1
+    step 21: open cabinet 1
+    step 22: take soapbar 1 from cabinet 1
+    step 23: go to cabinet 3
+    step 24: move soapbar 1 to cabinet 3
+    step 25: close cabinet 3
+    step 26: look
+    step 27: go to cabinet 3
+    step 28: open cabinet 3
+    step 29: close cabinet 3
+    step 30: go to cabinet 1
+    step 31: close cabinet 1
+    step 32: look
+    step 33: go to cabinet 2
+    step 34: open cabinet 2
+    step 35: close cabinet 2
+    step 36: go to cabinet 4
+    step 37: open cabinet 4
+    step 38: take cloth 1 from cabinet 4
+    step 39: go to sinkbasin 1
+    step 40: clean cloth 1 with sinkbasin 1
+    step 41: go to cabinet 1
+    step 42: open cabinet 1
+    step 43: move cloth 1 to cabinet 1
+  test-final-v20-007-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take potato 1 from fridge 1
+    step 4: go to microwave 1
+    step 5: open microwave 1
+    step 6: heat potato 1 with microwave 1
+    step 7: go to garbagecan 1
+    step 8: move potato 1 to garbagecan 1
+    step 9: go to fridge 1
+    step 10: take egg 1 from fridge 1
+    step 11: take egg 2 from fridge 1
+    step 12: go to garbagecan 1
+    step 13: take egg 1 from garbagecan 1
+    step 14: go to microwave 1
+    step 15: heat egg 1 with microwave 1
+    step 16: go to garbagecan 1
+    step 17: move egg 1 to garbagecan 1
+  test-final-v20-007-plan2: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take potato 1 from fridge 1
+    step 4: go to microwave 1
+    step 5: open microwave 1
+    step 6: heat potato 1 with microwave 1
+    step 7: go to garbagecan 1
+    step 8: move potato 1 to garbagecan 1
+    step 9: go to fridge 1
+    step 10: take egg 1 from fridge 1
+    step 11: take egg 1 from fridge 1
+    step 12: take egg 2 from fridge 1
+    step 13: go to garbagecan 1
+    step 14: take egg 1 from garbagecan 1
+    step 15: go to microwave 1
+    step 16: heat egg 1 with microwave 1
+    step 17: go to garbagecan 1
+    step 18: move egg 1 to garbagecan 1
+  test-final-v20-007-plan3: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take potato 1 from fridge 1
+    step 4: go to microwave 1
+    step 5: open microwave 1
+    step 6: heat potato 1 with microwave 1
+    step 7: go to garbagecan 1
+    step 8: move potato 1 to garbagecan 1
+    step 9: go to fridge 1
+    step 10: take egg 1 from fridge 1
+    step 11: take egg 2 from fridge 1
+    step 12: go to garbagecan 1
+    step 13: take egg 1 from garbagecan 1
+    step 14: go to microwave 1
+    step 15: heat egg 1 with microwave 1
+    step 16: go to garbagecan 1
+    step 17: move egg 1 to garbagecan 1
+  test-final-v20-008-plan1: start
+    step 1: look
+    step 2: go to drawer 1
+    step 3: open drawer 1
+    step 4: close drawer 1
+    step 5: go to drawer 2
+    step 6: open drawer 2
+    step 7: close drawer 2
+    step 8: go to drawer 3
+    step 9: open drawer 3
+    step 10: close drawer 3
+    step 11: go to sinkbasin 1
+    step 12: take butterknife 2 from sinkbasin 1
+    step 13: clean butterknife 2 with sinkbasin 1
+    step 14: go to drawer 1
+    step 15: open drawer 1
+    step 16: move butterknife 2 to drawer 1
+    step 17: close drawer 1
+    step 18: go to drawer 1
+    step 19: look
+    step 20: open drawer 1
+    step 21: close drawer 1
+    step 22: go to drawer 2
+    step 23: open drawer 2
+    step 24: close drawer 2
+    step 25: go to drawer 3
+    step 26: open drawer 3
+    step 27: close drawer 3
+    step 28: go to countertop 1
+    step 29: look
+    step 30: go to countertop 2
+    step 31: take butterknife 1 from countertop 2
+    step 32: clean butterknife 1 with sinkbasin 1
+    step 33: go to sinkbasin 1
+    step 34: clean butterknife 1 with sinkbasin 1
+    step 35: go to drawer 1
+    step 36: open drawer 1
+    step 37: move butterknife 1 to drawer 1
+    step 38: close drawer 1
+    step 39: go to drawer 1
+    step 40: look
+    step 41: open drawer 1
+    step 42: close drawer 1
+    step 43: go to drawer 1
+    step 44: open drawer 1
+    step 45: close drawer 1
+    step 46: go to cabinet 1
+    step 47: open cabinet 1
+    step 48: look
+    step 49: open cabinet 1
+    step 50: go to cabinet 2
+  test-final-v20-008-plan2: start
+    step 1: go to drawer 1
+    step 2: open drawer 1
+    step 3: close drawer 1
+    step 4: go to drawer 2
+    step 5: open drawer 2
+    step 6: close drawer 2
+    step 7: go to drawer 3
+    step 8: open drawer 3
+    step 9: close drawer 3
+    step 10: go to sinkbasin 1
+    step 11: take butterknife 2 from sinkbasin 1
+    step 12: clean butterknife 2 with sinkbasin 1
+    step 13: go to drawer 1
+    step 14: open drawer 1
+    step 15: move butterknife 2 to drawer 1
+    step 16: close drawer 1
+    step 17: go to sinkbasin 1
+    step 18: go to countertop 1
+    step 19: go to countertop 2
+    step 20: take butterknife 1 from countertop 2
+    step 21: clean butterknife 1 with sinkbasin 1
+    step 22: go to sinkbasin 1
+    step 23: clean butterknife 1 with sinkbasin 1
+    step 24: go to drawer 1
+    step 25: open drawer 1
+    step 26: move butterknife 1 to drawer 1
+    step 27: close drawer 1
+    step 28: go to drawer 1
+    step 29: go to drawer 1
+    step 30: look
+    step 31: go to drawer 2
+    step 32: open drawer 2
+    step 33: close drawer 2
+    step 34: go to drawer 3
+    step 35: open drawer 3
+    step 36: close drawer 3
+    step 37: go to countertop 3
+    step 38: take spatula 1 from countertop 3
+    step 39: clean spatula 1 with sinkbasin 1
+    step 40: go to sinkbasin 1
+    step 41: clean spatula 1 with sinkbasin 1
+    step 42: go to drawer 1
+    step 43: open drawer 1
+    step 44: move spatula 1 to drawer 1
+  test-final-v20-008-plan3: start
+    step 1: go to drawer 1
+    step 2: open drawer 1
+    step 3: close drawer 1
+    step 4: go to drawer 2
+    step 5: open drawer 2
+    step 6: close drawer 2
+    step 7: go to drawer 3
+    step 8: open drawer 3
+    step 9: close drawer 3
+    step 10: go to countertop 1
+    step 11: go to countertop 2
+    step 12: go to countertop 3
+    step 13: take spatula 1 from countertop 3
+    step 14: go to sinkbasin 1
+    step 15: clean spatula 1 with sinkbasin 1
+    step 16: go to drawer 1
+    step 17: open drawer 1
+    step 18: move spatula 1 to drawer 1
+  test-final-v20-009-plan1: start
+    step 1: go to cabinet 1
+    step 2: go to cabinet 2
+    step 3: open cabinet 2
+    step 4: go to cabinet 3
+    step 5: go to cabinet 4
+    step 6: go to cabinet 5
+    step 7: open cabinet 5
+    step 8: go to cabinet 6
+    step 9: open cabinet 6
+    step 10: go to fridge 1
+    step 11: open fridge 1
+    step 12: go to cabinet 1
+    step 13: go to cabinet 2
+    step 14: go to cabinet 3
+    step 15: go to cabinet 4
+    step 16: go to cabinet 5
+    step 17: go to cabinet 6
+    step 18: go to fridge 1
+    step 19: go to countertop 1
+    step 20: take mug 1 from countertop 1
+    step 21: go to fridge 1
+    step 22: cool mug 1 with fridge 1
+    step 23: go to coffeemachine 1
+    step 24: move mug 1 to coffeemachine 1
+  test-final-v20-009-plan2: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: look
+    step 4: go to cabinet 1
+    step 5: go to cabinet 2
+    step 6: open cabinet 2
+    step 7: go to cabinet 3
+    step 8: go to cabinet 4
+    step 9: go to cabinet 5
+    step 10: open cabinet 5
+    step 11: go to cabinet 6
+    step 12: open cabinet 6
+    step 13: go to countertop 1
+    step 14: take mug 1 from countertop 1
+    step 15: go to fridge 1
+    step 16: cool mug 1 with fridge 1
+    step 17: go to coffeemachine 1
+    step 18: move mug 1 to coffeemachine 1
+  test-final-v20-009-plan3: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: look
+    step 4: go to countertop 1
+    step 5: take mug 1 from countertop 1
+    step 6: cool mug 1 with fridge 1
+    step 7: go to fridge 1
+    step 8: cool mug 1 with fridge 1
+    step 9: go to coffeemachine 1
+    step 10: move mug 1 to coffeemachine 1
+  test-final-v20-010-plan1: start
+    step 1: look
+    step 2: go to cabinet 1
+    step 3: look
+    step 4: go to cabinet 2
+    step 5: open cabinet 2
+    step 6: go to cabinet 3
+    step 7: go to cabinet 4
+    step 8: go to cabinet 5
+    step 9: open cabinet 5
+    step 10: go to cabinet 6
+    step 11: open cabinet 6
+    step 12: go to fridge 1
+    step 13: open fridge 1
+    step 14: take potato 1 from fridge 1
+    step 15: go to microwave 1
+    step 16: open microwave 1
+    step 17: move potato 1 to microwave 1
+    step 18: heat potato 1 with microwave 1
+    step 19: close microwave 1
+    step 20: go to fridge 1
+    step 21: go to sinkbasin 1
+    step 22: look
+    step 23: go to cabinet 1
+    step 24: take bowl 1 from cabinet 1
+    step 25: go to sinkbasin 1
+    step 26: clean bowl 1 with sinkbasin 1
+    step 27: go to microwave 1
+    step 28: open microwave 1
+    step 29: move bowl 1 to microwave 1
+    step 30: close microwave 1
+    step 31: heat bowl 1 with microwave 1
+    step 32: open microwave 1
+    step 33: take bowl 1 from microwave 1
+    step 34: go to sinkbasin 1
+    step 35: clean bowl 1 with sinkbasin 1
+    step 36: go to microwave 1
+    step 37: move bowl 1 to microwave 1
+    step 38: close microwave 1
+    step 39: heat bowl 1 with microwave 1
+    step 40: open microwave 1
+    step 41: take bowl 1 from microwave 1
+    step 42: go to fridge 1
+    step 43: go to sinkbasin 1
+    step 44: clean bowl 1 with sinkbasin 1
+    step 45: go to microwave 1
+    step 46: move bowl 1 to microwave 1
+    step 47: close microwave 1
+    step 48: heat bowl 1 with microwave 1
+    step 49: open microwave 1
+    step 50: take bowl 1 from microwave 1
+  test-final-v20-010-plan2: start
+    step 1: look
+    step 2: go to microwave 1
+    step 3: open microwave 1
+    step 4: close microwave 1
+    step 5: go to sinkbasin 1
+    step 6: look
+    step 7: go to fridge 1
+    step 8: open fridge 1
+    step 9: close fridge 1
+    step 10: go to cabinet 1
+    step 11: go to cabinet 2
+    step 12: open cabinet 2
+    step 13: close cabinet 2
+    step 14: go to cabinet 3
+    step 15: go to cabinet 4
+    step 16: go to cabinet 5
+    step 17: open cabinet 5
+    step 18: close cabinet 5
+    step 19: go to cabinet 6
+    step 20: open cabinet 6
+    step 21: close cabinet 6
+    step 22: go to countertop 1
+    step 23: go to countertop 2
+    step 24: go to countertop 3
+    step 25: take egg 1 from countertop 3
+    step 26: go to sinkbasin 1
+    step 27: clean egg 1 with sinkbasin 1
+    step 28: go to microwave 1
+    step 29: open microwave 1
+    step 30: move egg 1 to microwave 1
+  test-final-v20-010-plan3: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: look
+    step 4: close fridge 1
+    step 5: go to countertop 1
+    step 6: go to countertop 2
+    step 7: go to countertop 3
+    step 8: take egg 1 from countertop 3
+    step 9: go to sinkbasin 1
+    step 10: clean egg 1 with sinkbasin 1
+    step 11: go to microwave 1
+    step 12: open microwave 1
+    step 13: move egg 1 to microwave 1
+  test-final-v20-011-plan1: start
+    step 1: look
+    step 2: go to cabinet 1
+    step 3: open cabinet 1
+    step 4: look
+    step 5: go to cabinet 2
+    step 6: open cabinet 2
+    step 7: go to cabinet 3
+    step 8: open cabinet 3
+    step 9: look
+    step 10: go to cabinet 4
+    step 11: open cabinet 4
+    step 12: look
+    step 13: go to cabinet 5
+    step 14: open cabinet 5
+    step 15: go to cabinet 6
+    step 16: open cabinet 6
+    step 17: take bowl 3 from cabinet 6
+    step 18: go to sinkbasin 1
+    step 19: clean bowl 3 with sinkbasin 1
+    step 20: go to countertop 1
+    step 21: move bowl 3 to countertop 1
+    step 22: look
+    step 23: go to countertop 2
+    step 24: go to countertop 3
+    step 25: look
+    step 26: go to countertop 1
+    step 27: look
+    step 28: go to sinkbasin 1
+    step 29: look
+    step 30: go to countertop 1
+    step 31: look
+    step 32: go to sinkbasin 1
+    step 33: look
+    step 34: go to countertop 1
+    step 35: look
+    step 36: go to sinkbasin 1
+    step 37: clean bowl 3 with sinkbasin 1
+    step 38: look
+    step 39: go to countertop 1
+    step 40: look
+    step 41: go to sinkbasin 1
+    step 42: clean bowl 3 with sinkbasin 1
+    step 43: look
+    step 44: go to countertop 1
+    step 45: look
+    step 46: go to sinkbasin 1
+    step 47: clean bowl 3 with sinkbasin 1
+    step 48: look
+    step 49: go to countertop 1
+    step 50: look
+  test-final-v20-011-plan2: start
+    step 1: go to sinkbasin 1
+    step 2: go to cabinet 5
+    step 3: open cabinet 5
+    step 4: go to cabinet 6
+    step 5: open cabinet 6
+    step 6: take bowl 3 from cabinet 6
+    step 7: go to sinkbasin 1
+    step 8: clean bowl 3 with sinkbasin 1
+    step 9: go to countertop 1
+    step 10: move bowl 3 to countertop 1
+    step 11: go to countertop 1
+    step 12: look
+    step 13: go to countertop 1
+    step 14: look
+    step 15: go to sinkbasin 1
+    step 16: go to countertop 1
+    step 17: look
+    step 18: go to sinkbasin 1
+    step 19: go to countertop 1
+    step 20: look
+    step 21: go to sinkbasin 1
+    step 22: go to countertop 1
+    step 23: look
+    step 24: go to sinkbasin 1
+    step 25: go to countertop 1
+    step 26: look
+    step 27: go to sinkbasin 1
+    step 28: go to countertop 1
+    step 29: look
+    step 30: go to sinkbasin 1
+    step 31: go to countertop 1
+    step 32: look
+    step 33: go to sinkbasin 1
+    step 34: go to countertop 1
+    step 35: look
+    step 36: go to sinkbasin 1
+    step 37: go to countertop 1
+    step 38: look
+    step 39: go to sinkbasin 1
+    step 40: go to countertop 1
+    step 41: look
+    step 42: go to sinkbasin 1
+    step 43: go to countertop 1
+    step 44: look
+    step 45: go to sinkbasin 1
+    step 46: go to countertop 1
+    step 47: look
+    step 48: go to sinkbasin 1
+    step 49: go to countertop 1
+    step 50: look
+  test-final-v20-011-plan3: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to countertop 2
+    step 4: go to countertop 3
+    step 5: go to cabinet 1
+    step 6: go to cabinet 2
+    step 7: open cabinet 2
+    step 8: go to cabinet 3
+    step 9: take bowl 1 from cabinet 3
+    step 10: go to sinkbasin 1
+    step 11: clean bowl 1 with sinkbasin 1
+    step 12: go to countertop 1
+    step 13: move bowl 1 to countertop 1
+    step 14: look
+    step 15: go to countertop 1
+    step 16: look
+    step 17: go to countertop 3
+    step 18: go to countertop 1
+    step 19: look
+    step 20: go to countertop 1
+    step 21: look
+    step 22: go to countertop 2
+    step 23: go to countertop 1
+    step 24: look
+    step 25: go to sinkbasin 1
+    step 26: go to countertop 1
+    step 27: look
+    step 28: go to countertop 1
+    step 29: look
+    step 30: go to countertop 3
+    step 31: go to countertop 1
+    step 32: look
+    step 33: go to sinkbasin 1
+    step 34: go to countertop 1
+    step 35: look
+    step 36: go to countertop 1
+    step 37: look
+    step 38: go to countertop 3
+    step 39: go to countertop 1
+    step 40: look
+    step 41: go to sinkbasin 1
+    step 42: go to countertop 1
+    step 43: look
+    step 44: go to countertop 1
+    step 45: look
+    step 46: go to countertop 3
+    step 47: go to countertop 1
+    step 48: look
+    step 49: go to sinkbasin 1
+    step 50: go to countertop 1
+  test-final-v20-012-plan1: start
+    step 1: go to cabinet 1
+    step 2: go to cabinet 2
+    step 3: open cabinet 2
+    step 4: take mug 1 from cabinet 2
+    step 5: go to fridge 1
+    step 6: open fridge 1
+    step 7: cool mug 1 with fridge 1
+    step 8: go to cabinet 2
+    step 9: move mug 1 to cabinet 2
+  test-final-v20-012-plan2: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to cabinet 1
+    step 4: go to fridge 1
+    step 5: take apple 1 from fridge 1
+    step 6: go to cabinet 1
+    step 7: move apple 1 to cabinet 1
+    step 8: go to fridge 1
+    step 9: close fridge 1
+    step 10: go to cabinet 1
+    step 11: look
+    step 12: go to countertop 1
+    step 13: take mug 2 from countertop 1
+    step 14: go to countertop 1
+    step 15: take mug 2 from countertop 1
+    step 16: look
+    step 17: go to countertop 1
+    step 18: take mug 2 from countertop 1
+    step 19: go to sinkbasin 1
+    step 20: go to countertop 1
+    step 21: take mug 2 from countertop 1
+    step 22: examine mug 2
+    step 23: go to fridge 1
+    step 24: open fridge 1
+    step 25: go to countertop 1
+    step 26: take mug 2 from countertop 1
+    step 27: go to sinkbasin 1
+    step 28: go to countertop 1
+    step 29: take mug 2 from countertop 1
+    step 30: go to cabinet 1
+    step 31: go to fridge 1
+    step 32: go to countertop 1
+    step 33: take mug 2 from countertop 1
+    step 34: look
+    step 35: go to sinkbasin 1
+    step 36: go to countertop 1
+    step 37: take mug 2 from countertop 1
+    step 38: examine mug 2
+    step 39: go to fridge 1
+    step 40: go to countertop 1
+    step 41: take mug 2 from countertop 1
+    step 42: go to sinkbasin 1
+    step 43: go to countertop 1
+    step 44: take mug 2 from countertop 1
+    step 45: go to cabinet 1
+    step 46: go to fridge 1
+    step 47: go to countertop 1
+    step 48: take mug 2 from countertop 1
+    step 49: go to sinkbasin 1
+    step 50: go to countertop 1
+  test-final-v20-012-plan3: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to cabinet 1
+    step 4: go to fridge 1
+    step 5: look
+    step 6: close fridge 1
+    step 7: go to cabinet 3
+    step 8: go to fridge 1
+    step 9: open fridge 1
+    step 10: go to cabinet 1
+    step 11: go to fridge 1
+    step 12: look
+    step 13: close fridge 1
+    step 14: go to cabinet 3
+    step 15: go to sinkbasin 1
+    step 16: take cup 1 from sinkbasin 1
+    step 17: go to fridge 1
+    step 18: open fridge 1
+    step 19: cool cup 1 with fridge 1
+    step 20: go to cabinet 3
+    step 21: move cup 1 to cabinet 3
+    step 22: go to cabinet 3
+    step 23: look
+    step 24: go to cabinet 3
+    step 25: look
+    step 26: go to sinkbasin 1
+    step 27: take cup 2 from sinkbasin 1
+    step 28: go to fridge 1
+    step 29: cool cup 2 with fridge 1
+    step 30: go to cabinet 3
+    step 31: move cup 2 to cabinet 3
+    step 32: look
+    step 33: go to cabinet 3
+    step 34: look
+    step 35: go to sinkbasin 1
+    step 36: go to cabinet 3
+    step 37: look
+    step 38: go to fridge 1
+    step 39: close fridge 1
+    step 40: go to cabinet 3
+    step 41: look
+    step 42: go to sinkbasin 1
+    step 43: go to cabinet 3
+    step 44: look
+    step 45: go to fridge 1
+    step 46: open fridge 1
+    step 47: go to cabinet 3
+    step 48: look
+    step 49: go to fridge 1
+    step 50: go to cabinet 3
+  test-final-v20-013-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: close fridge 1
+    step 4: go to countertop 1
+    step 5: take tomato 1 from countertop 1
+    step 6: go to fridge 1
+    step 7: open fridge 1
+    step 8: close fridge 1
+    step 9: go to microwave 1
+    step 10: open microwave 1
+    step 11: move tomato 1 to microwave 1
+    step 12: close microwave 1
+    step 13: heat tomato 1 with microwave 1
+    step 14: go to fridge 1
+    step 15: open fridge 1
+    step 16: close fridge 1
+    step 17: go to microwave 1
+    step 18: open microwave 1
+    step 19: cool tomato 1 with fridge 1
+    step 20: go to fridge 1
+    step 21: open fridge 1
+    step 22: close fridge 1
+    step 23: go to microwave 1
+    step 24: close microwave 1
+    step 25: heat tomato 1 with microwave 1
+    step 26: go to fridge 1
+    step 27: open fridge 1
+    step 28: close fridge 1
+    step 29: go to countertop 1
+    step 30: go to microwave 1
+    step 31: open microwave 1
+    step 32: take tomato 1 from microwave 1
+    step 33: go to fridge 1
+    step 34: open fridge 1
+    step 35: close fridge 1
+    step 36: go to microwave 1
+    step 37: move tomato 1 to microwave 1
+    step 38: close microwave 1
+    step 39: heat tomato 1 with microwave 1
+    step 40: go to fridge 1
+    step 41: open fridge 1
+    step 42: close fridge 1
+    step 43: go to countertop 1
+    step 44: go to microwave 1
+    step 45: open microwave 1
+    step 46: take tomato 1 from microwave 1
+    step 47: go to fridge 1
+    step 48: open fridge 1
+    step 49: close fridge 1
+    step 50: go to sinkbasin 1
+  test-final-v20-013-plan2: start
+    step 1: go to microwave 1
+    step 2: open microwave 1
+    step 3: go to fridge 1
+    step 4: open fridge 1
+    step 5: go to countertop 1
+    step 6: take tomato 1 from countertop 1
+    step 7: cool tomato 1 with fridge 1
+    step 8: go to fridge 1
+    step 9: put tomato 1 in fridge 1
+    step 10: cool tomato 1 with fridge 1
+    step 11: go to microwave 1
+    step 12: move tomato 1 to microwave 1
+  test-final-v20-013-plan3: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: close fridge 1
+    step 4: go to shelf 1
+    step 5: go to shelf 2
+    step 6: go to shelf 3
+    step 7: go to cabinet 1
+    step 8: go to cabinet 2
+    step 9: open cabinet 2
+    step 10: close cabinet 2
+    step 11: go to cabinet 3
+    step 12: go to cabinet 4
+    step 13: go to cabinet 5
+    step 14: open cabinet 5
+    step 15: close cabinet 5
+    step 16: go to cabinet 6
+    step 17: open cabinet 6
+    step 18: close cabinet 6
+    step 19: go to countertop 1
+    step 20: take tomato 1 from countertop 1
+    step 21: go to fridge 1
+    step 22: open fridge 1
+    step 23: close fridge 1
+    step 24: go to microwave 1
+    step 25: open microwave 1
+    step 26: move tomato 1 to microwave 1
+    step 27: close microwave 1
+    step 28: heat tomato 1 with microwave 1
+    step 29: go to microwave 1
+    step 30: open microwave 1
+    step 31: take tomato 1 from microwave 1
+    step 32: go to fridge 1
+    step 33: open fridge 1
+    step 34: close fridge 1
+    step 35: go to countertop 1
+    step 36: go to fridge 1
+    step 37: open fridge 1
+    step 38: close fridge 1
+    step 39: go to microwave 1
+    step 40: move tomato 1 to microwave 1
+    step 41: close microwave 1
+    step 42: heat tomato 1 with microwave 1
+    step 43: go to microwave 1
+    step 44: open microwave 1
+    step 45: take tomato 1 from microwave 1
+    step 46: go to fridge 1
+    step 47: open fridge 1
+    step 48: close fridge 1
+    step 49: go to countertop 1
+    step 50: go to microwave 1
+  test-final-v20-014-plan1: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: look
+    step 4: go to cabinet 1
+    step 5: open cabinet 1
+    step 6: take cloth 2 from cabinet 1
+    step 7: go to sinkbasin 1
+    step 8: clean cloth 2 with sinkbasin 1
+    step 9: go to countertop 1
+    step 10: move cloth 2 to countertop 1
+  test-final-v20-014-plan2: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: look
+    step 4: go to cabinet 1
+    step 5: open cabinet 1
+    step 6: take cloth 2 from cabinet 1
+    step 7: go to sinkbasin 1
+    step 8: clean cloth 2 with sinkbasin 1
+    step 9: go to countertop 1
+    step 10: move cloth 2 to countertop 1
+  test-final-v20-014-plan3: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to sinkbasin 1
+    step 4: go to sinkbasin 2
+    step 5: go to cabinet 1
+    step 6: open cabinet 1
+    step 7: take cloth 2 from cabinet 1
+    step 8: go to sinkbasin 1
+    step 9: clean cloth 2 with sinkbasin 1
+    step 10: go to countertop 1
+    step 11: move cloth 2 to countertop 1
+  test-final-v20-015-plan1: start
+    step 1: go to cabinet 1
+    step 2: take bowl 1 from cabinet 1
+    step 3: go to sinkbasin 1
+    step 4: clean bowl 1 with sinkbasin 1
+    step 5: go to cabinet 1
+    step 6: move bowl 1 to cabinet 1
+  test-final-v20-015-plan2: start
+    step 1: go to cabinet 6
+    step 2: open cabinet 6
+    step 3: go to cabinet 5
+    step 4: open cabinet 5
+    step 5: go to cabinet 4
+    step 6: go to cabinet 3
+    step 7: go to cabinet 2
+    step 8: open cabinet 2
+    step 9: go to cabinet 1
+    step 10: take bowl 1 from cabinet 1
+    step 11: go to sinkbasin 1
+    step 12: clean bowl 1 with sinkbasin 1
+    step 13: go to cabinet 1
+    step 14: move bowl 1 to cabinet 1
+  test-final-v20-015-plan3: start
+    step 1: look
+    step 2: go to cabinet 1
+    step 3: open cabinet 1
+    step 4: examine cabinet 1
+    step 5: take bowl 1 from cabinet 1
+    step 6: clean bowl 1 with sinkbasin 1
+    step 7: go to sinkbasin 1
+    step 8: clean bowl 1 with sinkbasin 1
+    step 9: go to cabinet 1
+    step 10: move bowl 1 to cabinet 1
+  test-final-v20-016-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take egg 1 from fridge 1
+    step 4: go to sinkbasin 1
+    step 5: clean egg 1 with sinkbasin 1
+    step 6: go to microwave 1
+    step 7: open microwave 1
+    step 8: move egg 1 to microwave 1
+  test-final-v20-016-plan2: start
+    step 1: go to cabinet 1
+    step 2: go to cabinet 2
+    step 3: open cabinet 2
+    step 4: go to cabinet 3
+    step 5: go to cabinet 4
+    step 6: go to cabinet 5
+    step 7: open cabinet 5
+    step 8: go to cabinet 6
+    step 9: open cabinet 6
+    step 10: go to fridge 1
+    step 11: open fridge 1
+    step 12: take egg 1 from fridge 1
+    step 13: go to sinkbasin 1
+    step 14: clean egg 1 with sinkbasin 1
+    step 15: go to microwave 1
+    step 16: open microwave 1
+    step 17: move egg 1 to microwave 1
+  test-final-v20-016-plan3: start
+    step 1: go to sinkbasin 1
+    step 2: go to fridge 1
+    step 3: open fridge 1
+    step 4: take egg 1 from fridge 1
+    step 5: go to sinkbasin 1
+    step 6: clean egg 1 with sinkbasin 1
+    step 7: go to microwave 1
+    step 8: open microwave 1
+    step 9: move egg 1 to microwave 1
+  test-final-v20-017-plan1: start
+    step 1: go to cabinet 1
+    step 2: go to cabinet 2
+    step 3: open cabinet 2
+    step 4: take bowl 1 from cabinet 2
+    step 5: go to sinkbasin 1
+    step 6: clean bowl 1 with sinkbasin 1
+    step 7: go to countertop 1
+    step 8: put pan 1 on countertop 1
+    step 9: move pan 1 to countertop 1
+    step 10: take pan 1 from countertop 1
+    step 11: go to countertop 1
+    step 12: look
+    step 13: go to countertop 1
+    step 14: take pan 1 from countertop 1
+    step 15: examine countertop 1
+    step 16: take pan 1 from countertop 1
+    step 17: go to sinkbasin 1
+    step 18: go to countertop 1
+    step 19: move pan 1 to countertop 1
+    step 20: take pan 1 from countertop 1
+    step 21: go to sinkbasin 1
+    step 22: go to countertop 1
+    step 23: take pan 1 from countertop 1
+    step 24: move pan 1 to countertop 1
+    step 25: go to cabinet 3
+    step 26: go to cabinet 4
+    step 27: go to cabinet 5
+    step 28: open cabinet 5
+    step 29: go to cabinet 6
+    step 30: open cabinet 6
+    step 31: go to drawer 1
+    step 32: open drawer 1
+    step 33: go to drawer 2
+    step 34: open drawer 2
+    step 35: go to drawer 3
+    step 36: open drawer 3
+    step 37: go to sinkbasin 1
+    step 38: go to countertop 1
+    step 39: take pan 1 from countertop 1
+    step 40: move pan 1 to countertop 1
+    step 41: go to sinkbasin 1
+    step 42: go to countertop 1
+    step 43: take pan 1 from countertop 1
+    step 44: examine pan 1
+    step 45: go to sinkbasin 1
+    step 46: clean pan 1 with sinkbasin 1
+    step 47: go to countertop 1
+    step 48: move pan 1 to countertop 1
+    step 49: take pan 1 from countertop 1
+    step 50: go to sinkbasin 1
+  test-final-v20-017-plan2: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: take pan 1 from countertop 1
+    step 4: clean pan 1 with sinkbasin 1
+    step 5: go to sinkbasin 1
+    step 6: clean pan 1 with sinkbasin 1
+    step 7: go to countertop 1
+    step 8: move pan 1 to countertop 1
+  test-final-v20-017-plan3: start
+    step 1: look
+    step 2: go to sinkbasin 1
+    step 3: look
+    step 4: go to countertop 1
+    step 5: take pan 1 from countertop 1
+    step 6: clean pan 1 with sinkbasin 1
+    step 7: go to sinkbasin 1
+    step 8: clean pan 1 with sinkbasin 1
+    step 9: go to countertop 1
+    step 10: move pan 1 to countertop 1
+  test-final-v20-018-plan1: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take lettuce from fridge 1
+    step 4: look
+    step 5: go to countertop 1
+    step 6: go to fridge 1
+    step 7: take lettuce from fridge 1
+    step 8: look
+    step 9: go to countertop 2
+    step 10: take lettuce 1 from countertop 2
+    step 11: cool lettuce 1 with fridge 1
+    step 12: go to fridge 1
+    step 13: move lettuce 1 to fridge 1
+    step 14: cool lettuce 1 with fridge 1
+    step 15: go to countertop 1
+    step 16: move lettuce 1 to countertop 1
+    step 17: go to fridge 1
+    step 18: take lettuce 1 from fridge 1
+    step 19: cool lettuce 1 with fridge 1
+    step 20: go to countertop 1
+    step 21: move lettuce 1 to countertop 1
+  test-final-v20-018-plan2: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: go to cabinet 1
+    step 4: go to cabinet 2
+    step 5: open cabinet 2
+    step 6: go to cabinet 3
+    step 7: go to cabinet 4
+    step 8: go to cabinet 5
+    step 9: open cabinet 5
+    step 10: go to cabinet 6
+    step 11: open cabinet 6
+    step 12: go to fridge 1
+    step 13: go to countertop 1
+    step 14: go to fridge 1
+    step 15: go to cabinet 1
+    step 16: go to countertop 2
+    step 17: take lettuce 1 from countertop 2
+    step 18: cool lettuce 1 with fridge 1
+    step 19: go to fridge 1
+    step 20: cool lettuce 1 with fridge 1
+    step 21: go to countertop 1
+    step 22: move lettuce 1 to countertop 1
+  test-final-v20-018-plan3: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to countertop 2
+    step 4: take lettuce 1 from countertop 2
+    step 5: cool lettuce 1 with fridge 1
+    step 6: go to fridge 1
+    step 7: open fridge 1
+    step 8: cool lettuce 1 with fridge 1
+    step 9: go to countertop 1
+    step 10: move lettuce 1 to countertop 1
+  test-final-v20-019-plan1: start
+    step 1: go to cabinet 1
+    step 2: go to cabinet 2
+    step 3: open cabinet 2
+    step 4: go to cabinet 3
+    step 5: take cup 1 from cabinet 3
+    step 6: go to microwave 1
+    step 7: open microwave 1
+    step 8: heat cup 1 with microwave 1
+    step 9: go to coffeemachine 1
+    step 10: move cup 1 to coffeemachine 1
+    step 11: put cup 1 in coffeemachine 1
+    step 12: move cup 1 to coffeemachine 1
+    step 13: put cup 1 in coffeemachine 1
+    step 14: examine coffeemachine 1
+    step 15: go to countertop 1
+    step 16: go to coffeemachine 1
+    step 17: put cup 1 in coffeemachine 1
+    step 18: move cup 1 to coffeemachine 1
+    step 19: examine cup 1
+    step 20: go to microwave 1
+    step 21: close microwave 1
+    step 22: go to coffeemachine 1
+    step 23: put cup 1 in coffeemachine 1
+    step 24: move cup 1 to coffeemachine 1
+    step 25: examine coffeemachine 1
+    step 26: go to countertop 2
+    step 27: go to cup 3
+    step 28: take cup 3 from countertop 2
+    step 29: go to coffeemachine 1
+    step 30: put cup 3 in coffeemachine 1
+    step 31: move cup 3 to coffeemachine 1
+    step 32: examine coffeemachine 1
+    step 33: go to countertop 3
+    step 34: go to coffeemachine 1
+    step 35: go to drawer 1
+    step 36: open drawer 1
+    step 37: go to coffeemachine 1
+    step 38: go to fridge 1
+    step 39: open fridge 1
+    step 40: take cup 2 from fridge 1
+    step 41: go to microwave 1
+    step 42: open microwave 1
+    step 43: heat cup 2 with microwave 1
+    step 44: go to coffeemachine 1
+    step 45: put cup 2 in coffeemachine 1
+    step 46: move cup 2 to coffeemachine 1
+    step 47: examine cup 2
+    step 48: go to fridge 1
+    step 49: take cup 2 from fridge 1
+    step 50: go to microwave 1
+  test-final-v20-019-plan2: start
+    step 1: look
+    step 2: go to microwave 1
+    step 3: open microwave 1
+    step 4: close microwave 1
+    step 5: go to countertop 1
+    step 6: take mug 2 from countertop 1
+    step 7: go to microwave 1
+    step 8: open microwave 1
+    step 9: heat mug 2 with microwave 1
+    step 10: go to coffeemachine 1
+    step 11: move mug 2 to coffeemachine 1
+  test-final-v20-019-plan3: start
+    step 1: go to fridge 1
+    step 2: open fridge 1
+    step 3: take cup 2 from fridge 1
+    step 4: go to microwave 1
+    step 5: open microwave 1
+    step 6: heat cup 2 with microwave 1
+    step 7: go to coffeemachine 1
+    step 8: move cup 2 to coffeemachine 1
+    step 9: put cup 2 in coffeemachine 1
+    step 10: move cup 2 to coffeemachine 1
+    step 11: put cup 2 in coffeemachine 1
+    step 12: examine coffeemachine 1
+    step 13: look
+    step 14: go to countertop 1
+    step 15: go to countertop 2
+    step 16: go to coffeemachine 1
+    step 17: move cup 2 to coffeemachine 1
+    step 18: put cup 2 in coffeemachine 1
+    step 19: examine cup 2
+    step 20: go to microwave 1
+    step 21: take cup 2 from microwave 1
+    step 22: go to coffeemachine 1
+    step 23: put cup 2 in coffeemachine 1
+    step 24: move cup 2 to coffeemachine 1
+    step 25: go to fridge 1
+    step 26: go to countertop 1
+    step 27: take mug 2 from countertop 1
+    step 28: go to microwave 1
+    step 29: heat mug 2 with microwave 1
+    step 30: take mug 2 from countertop 1
+    step 31: go to coffeemachine 1
+    step 32: take mug 2 from countertop 1
+    step 33: look
+    step 34: go to countertop 1
+    step 35: take mug 2 from countertop 1
+    step 36: go to mug 2
+    step 37: go to countertop 1
+    step 38: take mug 2 from countertop 1
+    step 39: examine countertop 1
+    step 40: take mug 2 from countertop 1
+    step 41: go to mug 2
+    step 42: go to countertop 1
+    step 43: take mug 2 from countertop 1
+    step 44: examine mug 2
+    step 45: go to microwave 1
+    step 46: go to countertop 1
+    step 47: take mug 2 from countertop 1
+    step 48: go to microwave 1
+    step 49: heat mug 2 with microwave 1
+    step 50: go to coffeemachine 1
+  test-final-v20-020-plan1: start
+    step 1: look
+    step 2: go to countertop 1
+    step 3: go to countertop 2
+    step 4: go to countertop 3
+    step 5: take spatula 1 from countertop 3
+    step 6: go to sinkbasin 1
+    step 7: clean spatula 1 with sinkbasin 1
+    step 8: go to drawer 1
+    step 9: open drawer 1
+    step 10: move spatula 1 to drawer 1
+  test-final-v20-020-plan2: start
+    step 1: look
+    step 2: go to sinkbasin 1
+    step 3: look
+    step 4: go to drawer 1
+    step 5: open drawer 1
+    step 6: close drawer 1
+    step 7: go to drawer 2
+    step 8: open drawer 2
+    step 9: close drawer 2
+    step 10: go to drawer 3
+    step 11: open drawer 3
+    step 12: close drawer 3
+    step 13: go to countertop 1
+    step 14: look
+    step 15: go to countertop 2
+    step 16: look
+    step 17: go to countertop 3
+    step 18: take spatula 1 from countertop 3
+    step 19: go to sinkbasin 1
+    step 20: clean spatula 1 with sinkbasin 1
+    step 21: go to drawer 1
+    step 22: open drawer 1
+    step 23: move spatula 1 to drawer 1
+  test-final-v20-020-plan3: start
+    step 1: look
+    step 2: go to sinkbasin 1
+    step 3: look
+    step 4: go to countertop 1
+    step 5: look
+    step 6: go to countertop 2
+    step 7: look
+    step 8: go to countertop 3
+    step 9: take spatula 1 from countertop 3
+    step 10: go to sinkbasin 1
+    step 11: clean spatula 1 with sinkbasin 1
+    step 12: go to drawer 1
+    step 13: open drawer 1
+    step 14: move spatula 1 to drawer 1
+COMPARISON_COMPLETE {'empty_memory': {'questions': 20, 'trajectories': 60, 'successful_trajectories': 42, 'pass_at_1': 0.7, 'mean_steps': 29.933333333333334}, 'frozen_evolved_memory': {'questions': 20, 'trajectories': 60, 'successful_trajectories': 45, 'pass_at_1': 0.75, 'mean_steps': 24.216666666666665}}

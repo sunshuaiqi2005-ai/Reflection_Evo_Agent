@@ -1,0 +1,151 @@
+{
+  "id": "train-003-plan1",
+  "task_id": "train/pick_heat_then_place_in_recep-Apple-None-CounterTop-2/trial_T20190908_112607_841503/game.tw-pddl",
+  "plan": {
+    "name": "Search and Retrieve from Refrigerator First",
+    "strategy": "Prioritize checking the fridge for an apple, then heat it in the microwave, and place it on the countertop.",
+    "steps": [
+      "Check the fridge 1 to locate an apple.",
+      "If an apple is found, take it from the fridge.",
+      "Heat the apple in the microwave 1 to make it hot.",
+      "After heating, move the hot apple to countertop 1 or countertop 2 as specified in the task goal."
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a drawer 13, a drawer 12, a drawer 11, a drawer 10, a drawer 9, a drawer 8, a drawer 7, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 6, a stoveburner 5, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a hot apple in countertop.",
+  "memory_version": 2,
+  "injection": {
+    "mode": "full",
+    "possible_problems": [],
+    "state_ids": [],
+    "experiences": [
+      {
+        "id": "E00005",
+        "state": "碗在柜子中，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从柜子中取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00006",
+        "state": "碗在台面上，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从台面上取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00007",
+        "state": "微波炉未打开，无法放置碗。",
+        "explanation": "",
+        "advice": [
+          "在放置碗之前，确保微波炉已打开。",
+          "若微波炉未打开，先打开微波炉再放置碗。",
+          "避免在未打开的微波炉中放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00013",
+        "state": "在冰箱中找到土豆后，需将其放入微波炉并加热。",
+        "explanation": "",
+        "advice": [
+          "将土豆放入微波炉",
+          "确认微波炉已打开",
+          "执行加热操作"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00014",
+        "state": "若加热操作失败，需检查微波炉是否已打开并包含土豆。",
+        "explanation": "",
+        "advice": [
+          "确认微波炉已打开",
+          "确保土豆已放入微波炉",
+          "重新执行加热操作"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00015",
+        "state": "在垃圾箱中放置加热后的土豆时，需确保垃圾箱可用。",
+        "explanation": "",
+        "advice": [
+          "确认垃圾箱已打开",
+          "将土豆放入垃圾箱",
+          "检查垃圾箱是否接受该物品"
+        ],
+        "exceptions": []
+      }
+    ],
+    "candidate_count": 6,
+    "budget_applied": false
+  },
+  "steps": [
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open fridge 1",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a apple 1, a cup 1, and a potato 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take apple 1 from fridge 1",
+      "observation": "You pick up the apple 1 from the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to microwave 1",
+      "observation": "You arrive at microwave 1. The microwave 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open microwave 1",
+      "observation": "You open the microwave 1. The microwave 1 is open. In it, you see a mug 2, and a mug 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "heat apple 1 with microwave 1",
+      "observation": "You heat the apple 1 using the microwave 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a butterknife 1, a fork 2, a knife 1, a lettuce 1, a pan 1, a plate 1, a soapbottle 2, a spatula 3, a spoon 1, a window 3, and a window 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move apple 1 to countertop 1",
+      "observation": "You move the apple 1 to the countertop 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "won": true,
+  "termination": "won"
+}

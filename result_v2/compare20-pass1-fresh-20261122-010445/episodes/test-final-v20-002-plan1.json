@@ -1,0 +1,533 @@
+{
+  "id": "test-final-v20-002-plan1",
+  "task_id": "valid_unseen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-10/trial_T20190909_123133_763972/game.tw-pddl",
+  "plan": {
+    "name": "Strategy 1: Direct Cooling and Placement",
+    "strategy": "Prioritize locating the lettuce in the fridge, cool it directly if needed, and place it on the countertop.",
+    "steps": [
+      "Check the fridge to locate the lettuce.",
+      "If the lettuce is not already cool, place it in the fridge to cool.",
+      "Once cooled, take the lettuce from the fridge.",
+      "Place the lettuce on the countertop."
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: cool some lettuce and put it in countertop.",
+  "memory_version": 20,
+  "injection": {
+    "mode": "catalogue",
+    "possible_problems": [
+      "冷却步骤失败可能与冷却设备或方法有关。",
+      "If the initial cleaning action fails, the system should attempt the action again.",
+      "微波炉内已有苹果，但未被识别为任务目标的一部分。",
+      "番茄可能存在于餐桌，但未被正确识别或处理。",
+      "Searching for an apple in a large number of cabinets may be inefficient and may not complete before the step limit."
+    ],
+    "state_ids": [
+      "S00033",
+      "S00017",
+      "S00047",
+      "S00009",
+      "S00059"
+    ],
+    "experiences": [
+      {
+        "id": "E00013",
+        "state": "在冰箱中找到土豆后，需将其放入微波炉并加热。",
+        "explanation": "",
+        "advice": [
+          "将土豆放入微波炉",
+          "确认微波炉已打开",
+          "执行加热操作"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00014",
+        "state": "若加热操作失败，需检查微波炉是否已打开并包含土豆。",
+        "explanation": "",
+        "advice": [
+          "确认微波炉已打开",
+          "确保土豆已放入微波炉",
+          "重新执行加热操作"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00015",
+        "state": "在垃圾箱中放置加热后的土豆时，需确保垃圾箱可用。",
+        "explanation": "",
+        "advice": [
+          "确认垃圾箱已打开",
+          "将土豆放入垃圾箱",
+          "检查垃圾箱是否接受该物品"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00029",
+        "state": "The initial 'clean' action may fail if the agent is not at the correct location (e.g., sinkbasin).",
+        "explanation": "",
+        "advice": [
+          "Move to the sinkbasin before attempting to clean the sponge.",
+          "If the 'clean' action fails, check if the agent is at the correct location for cleaning."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00057",
+        "state": "When the cleaning action fails, the actor should attempt the action again.",
+        "explanation": "",
+        "advice": [
+          "Repeat the cleaning action if it fails the first time.",
+          "Ensure the object is in the correct location for cleaning."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00059",
+        "state": "When the object is successfully cleaned and moved to the target location, the actor should confirm the action's success.",
+        "explanation": "",
+        "advice": [
+          "Verify that the object is in the correct location after the action is completed.",
+          "Ensure the task is fully completed before ending the interaction."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00068",
+        "state": "使用冰箱冷却杯子是有效的，但需确保杯子已被正确拾取。",
+        "explanation": "",
+        "advice": [
+          "在冷却前确保杯子已被正确拾取并携带至冷却设备。",
+          "若冷却失败，应检查杯子是否在冷却设备附近。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00080",
+        "state": "杯子需要冷却，但冰箱可能关闭。",
+        "explanation": "冰箱可能关闭，需先打开才能使用。",
+        "advice": [
+          "先打开冰箱再使用",
+          "若冰箱关闭，先打开再使用",
+          "确保冰箱打开后可用"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00088",
+        "state": "方案一在检查完所有柜子后终于在 countertop 3 找到土豆并加热，但未将土豆放入垃圾箱，任务未完成。",
+        "explanation": "可能因为计划中未包含将土豆放入垃圾箱的步骤。",
+        "advice": [
+          "在计划中明确所有步骤，包括将土豆放入垃圾箱",
+          "确保所有步骤都被执行",
+          "在执行步骤时检查是否遗漏了关键步骤"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00089",
+        "state": "方案二在检查 fridge 后直接检查 countertop 并找到土豆，成功加热并放入垃圾箱，任务完成。",
+        "explanation": "可能因为方案二的搜索策略更高效，优先检查了常见存储位置。",
+        "advice": [
+          "优先检查 fridge 和 countertop",
+          "避免无针对性地检查所有柜子",
+          "在计划中明确检查顺序"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00090",
+        "state": "方案三系统性地检查所有柜子，但未检查 fridge 和 countertop，导致未找到土豆，任务未完成。",
+        "explanation": "可能因为计划中未将 fridge 和 countertop 作为优先检查位置。",
+        "advice": [
+          "在搜索策略中优先考虑 fridge 和 countertop",
+          "避免过度依赖柜子作为唯一存储位置",
+          "在计划中明确检查顺序"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00111",
+        "state": "加热设备可能包含其他物品。",
+        "explanation": "微波炉中可能有其他物品，如土豆，可能影响加热效果。",
+        "advice": [
+          "加热前检查设备内部",
+          "确保目标物品是唯一加热对象",
+          "避免加热非目标物品"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00161",
+        "state": "Searching for an apple in a large number of cabinets may be inefficient and may not complete before the step limit.",
+        "explanation": "",
+        "advice": [
+          "Limit the number of cabinets searched to avoid exceeding the step limit.",
+          "Prioritize cabinets that are more likely to contain the apple."
+        ],
+        "exceptions": [
+          "The apple may be in a cabinet that is not checked due to step limit constraints.",
+          "The apple may not exist in the environment.",
+          "The apple may be in a location that is not accessible."
+        ]
+      }
+    ],
+    "candidate_count": 13,
+    "budget_applied": false
+  },
+  "steps": [
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open fridge 1",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a apple 1, a bread 1, a plate 1, a potato 1, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take lettuce 1 from fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the fridge 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look inside fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the fridge 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "examine fridge 1",
+      "observation": "The fridge 1 is open. In it, you see a apple 1, a bread 1, a plate 1, a potato 1, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "cool lettuce 1 with fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take lettuce 1 from fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a egg 2, a spoon 1, a tomato 1, and a vase 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is open. In it, you see a apple 1, a bread 1, a plate 1, a potato 1, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look inside fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "examine fridge 1",
+      "observation": "The fridge 1 is open. In it, you see a apple 1, a bread 1, a plate 1, a potato 1, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 2",
+      "observation": "You arrive at countertop 2. On the countertop 2, you see a butterknife 1, a creditcard 2, a creditcard 1, a cup 1, a knife 1, a lettuce 1, a plate 2, and a spatula 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take lettuce 1 from countertop 2",
+      "observation": "You pick up the lettuce 1 from the countertop 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "cool lettuce 1 with fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is open. In it, you see a apple 1, a bread 1, a plate 1, a potato 1, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "put lettuce 1 in fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move lettuce 1 to fridge 1",
+      "observation": "You move the lettuce 1 to the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "cool lettuce 1 with fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take lettuce 1 from fridge 1",
+      "observation": "You pick up the lettuce 1 from the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a egg 2, a spoon 1, a tomato 1, and a vase 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move lettuce 1 to countertop 1",
+      "observation": "You move the lettuce 1 to the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is open. In it, you see a apple 1, a bread 1, a plate 1, a potato 1, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "cool lettuce 1 with fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take lettuce 1 from countertop 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a egg 2, a lettuce 1, a spoon 1, a tomato 1, and a vase 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take lettuce 1 from countertop 1",
+      "observation": "You pick up the lettuce 1 from the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "cool lettuce 1 with fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is open. In it, you see a apple 1, a bread 1, a plate 1, a potato 1, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "put lettuce 1 in fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move lettuce 1 to fridge 1",
+      "observation": "You move the lettuce 1 to the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "cool lettuce 1 with fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take lettuce 1 from fridge 1",
+      "observation": "You pick up the lettuce 1 from the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a egg 2, a spoon 1, a tomato 1, and a vase 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move lettuce 1 to countertop 1",
+      "observation": "You move the lettuce 1 to the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is open. In it, you see a apple 1, a bread 1, a plate 1, a potato 1, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "cool lettuce 1 with fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take lettuce 1 from countertop 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a egg 2, a lettuce 1, a spoon 1, a tomato 1, and a vase 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take lettuce 1 from countertop 1",
+      "observation": "You pick up the lettuce 1 from the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "cool lettuce 1 with fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is open. In it, you see a apple 1, a bread 1, a plate 1, a potato 1, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "put lettuce 1 in fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move lettuce 1 to fridge 1",
+      "observation": "You move the lettuce 1 to the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "cool lettuce 1 with fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take lettuce 1 from fridge 1",
+      "observation": "You pick up the lettuce 1 from the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a egg 2, a spoon 1, a tomato 1, and a vase 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move lettuce 1 to countertop 1",
+      "observation": "You move the lettuce 1 to the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is open. In it, you see a apple 1, a bread 1, a plate 1, a potato 1, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    }
+  ],
+  "won": false,
+  "termination": "step_limit"
+}

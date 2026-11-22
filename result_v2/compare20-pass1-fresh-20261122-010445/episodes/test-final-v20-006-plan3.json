@@ -1,0 +1,538 @@
+{
+  "id": "test-final-v20-006-plan3",
+  "task_id": "valid_unseen/pick_clean_then_place_in_recep-Cloth-None-Cabinet-424/trial_T20190908_022321_380927/game.tw-pddl",
+  "plan": {
+    "name": "Strategy 3: Clean First, Then Locate and Store",
+    "strategy": "Assume the cloth may be in use or dirty, so clean it first and then find a suitable cabinet for storage.",
+    "steps": [
+      "Locate a cloth in the environment (start with countertop 1 and then move to sinkbasin 1).",
+      "If a cloth is not immediately visible, search the cabinets for a cloth that may be stored there.",
+      "Once a cloth is found, clean it in the sinkbasin 1.",
+      "After cleaning, choose a cabinet (e.g., cabinet 1) and place the cloth inside it for storage."
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a countertop 1, a garbagecan 1, a handtowelholder 2, a handtowelholder 1, a sinkbasin 2, a sinkbasin 1, a toilet 1, a toiletpaperhanger 1, and a towelholder 1.\n\nYour task is to: clean some cloth and put it in cabinet.",
+  "memory_version": 20,
+  "injection": {
+    "mode": "catalogue",
+    "possible_problems": [
+      "清洁操作失败，可能需要重新尝试或调整位置",
+      "未找到布，可能需要扩展搜索范围",
+      "放置布到柜子前未确认布是否已清洁",
+      "柜子可能未被正确选择或打开",
+      "搜索过程可能因步骤限制而无法完成"
+    ],
+    "state_ids": [
+      "S00017",
+      "S00053",
+      "S00004",
+      "S00005",
+      "S00059"
+    ],
+    "experiences": [
+      {
+        "id": "E00005",
+        "state": "碗在柜子中，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从柜子中取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00006",
+        "state": "碗在台面上，但未被清洁。",
+        "explanation": "",
+        "advice": [
+          "从台面上取出碗后，使用水槽清洁碗。",
+          "确保碗已清洁后再放入微波炉。",
+          "避免在未清洁的情况下放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00007",
+        "state": "微波炉未打开，无法放置碗。",
+        "explanation": "",
+        "advice": [
+          "在放置碗之前，确保微波炉已打开。",
+          "若微波炉未打开，先打开微波炉再放置碗。",
+          "避免在未打开的微波炉中放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00029",
+        "state": "The initial 'clean' action may fail if the agent is not at the correct location (e.g., sinkbasin).",
+        "explanation": "",
+        "advice": [
+          "Move to the sinkbasin before attempting to clean the sponge.",
+          "If the 'clean' action fails, check if the agent is at the correct location for cleaning."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00057",
+        "state": "When the cleaning action fails, the actor should attempt the action again.",
+        "explanation": "",
+        "advice": [
+          "Repeat the cleaning action if it fails the first time.",
+          "Ensure the object is in the correct location for cleaning."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00059",
+        "state": "When the object is successfully cleaned and moved to the target location, the actor should confirm the action's success.",
+        "explanation": "",
+        "advice": [
+          "Verify that the object is in the correct location after the action is completed.",
+          "Ensure the task is fully completed before ending the interaction."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00078",
+        "state": "杯子在柜子中，但需要打开柜子才能看到。",
+        "explanation": "柜子可能关闭，需先打开才能查看内容。",
+        "advice": [
+          "先打开柜子再检查内容",
+          "若柜子关闭，先打开再检查",
+          "确保柜子打开后内容可见"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00079",
+        "state": "杯子在台面上，但需要移动才能获取。",
+        "explanation": "杯子可能被其他物品遮挡，需先移动物品。",
+        "advice": [
+          "先检查台面是否有其他物品",
+          "若物品遮挡，先移动物品",
+          "确保杯子可见且可获取"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00102",
+        "state": "碗在柜子中，但未冷却。",
+        "explanation": "需先取出碗，再使用冰箱进行冷却。",
+        "advice": [
+          "取出碗",
+          "使用冰箱进行冷却",
+          "冷却后放置在餐桌"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00103",
+        "state": "碗在冰箱中，但未冷却。",
+        "explanation": "需检查碗的温度状态，若未冷却则需进一步冷却。",
+        "advice": [
+          "检查碗的温度",
+          "若未冷却，使用冰箱进行冷却",
+          "冷却后放置在餐桌"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00104",
+        "state": "碗在台面上，但未冷却。",
+        "explanation": "需检查碗的温度状态，若未冷却则需使用冰箱进行冷却。",
+        "advice": [
+          "检查碗的温度",
+          "若未冷却，使用冰箱进行冷却",
+          "冷却后放置在餐桌"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00127",
+        "state": "When a bowl is not found in the initial search, it is important to continue searching in other locations.",
+        "explanation": "Strategies 1 and 3 did not find a bowl in their initial search and had to continue searching.",
+        "advice": [
+          "Continue searching in other locations if a bowl is not found in the initial search."
+        ],
+        "exceptions": [
+          "If the task goal is to place a clean mug on the shelf, this advice may not apply."
+        ]
+      },
+      {
+        "id": "E00134",
+        "state": "水壶在柜台2上，未被清洁。",
+        "explanation": "水壶可能在常见位置，如柜台。",
+        "advice": [
+          "检查柜台1和柜台2",
+          "若未找到，检查水槽",
+          "若仍未找到，检查柜子"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00135",
+        "state": "水壶未在柜子中找到。",
+        "explanation": "搜索柜子时可能遗漏了水壶。",
+        "advice": [
+          "系统性搜索柜子，从柜子1到柜子16",
+          "检查每个柜子的内部和外部",
+          "若未找到，再检查其他可能位置"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00136",
+        "state": "水壶在柜台2上，清洁后放入柜子1。",
+        "explanation": "水壶可能在常见位置，清洁后放入柜子。",
+        "advice": [
+          "检查柜台1和柜台2",
+          "若未找到，检查水槽",
+          "若仍未找到，检查柜子"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00143",
+        "state": "抽屉中存在皂条，但未明确其是否干净。",
+        "explanation": "实际操作中通过清洁步骤确保皂条干净。",
+        "advice": [
+          "若皂条状态不确定，应优先清洁以确保符合任务要求。",
+          "清洁步骤应使用水槽或其他可用的清洁工具。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00145",
+        "state": "皂条已从抽屉中取出，但未立即清洁。",
+        "explanation": "实际操作中未立即清洁，但后续步骤中进行了清洁。",
+        "advice": [
+          "在取出皂条后，应立即检查其是否干净，若不干净则立即清洁。",
+          "清洁步骤应尽快执行，以避免任务延误。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00161",
+        "state": "Searching for an apple in a large number of cabinets may be inefficient and may not complete before the step limit.",
+        "explanation": "",
+        "advice": [
+          "Limit the number of cabinets searched to avoid exceeding the step limit.",
+          "Prioritize cabinets that are more likely to contain the apple."
+        ],
+        "exceptions": [
+          "The apple may be in a cabinet that is not checked due to step limit constraints.",
+          "The apple may not exist in the environment.",
+          "The apple may be in a location that is not accessible."
+        ]
+      }
+    ],
+    "candidate_count": 18,
+    "budget_applied": false
+  },
+  "steps": [
+    {
+      "action": "look",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a candle 2, a soapbar 1, a soapbottle 2, a soapbottle 1, and a spraybottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take soapbar 1 from countertop 1",
+      "observation": "You pick up the soapbar 1 from the countertop 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "clean soapbar 1 with sinkbasin 1",
+      "observation": "You clean the soapbar 1 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 1",
+      "observation": "You arrive at cabinet 1. The cabinet 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 1",
+      "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see a soapbottle 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move soapbar 1 to cabinet 1",
+      "observation": "You move the soapbar 1 to the cabinet 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 1",
+      "observation": "You close the cabinet 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the cabinet 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 1",
+      "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see a soapbar 1, and a soapbottle 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 1",
+      "observation": "You close the cabinet 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 2",
+      "observation": "You arrive at cabinet 2. The cabinet 2 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 2",
+      "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see a candle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 2",
+      "observation": "You close the cabinet 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 3",
+      "observation": "You arrive at cabinet 3. The cabinet 3 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 3",
+      "observation": "You open the cabinet 3. The cabinet 3 is open. In it, you see a soapbar 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move soapbar 1 from cabinet 1 to cabinet 3",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 1",
+      "observation": "You arrive at cabinet 1. The cabinet 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 1",
+      "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see a soapbar 1, and a soapbottle 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take soapbar 1 from cabinet 1",
+      "observation": "You pick up the soapbar 1 from the cabinet 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 3",
+      "observation": "You arrive at cabinet 3. The cabinet 3 is open. In it, you see a soapbar 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move soapbar 1 to cabinet 3",
+      "observation": "You move the soapbar 1 to the cabinet 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 3",
+      "observation": "You close the cabinet 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the cabinet 3. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 3",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 3",
+      "observation": "You open the cabinet 3. The cabinet 3 is open. In it, you see a soapbar 2, and a soapbar 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 3",
+      "observation": "You close the cabinet 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 1",
+      "observation": "You arrive at cabinet 1. The cabinet 1 is open. In it, you see a soapbottle 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 1",
+      "observation": "You close the cabinet 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "look",
+      "observation": "You are facing the cabinet 1. Next to it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 2",
+      "observation": "You arrive at cabinet 2. The cabinet 2 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 2",
+      "observation": "You open the cabinet 2. The cabinet 2 is open. In it, you see a candle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 2",
+      "observation": "You close the cabinet 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 4",
+      "observation": "You arrive at cabinet 4. The cabinet 4 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 4",
+      "observation": "You open the cabinet 4. The cabinet 4 is open. In it, you see a cloth 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take cloth 1 from cabinet 4",
+      "observation": "You pick up the cloth 1 from the cabinet 4.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "clean cloth 1 with sinkbasin 1",
+      "observation": "You clean the cloth 1 using the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 1",
+      "observation": "You arrive at cabinet 1. The cabinet 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 1",
+      "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see a soapbottle 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move cloth 1 to cabinet 1",
+      "observation": "You move the cloth 1 to the cabinet 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "won": true,
+  "termination": "won"
+}

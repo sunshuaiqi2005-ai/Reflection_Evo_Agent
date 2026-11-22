@@ -1,0 +1,66 @@
+{
+  "source_run": "compare20-pass1-fresh-20261122-010445",
+  "archive_filename": "compare20-pass1-fresh-20261122-010445-complete.tar.xz",
+  "archive_sha256": "515f4ac2e8e7466991098d089991e099fd22273de24562109565d1e210136b00",
+  "archive_bytes": 2772996,
+  "original_files": 5456,
+  "original_bytes": 102725230,
+  "archive_verified_against_source": true,
+  "core_source_commit": "9530a05508bfe2aa003d7ed2122d0fc2e8877bb1",
+  "training_rounds": 20,
+  "training_trajectories": 60,
+  "evaluation_questions": 20,
+  "trajectories_per_evaluation_group": 60,
+  "evaluation_memory_updates": false,
+  "published_at_utc": "2026-11-22T13:47:30.115476+00:00",
+  "note": "Original run files are unchanged. The full archive includes model_calls, rounds, evaluation, memory snapshots, embeddings, source snapshot, logs and task manifests. Python bytecode caches are excluded.",
+  "archive_storage": "split_binary_parts",
+  "archive_part_bytes": 524286,
+  "archive_parts": [
+    {
+      "filename": "compare20-pass1-fresh-20261122-010445-complete.tar.xz.part01",
+      "path": "archives/compare20-pass1-fresh-20261122-010445-complete.tar.xz.part01",
+      "bytes": 524286,
+      "offset": 0,
+      "sha256": "b120a16deff3bbc0564d887ec5633b3ee19f7169e274f55c2a4bddaa0c99a08a"
+    },
+    {
+      "filename": "compare20-pass1-fresh-20261122-010445-complete.tar.xz.part02",
+      "path": "archives/compare20-pass1-fresh-20261122-010445-complete.tar.xz.part02",
+      "bytes": 524286,
+      "offset": 524286,
+      "sha256": "7beca81e140da912bc5346b143da88fe1abc3c02e4c57b3e7323e956f93203ba"
+    },
+    {
+      "filename": "compare20-pass1-fresh-20261122-010445-complete.tar.xz.part03",
+      "path": "archives/compare20-pass1-fresh-20261122-010445-complete.tar.xz.part03",
+      "bytes": 524286,
+      "offset": 1048572,
+      "sha256": "f210fbde5cc231b1817309e410292b6e26f403e4a9a0257eab9f4166b2285b3b"
+    },
+    {
+      "filename": "compare20-pass1-fresh-20261122-010445-complete.tar.xz.part04",
+      "path": "archives/compare20-pass1-fresh-20261122-010445-complete.tar.xz.part04",
+      "bytes": 524286,
+      "offset": 1572858,
+      "sha256": "9417a7f6c8e4364b2363acc9053081abc2cbec3062344afb57cb298adde79728"
+    },
+    {
+      "filename": "compare20-pass1-fresh-20261122-010445-complete.tar.xz.part05",
+      "path": "archives/compare20-pass1-fresh-20261122-010445-complete.tar.xz.part05",
+      "bytes": 524286,
+      "offset": 2097144,
+      "sha256": "cedea0ef6a7c8996a7333f61bdef1501eb7542d76116f0fe8b5b1f34c682528b"
+    },
+    {
+      "filename": "compare20-pass1-fresh-20261122-010445-complete.tar.xz.part06",
+      "path": "archives/compare20-pass1-fresh-20261122-010445-complete.tar.xz.part06",
+      "bytes": 151566,
+      "offset": 2621430,
+      "sha256": "a4523bbf68f56a3dd333e885d8100a1b5d1e4ec8382c31ee0423b86f40f8510a"
+    }
+  ],
+  "restore_command": "sh restore.sh",
+  "archive_reassembly_verified": true,
+  "transport_note": "The connector failed to transmit the full base64 archive in one request. Parts preserve the exact original compressed archive bytes."
+}

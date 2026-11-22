@@ -1,0 +1,317 @@
+{
+  "id": "test-final-v20-018-plan3",
+  "task_id": "valid_unseen/pick_cool_then_place_in_recep-Lettuce-None-CounterTop-10/trial_T20190909_174840_771703/game.tw-pddl",
+  "plan": {
+    "name": "Check countertop first, then fridge and cabinets for lettuce, cool and place on countertop.",
+    "strategy": "Check the countertop first for any existing lettuce, then search the fridge and cabinets if it is not found, cool it if necessary, and place it back on the countertop.",
+    "steps": [
+      "Check countertop 1 to countertop 3 for any existing lettuce.",
+      "If lettuce is not found on the countertop, check fridge 1 for lettuce.",
+      "If lettuce is not found in the fridge, systematically search cabinets 1 to 6.",
+      "Once lettuce is found, take it and check if it is already cool.",
+      "If lettuce is not cool, place it in the fridge to cool it.",
+      "Once lettuce is cool, return it to a countertop (e.g., countertop 1) and place it there."
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: cool some lettuce and put it in countertop.",
+  "memory_version": 20,
+  "injection": {
+    "mode": "catalogue",
+    "possible_problems": [
+      "冷却步骤失败可能与冷却设备或方法有关。",
+      "方案未在执行前确认苹果是否已冷却，导致需要额外步骤。",
+      "目标物品（mug）在搜索阶段被找到。",
+      "If the initial 'clean' action fails, the agent may need to move to a specific location (e.g., sinkbasin) to perform the cleaning.",
+      "Searching for an apple in a large number of cabinets may be inefficient and may not complete before the step limit."
+    ],
+    "state_ids": [
+      "S00033",
+      "S00059",
+      "S00022",
+      "S00017",
+      "S00012"
+    ],
+    "experiences": [
+      {
+        "id": "E00022",
+        "state": "苹果在冰箱中，但未在抽屉或柜子中。",
+        "explanation": "苹果可能储存在冰箱中，而未在抽屉或柜子中。",
+        "advice": [
+          "优先检查冰箱以获取苹果。",
+          "若未找到苹果，应检查其他常见存储位置。",
+          "若未找到苹果，可能需要重新确认任务条件。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00029",
+        "state": "The initial 'clean' action may fail if the agent is not at the correct location (e.g., sinkbasin).",
+        "explanation": "",
+        "advice": [
+          "Move to the sinkbasin before attempting to clean the sponge.",
+          "If the 'clean' action fails, check if the agent is at the correct location for cleaning."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00039",
+        "state": "目标物品（mug）在搜索阶段被找到。",
+        "explanation": "可能需要在找到目标物品后立即进行加热操作。",
+        "advice": [
+          "在找到目标物品后立即进行加热操作",
+          "确保加热设备（如 microwave）可用",
+          "检查加热设备是否已打开"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00048",
+        "state": "苹果在冰箱中，但未被立即识别。",
+        "explanation": "苹果可能被其他物品遮挡或未被注意到。",
+        "advice": [
+          "打开冰箱后仔细检查内部物品",
+          "确认苹果是否在视野范围内"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00049",
+        "state": "微波炉内已有苹果，但未被处理。",
+        "explanation": "微波炉内已有苹果可能未被识别为任务目标的一部分。",
+        "advice": [
+          "检查微波炉内是否已有苹果",
+          "确认是否需要替换或补充"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00050",
+        "state": "清洁苹果时未检查微波炉内是否已有苹果。",
+        "explanation": "清洁苹果后直接放入微波炉，未确认微波炉内是否已有苹果。",
+        "advice": [
+          "清洁苹果后检查微波炉内是否已有苹果",
+          "确认微波炉是否已打开并准备好接收苹果"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00057",
+        "state": "When the cleaning action fails, the actor should attempt the action again.",
+        "explanation": "",
+        "advice": [
+          "Repeat the cleaning action if it fails the first time.",
+          "Ensure the object is in the correct location for cleaning."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00059",
+        "state": "When the object is successfully cleaned and moved to the target location, the actor should confirm the action's success.",
+        "explanation": "",
+        "advice": [
+          "Verify that the object is in the correct location after the action is completed.",
+          "Ensure the task is fully completed before ending the interaction."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00068",
+        "state": "使用冰箱冷却杯子是有效的，但需确保杯子已被正确拾取。",
+        "explanation": "",
+        "advice": [
+          "在冷却前确保杯子已被正确拾取并携带至冷却设备。",
+          "若冷却失败，应检查杯子是否在冷却设备附近。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00080",
+        "state": "杯子需要冷却，但冰箱可能关闭。",
+        "explanation": "冰箱可能关闭，需先打开才能使用。",
+        "advice": [
+          "先打开冰箱再使用",
+          "若冰箱关闭，先打开再使用",
+          "确保冰箱打开后可用"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00095",
+        "state": "番茄可能存在于餐桌，但未被正确识别或处理。",
+        "explanation": "方案1未能正确识别餐桌上的番茄，导致任务失败。",
+        "advice": [
+          "在检查目标位置时，应明确识别番茄的存在。",
+          "如果番茄在目标位置，应优先处理。"
+        ],
+        "exceptions": [
+          "番茄可能在目标位置但未被识别。",
+          "番茄可能在目标位置但未被正确处理。",
+          "番茄可能在目标位置但未被正确识别。"
+        ]
+      },
+      {
+        "id": "E00159",
+        "state": "Searching for an apple in the fridge, countertops, and cabinets may not be effective if the apple is not in those locations.",
+        "explanation": "",
+        "advice": [
+          "Consider checking less common storage areas if the apple is not found in the initial locations.",
+          "Verify if the apple exists in the environment before proceeding with a search."
+        ],
+        "exceptions": [
+          "The apple may be in a location not checked due to step limit constraints.",
+          "The apple may not exist in the environment.",
+          "The apple may be in a location that is not accessible."
+        ]
+      },
+      {
+        "id": "E00160",
+        "state": "Focusing on finding a cool apple directly by checking the fridge first may be effective if the apple is already cool and stored there.",
+        "explanation": "",
+        "advice": [
+          "Check the fridge first for a cool apple to avoid unnecessary steps.",
+          "If the apple is not cool, place it in the fridge to cool before proceeding."
+        ],
+        "exceptions": [
+          "The apple may not be in the fridge.",
+          "The apple may not exist in the environment.",
+          "The apple may be in a location that is not accessible."
+        ]
+      },
+      {
+        "id": "E00161",
+        "state": "Searching for an apple in a large number of cabinets may be inefficient and may not complete before the step limit.",
+        "explanation": "",
+        "advice": [
+          "Limit the number of cabinets searched to avoid exceeding the step limit.",
+          "Prioritize cabinets that are more likely to contain the apple."
+        ],
+        "exceptions": [
+          "The apple may be in a cabinet that is not checked due to step limit constraints.",
+          "The apple may not exist in the environment.",
+          "The apple may be in a location that is not accessible."
+        ]
+      },
+      {
+        "id": "E00168",
+        "state": "苹果在水槽中，但未被冷却。",
+        "explanation": "苹果可能未被冷却，需使用冰箱进行冷却。",
+        "advice": [
+          "检查苹果是否已冷却",
+          "使用冰箱进行冷却",
+          "确认苹果是否可被冷却"
+        ],
+        "exceptions": [
+          "苹果可能无法被冷却",
+          "苹果可能未被命名",
+          "苹果可能已被使用过"
+        ]
+      },
+      {
+        "id": "E00169",
+        "state": "苹果在水槽中，但未被检查。",
+        "explanation": "水槽是常见放置苹果的位置，应优先检查。",
+        "advice": [
+          "优先检查水槽和冰箱",
+          "避免过度搜索非相关位置",
+          "确认苹果是否在初始观察中被提及"
+        ],
+        "exceptions": [
+          "苹果可能不在水槽",
+          "苹果可能已被移动",
+          "苹果可能未被命名"
+        ]
+      },
+      {
+        "id": "E00170",
+        "state": "苹果在水槽中，但未被正确放置。",
+        "explanation": "苹果可能未被正确放置，需确认垃圾桶位置。",
+        "advice": [
+          "确认垃圾桶位置",
+          "确保苹果正确放置",
+          "检查垃圾桶是否已打开"
+        ],
+        "exceptions": [
+          "垃圾桶可能未被打开",
+          "苹果可能未被命名",
+          "苹果可能已被使用过"
+        ]
+      }
+    ],
+    "candidate_count": 17,
+    "budget_applied": false
+  },
+  "steps": [
+    {
+      "action": "look",
+      "observation": "You are in the middle of a room. Looking quickly around you, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3, a bowl 2, a creditcard 2, a creditcard 1, a dishsponge 1, and a glassbottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 2",
+      "observation": "You arrive at countertop 2. On the countertop 2, you see a bread 1, a cellphone 1, a cup 2, a cup 1, a dishsponge 2, a knife 2, a knife 1, a lettuce 2, a lettuce 1, and a plate 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take lettuce 1 from countertop 2",
+      "observation": "You pick up the lettuce 1 from the countertop 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "cool lettuce 1 with fridge 1",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open fridge 1",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a bowl 1, a bread 2, a cup 3, a egg 1, a mug 1, a plate 3, a potato 1, and a tomato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "cool lettuce 1 with fridge 1",
+      "observation": "You cool the lettuce 1 using the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a bowl 3, a bowl 2, a creditcard 2, a creditcard 1, a dishsponge 1, and a glassbottle 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "move lettuce 1 to countertop 1",
+      "observation": "You move the lettuce 1 to the countertop 1.",
+      "score": 1.0,
+      "done": true,
+      "won": true
+    }
+  ],
+  "won": true,
+  "termination": "won"
+}

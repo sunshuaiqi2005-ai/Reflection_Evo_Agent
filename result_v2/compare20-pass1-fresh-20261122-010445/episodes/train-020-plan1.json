@@ -1,0 +1,574 @@
+{
+  "id": "train-020-plan1",
+  "task_id": "train/pick_cool_then_place_in_recep-Apple-None-GarbageCan-2/trial_T20190906_195910_686523/game.tw-pddl",
+  "plan": {
+    "name": "Efficient Search and Direct Disposal",
+    "strategy": "Prioritize checking the fridge first for a cool apple, then proceed directly to the garbagecan.",
+    "steps": [
+      "Check the fridge 1 for a cool apple.",
+      "If found, take the apple and move to the garbagecan 1.",
+      "Place the cool apple in the garbagecan 1."
+    ]
+  },
+  "initial_observation": "-= Welcome to TextWorld, ALFRED! =-\n\nYou are in the middle of a room. Looking quickly around you, you see a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 2, a countertop 1, a drawer 13, a drawer 12, a drawer 11, a drawer 10, a drawer 9, a drawer 8, a drawer 7, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sinkbasin 1, a stoveburner 6, a stoveburner 5, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.\n\nYour task is to: put a cool apple in garbagecan.",
+  "memory_version": 19,
+  "injection": {
+    "mode": "catalogue",
+    "possible_problems": [
+      "苹果在冰箱中，但未在抽屉或柜子中。",
+      "方案一在检查完所有柜子后终于在 countertop 3 找到土豆并加热，但未将土豆放入垃圾箱，任务未完成。",
+      "Searching for an apple in a large number of cabinets may be inefficient and may not complete before the step limit.",
+      "微波炉未打开，无法放置碗。",
+      "When the object is found in an unexpected location, the actor should adjust the plan accordingly."
+    ],
+    "state_ids": [
+      "S00012",
+      "S00009",
+      "S00059",
+      "S00005",
+      "S00030"
+    ],
+    "experiences": [
+      {
+        "id": "E00007",
+        "state": "微波炉未打开，无法放置碗。",
+        "explanation": "",
+        "advice": [
+          "在放置碗之前，确保微波炉已打开。",
+          "若微波炉未打开，先打开微波炉再放置碗。",
+          "避免在未打开的微波炉中放置碗。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00013",
+        "state": "在冰箱中找到土豆后，需将其放入微波炉并加热。",
+        "explanation": "",
+        "advice": [
+          "将土豆放入微波炉",
+          "确认微波炉已打开",
+          "执行加热操作"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00014",
+        "state": "若加热操作失败，需检查微波炉是否已打开并包含土豆。",
+        "explanation": "",
+        "advice": [
+          "确认微波炉已打开",
+          "确保土豆已放入微波炉",
+          "重新执行加热操作"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00015",
+        "state": "在垃圾箱中放置加热后的土豆时，需确保垃圾箱可用。",
+        "explanation": "",
+        "advice": [
+          "确认垃圾箱已打开",
+          "将土豆放入垃圾箱",
+          "检查垃圾箱是否接受该物品"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00022",
+        "state": "苹果在冰箱中，但未在抽屉或柜子中。",
+        "explanation": "苹果可能储存在冰箱中，而未在抽屉或柜子中。",
+        "advice": [
+          "优先检查冰箱以获取苹果。",
+          "若未找到苹果，应检查其他常见存储位置。",
+          "若未找到苹果，可能需要重新确认任务条件。"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00048",
+        "state": "苹果在冰箱中，但未被立即识别。",
+        "explanation": "苹果可能被其他物品遮挡或未被注意到。",
+        "advice": [
+          "打开冰箱后仔细检查内部物品",
+          "确认苹果是否在视野范围内"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00049",
+        "state": "微波炉内已有苹果，但未被处理。",
+        "explanation": "微波炉内已有苹果可能未被识别为任务目标的一部分。",
+        "advice": [
+          "检查微波炉内是否已有苹果",
+          "确认是否需要替换或补充"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00050",
+        "state": "清洁苹果时未检查微波炉内是否已有苹果。",
+        "explanation": "清洁苹果后直接放入微波炉，未确认微波炉内是否已有苹果。",
+        "advice": [
+          "清洁苹果后检查微波炉内是否已有苹果",
+          "确认微波炉是否已打开并准备好接收苹果"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00058",
+        "state": "When the object is found in an unexpected location, the actor should adjust the plan accordingly.",
+        "explanation": "",
+        "advice": [
+          "Check the object's location before proceeding with the cleaning action.",
+          "Adjust the plan if the object is not found in the expected location."
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00088",
+        "state": "方案一在检查完所有柜子后终于在 countertop 3 找到土豆并加热，但未将土豆放入垃圾箱，任务未完成。",
+        "explanation": "可能因为计划中未包含将土豆放入垃圾箱的步骤。",
+        "advice": [
+          "在计划中明确所有步骤，包括将土豆放入垃圾箱",
+          "确保所有步骤都被执行",
+          "在执行步骤时检查是否遗漏了关键步骤"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00089",
+        "state": "方案二在检查 fridge 后直接检查 countertop 并找到土豆，成功加热并放入垃圾箱，任务完成。",
+        "explanation": "可能因为方案二的搜索策略更高效，优先检查了常见存储位置。",
+        "advice": [
+          "优先检查 fridge 和 countertop",
+          "避免无针对性地检查所有柜子",
+          "在计划中明确检查顺序"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00090",
+        "state": "方案三系统性地检查所有柜子，但未检查 fridge 和 countertop，导致未找到土豆，任务未完成。",
+        "explanation": "可能因为计划中未将 fridge 和 countertop 作为优先检查位置。",
+        "advice": [
+          "在搜索策略中优先考虑 fridge 和 countertop",
+          "避免过度依赖柜子作为唯一存储位置",
+          "在计划中明确检查顺序"
+        ],
+        "exceptions": []
+      },
+      {
+        "id": "E00095",
+        "state": "番茄可能存在于餐桌，但未被正确识别或处理。",
+        "explanation": "方案1未能正确识别餐桌上的番茄，导致任务失败。",
+        "advice": [
+          "在检查目标位置时，应明确识别番茄的存在。",
+          "如果番茄在目标位置，应优先处理。"
+        ],
+        "exceptions": [
+          "番茄可能在目标位置但未被识别。",
+          "番茄可能在目标位置但未被正确处理。",
+          "番茄可能在目标位置但未被正确识别。"
+        ]
+      },
+      {
+        "id": "E00159",
+        "state": "Searching for an apple in the fridge, countertops, and cabinets may not be effective if the apple is not in those locations.",
+        "explanation": "",
+        "advice": [
+          "Consider checking less common storage areas if the apple is not found in the initial locations.",
+          "Verify if the apple exists in the environment before proceeding with a search."
+        ],
+        "exceptions": [
+          "The apple may be in a location not checked due to step limit constraints.",
+          "The apple may not exist in the environment.",
+          "The apple may be in a location that is not accessible."
+        ]
+      },
+      {
+        "id": "E00160",
+        "state": "Focusing on finding a cool apple directly by checking the fridge first may be effective if the apple is already cool and stored there.",
+        "explanation": "",
+        "advice": [
+          "Check the fridge first for a cool apple to avoid unnecessary steps.",
+          "If the apple is not cool, place it in the fridge to cool before proceeding."
+        ],
+        "exceptions": [
+          "The apple may not be in the fridge.",
+          "The apple may not exist in the environment.",
+          "The apple may be in a location that is not accessible."
+        ]
+      },
+      {
+        "id": "E00161",
+        "state": "Searching for an apple in a large number of cabinets may be inefficient and may not complete before the step limit.",
+        "explanation": "",
+        "advice": [
+          "Limit the number of cabinets searched to avoid exceeding the step limit.",
+          "Prioritize cabinets that are more likely to contain the apple."
+        ],
+        "exceptions": [
+          "The apple may be in a cabinet that is not checked due to step limit constraints.",
+          "The apple may not exist in the environment.",
+          "The apple may be in a location that is not accessible."
+        ]
+      }
+    ],
+    "candidate_count": 16,
+    "budget_applied": false
+  },
+  "steps": [
+    {
+      "action": "go to fridge 1",
+      "observation": "You arrive at fridge 1. The fridge 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open fridge 1",
+      "observation": "You open the fridge 1. The fridge 1 is open. In it, you see a potato 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close fridge 1",
+      "observation": "You close the fridge 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 1",
+      "observation": "You arrive at countertop 1. On the countertop 1, you see a fork 2, a ladle 1, a pan 1, a pot 1, a soapbottle 2, a spatula 1, a tomato 1, a window 3, and a window 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to countertop 2",
+      "observation": "You arrive at countertop 2. On the countertop 2, you see a bread 3, a bread 2, a bread 1, a butterknife 1, a cellphone 3, a cup 1, a dishsponge 1, a fork 3, a knife 3, a lettuce 3, a lettuce 2, a lettuce 1, a plate 2, a saltshaker 2, a soapbottle 1, and a spoon 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 1",
+      "observation": "You arrive at cabinet 1. The cabinet 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 1",
+      "observation": "You open the cabinet 1. The cabinet 1 is open. In it, you see a peppershaker 2, and a peppershaker 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 1",
+      "observation": "You close the cabinet 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 2",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 3",
+      "observation": "You arrive at cabinet 3. The cabinet 3 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 3",
+      "observation": "You open the cabinet 3. The cabinet 3 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 3",
+      "observation": "You close the cabinet 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 4",
+      "observation": "Nothing happens.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 5",
+      "observation": "You arrive at cabinet 5. The cabinet 5 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 5",
+      "observation": "You open the cabinet 5. The cabinet 5 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 5",
+      "observation": "You close the cabinet 5.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 6",
+      "observation": "You arrive at cabinet 6. The cabinet 6 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 6",
+      "observation": "You open the cabinet 6. The cabinet 6 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 6",
+      "observation": "You close the cabinet 6.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 7",
+      "observation": "You arrive at cabinet 7. The cabinet 7 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 7",
+      "observation": "You open the cabinet 7. The cabinet 7 is open. In it, you see a kettle 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 7",
+      "observation": "You close the cabinet 7.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 8",
+      "observation": "You arrive at cabinet 8. The cabinet 8 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 8",
+      "observation": "You open the cabinet 8. The cabinet 8 is open. In it, you see a mug 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close cabinet 8",
+      "observation": "You close the cabinet 8.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to cabinet 9",
+      "observation": "You arrive at cabinet 9. The cabinet 9 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open cabinet 9",
+      "observation": "You open the cabinet 9. The cabinet 9 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to drawer 1",
+      "observation": "You arrive at drawer 1. The drawer 1 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open drawer 1",
+      "observation": "You open the drawer 1. The drawer 1 is open. In it, you see a knife 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close drawer 1",
+      "observation": "You close the drawer 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to drawer 2",
+      "observation": "You arrive at drawer 2. The drawer 2 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open drawer 2",
+      "observation": "You open the drawer 2. The drawer 2 is open. In it, you see a fork 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close drawer 2",
+      "observation": "You close the drawer 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to drawer 3",
+      "observation": "You arrive at drawer 3. The drawer 3 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open drawer 3",
+      "observation": "You open the drawer 3. The drawer 3 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close drawer 3",
+      "observation": "You close the drawer 3.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to drawer 4",
+      "observation": "You arrive at drawer 4. The drawer 4 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open drawer 4",
+      "observation": "You open the drawer 4. The drawer 4 is open. In it, you see a cellphone 2, and a cellphone 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close drawer 4",
+      "observation": "You close the drawer 4.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to drawer 5",
+      "observation": "You arrive at drawer 5. On the drawer 5, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to drawer 6",
+      "observation": "You arrive at drawer 6. The drawer 6 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open drawer 6",
+      "observation": "You open the drawer 6. The drawer 6 is open. In it, you see a saltshaker 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close drawer 6",
+      "observation": "You close the drawer 6.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to drawer 7",
+      "observation": "You arrive at drawer 7. On the drawer 7, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to drawer 8",
+      "observation": "You arrive at drawer 8. On the drawer 8, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to drawer 9",
+      "observation": "You arrive at drawer 9. The drawer 9 is closed.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "open drawer 9",
+      "observation": "You open the drawer 9. The drawer 9 is open. In it, you see nothing.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "close drawer 9",
+      "observation": "You close the drawer 9.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "go to sinkbasin 1",
+      "observation": "You arrive at sinkbasin 1. On the sinkbasin 1, you see a apple 3, a bowl 2, a spoon 2, and a tomato 2.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    },
+    {
+      "action": "take apple 3 from sinkbasin 1",
+      "observation": "You pick up the apple 3 from the sinkbasin 1.",
+      "score": 0.0,
+      "done": false,
+      "won": false
+    }
+  ],
+  "won": false,
+  "termination": "step_limit"
+}

@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "forecast-experience"
+version = "0.1.0"
+description = "Planner, Actor, Forecaster and Critic with clustered experience memory"
+requires-python = ">=3.9"
+dependencies = [
+  "alfworld==0.4.2",
+  "textworld[pddl]==1.7.0",
+  "numpy>=1.24,<2",
+  "spacy==3.7.5",
+  "PyYAML>=6,<7",
+  "tokenizers>=0.21,<0.23",
+]
+
+[project.scripts]
+forecast-experience = "forecast_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
